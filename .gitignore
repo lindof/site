@@ -1,0 +1,9 @@
+# 2022-01-15 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+*
+!*/
+!/.editorconfig
+!/.gitignore
+!/composer.json
+!/readme.md
+!/app/code/**/*
+!/app/etc/config.php
