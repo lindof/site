@@ -1,0 +1,961 @@
+body {
+    margin: 0px;
+}
+
+#velsof_wheel_container{
+    font-family: 'Merriweather', serif;
+}
+
+.bodyoverflowhidden {
+    overflow: hidden !important;
+}
+
+#velsof_wheel_container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left: 0px;
+    overflow-y: auto;
+    display: none;
+    z-index: 99999999;
+}
+
+#velsof_wheel_model {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #9e9e9e;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#velsof_wheel_main_container  {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -90%;
+    width: 90%;
+    max-width: 790px;
+    overflow-y: hidden;
+    box-sizing: border;
+    background: #004c70;
+    -webkit-box-shadow: 10px 0px 5px -5px rgba(66,66,66,0.45);
+    -moz-box-shadow: 10px 0px 5px -5px rgba(66,66,66,0.45);
+    box-shadow: 10px 0px 5px -5px rgba(66,66,66,0.45);
+}
+
+.spin_toggle {
+    text-decoration: none;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.61);
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.45s ease-out 0;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    z-index: 222222;
+    cursor: pointer;
+    background: #d8d8d8;
+    border-radius: 0px 25px 25px 0px;
+    padding: 9px 10px 11px 10px;
+    margin-left: -10px
+}
+
+.spin_toggle img:hover {
+    animation: shake1 2s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.spin_toggle {
+    -moz-animation:spinanimation 5s ease-in-out infinite;
+    -webkit-animation:spinanimation 5s ease-in-out infinite;
+    animation: spinanimation 5s ease-in-out infinite;
+}
+
+#velsoftop.velsoftheme {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    opacity: .5;
+}
+
+#velsof_wheel_main_container {
+    transition: all 500ms ease;
+}
+
+#velsof_wheel_main_container.transform {
+    left: 0%;
+}
+
+#velsof_spinner_container {
+    float: left;
+    width: 500px;
+    text-align: left;
+    height: 500px;
+}
+
+#velsof_offer_container {
+    float: right;
+    width: 230px;
+    text-align: left;
+}
+
+#velsof_spinners {
+    position: absolute;
+    left: -230px;
+    height: 500px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    bottom: 0px;
+}
+
+#velsof_spinner {
+    background-size: cover;
+    width: 500px;
+    text-align: left;
+    height: 500px;
+
+}
+
+
+#velsof_spinner {
+    -webkit-animation-duration: 6000ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-duration: 6000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+}
+
+
+.wheelslices {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: rotate(-60deg) translate(0px, -50%);
+    transform-origin: 0 0;
+    -webkit-transform: rotate(-60deg) translate(0px, -50%);
+    -webkit-transform-origin: 0 0;
+    text-align: right;
+    width: 40%;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent; 
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+#velsof_wheel_pointer {
+    background: url(../images/wheel_pointer_1.png);
+    background-size: cover;
+    position: absolute;
+    width: 81px;
+    height: 50px;
+    left: 230px;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0px;
+    bottom: 0px;
+    z-index: 11;
+}
+
+#velsof_offer_main_container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0px;
+    bottom: 0px;
+    left: 360px;
+    height: 300px;
+    width: 390px;
+}
+
+.velsof_main_title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.velsof_subtitle {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.velsof_ul li {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.velsof_ul {
+    margin-top: 10px;
+    list-style-type: circle;
+    margin-bottom: 10px;
+}
+
+.velsof_input_field {
+    padding: 9px 10px;
+    width: 94%;
+    background: #fff;
+    border-radius: 3px !important;
+    border: none;
+    color: #5a5a5a;
+    font-size: 15px;
+}
+
+.velsof_button {
+    background: #000;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    width: 70%;
+    margin-top: 10px;
+    padding: 9px 5px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.velsof_shadow {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    width: 100%;
+    height: 92.5%;
+    background-image: url(../images/shadow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+/* Custom CSS */
+
+
+.cancel_button {
+    text-align: right;
+    cursor: pointer;
+}
+
+.exit_button {
+    text-align: center;
+}
+
+#spin_wheel_logo_container
+{
+    float: right;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+#spin_wheel_logo{
+    width:100px;
+    height:100px;
+    position: relative;
+}
+
+#spin_wheel_logo_container
+{
+    float: right;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+#spin_wheel_logo{
+    width:100px;
+    height:100px;
+}
+
+#pull_out_tab {
+    top: 50%;
+    position: fixed;
+    opacity: 0.5;
+    display: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.tooltipster-sidetip.tooltipster-default.tooltipster-velsofspinwheel .tooltipster-box {
+    background-color: #FFBABA;
+    border-radius: 6px;
+    border: 0;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    opacity: 0.95; }
+
+.tooltipster-sidetip.tooltipster-default.tooltipster-velsofspinwheel .tooltipster-arrow-border {
+    border-top-color: #FFBABA; }
+
+.tooltipster-sidetip.tooltipster-default.tooltipster-velsofspinwheel .tooltipster-arrow-background {
+    border-top-color: #FFBABA; }
+
+.tooltipster-sidetip.tooltipster-default.tooltipster-velsofspinwheel .tooltipster-content {
+    color: #D8000C;
+    padding: 15px 15px;
+}
+
+.tooltipster-velsofspinwheel {
+    z-index: 9999999999999999999999 !important; 
+}
+
+#vss_combined_input_field {
+    color: #607d8b !important;
+}
+
+#vss_loader {
+    z-index: 9999999999999999;
+    position: absolute;
+    display: none; 
+    margin-top: 18%;
+    margin-left: 33%;
+}
+
+
+@media screen and (max-width: 3000px) and (min-width: 750px) {
+
+}
+
+@media screen and (max-width: 850px) and (min-width: 750px) { 
+    #velsof_offer_main_container {
+        left: 330px;
+        width: 345px;
+    }
+}
+@media screen and (max-width: 749px) and (min-width: 700px) {
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 450px;
+        height: 450px;
+    }
+
+    #velsof_spinners {
+        left: -205px;
+    }
+    #velsof_wheel_pointer {
+        left: 210px;
+    }
+    #velsof_offer_main_container {
+        left: 320px;
+        width: 315px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 650px) {
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 400px;
+        height: 400px;
+    }
+
+    #velsof_spinners {
+        left: -180px;
+    }
+    #velsof_wheel_pointer {
+        left: 190px;
+    }
+    #velsof_offer_main_container {
+        left: 305px;
+        width: 275px;
+    }
+}
+
+@media screen and (max-width: 649px) and (min-width: 600px) {
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 350px;
+        height: 350px;
+    }
+
+    #velsof_spinners {
+        left: -150px;
+    }
+    .wheelslices {
+        font-size: 12px;
+    }
+    #velsof_wheel_pointer {
+        left: 175px;
+    }
+
+    #velsof_offer_main_container {
+        left: 275px;
+        width: 250px;
+    }
+
+}
+
+@media screen and (max-width: 599px) and (min-width: 550px) {
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 370px;
+        height: 370px;
+    }
+
+    #velsof_spinners {
+        left: -140px;
+    }
+    .wheelslices {
+        font-size: 11px;
+    }
+    #velsof_wheel_pointer {
+        left: 160px;
+    }
+    #velsof_offer_main_container {
+        left: 275px;
+        width: 200px;
+    }
+
+    .velsof_button {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 549px) and (min-width: 500px) {
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 350px;
+        height: 350px;
+    }
+
+    #velsof_spinners {
+        left: -130px;
+    }
+
+    #velsof_wheel_pointer {
+        left: 190px;
+    }
+    .wheelslices {
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    #velsof_offer_main_container {
+        left: 280px;
+    }
+    #velsof_wheel_main_container {
+        width: 100%;
+    }
+
+    #velsof_offer_main_container {
+        left: 275px;
+        width: 210px;
+    }
+}
+
+#velsofbottom.diwali_theme_5, #velsofbottom.blackfriday_theme_2, 
+#velsofbottom.holloween_theme_1, #velsofbottom.thanking_theme_2, 
+#velsof_wheel_main_container
+{
+    background-size:cover
+}
+
+@media (max-width: 499px){
+    #velsofbottom.blackfriday_theme_2 {
+        background-size: cover !important;
+    }
+}
+
+@media screen and (max-width: 749px) and (min-width: 470px) {
+
+}
+
+@media screen and (max-width: 499px) {
+    #velsof_offer_main_container {
+        position: static;
+        width: auto;
+    }
+
+    #spin_wheel_logo_container {
+        margin-right: 1%;
+        margin-top: 1%;
+    }
+
+    #velsof_offer_container {
+        float: none;
+        width: auto;
+        padding: 30px 25px;
+        position: relative;
+    }
+
+    #velsof_spinner_container {
+        float: none;
+        width: 100%;
+    }
+
+    #velsof_wheel_main_container {
+        width: 100%;
+    }
+
+    #velsof_spinners, #velsof_spinner_container, #velsof_spinner {
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+
+    #velsof_spinners {
+        left: -180px;
+    }
+    .wheelslices {
+        font-size: 12px;
+    }
+    #velsof_wheel_pointer {
+        left: 190px;
+    }
+    #velsof_wheel_main_container {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+#velsofbottom.velsoftheme {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 100%;
+    opacity: .5;
+}
+/* Tooltip container */
+.kbtooltip {
+    position: relative;
+}
+
+/* Tooltip text */
+.kbtooltip .tooltiptext {
+    display: none;
+    width: 120px;
+    background-color: #ffc9c9;
+    color: #f30000 !important;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+.kbtooltip .tooltiptext {
+    width: 120px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    margin-bottom: 5px;
+}
+
+.kbtooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffc9c9 transparent transparent transparent;
+}
+
+/*christmas*/
+#velsoftop.merry_christmas_1 {
+    background: url(../images/theme/christmas/theme1/images/overlay.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+    background-size: cover;
+}
+
+#velsofbottom.merry_christmas_1  { 
+    background-image: url(../images/theme/christmas/theme1/images/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto; 
+
+}
+
+#velsoftop.merry_christmas_2 {
+    background: url(../images/theme/christmas/theme2/images/overlay.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-size: cover;	
+    background-position: top -60px center;
+}
+
+#velsofbottom.merry_christmas_2  { 
+    background-image: url(../images/theme/christmas/theme2/images/base.png);
+    background-position: bottom center;
+    opacity: 1;
+    background-size: 50%;
+
+}
+.animated{animation-duration:4s;animation-fill-mode:both}
+@keyframes slideInUp{0%{transform:translate3d(0,100%,0);visibility:visible}to{transform:translateZ(0)}}.slideInUp{animation-name:slideInUp}
+#velsoftop.merry_christmas_3 {
+    background: url(../images/theme/christmas/theme3/images/background.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-size: cover;	
+}
+
+#velsofbottom.merry_christmas_3  { 
+    background-image: url(../images/theme/christmas/theme3/images/base.png);
+    background-position: bottom 0% left 33%;
+    opacity: 1;
+    background-size: 30%;
+}
+
+#velsoftop.merry_christmas_4 {
+    background: url(../images/theme/christmas/theme4/images/overlay.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+#velsofbottom.merry_christmas_4  { 
+    background-image: url(../images/theme/christmas/theme4/images/base.png);
+    background-position: bottom 0% right 5%;
+    opacity: 1;
+    background-size: auto;
+
+}
+
+#velsoftop.merry_christmas_5 {
+    background: url(../images/theme/christmas/theme5/images/background.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+#velsofbottom.merry_christmas_5 { 
+    background-image: url(../images/theme/christmas/theme5/images/gift.png);
+    opacity: 1;
+    background-size: 50%;
+    background-position: bottom right;
+
+
+}
+@media(max-width:499px)
+{
+    #velsofbottom.merry_christmas_2 {
+        background-image: url(../images/theme/christmas/theme2/images/base.png);
+        background-position: bottom right;
+        opacity: 1;
+        background-size: 60%;
+    }
+    #velsofbottom.merry_christmas_3 {
+        background-image: url(../images/theme/christmas/theme3/images/base.png);
+        background-position: bottom 0% right 0%;
+        background-size: 50%;
+    }
+}
+
+/*start: changes done by Dhruw on 29 Jan 2019 for integrating valentine themes*/
+#velsof_wheel_main_container.hug_day {
+    background-image: url(../images/theme/valentine_week/hug_day/background.png);
+}
+#velsoftop.hug_day {
+    background: url(../images/theme/valentine_week/hug_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+}
+#velsofbottom.hug_day  { 
+    background-image: url(../images/theme/valentine_week/hug_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.chocolate_day {
+    background-image: url(../images/theme/valentine_week/chocolate_day/background.png);
+}
+#velsoftop.chocolate_day {
+    background: url(../images/theme/valentine_week/chocolate_day/top.gif);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+}
+#velsofbottom.chocolate_day  { 
+    background-image: url(../images/theme/valentine_week/chocolate_day/bottom.png);    
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.teddy_day {
+    background-image: url(../images/theme/valentine_week/teddy_day/background.png);
+}
+#velsoftop.teddy_day {
+    background: url(../images/theme/valentine_week/teddy_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+}
+#velsofbottom.teddy_day  { 
+    background-image: url(../images/theme/valentine_week/teddy_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.promise_day {
+    background-image: url(../images/theme/valentine_week/promise_day/background.png);
+}
+#velsoftop.promise_day {
+    background: url(../images/theme/valentine_week/promise_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+    
+}
+#velsofbottom.promise_day  { 
+    background-image: url(../images/theme/valentine_week/promise_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.valentine_day {
+    background-image: url(../images/theme/valentine_week/valentine_day/background.png);
+}
+#velsoftop.valentine_day {
+    background: url(../images/theme/valentine_week/valentine_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+}
+#velsofbottom.valentine_day  { 
+    background-image: url(../images/theme/valentine_week/valentine_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.rose_day {
+    background-image: url(../images/theme/valentine_week/rose_day/background.png);
+}
+#velsoftop.rose_day {
+    background: url(../images/theme/valentine_week/rose_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top left 140px;
+}
+#velsofbottom.rose_day  { 
+    background-image: url(../images/theme/valentine_week/rose_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.propose_day {
+    background-image: url(../images/theme/valentine_week/propose_day/background.png);
+}
+#velsoftop.propose_day {
+    background: url(../images/theme/valentine_week/propose_day/top.gif);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top center;
+}
+#velsofbottom.propose_day  { 
+    background-image: url(../images/theme/valentine_week/propose_day/bottom.png);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+#velsof_wheel_main_container.kiss_day {
+    background-image: url(../images/theme/valentine_week/kiss_day/background.png);
+}
+#velsoftop.kiss_day {
+    background: url(../images/theme/valentine_week/kiss_day/top.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: top left 120px;
+}
+#velsofbottom.kiss_day  { 
+    background-image: url(../images/theme/valentine_week/kiss_day/bottom.gif);
+    background-position: bottom right 30px;
+    opacity: 1;
+    background-size: auto;
+}
+
+/*end: changes done by Dhruw on 29 Jan 2019 for integrating valentine themes*/
+.meter { 
+    height: 20px;  /* Can be anything */
+    position: relative;
+    margin: 10px 0 10px 0; /* Just for demo spacing */
+    background: #e0f7e3;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 2px;
+}
+.progressBar p {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.meter > span {
+    display: block;
+    height: 100%;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomright: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(43,194,83)),
+        color-stop(1, rgb(84,240,84))
+        );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+        );
+    -webkit-box-shadow: 
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    -moz-box-shadow: 
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    box-shadow: 
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+.meter > span:after, .animate > span > span {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: 
+        -webkit-gradient(linear, 0 0, 100% 100%, 
+        color-stop(.25, rgba(255, 255, 255, .2)), 
+        color-stop(.25, transparent), color-stop(.5, transparent), 
+        color-stop(.5, rgba(255, 255, 255, .2)), 
+        color-stop(.75, rgba(255, 255, 255, .2)), 
+        color-stop(.75, transparent), to(transparent)
+        );
+    background-image: 
+        -moz-linear-gradient(
+        -45deg, 
+        rgba(255, 255, 255, .2) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, .2) 50%, 
+        rgba(255, 255, 255, .2) 75%, 
+        transparent 75%, 
+        transparent
+        );
+    z-index: 1;
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    -webkit-animation: move 2s linear infinite;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomright: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+
+.animate > span:after {
+    display: none;
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+.orange > span {
+    background-color: #f1a165;
+    background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a));
+    background-image: -webkit-linear-gradient(#f1a165, #f36d0a); 
+}
+
+.red > span {
+    background-color: #f0a3a3;
+    background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #f42323));
+    background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
+}
+
+.nostripes > span > span, .nostripes > span:after {
+    -webkit-animation: none;
+    background-image: none;
+}
+
+.spinwheel_close_icon {
+    position: relative;
+    right: 32px;
+    top: 32px;
+    width: 35px;
+    height: 35px;
+    opacity: 0.75;
+    float: right;
+}
+.spinwheel_close_icon:hover {
+    opacity: 1;
+}
+.spinwheel_close_icon:before, .spinwheel_close_icon:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+}
+
+
+@media(max-width:767px){
+    #velsofbottom.new_year_2020_1, #velsofbottom.new_year_2020_2, #velsofbottom.new_year_2020_3, 
+    #velsofbottom.new_year_2020_4, #velsofbottom.new_year_2020_5, #velsofbottom.new_year_2020_6, #velsofbottom.new_year_2020_7  {
+        background-position: bottom 10px right 10px;
+        background-size: 45%;
+    }
+}
+
+.spinwheel_close_icon:before {
+    transform: rotate(45deg);
+}
+.spinwheel_close_icon:after {
+    transform: rotate(-45deg);
+}
+
+span.spinwheel_close_icon {
+    z-index: 9999999;
+}
+
+
+@media screen and (max-width: 499px){
+    #velsof_offer_container {
+        z-index: 999999;
+    }
+}

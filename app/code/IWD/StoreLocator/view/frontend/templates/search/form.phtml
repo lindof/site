@@ -1,0 +1,50 @@
+<?php
+$isShown = $this->isShownRadius();
+$default = $this->getDefaultRadius();
+$list = $this->getRadiusList();
+?>
+<div class="storelocator-map <?php if ($block->isResponsive()): ?>responsive<?php endif; ?>">
+    <input type="hidden" id="store_field" name="store_field" data-role="filter-field"
+           value="<?php echo $this->getStoreId() ?>"/>
+    <div class="storelocator-filter <?php if (!$isShown): ?>storelocator-filter-compact<?php endif; ?>"
+         data-role="filter">
+
+        <div class="storelocator-filter-country">
+            <?php $countries = $this->getListCountries(); ?>
+            <select id="country_field" data-role="filter-field" autocomplete="off">
+                <option value=""><?php echo __('Country') ?></option>
+                <?php foreach ($countries as $code => $name): ?>
+                    <option value="<?php echo $code; ?>" <?php /*if ($default==$item):?>selected="selected"<?php endif;*/ ?>><?php echo $name; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        
+        <div class="storelocator-filter-state ">
+            <!--  select id="region_id_field" data-role="filter-field" autocomplete="off">
+                <option value=""><?php echo __('State') ?></option>
+            </select -->
+            <input type="text" id="region_field" data-role="filter-field" class=""
+                   placeholder="Enter City & State or Zip" autocomplete="off"/>
+        </div>
+
+        <?php $metric = $block->getMetric() ?>
+        <div class="storelocator-raduis-state" <?php if (!$isShown): ?>style="display:none"<?php endif; ?>>
+            <select id="radius_field" data-role="filter-field" autocomplete="off">
+                <option value=""><?php echo __('Radius') ?></option>
+                <?php foreach ($list as $item): ?>
+                    <option value="<?php echo $item; ?>"
+                            <?php if ($default == $item): ?>selected="selected"<?php endif; ?>><?php echo $item; ?><?php echo $metric ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <button class="storelocator-submit action primary" id="storelocator_submit"><?php echo __('SEARCH') ?></button>
+        <div class="clear"></div>
+    </div>
+
+    <div id="storelocator-map"></div>
+    <div class="storelcoator-mobile-function">
+        <p><?php echo __('- or use your current location -'); ?></p>
+        <a href=""><?php echo __('CURRENT LOCATION') ?></a>
+    </div>
+</div>
+<div class="storelocator-map-section"></div>

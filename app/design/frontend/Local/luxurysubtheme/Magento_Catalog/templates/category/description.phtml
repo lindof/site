@@ -1,0 +1,49 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+
+<!-- Start of Tabs -->
+
+<div class="container">
+    <div class="linktabs linktabs-category">
+        <div class="tab">
+            <a href="https://lindoffur.simplybook.me/v2/#book/service/1/count/1/" target="_blank">Book IN-Store Appt</a>
+        </div>
+        <div class="tab">
+            <a href="/build-your-own">Build Your Own</a>
+        </div>
+        <div class="tab">
+            <a href="/where-to-buy" target="_blank">Where To Buy</a>
+        </div>
+        <div class="tab">
+            <a href="/gift-cards" target="_blank">Gift Cards</a>
+        </div>
+        <div class="tab">
+            <a href="/new-member-sign-up" target="_blank">Become a Member</a>
+        </div>
+    </div>
+</div>
+
+<!-- End of Tabs -->
+
+
+
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php if ($_description = $block->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description">
+        <?= /* @escapeNotVerified */ $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
+    </div>
+<?php endif; ?>

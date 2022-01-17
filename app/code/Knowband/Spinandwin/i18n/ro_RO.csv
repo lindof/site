@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","حدث خطأ أثناء إنشاء رمز القسيمة, يرجى المحاولة مرة أخرى."
+Schedule has been deleted successfully,لقد تم حذف الجدول بنجاح
+Invalid Data.,بيانات غير صالحة.
+Add/Edit Schedule,إضافة / تعديل الجدول
+Schedule has been saved successfully.,تم حفظ الجدول بنجاح.
+Email has been sent successfully.,تم ارسال البريد الالكتروني بنجاح.
+"Something went wrong while sending the coupon email, please try again.","حدث خطأ أثناء إرسال البريد الإلكتروني القسيمة, يرجى المحاولة مرة أخرى."
+Spin and Win,أدر واربح
+Knowband,Knowband
+Settings saved successfully.,إعدادات حفظ بنجاح.
+New Customer,عميل جديد
+No list found. (Verify Credentials),لم يتم العثور على القائمة. (التحقق من وثائق التفويض)
+The Private Klaviyo API Key you have set is invalid.,والخاصة Klaviyo API مفتاح لديك مجموعة غير صالح.
+The Private Klaviyo API key you have set is no longer valid.,مفتاح API Klaviyo الخاصة لديك مجموعة لم يعد صالحا.
+Unable to verify Klaviyo Private API Key.,غير قادر على التحقق من Klaviyo الخاصة API مفتاح.
+Mobile,التليفون المحمول
+Tablet,لوح
+Desktop,سطح المكتب
+You have already taken advantage of this offer. Please try another email.,كنت قد اتخذت بالفعل الاستفادة من هذا العرض. يرجى المحاولة بريد إلكتروني آخر.
+Not your lucky day today. Better Luck Next Time.,لا يومك محظوظ اليوم. حظ أوفر في المرة القادمة.
+Error occurred while subscribing. Please try again later.,حدث خطأ أثناء الاشتراك. الرجاء معاودة المحاولة في وقت لاحق.
+Jan,يناير
+Feb,فبراير
+Mar,مارس
+Apr,أبريل
+May,قد
+Jun,يونيو
+Jul,يوليو
+Aug,أغسطس
+Sep,سبتمبر
+Oct,أكتوبر
+Nov,نوفمبر
+Dec,ديسمبر
+None,لا شيء
+Rose Day,يوم وردة
+Propose Day,اقتراح يوم
+Chocolate Day,يوم الشوكولاته
+Teddy Day,يوم تيدي
+Promise Day,يوم الوعد
+Hug Day,يوم العناق
+Kiss Day,قبلة اليوم
+Valentine\'s Day,عيد الحب
+Xmas Theme 1,عيد الميلاد موضوع 1
+Xmas Theme 2,عيد الميلاد موضوع dois
+Merry Christmas - Theme 1,عيد ميلاد سعيد - الموضوع رقم 1
+Merry Christmas - Theme 2,عيد ميلاد سعيد - موضوع 2
+Merry Christmas - Theme 3,عيد ميلاد سعيد - 3 موضوع
+Merry Christmas - Theme 4,عيد ميلاد سعيد - المحور 4
+Merry Christmas - Theme 5,عيد ميلاد سعيد - موضوع 5
+Black Friday Theme1,يوم الجمعة الأسود THEME1
+Black Friday Theme2,يوم الجمعة الأسود Theme2
+Black Friday Theme3,يوم الجمعة الأسود Theme3
+Black Friday Theme4,يوم الجمعة الأسود Theme4
+Diwali Theme1,ديوالي THEME1
+Diwali Theme2,ديوالي theme2
+Diwali Theme3,ديوالي Theme3
+Diwali Theme4,ديوالي Theme4
+Diwali Theme5,ديوالي Theme5
+Easter Theme1,عيد الفصح THEME1
+Easter Theme2,عيد الفصح Theme2
+Easter Theme3,عيد الفصح Theme3
+Halloween Theme1,هالوين THEME1
+Halloween Theme2,هالوين theme2
+Halloween Theme3,هالوين Theme3
+Halloween Theme4,هالوين Theme4
+Thanks Giving Theme1,وبفضل منح THEME1
+Happy New Year Theme1,سنة جديدة سعيدة THEME1
+Happy New Year Theme2,سنة جديدة سعيدة Theme2
+Happy New Year Theme3,سنة جديدة سعيدة Theme3
+Happy New Year Theme4,سنة جديدة سعيدة Theme4
+Happy New Year Theme5,سنة جديدة سعيدة Theme5
+Happy New Year Theme6,سنة جديدة سعيدة Theme6
+Happy New Year Theme7,سنة جديدة سعيدة Theme7
+Wheel Design 1,عجلة تصميم 1
+Wheel Design 2,عجلة تصميم 2
+Look and Feel,انظر و اشعر
+General Settings,الاعدادات العامة
+Display Settings,اعدادات العرض
+Theme Scheduling,موضوع جدولة
+Text Settings,إعدادات النص
+Special bonus unlocked,مكافأة خاصة مقفلة
+You have a chance to win a nice big fat discount. Are you ready?,لديك فرصة للفوز لطيفة خصم كبيرة من الدهون. هل أنت جاهز?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","يمكنك تدور العجلة مرة واحدة فقط. إذا كنت الفوز, يمكنك المطالبة القسيمة الخاصة بك لمدة 1 يوم فقط!"
+Email Settings,إعدادات البريد الإلكتروني
+Only on wheel,فقط على عجلة
+Email Only,البريد الإلكتروني فقط
+Email & Wheel,البريد الإلكتروني والعجلة
+Fire,نار
+Aqua,أكوا
+Wind,ريح
+Void,باطل
+Earth,أرض
+Return Statuses,عودة المنزلة
+Coupon Code,رمز الكوبون
+Customer Email,العملاء البريد الإلكتروني
+Country,بلد
+Device,جهاز
+Coupon Used,قسيمة مستعمل
+No,لا
+Yes,نعم
+Coupon Generated On,قسيمة إنشاؤها على
+Statistics,الإحصاء
+Email Marketing,التسويق عبر البريد الإلكتروني
+User List,قائمة المستخدم
+Status,الحالة
+Enabled,تمكين
+Disabled,معاق
+From Date,من التاريخ
+To Date,حتى الآن
+Action,عمل
+Slice Settings,إعدادات شريحة
+10% OFF,خصم 10
+Not Lucky Today,لا محظوظ اليوم
+35% OFF,35% OFF
+Opps! Sorry,انتبه! آسف
+15% OFF,15% OFF
+Better Luck Next Time,حظ أوفر في المرة القادمة
+50% OFF,خصم 50
+Try Next Time,حاول في المرة القادمة
+12% OFF,12% OFF
+Come Again,تأتي مرة أخرى
+5% OFF,5% OFF
+Try Again,حاول مجددا
+First Name,الاسم الاول
+Last Name,الكنية
+Email,البريد الإلكتروني
+Created Date,تاريخ الإنشاء
+CSV,CSV
+Edit,تعديل
+Delete,حذف
+Save Schedule,حفظ الجدول
+Back,عودة
+Save Settings,احفظ التغييرات
+Email cannot be left blank,البريد الإلكتروني لا يمكن أن تترك فارغة
+Not a valid email,البريد الإلكتروني غير صالح
+a discount,خصم
+Code copied.,نسخ التعليمات البرمجية.
+First name cannot be left blank,الاسم الأول لا يمكن أن تترك فارغة
+Last name cannot be left blank,الاسم الأخير لا يمكن أن تترك فارغة
+Hurrah! You've got,مرحى! عندك
+ discount. Lucky day!,خصم. يوم الحظ!
+The coupon code has been sent to you through the email.,تم ارسال رمز القسيمة لك من خلال البريد الإلكتروني.
+Better luck next time!,حظ أوفر في المرة القادمة!
+Don't forget to use the discount code at checkout!,لا تنسى أن استخدام رمز الخصم على الخروج!
+Enter you email,أدخل البريد الإلكتروني لك
+Try your luck,جرب حظك
+Next Time,في المرة القادمة
+"No, I do not feel lucky","لا, أنا لا أشعر بأنني محظوظ"
+Continue,استمر
+Enable Theme Scheduling,تمكين موضوع جدولة
+Add New Schedule,إضافة جدول جديد
+Select number of slices,حدد عدد من شرائح
+12 Slices,12 شرائح
+8 Slices,8 شرائح
+6 Slices,6 شرائح
+Select the number of slices to show.,حدد عدد شرائح للعرض.
+Slice Label,تسمية شريحة
+Coupon Type,نوع القسيمة
+Coupon Value,قيمة القسيمة
+Gravity (%),الجاذبية (%)
+Fixed,ثابت
+Percentage,النسبة المئوية
+Free Shipping,الشحن مجانا
+Theme,موضوع
+Theme Peview,موضوع Peview
+Wheel Design,تصميم عجلة
+Wheel Peview,عجلة Peview
+Wheel Color,عجلة الألوان
+Change color of the wheel.,تغيير لون عجلة القيادة.
+Wheel Text Color,لون الخط مدخل ل
+Change text color of the wheel.,تغيير لون النص من عجلة القيادة.
+Wheel Background Color,خلفية عجلة الألوان
+Change background color of wheel.,لون الخلفية تغيير العجلة.
+Font Color,لون الخط
+Change font color of text on wheel.,تغيير لون الخط من النص على عجلة القيادة.
+Button Background Color,زر لون الخلفية
+Change background color of spin button.,لون الخلفية تغيير زر زيادة ونقصان.
+`Try your luck` Button Text Color,`حاول الخاص زر luck` لون الخط
+Change font color of the front `Try your luck` button.,تغيير لون الخط للجبهة `حاول زر luck` الخاص بك.
+"No, I do not feel lucky text color","لا, أنا لا أشعر بأنني محظوظ لون النص"
+"Change font color of No, I do not feel lucky text.","تغيير لون الخط من لا, أنا لا أشعر النص محظوظا."
+Schedule Status,وضع الجدول الزمني
+Select Date,حدد تاريخ
+Field cannot be empty.,لا يمكن أن يكون الحقل فارغا.
+You can enter only numbers.,يمكنك إدخال أرقام فقط.
+Number should be greater than 0.,يجب أن تكون عدد أكبر من 0.
+Field cannot be greater than {#} characters.,لا يمكن أن يكون الحقل أكبر من {#} حرفا.
+Field cannot be less than {#} character(s).,المجال لا يمكن أن يكون أقل من {#} حرف (ق).
+Please enter Email.,يرجى إدخال البريد الإلكتروني.
+Please enter a valid Email.,يرجى إدخال البريد الإلكتروني الصحيح.
+Invalid date format.,تنسيق التاريخ غير صالح.
+Number is not in the valid range. It should be between {1} and {100},عدد غير موجود في النطاق الصالح. وينبغي أن يكون بين {1} {100} و
+Field should be numeric.,يجب أن يكون حقل رقمي.
+Field can have only upto two decimal values.,يمكن أن يكون الحقل فقط تصل قيمتين عشرية.
+Email cannot be greater than {#} characters.,البريد الإلكتروني لا يمكن أن يكون أكبر من {#} حرفا.
+Zip should not have special characters.,لا ينبغي أن يكون الرمز البريدي أحرف خاصة.
+Percentage should be in number.,يجب أن تكون النسبة المئوية في العدد.
+Percentage should be between 0 and 100.,يجب أن تكون النسبة المئوية بين 0 و 100.
+Size cannot be greater than {#} characters.,الحجم لا يمكن أن يكون أكبر من {#} حرفا.
+Color could not be greater than {#} characters.,اللون لا يمكن أن يكون أكبر من {#} حرفا.
+Color is not valid.,لون غير صالح.
+Special characters are not allowed.,يمنع استعمال الرموز.
+Script tags are not allowed.,لا يسمح علامات البرنامج النصي.
+Style tags are not allowed.,لا يسمح العلامات نمط.
+Iframe tags are not allowed.,لا يسمح علامات IFRAME.
+Uploaded file is not an image.,ملف مرفوع ليس صورة.
+Uploaded file size must be less than #d.,يجب أن يكون مرفوع حجم الملف أقل من يومان (#).
+Field should not contain HTML tags.,يجب أن لا يحتوي على حقل علامات HTML.
+You can enter only positive numbers.,يمكنك إدخال أرقام موجبة فقط.
+`From Date` should be smaller than `To Date`,`من date` يجب أن يكون أصغر من` ل date`
+`From Date` already present in a slot.,`من date` موجودة بالفعل في الفتحة.
+`To Date` already present in a slot.,`ل date` تقديم بالفعل في الفتحة.
+Coupon Display Options,خيارات العرض قسيمة
+Email Subject,موضوع البريد الإلكتروني
+Email Template,قالب البريد الإلكتروني
+Email Content,البريد الإلكتروني المحتوى
+Test Email,البريد الإلكتروني اختبار
+Send Email,ارسل بريد الكتروني
+Enable the Extension,تمكين التمديد
+Show pull-out tab,تظهر علامة التبويب الانسحاب
+Allow customer to hide/show popup,السماح العملاء لاخفاء / اظهار منبثقة
+Upload pull-out tab image,تحميل الانسحاب صورة علامة التبويب
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,بابوا نيو غينيا فقط أو بتنسيق jpg ملف قبول. لا ينبغي أن يكون حجم ملف أكثر من 2 MB.
+Display Logo,عرض الشعار
+Upload Logo,تحميل الشعار
+Remove logo,شعار إزالة
+Email Recheck,أرسل إعادة تدقيق
+Allow customer to provide coupon code more than one time.,السماح العملاء لتوفير رمز القسيمة أكثر من مرة واحدة.
+Enable Wheel Sound,تمكين عجلة الصوت
+Allow sound on rotating the wheel.,السماح الصوت على تدوير عجلة.
+Show Fireworks,مشاهدة الألعاب النارية
+Show fireworks after a customer wins.,عرض الألعاب النارية بعد فوز العملاء.
+Show Customer Name,مشاهدة اسم العميل
+Show First Name,مشاهدة الاسم الأول
+Show Last Name,إظهار اسم العائلة
+Show Both,عرض كل
+Show None,مشاهدة لا يوجد
+Show customer name on the front end,تظهر اسم العميل على الواجهة الأمامية
+Require Customer Name,تتطلب اسم العميل
+Require First Name,تتطلب الاسم الأول
+Require Last Name,تتطلب اسم العائلة
+Require Both,تتطلب كلا
+Require None,تتطلب لا يوجد
+Require customer name on the front end,تتطلب اسم العميل على الواجهة الأمامية
+Wheel Display Interval,العرض مدخل الفاصل
+Days,أيام
+Enter the display interval (in days) after which pop will show again (if not used).,أدخل الفاصل عرض (بالأيام) وبعد ذلك البوب ​​سوف تظهر مرة أخرى (إذا لم تستخدم).
+Show Progress Meter,مشاهدة التقدم متر
+Progress Percentage,نسبة التقدم
+Enter the percentage of the progress meter.,أدخل النسبة المئوية من مقياس التقدم.
+Progress Text,نص التقدم
+Enter the Text for the progress meter.,أدخل النص لمقياس التقدم.
+Custom CSS,لغة تنسيق ويب حسب الطلب
+Add custom CSS code that you want to be executed on the front end,إضافة رمز CSS المخصصة التي تريدها ليتم تنفيذها على الواجهة الأمامية
+Custom JS,JS مخصص
+Add custom JS code that you want to be executed on the front end,إضافة مخصصة JS التعليمات البرمجية التي تريد ليتم تنفيذها على الواجهة الأمامية
+Enable Mailchimp,تمكين ميل تشيمب
+Mailchimp Api Key,ميل تشيمب مفتاح API
+Mailchimp List,قائمة ميل تشيمب
+Select List,تحديد قائمة
+Enable Klaviyo,تمكين Klaviyo
+Klaviyo Api Key,API Klaviyo مفتاح
+Klaviyo List,قائمة Klaviyo
+Enable Constant Contact,تمكين اتصال دائم
+Constant Contact Api Key,اتصال دائم مفتاح API
+Constant Contact Api Token,اتصال دائم واجهة برمجة تطبيقات رمز
+Constant Contact List,قائمة الاتصال المستمر
+Please select atleast one page,الرجاء تحديد أتلست صفحة واحدة
+Please select atleast one country,الرجاء تحديد أتلست بلد واحد
+Field cannot be empty,المجال لا يمكن إفراغ
+Total Coupons Generated,مجموع القسائم ولدت
+Total Coupons Unused,مجموع القسائم غير المستخدمة
+Total Coupons Used,مجموع قسائم مستعمل
+`Active Date` cannot be greater than `Inactive Date`,`النشطة date` لا يمكن أن يكون أكبر من` غير فعال date`
+`From` Date cannot be greater than `To` Date,`From` تاريخ لا يمكن أن يكون أكبر من` para` التسجيل
+Date & Time should be greater than current date time.,يجب أن يكون تاريخ ووقت أكبر من وقت التاريخ الحالي.
+Total Generated,إجمالي المتولدة
+Till,حتى
+Total Used,إجمالي مستعمل
+Total Unused,إجمالي غير المستخدمة
+Coupon Statistics (Graphical),قسيمة الاحصائيات (الرسومات)
+Select date,حدد تاريخ
+Generate,انشاء
+Other Statistics,الاحصائيات أخرى
+Country Statistics,أحصائيات الدولة
+Device Statistics,جهاز الاحصائيات
+Coupons List,قائمة كوبونات
+Minimum Screen Size,الحد الأدنى حجم الشاشة
+Smartphone (320x480),الهاتف الذكي (320x480 وضع)
+Tablet Portrait(768x1024),وحي صورة (768x1024)
+Tablet Landscape (1024x768),وحي المناظر الطبيعية (1024x768)
+Laptop (1366x768),كمبيوتر محمول (1366x768)
+Desktop(1600x1080),سطح المكتب (1600x1080)
+Smartphones only,الهواتف الذكية فقط
+Maximum Display Frequency,الحد الأقصى العرض التردد
+Every Visit,كل زيارة
+One Visit per hour,um زيارة للساعة الواحدة
+One visit per day,زيارة واحدة يوميا
+One visit per week,زيارة واحدة أسبوعيا
+One visit per month,زيارة واحدة شهريا
+Show Spin Wheel on the front end after the specified time,مشاهدة عجلة تدور على الواجهة الأمامية بعد الوقت المحدد
+Hide Spin Wheel After,إخفاء تدور العجلة بعد
+Always Display,دائما العرض
+10 Seconds,10 ثواني
+20 Seconds,20 ثانية
+30 Seconds,30 ثانية
+40 Seconds,40 ثواني
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,اختيار الفاصل الزمني وبعد ذلك تدور عجلة على الواجهة الأمامية وإخفاء تلقائيا
+Set Fix Time,ضبط الوقت فيكس
+Active Date/Time,نشط تاريخ / وقت
+Expire Date/Time,ينتهي الوقت / التاريخ
+Whom to show,منهم إلى عرض
+All Visitors,جميع الزوار
+New Visitors,آخر جديد
+Returning Visitors,عودة آخر
+Select whom to show the popup.,اختر منهم لإظهار المنبثقة.
+When to Show,عندما إظهار
+Immediately,فورا
+After Time(seconds),بعد الوقت (ثانية)
+When scroll down(%),عندما انتقل لأسفل (%)
+When Exit,عندما خروج
+Select when to display the popup.,تحديد وقت عرض المنبثقة.
+Enter time (In Seconds),أدخل الوقت (بالثواني)
+Enter time in seconds after which you want to display spin wheel pop up.,أدخل الوقت بالثواني بعد الذي تريد عرضه تدور عجلة يطفو على السطح.
+Enter Scroll Percentage,أدخل انتقل النسبة المئوية
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,أدخل التمرير نسبة بعد الذي تريد عرضه تدور عجلة يطفو على السطح. هل لا أدخل علامة%.
+Geo Location,الموقع الجغرافي
+World Wide,في جميع أنحاء العالم
+Display selected areas only,عرض مناطق مختارة فقط
+Do not display selected areas,لا تعرض مناطق مختارة
+Select Geo Location where you want to show the popup.,تحديد الموقع الجغرافي حيث تريد أن تظهر المنبثقة.
+Select countries.,اختر البلدان.
+Title Text,نص عنوان
+Subtitle Text,نص الترجمة
+Rules Text,نص القواعد
+One rule should be entered in one line in order to show it on pop up point wise.,يجب إدخال قاعدة واحدة في سطر واحد من أجل إظهاره على يطفو على السطح نقطة الحكمة.
+Are your sure?,هل انت متأكد?
+Please enter a valid color code,الرجاء إدخال رمز اللون صحيح
+`Active Date` cannot be greater than `Expire Date`,`النشطة date` لا يمكن أن يكون أكبر من` انتهاء صلاحية date`
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,مجموع الجاذبية ليست في نطاق صالح. وينبغي أن يكون بين العامين 1 و 100. ككل:
+No list exists for this API key.,لا توجد قائمة لهذا المفتاح API.
+No. of times,عدد مرات
+Date,تاريخ
+Please upload an image file.,يرجى تحميل ملف صورة.
+Note: select time in GMT only.,ملاحظة: حدد الوقت في GMT فقط.
+This slot is already available.,هذه الفتحة هي متاحة بالفعل.

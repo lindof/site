@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+	<head>
+		<css src="Drc_InstagramPics::css/styles.css" />
+	</head>
+
+	<reference name="root">
+		<action method="setTemplate">
+			<template>instagram/reload.phtml</template>
+		</action>
+	</reference>
+</page>

@@ -1,0 +1,81 @@
+<?php $slice_settings = $this->getSettings('knowband/spinandwin/settings'); if(!isset($slice_settings['slice_settings'])) {  $slice_settings['slice_settings'] = $this->getDefaultSettings(); } ?>
+<style>
+    #text-settings input{
+        display: block;
+    }
+</style>
+<div class="fieldset-wrapper" id="slice-settings">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Slice Settings")?></h1>
+        <fieldset class="admin__fieldset">
+            
+             
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_number_of_slices">
+                    <span>
+                        <?php echo __("Select number of slices");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[slice_settings][number_of_slices]" id="spinandwin_number_of_slices">
+                        <option value="12" <?php echo (isset($slice_settings["slice_settings"]["number_of_slices"]) && $slice_settings["slice_settings"]["number_of_slices"] == "12")?'selected="selected"':''?>><?php echo __("12 Slices"); ?></option>
+                        <option value="8" <?php echo (isset($slice_settings["slice_settings"]["number_of_slices"]) && $slice_settings["slice_settings"]["number_of_slices"] == "8")?'selected="selected"':''?>><?php echo __("8 Slices"); ?></option>
+                        <option value="6" <?php echo (isset($slice_settings["slice_settings"]["number_of_slices"]) && $slice_settings["slice_settings"]["number_of_slices"] == "6")?'selected="selected"':''?>><?php echo __("6 Slices"); ?></option>                        
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Select the number of slices to show.")?>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <table class="admin__table-primary" id="vss_slice_settings_table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><?php echo __("Slice Label"); ?></th>
+                    <th><?php echo __("Coupon Type"); ?></th>
+                    <th><?php echo __("Coupon Value"); ?></th>
+                    <th><?php echo __("Gravity (%)"); ?></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php for ($i = 1; $i <= 12; $i++) { 
+                    $class = '';
+                    if ($i % 2 == 0) {
+                        $class = 'even';
+                    } else {
+                        $class = 'odd';
+                    }
+                    ?>
+                <tr class="kb_slices pure-table-<?php echo $class; ?>" id="kb_slice_<?php echo $i; ?>">
+                    <td><?php echo $i; ?></td>
+                    <td>
+                        <input type="text" name="vss_spinandwin[slice_settings][slice_<?php echo $i ?>][label]" value="<?php if (isset($slice_settings['slice_settings']['slice_'.$i]['label'])) echo $slice_settings['slice_settings']['slice_'.$i]['label']; ?>" class="form-control vss_slice_label" required="true"/>
+                    </td>
+                    <td>
+                        <select name="vss_spinandwin[slice_settings][slice_<?php echo $i ?>][coupon_type]" class="form-control"  required="true" onchange="disableCouponValue(<?php echo $i ?>);">
+                            <option value="F" <?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_type']) && $slice_settings['slice_settings']['slice_'.$i]['coupon_type'] == 'F') echo 'selected="selected"'; ?>><?php echo __("Fixed"); ?></option>
+                            <option value="P" <?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_type']) && $slice_settings['slice_settings']['slice_'.$i]['coupon_type'] == 'P') echo 'selected="selected"'; ?>><?php echo __("Percentage"); ?></option>
+                            <option value="S" <?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_type']) && $slice_settings['slice_settings']['slice_'.$i]['coupon_type'] == 'S') echo 'selected="selected"'; ?>><?php echo __("Free Shipping"); ?></option>
+                        </select>
+                    </td>
+                    <td>
+                        <?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_type']) && $slice_settings['slice_settings']['slice_'.$i]['coupon_type'] == 'S'){ ?>
+                        <input type="text" readonly="readonly" name="vss_spinandwin[slice_settings][slice_<?php echo $i ?>][coupon_value]" value="<?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_value'])) echo $slice_settings['slice_settings']['slice_'.$i]['coupon_value']; ?>" class="form-control vss_slice_value"  required="true"/>
+                        <?php } else {?>
+                        <input type="text" name="vss_spinandwin[slice_settings][slice_<?php echo $i ?>][coupon_value]" value="<?php if (isset($slice_settings['slice_settings']['slice_'.$i]['coupon_value'])) echo $slice_settings['slice_settings']['slice_'.$i]['coupon_value']; ?>" class="form-control vss_slice_value"  required="true"/>
+                        <?php } ?>
+                        
+                    </td>
+                    <td class="vss_slice_gravity_td">
+                        <input type="text" name="vss_spinandwin[slice_settings][slice_<?php echo $i ?>][gravity]" value="<?php if (isset($slice_settings['slice_settings']['slice_'.$i]['gravity'])) echo $slice_settings['slice_settings']['slice_'.$i]['gravity']; ?>" class="form-control vss_slice_gravity"  required="true"/>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        </fieldset>
+    </div>
+</div>

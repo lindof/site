@@ -1,0 +1,176 @@
+<?php
+$isMandatory = $block->getisMandatory();
+$deliverydateLabel = $block->getDeliverydatelabel();
+$deliverydateLabel = $deliverydateLabel ? $deliverydateLabel . ':' : 'Delivery Date:';
+$deliverydateCommentsLabel = $block->getDeliveryDateCommentsLabel();
+$deliverydateCommentsLabel = $deliverydateCommentsLabel ? $deliverydateCommentsLabel . ':' : 'Delivery Comments:';
+$timeslotTableLabel = $block->getTableLabel();
+$timeslotTableLabel = $timeslotTableLabel ? $timeslotTableLabel : 'Timeslot\'s';
+
+$required = '';
+if ($isMandatory) {
+    $required = ' required-entry _required';
+}
+?>
+<div class="deliverydate-main-wrapper">
+    <div class="admin__form-field">
+
+        <div class="admin__form-field-control field-delivery-date <?php echo $required ?>"
+             data-ui-id="shipping_arrival_date">
+            <label class="label admin__field-label" for="shipping_arrival_date" data-ui-id="shipping_arrival_date">
+                <span><?php echo __($deliverydateLabel) ?></span>
+                <?php
+                if ($isMandatory) {
+                    echo '<span class="' . $required . '"></span>';
+                }
+                ?>
+            </label>
+
+            <div class="admin__field-control value">
+                <table id="standard_order_type" class="delivery-date-admin data-grid data-grid-draggable"
+                       data-role="grid">
+                    <thead>
+                    <tr>
+                        <th><?php echo __('Date-Day') ?></th>
+                        <th colspan="<?php echo count($this->getHelper()->getTimeSlots()) + 1; ?>"><?php echo __($timeslotTableLabel) ?></th>
+                    </tr>
+                    </thead>
+                    <?php
+                    foreach ($block->getavailableTimeslot() as $key => $value) {
+                        echo '<tr>';
+                        echo '<td>' . __($value['row_heading']) . '</td>';
+                        for ($i = 0; $i < count($value['slots']); $i++) {
+                            if (isset($value['slots'][$i]['disabled']) && $value['slots'][$i]['disabled'] === true) {
+                                echo '<td class="disabled">';
+                            } else {
+                                echo '<td>';
+                            }
+                            $required = '';
+                            $onClick = '';
+                            $selected = false;
+
+
+                            if ($block->getisMandatory()) {
+                                $required = 'required-entry admin__control-radio required-entry _required';
+                            }
+
+
+                            if (isset($value['slots'][$i]['disabled']) && $value['slots'][$i]['disabled'] === true) {
+                                echo "<label class='label'><input type='radio' id='{$value['slots'][$i]['slot_id']}' name='radio' class='" . $required . "' onClick='" . $onClick . "' value='{$value['slots'][$i]['slot_value']}' disabled='disabled' />";
+                                echo "<label for='{$value['slots'][$i]['slot_id']}'>" . html_entity_decode($value['slots'][$i]['slot_value_html']) . "</label></label>";
+                            } else {
+                                echo "<label class='label'>";
+                                if (isset($selected) && $selected == true) {
+                                    echo "<input type='radio' id='{$value['slots'][$i]['slot_id']}' name='radio' class='{$required} delivery-slot' onClick='{$onClick}' value='{$value['slots'][$i]['slot_value']}' checked='checked' />";
+                                } else {
+                                    echo "<input type='radio' id='{$value['slots'][$i]['slot_id']}' name='radio' class='{$required} delivery-slot' onClick='{$onClick}' value='{$value['slots'][$i]['slot_value']}'/>";
+                                }
+                                echo "<label for='{$value['slots'][$i]['slot_id']}'>" . html_entity_decode($value['slots'][$i]['slot_value_html']) . "</label>";
+
+                                echo "</label>";
+                            }
+
+                            echo '</td>';
+                        }
+                        echo '</tr>';
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-values">
+        <input type="hidden" name="shipping_arrival_date" id="shipping_arrival_date"/>
+        <input type="hidden" name="shipping_arrival_slot" id="shipping_arrival_slot"/>
+        <input type="hidden" name="delivery_charges" id="delivery_charges"/>
+    </div>
+    <div class="admin__field field field-delivery-date-comment" data-ui-id="shipping_arrival_comments">
+        <label class="label admin__field-label" for="shipping_arrival_comments"
+               data-ui-id="shipping_arrival_comments"><span><?php echo __($deliverydateCommentsLabel) ?></span></label>
+
+        <div class="admin__field-control control">
+            <textarea cols="65" rows="8" name="shipping_arrival_comments" id="shipping_arrival_comments"></textarea>
+        </div>
+        <?php if ($this->getHelper()->useCallFeature()): ?>
+        <div class="admin__field admin__field-option control">
+            <input name="calL_before_delivery" type="checkbox" id="call_before_delivery" value="1" class="admin__control-checkbox">
+            <label for="call_before_delivery" class="admin__field-label"><?= $this->getHelper()->getDeliveryDateCallMeLabel(); ?></label>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/storage'
+    ], function ($, storage) {
+        // $('#standard_order').prop('checked', true);
+        function clearHidden() {
+            jQuery('#shipping_arrival_date').val('');
+            jQuery('#shipping_arrival_slot').val('');
+            jQuery('#delivery_charges').val('');
+            jQuery('.delivery-slot').prop('checked', false);
+        }
+
+        jQuery('#call_before_delivery').change(function (event) {
+            var params = {
+                call_before_delivery : $('#call_before_delivery').is(':checked')
+            };
+            
+            jQuery.ajax({
+                url: "<?php echo $this->getUrl('deliverydate/order/SaveCallBeforeDelivery'); ?>",
+                type: 'POST',
+                data: params,
+            })
+                .done(function (response) {
+                    order.loadArea('totals', true);
+                    jQuery('#order-totals').html(response);
+                });
+
+        });
+
+        jQuery('#shipping_arrival_comments').blur(function (event) {
+            var params = {
+                shipping_arrival_comments: $('#shipping_arrival_comments').val()
+            };
+
+            jQuery.ajax({
+                url: "<?php echo $this->getUrl('deliverydate/order/SaveDeliverydateComment'); ?>",
+                type: 'POST',
+                data: params,
+            })
+                .done(function (response) {
+                    order.loadArea('totals', true);
+                    jQuery('#order-totals').html(response);
+                });
+
+        });
+        jQuery('.delivery-slot').click(function (event) {
+            order.loadArea('totals', true);
+            var res = this.id.split('_');
+
+            jQuery('#shipping_arrival_date').val(res[0]);
+            jQuery('#shipping_arrival_slot').val(jQuery(this).val());
+            jQuery('#delivery_charges').val(res[2]);
+
+            var params = {
+                delivery_charges: res[2],
+                shipping_arrival_date: res[0],
+                shipping_arrival_slot: jQuery(this).val(),
+            };
+
+            jQuery.ajax({
+                url: "<?php echo $this->getUrl('deliverydate/order/saveDeliverydateInfo'); ?>",
+                type: 'POST',
+                data: params,
+            })
+                .done(function (response) {
+                    jQuery('#order-totals').html(response);
+                    order.loadArea('totals', true);
+                });
+
+
+        });
+    });
+
+</script>

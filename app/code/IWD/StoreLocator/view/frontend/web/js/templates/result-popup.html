@@ -1,0 +1,22 @@
+<div class="storelocator-item">    
+    <div class="storelocator-name">
+        <% if (data.icon!=null) { %>
+            <div class="storelocator-icon-image">
+            <img src="<%- url %><%- data.icon %>" />
+            </div>
+        <% }%>
+        
+        <h4><%- data.name %><small>(<%- data.distance %> <%- metric %>)</small></h4>
+    </div>
+    <span class="storelocator-phone"><%- data.phone %></span>
+    <div class="storelocator-text"><%- data.street %>,</div>
+    <div class="storelocator-text"><%- data.city %>, <%- data.region %>,</div>
+    <div class="storelocator-text"><%- data.country_id %>, <%- data.postal_code %></div>
+    
+    <div class="storelocator-itema-action">
+        <% if (data.website!=null) { %>
+        <a href="<%- data.website %>" target="_blank" class="item-website-action action primary">Website</a>
+        <% } %>
+        <a  class="item-get-direction-action action primary" target="_blank" href="https://maps.google.com/maps?daddr=<%- data.street %>+<%- data.city %>+<%- data.region %>+<%- data.country_id %>+<%- data.postal_code %>">Get Directions</a>
+    </div>
+</div>

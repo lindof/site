@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Mageside. All rights reserved.
+ * See MS-LICENSE.txt for license details.
+ */
+-->
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="style-src">
+            <values>
+                <value id="maxcdn_bootstrapcdn_com" type="host">maxcdn.bootstrapcdn.com</value>
+                <value id="cdnjs_cloudflare_com" type="host">cdnjs.cloudflare.com</value>
+                <value id="googleapi_com" type="host">*.googleapi.com</value>
+                <value id="google_com" type="host">*.google.com</value>
+                <value id="fontawesome_com" type="host">*.fontawesome.com</value>
+                <value id="embed_tawk_to" type="host">embed.tawk.to</value>
+            </values>
+        </policy>
+        <policy id="font-src">
+            <values>
+                <value id="fontawesome_com" type="host">*.fontawesome.com</value>
+                <value id="googleapi_com" type="host">*.googleapi.com</value>
+                <value id="gstatic_com" type="host">*.gstatic.com</value>
+                <value id="bootstrapcdn_com" type="host">maxcdn.bootstrapcdn.com</value>
+                <value id="cdnjs_cloudflare_com" type="host">cdnjs.cloudflare.com</value>
+                <value id="embed_tawk_to" type="host">embed.tawk.to</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="mageside_com" type="host">mageside.com</value>
+                <value id="magentocommerce" type="host">widgets.magentocommerce.com</value>
+                <value id="googleapi_com" type="host">*.googleapi.com</value>
+                <value id="google_com" type="host">*.google.com</value>
+                <value id="google_com_ua" type="host">*.google.com.ua</value>
+                <value id="embed_tawk_to" type="host">embed.tawk.to</value>
+                <value id="facebook_com" type="host">*.facebook.com</value>
+            </values>
+        </policy>
+        <policy id="form-action">
+            <values>
+                <value id="facebook_com" type="host">*.facebook.com</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="player_vimeo_com" type="host">player.vimeo.com</value>
+                <value id="hotjar_com" type="host">*.hotjar.com</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="geostag_cardinalcommerce_com" type="host">geostag.cardinalcommerce.com</value>
+                <value id="google_com" type="host">*.google.com</value>
+                <value id="google_analytics_com" type="host">*.google-analytics.com</value>
+                <value id="facebook_com" type="host">*.facebook.com</value>
+                <value id="tawk_to" type="host">*.tawk.to</value>
+                <value id="hotjar_com" type="host">*.hotjar.com</value>
+                <value id="doubleclick_net" type="host">*.doubleclick.net</value>
+            </values>
+        </policy>
+        <policy id="script-src">
+            <values>
+                <value id="googleadservices_com" type="host">googleadservices.com</value>
+                <value id="google_analytics_com" type="host">google-analytics.com</value>
+                <value id="googleapi_com" type="host">*.googleapi.com</value>
+                <value id="google_com" type="host">*.google.com</value>
+                <value id="paypalobjects_com" type="host">paypalobjects.com</value>
+                <value id="embed_tawk_to" type="host">embed.tawk.to</value>
+                <value id="paypal_com" type="host">*.paypal.com</value>
+                <value id="vimeo_com" type="host">*.vimeo.com</value>
+                <value id="youtube_com" type="host">*.youtube.com</value>
+                <value id="hotjar_com" type="host">*.hotjar.com</value>
+                <value id="cdn_jsdelivr_net" type="host">cdn.jsdelivr.net</value>
+                <value id="www_dwin1_com" type="host">www.dwin1.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

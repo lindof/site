@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Something went wrong while generating the coupon code, please try again."
+Schedule has been deleted successfully,Schedule has been deleted successfully
+Invalid Data.,Invalid Data.
+Add/Edit Schedule,Add/Edit Schedule
+Schedule has been saved successfully.,Schedule has been saved successfully.
+Email has been sent successfully.,Email has been sent successfully.
+"Something went wrong while sending the coupon email, please try again.","Something went wrong while sending the coupon email, please try again."
+Spin and Win,Spin and Win
+Knowband,Knowband
+Settings saved successfully.,Settings saved successfully.
+New Customer,New Customer
+No list found. (Verify Credentials),No list found. (Verify Credentials)
+The Private Klaviyo API Key you have set is invalid.,The Private Klaviyo API Key you have set is invalid.
+The Private Klaviyo API key you have set is no longer valid.,The Private Klaviyo API key you have set is no longer valid.
+Unable to verify Klaviyo Private API Key.,Unable to verify Klaviyo Private API Key.
+Mobile,Mobile
+Tablet,Tablet
+Desktop,Desktop
+You have already taken advantage of this offer. Please try another email.,You have already taken advantage of this offer. Please try another email.
+Not your lucky day today. Better Luck Next Time.,Not your lucky day today. Better Luck Next Time.
+Error occurred while subscribing. Please try again later.,Error occurred while subscribing. Please try again later.
+Jan,Jan
+Feb,Feb
+Mar,Mar
+Apr,Apr
+May,May
+Jun,Jun
+Jul,Jul
+Aug,Aug
+Sep,Sep
+Oct,Oct
+Nov,Nov
+Dec,Dec
+None,None
+Rose Day,Rose Day
+Propose Day,Propose Day
+Chocolate Day,Chocolate Day
+Teddy Day,Teddy Day
+Promise Day,Promise Day
+Hug Day,Hug Day
+Kiss Day,Kiss Day
+Valentine\'s Day,Valentine\'s Day
+Xmas Theme 1,Xmas Theme 1
+Xmas Theme 2,Xmas Theme 2
+Merry Christmas - Theme 1,Merry Christmas - Theme 1
+Merry Christmas - Theme 2,Merry Christmas - Theme 2
+Merry Christmas - Theme 3,Merry Christmas - Theme 3
+Merry Christmas - Theme 4,Merry Christmas - Theme 4
+Merry Christmas - Theme 5,Merry Christmas - Theme 5
+Black Friday Theme1,Black Friday Theme1
+Black Friday Theme2,Black Friday Theme2
+Black Friday Theme3,Black Friday Theme3
+Black Friday Theme4,Black Friday Theme4
+Diwali Theme1,Diwali Theme1
+Diwali Theme2,Diwali Theme2
+Diwali Theme3,Diwali Theme3
+Diwali Theme4,Diwali Theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,Easter Theme1
+Easter Theme2,Easter Theme2
+Easter Theme3,Easter Theme3
+Halloween Theme1,Halloween Theme1
+Halloween Theme2,Halloween Theme2
+Halloween Theme3,Halloween Theme3
+Halloween Theme4,Halloween Theme4
+Thanks Giving Theme1,Thanks Giving Theme1
+Happy New Year Theme1,Happy New Year Theme1
+Happy New Year Theme2,Happy New Year Theme2
+Happy New Year Theme3,Happy New Year Theme3
+Happy New Year Theme4,Happy New Year Theme4
+Happy New Year Theme5,Happy New Year Theme5
+Happy New Year Theme6,Happy New Year Theme6
+Happy New Year Theme7,Happy New Year Theme7
+Wheel Design 1,Wheel Design 1
+Wheel Design 2,Wheel Design 2
+Look and Feel,Look and Feel
+General Settings,General Settings
+Display Settings,Display Settings
+Theme Scheduling,Theme Scheduling
+Text Settings,Text Settings
+Special bonus unlocked,Special bonus unlocked
+You have a chance to win a nice big fat discount. Are you ready?,You have a chance to win a nice big fat discount. Are you ready?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!"
+Email Settings,Email Settings
+Only on wheel,Only on wheel
+Email Only,Email Only
+Email & Wheel,Email & Wheel
+Fire,Fire
+Aqua,Aqua
+Wind,Wind
+Void,Void
+Earth,Earth
+Return Statuses,Return Statuses
+Coupon Code,Coupon Code
+Customer Email,Customer Email
+Country,Country
+Device,Device
+Coupon Used,Coupon Used
+No,No
+Yes,Yes
+Coupon Generated On,Coupon Generated On
+Statistics,Statistics
+Email Marketing,Email Marketing
+User List,User List
+Status,Status
+Enabled,Enabled
+Disabled,Disabled
+From Date,From Date
+To Date,To Date
+Action,Action
+Slice Settings,Slice Settings
+10% OFF,10% OFF
+Not Lucky Today,Not Lucky Today
+35% OFF,35% OFF
+Opps! Sorry,Opps! Sorry
+15% OFF,15% OFF
+Better Luck Next Time,Better Luck Next Time
+50% OFF,50% OFF
+Try Next Time,Try Next Time
+12% OFF,12% OFF
+Come Again,Come Again
+5% OFF,5% OFF
+Try Again,Try Again
+First Name,First Name
+Last Name,Last Name
+Email,Email
+Created Date,Created Date
+CSV,CSV
+Edit,Edit
+Delete,Delete
+Save Schedule,Save Schedule
+Back,Back
+Save Settings,Save Settings
+Email cannot be left blank,Email cannot be left blank
+Not a valid email,Not a valid email
+a discount,a discount
+Code copied.,Code copied.
+First name cannot be left blank,First name cannot be left blank
+Last name cannot be left blank,Last name cannot be left blank
+Hurrah! You've got,Hurrah! You've got
+ discount. Lucky day!, discount. Lucky day!
+The coupon code has been sent to you through the email.,The coupon code has been sent to you through the email.
+Better luck next time!,Better luck next time!
+Don't forget to use the discount code at checkout!,Don't forget to use the discount code at checkout!
+Enter you email,Enter you email
+Try your luck,Try your luck
+Next Time,Next Time
+"No, I do not feel lucky","No, I do not feel lucky"
+Continue,Continue
+Enable Theme Scheduling,Enable Theme Scheduling
+Add New Schedule,Add New Schedule
+Select number of slices,Select number of slices
+12 Slices,12 Slices
+8 Slices,8 Slices
+6 Slices,6 Slices
+Select the number of slices to show.,Select the number of slices to show.
+Slice Label,Slice Label
+Coupon Type,Coupon Type
+Coupon Value,Coupon Value
+Gravity (%),Gravity (%)
+Fixed,Fixed
+Percentage,Percentage
+Free Shipping,Free Shipping
+Theme,Theme
+Theme Peview,Theme Peview
+Wheel Design,Wheel Design
+Wheel Peview,Wheel Peview
+Wheel Color,Wheel Color
+Change color of the wheel.,Change color of the wheel.
+Wheel Text Color,Wheel Text Color
+Change text color of the wheel.,Change text color of the wheel.
+Wheel Background Color,Wheel Background Color
+Change background color of wheel.,Change background color of wheel.
+Font Color,Font Color
+Change font color of text on wheel.,Change font color of text on wheel.
+Button Background Color,Button Background Color
+Change background color of spin button.,Change background color of spin button.
+`Try your luck` Button Text Color,`Try your luck` Button Text Color
+Change font color of the front `Try your luck` button.,Change font color of the front `Try your luck` button.
+"No, I do not feel lucky text color","No, I do not feel lucky text color"
+"Change font color of No, I do not feel lucky text.","Change font color of No, I do not feel lucky text."
+Schedule Status,Schedule Status
+Select Date,Select Date
+Field cannot be empty.,Field cannot be empty.
+You can enter only numbers.,You can enter only numbers.
+Number should be greater than 0.,Number should be greater than 0.
+Field cannot be greater than {#} characters.,Field cannot be greater than {#} characters.
+Field cannot be less than {#} character(s).,Field cannot be less than {#} character(s).
+Please enter Email.,Please enter Email.
+Please enter a valid Email.,Please enter a valid Email.
+Invalid date format.,Invalid date format.
+Number is not in the valid range. It should be between {1} and {100},Number is not in the valid range. It should be between {1} and {100}
+Field should be numeric.,Field should be numeric.
+Field can have only upto two decimal values.,Field can have only upto two decimal values.
+Email cannot be greater than {#} characters.,Email cannot be greater than {#} characters.
+Zip should not have special characters.,Zip should not have special characters.
+Percentage should be in number.,Percentage should be in number.
+Percentage should be between 0 and 100.,Percentage should be between 0 and 100.
+Size cannot be greater than {#} characters.,Size cannot be greater than {#} characters.
+Color could not be greater than {#} characters.,Color could not be greater than {#} characters.
+Color is not valid.,Color is not valid.
+Special characters are not allowed.,Special characters are not allowed.
+Script tags are not allowed.,Script tags are not allowed.
+Style tags are not allowed.,Style tags are not allowed.
+Iframe tags are not allowed.,Iframe tags are not allowed.
+Uploaded file is not an image.,Uploaded file is not an image.
+Uploaded file size must be less than #d.,Uploaded file size must be less than #d.
+Field should not contain HTML tags.,Field should not contain HTML tags.
+You can enter only positive numbers.,You can enter only positive numbers.
+`From Date` should be smaller than `To Date`,`From Date` should be smaller than `To Date`
+`From Date` already present in a slot.,`From Date` already present in a slot.
+`To Date` already present in a slot.,`To Date` already present in a slot.
+Coupon Display Options,Coupon Display Options
+Email Subject,Email Subject
+Email Template,Email Template
+Email Content,Email Content
+Test Email,Test Email
+Send Email,Send Email
+Enable the Extension,Enable the Extension
+Show pull-out tab,Show pull-out tab
+Allow customer to hide/show popup,Allow customer to hide/show popup
+Upload pull-out tab image,Upload pull-out tab image
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Only .png or .jpg file format accepted. File size should not be more than 2 MB.
+Display Logo,Display Logo
+Upload Logo,Upload Logo
+Remove logo,Remove logo
+Email Recheck,Email Recheck
+Allow customer to provide coupon code more than one time.,Allow customer to provide coupon code more than one time.
+Enable Wheel Sound,Enable Wheel Sound
+Allow sound on rotating the wheel.,Allow sound on rotating the wheel.
+Show Fireworks,Show Fireworks
+Show fireworks after a customer wins.,Show fireworks after a customer wins.
+Show Customer Name,Show Customer Name
+Show First Name,Show First Name
+Show Last Name,Show Last Name
+Show Both,Show Both
+Show None,Show None
+Show customer name on the front end,Show customer name on the front end
+Require Customer Name,Require Customer Name
+Require First Name,Require First Name
+Require Last Name,Require Last Name
+Require Both,Require Both
+Require None,Require None
+Require customer name on the front end,Require customer name on the front end
+Wheel Display Interval,Wheel Display Interval
+Days,Days
+Enter the display interval (in days) after which pop will show again (if not used).,Enter the display interval (in days) after which pop will show again (if not used).
+Show Progress Meter,Show Progress Meter
+Progress Percentage,Progress Percentage
+Enter the percentage of the progress meter.,Enter the percentage of the progress meter.
+Progress Text,Progress Text
+Enter the Text for the progress meter.,Enter the Text for the progress meter.
+Custom CSS,Custom CSS
+Add custom CSS code that you want to be executed on the front end,Add custom CSS code that you want to be executed on the front end
+Custom JS,Custom JS
+Add custom JS code that you want to be executed on the front end,Add custom JS code that you want to be executed on the front end
+Enable Mailchimp,Enable Mailchimp
+Mailchimp Api Key,Mailchimp Api Key
+Mailchimp List,Mailchimp List
+Select List,Select List
+Enable Klaviyo,Enable Klaviyo
+Klaviyo Api Key,Klaviyo Api Key
+Klaviyo List,Klaviyo List
+Enable Constant Contact,Enable Constant Contact
+Constant Contact Api Key,Constant Contact Api Key
+Constant Contact Api Token,Constant Contact Api Token
+Constant Contact List,Constant Contact List
+Please select atleast one page,Please select atleast one page
+Please select atleast one country,Please select atleast one country
+Field cannot be empty,Field cannot be empty
+Total Coupons Generated,Total Coupons Generated
+Total Coupons Unused,Total Coupons Unused
+Total Coupons Used,Total Coupons Used
+`Active Date` cannot be greater than `Inactive Date`,`Active Date` cannot be greater than `Inactive Date`
+`From` Date cannot be greater than `To` Date,`From` Date cannot be greater than `To` Date
+Date & Time should be greater than current date time.,Date & Time should be greater than current date time.
+Total Generated,Total Generated
+Till,Till
+Total Used,Total Used
+Total Unused,Total Unused
+Coupon Statistics (Graphical),Coupon Statistics (Graphical)
+Select date,Select date
+Generate,Generate
+Other Statistics,Other Statistics
+Country Statistics,Country Statistics
+Device Statistics,Device Statistics
+Coupons List,Coupons List
+Minimum Screen Size,Minimum Screen Size
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Tablet Portrait(768x1024)
+Tablet Landscape (1024x768),Tablet Landscape (1024x768)
+Laptop (1366x768),Laptop (1366x768)
+Desktop(1600x1080),Desktop(1600x1080)
+Smartphones only,Smartphones only
+Maximum Display Frequency,Maximum Display Frequency
+Every Visit,Every Visit
+One Visit per hour,One Visit per hour
+One visit per day,One visit per day
+One visit per week,One visit per week
+One visit per month,One visit per month
+Show Spin Wheel on the front end after the specified time,Show Spin Wheel on the front end after the specified time
+Hide Spin Wheel After,Hide Spin Wheel After
+Always Display,Always Display
+10 Seconds,10 Seconds
+20 Seconds,20 Seconds
+30 Seconds,30 Seconds
+40 Seconds,40 Seconds
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,Choose the time interval after which the Spin Wheel on the front end will hide automatically
+Set Fix Time,Set Fix Time
+Active Date/Time,Active Date/Time
+Expire Date/Time,Expire Date/Time
+Whom to show,Whom to show
+All Visitors,All Visitors
+New Visitors,New Visitors
+Returning Visitors,Returning Visitors
+Select whom to show the popup.,Select whom to show the popup.
+When to Show,When to Show
+Immediately,Immediately
+After Time(seconds),After Time(seconds)
+When scroll down(%),When scroll down(%)
+When Exit,When Exit
+Select when to display the popup.,Select when to display the popup.
+Enter time (In Seconds),Enter time (In Seconds)
+Enter time in seconds after which you want to display spin wheel pop up.,Enter time in seconds after which you want to display spin wheel pop up.
+Enter Scroll Percentage,Enter Scroll Percentage
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.
+Geo Location,Geo Location
+World Wide,World Wide
+Display selected areas only,Display selected areas only
+Do not display selected areas,Do not display selected areas
+Select Geo Location where you want to show the popup.,Select Geo Location where you want to show the popup.
+Select countries.,Select countries.
+Title Text,Title Text
+Subtitle Text,Subtitle Text
+Rules Text,Rules Text
+One rule should be entered in one line in order to show it on pop up point wise.,One rule should be entered in one line in order to show it on pop up point wise.
+Are your sure?,Are your sure?
+Please enter a valid color code,Please enter a valid color code
+`Active Date` cannot be greater than `Expire Date`,`Active Date` cannot be greater than `Expire Date`
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: 
+No list exists for this API key.,No list exists for this API key.
+No. of times,No. of times
+Date,Date
+Please upload an image file.,Please upload an image file.
+Note: select time in GMT only.,Note: select time in GMT only.
+This slot is already available.,This slot is already available.

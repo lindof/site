@@ -1,0 +1,741 @@
+<?php
+    $settings = $this->getSettings();
+    
+    $slice_settings = $settings['slice_settings'];
+    $general_settings = $settings['general_settings'];
+    
+    $required = 'none';    
+    if(isset($general_settings['display_required'])){
+        if($general_settings['display_required'] == '1'){
+            $required = 'first';
+        } else if ($general_settings['display_required'] == '2'){
+            $required = 'last';
+        } else if ($general_settings['display_required'] == '3'){
+            $required = 'both';
+        }
+    }
+    $lookandfeel_settings = $this->getLookandFeelSettings();
+    
+    $display_settings = $settings['display_settings'];
+    $email_settings = $settings['email_settings'];
+    $text_settings = $settings['text_settings'];
+    $logo_file = $this->getSettings('knowband/spinandwin/logo');
+    if($lookandfeel_settings['theme'] == '1'){
+        $theme = '';
+    }else if($lookandfeel_settings['theme'] == '2'){
+        $theme = 'xmas1';
+    }else if($lookandfeel_settings['theme'] == '3'){
+        $theme = 'xmas2';
+    }else {
+        $theme = $lookandfeel_settings['theme'];
+    }
+    $device = $this->getDevice();
+    $showWheel = true;
+    if ($display_settings['screen_size'] == '6' && $device != 'Mobile') { 
+        $showWheel = false;
+    }
+    if (isset($general_settings['enable']) && $general_settings['enable'] && $showWheel) {
+        if ($this->checkTimeInterval($display_settings)) {
+            if ($this->checkShowOnPage($display_settings)) {
+                if ($this->checkShowOnCountry($display_settings)) {
+            
+?>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Merriweather|Roboto" rel="stylesheet">
+</head>
+<script>
+    var velsofWheelHexCode = "#4497bb";
+    var wheel_design = '<?php echo $lookandfeel_settings['wheel_design']; ?>';
+    var wheel_color = '<?php echo $lookandfeel_settings['wheel_color']; ?>';
+    var wheel_sound = '<?php echo isset($general_settings['wheel_sound']) ?$general_settings['wheel_sound'] : '0'; ?>';
+    var wheel_sound_file_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::audio/wheelsound.mp3'); ?>';
+    var spinandwin_ajax_url = '<?php echo $this->getUrl("spinandwin/index/ajax/", ['_secure' => $this->getRequest()->isSecure()]); ?>';
+    var velsofWheelHexCode = "#4497bb";
+    var when_exit = false;
+    var time_display = '';
+    var scroll_display = '';
+    var urlFrontAjax = "<?php echo $this->getUrl('spinandwin/index/ajax', array('_secure' => $this->getRequest()->isSecure())); ?>";
+    <?php if (isset($display_settings['when_to_show'])) { 
+        if ($display_settings['when_to_show'] == '2') { ?>
+        time_display = '<?php echo $display_settings['time_display']; ?>';
+    <?php } else if ($display_settings['when_to_show'] == '3') { ?>
+        scroll_display = '<?php echo $display_settings['scroll_display']; ?>';
+    <?php } else if ($display_settings['when_to_show'] == '4') { ?>
+        when_exit = true;
+    <?php   
+        } 
+    }
+    ?>
+    var display_settings = '<?php echo json_encode($display_settings, true); ?>';
+    var coupon_display_options = '<?php echo $email_settings['coupon_display_options']; ?>';
+    var display_interval = '<?php echo $general_settings['display_interval']; ?>';
+    var email_blank_error = "<?php echo __("Email cannot be left blank"); ?>";
+    var email_error = "<?php echo __("Not a valid email"); ?>";
+    var coupon_discount_ph = "<?php echo __("a discount"); ?>";
+    var coupon_copied = "<?php echo __("Code copied."); ?>";
+    var show_fireworks = "<?php echo isset($general_settings['fireworks']) ? $general_settings['fireworks']:'0'; ?>";
+    var show_pull_out = "<?php echo isset($general_settings['pull_out']) ? $general_settings['pull_out']:'0'; ?>";
+    var fname_blank_error = "<?php echo __("First name cannot be left blank"); ?>";
+    var lname_blank_error = "<?php echo __("Last name cannot be left blank"); ?>";
+    var require_name = "<?php echo $required ?>";
+
+</script>
+<style>
+        #velsof_spinner div {
+            color: <?php echo $lookandfeel_settings['wheel_text_color']; ?>;
+        }
+        
+        #vss_try_your_luck_button {
+            width: 100%;
+            background-color: <?php echo $lookandfeel_settings['background_color_spin']; ?>;
+            color: <?php echo $lookandfeel_settings['try_luck_text_color']; ?> !important;
+        }
+
+        #spinwheel_exit {
+            color: <?php echo $lookandfeel_settings['background_color_cancel']; ?> !important;
+        }
+
+        #spinwheel_continue_btn {
+            background-color: <?php echo $lookandfeel_settings['background_color_spin']; ?>;
+        }
+
+        #vss_next_time_button {
+          //  background-color: <?php echo $lookandfeel_settings['background_color_cancel']; ?>;
+        }
+        #velsof_wheel_main_container{
+            background-color: <?php echo $lookandfeel_settings['background_color_wheel']; ?>;
+        }
+
+        #velsof_wheel_main_container * {
+            color: <?php echo $lookandfeel_settings['text_color_wheel']; ?>;
+        }
+        #velsoftop.xmas1 {
+            background: url('<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/xmas1/bg-christmas.png'); ?>');
+            background-size: 50%; 
+        }
+
+        #velsofbottom.xmas1  {
+            background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/xmas1/bg-bottom-christmas.png'); ?>);
+        }
+
+        #velsoftop.xmas2 {
+            background: url('<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/xmas2/bg-christmas.png'); ?>');
+            background-size: 50%; 
+        }
+
+        #velsofbottom.xmas2  {
+            background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/xmas2/bg-bottom-christmas.png'); ?>);
+        }
+        <?php if($theme == 'blackfriday_theme_1') { ?>
+            #velsoftop.blackfriday_theme_1 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme1/images/overlay.png'); ?>);
+                background-size: cover;
+                opacity: 1;
+            }
+
+            #velsofbottom.blackfriday_theme_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme1/images/base.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+            }
+        <?php } ?>
+
+        <?php if($theme == 'blackfriday_theme_2') { ?>
+            #velsoftop.blackfriday_theme_2 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme2/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: bottom 18% right;
+                background-size: cover;
+            }
+
+            #velsofbottom.blackfriday_theme_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme2/images/base.gif'); ?>);
+                background-position: bottom right;
+                background-size: 65%;
+            }
+
+            @media(max-width:499px)
+            {
+                #velsofbottom.blackfriday_theme_2  { 
+                        background-size: 100%;
+                }
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'blackfriday_theme_3') { ?>
+            #velsoftop.blackfriday_theme_3 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme3/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top 5% center;
+            }
+
+            #velsofbottom.blackfriday_theme_3  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme3/images/base.png'); ?>);
+                background-position: bottom 2% right 2%;
+                background-size: 45%;
+                opacity:1
+
+            }
+        <?php } ?>
+        <?php if($theme == 'blackfriday_theme_4') { ?>
+            #velsoftop.blackfriday_theme_4 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme4/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top 5% center;
+            }
+
+            #velsofbottom.blackfriday_theme_4  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/black_friday/theme4/images/base.gif'); ?>);
+                background-position: bottom right;
+                background-size: 48%;
+                opacity:1;
+
+            }
+        <?php } ?>
+        /*easter*/
+        <?php if($theme == 'easter_theme_1') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme1/images/background.png'); ?>);
+            }
+            #velsoftop.easter_theme_1 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme1/images/overlay.png'); ?>);
+                background-repeat: repeat-x;
+                opacity: 1;
+            }
+
+            #velsofbottom.easter_theme_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme1/images/base.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 0.7;
+            }
+        <?php } ?>
+
+        <?php if($theme == 'easter_theme_2') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme2/images/background.png'); ?>);
+            }
+            #velsoftop.easter_theme_2 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme2/images/overlay.png'); ?>);
+                background-repeat: repeat-x;
+                opacity: 1;
+            }
+
+            #velsofbottom.easter_theme_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme2/images/base.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 0.7;
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'easter_theme_3') { ?>
+            #velsoftop.easter_theme_3 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme3/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top center;
+            }
+
+            #velsofbottom.easter_theme_3  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/easter/theme3/images/base.png'); ?>);
+                background-position: bottom right;
+                background-size: cover;
+                opacity:1;
+            }
+        <?php } ?>
+
+        /*easter*/
+        /*halloween*/
+        <?php if($theme == 'holloween_theme_1') { ?>
+            #velsoftop.holloween_theme_1 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme1/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top 5% center;
+            }
+
+            #velsofbottom.holloween_theme_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme1/images/base.png'); ?>);
+                background-position: bottom right;
+
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'holloween_theme_2') { ?>
+            #velsoftop.holloween_theme_2 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme2/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+            }
+
+            #velsofbottom.holloween_theme_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme2/images/base.png'); ?>);
+                background-position: bottom right;
+
+            }
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme2/images/background.png'); ?>);
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'holloween_theme_3') { ?>
+            #velsoftop.holloween_theme_3 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme3/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top 5% center;
+                    opacity:1
+            }
+            #velsofbottom.holloween_theme_3 { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme3/images/base.png'); ?>);
+                background-position: bottom right;
+                opacity:1
+
+            }
+        <?php } ?>
+            
+        <?php if($theme == 'holloween_theme_4') { ?>
+            #velsoftop.holloween_theme_4 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme4/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top right;
+                opacity:1
+            }
+            #velsofbottom.holloween_theme_4 { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/halloween/theme4/images/base.png'); ?>);
+                background-position: bottom right;
+                opacity:1
+
+            }
+        <?php } ?>
+        /*thanksgiving*/
+        <?php if($theme == 'thanking_theme_1') { ?>
+            #velsoftop.thanking_theme_1 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme1/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 0.5;
+            }
+            #velsofbottom.thanking_theme_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme1/images/base.png'); ?>);
+                background-position: bottom right;
+                background-size: cover;
+
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'thanking_theme_2') { ?>
+            #velsoftop.thanking_theme_2 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme2/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+                background-position: top center;
+            }
+            #velsofbottom.thanking_theme_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme2/images/base.png'); ?>);
+                background-position: bottom right;
+
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'thanking_theme_3') { ?>
+            #velsoftop.thanking_theme_3 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme3/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+                background-position: top center;
+            }
+            #velsofbottom.thanking_theme_3  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme3/images/base.png'); ?>);
+                background-position: bottom right;
+                opacity: 1;
+                background-size: cover;
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'thanking_theme_4') { ?>
+            #velsoftop.thanking_theme_4 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme4/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                background-position: top 5% left 30%;;
+            }
+
+            #velsofbottom.thanking_theme_4  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/thanksgiving/theme4/images/base.png'); ?>);
+                background-position: bottom right;
+                opacity: 1;
+                background-size: cover;
+            }
+        <?php } ?>
+        
+        /*diwali*/
+        <?php if($theme == 'diwali_theme_1') { ?>
+            #velsoftop.diwali_theme_1 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme1/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+            #velsofbottom.diwali_theme_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme1/images/bottom.png'); ?>);
+                background-position: bottom right;
+                opacity: 1;
+
+            }
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme1/images/base.gif'); ?>);
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'diwali_theme_2') { ?>
+            #velsoftop.diwali_theme_2 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme2/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+
+            #velsofbottom.diwali_theme_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme2/images/base.png'); ?>);
+                background-position: bottom right;
+                opacity: 1;
+
+            }
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme2/images/background.png'); ?>);
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'diwali_theme_3') { ?>
+            #velsoftop.diwali_theme_3 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme3/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+
+            #velsofbottom.diwali_theme_3  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme3/images/base.png'); ?>);
+                background-position: bottom right 5%;
+                opacity: 1;
+                background-size: auto;
+
+            }
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme3/images/background.png'); ?>);
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'diwali_theme_4') { ?>
+            #velsoftop.diwali_theme_4 {
+                background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme4/images/overlay.png'); ?>);
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+            #velsofbottom.diwali_theme_4  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme4/images/base.png'); ?>);
+                background-position: bottom 10% right 5%;
+                opacity: 1;
+                background-size: auto;
+
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'diwali_theme_5') { ?>
+        #velsoftop.diwali_theme_5 {
+            background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme5/images/overlay.png'); ?>);
+            background-repeat: no-repeat;
+            opacity: 0.7;
+        }
+
+        #velsofbottom.diwali_theme_5 { 
+            background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/diwali/theme5/images/base.gif'); ?>);
+            opacity: 0.5;
+        }
+        <?php } ?>
+        
+        
+        /*easter*/
+        <?php if($theme == 'new_year_2020_1') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme1/images/background.png'); ?>);
+            }
+            #velsofbottom.new_year_2020_1  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme1/images/bottom.gif'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 1;
+            }
+        <?php } ?>
+            
+        <?php if($theme == 'new_year_2020_2') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme2/images/background.png'); ?>);
+            }
+            #velsofbottom.new_year_2020_2  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme2/images/bottom.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 1;
+            }
+        <?php } ?>
+            
+            
+        <?php if($theme == 'new_year_2020_3') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme3/images/background.png'); ?>);
+            }
+            #velsofbottom.new_year_2020_3  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme3/images/bottom.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 1;
+            }
+        <?php } ?>
+            
+        <?php if($theme == 'new_year_2020_4') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme4/images/background.png'); ?>);
+            }
+            #velsofbottom.new_year_2020_4  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme4/images/bottom.gif'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 1;
+            }
+        <?php } ?>
+            
+        <?php if($theme == 'new_year_2020_5') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme5/images/background.png'); ?>);
+            }
+            #velsofbottom.new_year_2020_5  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme5/images/bottom.png'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                opacity: 1;
+            }
+        <?php } ?>
+            
+        <?php if($theme == 'new_year_2020_6') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme6/images/background.png'); ?>);
+            }
+            #velsoftop.new_year_2020_6  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme6/images/top.png'); ?>);
+                background-position: top;
+                background-size: auto;
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+            
+            #velsofbottom.new_year_2020_6  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme6/images/bottom.gif'); ?>);
+                background-position: bottom right;
+                background-size: auto;
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+        <?php } ?>
+        
+        <?php if($theme == 'new_year_2020_7') { ?>
+            #velsof_wheel_main_container {
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme7/images/background.png'); ?>);
+            }
+            #velsoftop.new_year_2020_7  { 
+                background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/new_year_2020/theme7/images/top.png'); ?>);
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: auto;
+                opacity: 1;
+            }
+            
+        <?php } ?>
+            
+</style>
+<?php if(isset($general_settings['customcss']) && $general_settings['customcss'] != ''){ ?>
+<style><?php echo $general_settings['customcss']; ?></style>
+<?php } ?>
+<?php if(isset($general_settings['customjs']) && $general_settings['customjs'] != ''){ ?>
+<script><?php echo $general_settings['customjs']; ?></script>
+<?php } ?>
+<?php if(isset($general_settings['pull_out']) && $general_settings['pull_out'] == '1'){ ?>
+<div id="pull_out" class="spin_toggle"  style="display: none;">
+    <?php 
+        //for custom pull out image 
+        $pullout_file = $this->getSettings('knowband/spinandwin/pullout');
+        if(isset($pullout_file['image'])){
+            $pullout_img = $this->getMediaUrl().'Knowband_Spinandwin/'.$pullout_file['image'];
+        }else{
+            $pullout_img = $this->getViewFileUrl('Knowband_Spinandwin::images/gift.png');
+        }
+    ?>
+    <img src="<?php echo $pullout_img; ?>" alt="slide" style="width:50px; height: 50px;">
+</div>
+<?php } ?>
+<div id="velsof_wheel_container" style="display: none;">
+    <div id="velsof_wheel_model"> </div>
+    <div id="velsof_wheel_main_container" class="<?php echo $theme; ?>">
+        <div id="velsoftop" class="velsoftheme <?php echo $theme; ?>"></div>
+        <div id="velsofbottom" class="velsoftheme <?php echo $theme; ?>"> </div>
+        <div id="velsof_offer_container">    
+            <?php if(isset($general_settings['logo_enable'])){
+                if(isset($logo_file['image']) && $logo_file['image'] != '') { ?>
+                    <div id="spin_wheel_logo_container">
+                        <img src="<?php echo $this->getMediaUrl().'Knowband_Spinandwin/'.$logo_file['image']; ?>" alt="Logo" id="spin_wheel_logo">
+                    </div>
+                <?php }else{?>
+                    <div id="spin_wheel_logo_container">
+                        <img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" alt="Logo" id="spin_wheel_logo">
+                    </div>
+            <?php } ?>
+            <?php } ?>
+            <div id="velsof_offer_main_container" style="z-index: 1000;">
+                <div id="velsof_main_header" class="velsof_main_title"><?php echo $text_settings['title_text_1']; ?></div>
+                <div id="spin_successmessage" class="velsof_main_title" style="display: none;">
+                    <?php echo __("Hurrah! You've got"); ?> {discount} <?php echo __(" discount. Lucky day!"); ?>
+                </div>
+                <div id="spin_sent_on_email" class="velsof_main_title" style="display: none;">
+                    <?php echo __("The coupon code has been sent to you through the email."); ?>
+                </div>
+                <div id="spin_falemsg" class="velsof_main_title" style="display: none;">
+                    <?php echo __("Better luck next time!"); ?>
+                </div>
+                <div>
+                    <div id="spinwheeltitle" class="velsof_subtitle"><?php echo $text_settings['title_text_2']; ?></div>
+                    <ul class="velsof_ul">
+                        <?php $text_array = explode("\n", $text_settings['title_text_3']);
+                            foreach ($text_array as $text) { ?>
+                                <li><?php echo $text; ?></li>
+                            <?php } ?>
+                    </ul>
+                    <div id="sucmsgdes" class="velsof_subtitle" style="display:none;"><?php echo __("Don't forget to use the discount code at checkout!"); ?></div>
+                </div>
+                
+                
+                <div>
+                    
+                    <div class="kbtooltip">
+                    <?php if (isset($general_settings['display_customer_name'])) {
+                        if ($general_settings['display_customer_name'] == '1') { ?>
+                        <input type="text" name="vss_firstname_input_field" id="vss_firstname_input_field" class="velsof_input_field" placeholder="<?php echo __("First Name"); ?>" value="" style="color:#607d8b !important; margin-bottom:3px;">
+                    <?php } else if ($general_settings['display_customer_name'] == '2') { ?>    
+                        <input type="text" name="vss_lastname_input_field" id="vss_lastname_input_field" class="velsof_input_field" placeholder="<?php echo __("Last Name"); ?>" value="" style="color:#607d8b !important; margin-bottom:3px;">
+                    <?php } else if ($general_settings['display_customer_name'] == '3') { ?>
+                        <input type="text" name="vss_firstname_input_field" id="vss_firstname_input_field" class="velsof_input_field" placeholder="<?php echo __("First Name"); ?>" value="" style="width:49%; color:#607d8b !important;">
+                        <input type="text" name="vss_lastname_input_field" id="vss_lastname_input_field" class="velsof_input_field" placeholder="<?php echo __("Last Name"); ?>" value="" style="width:50%; color:#607d8b !important; margin-bottom:3px;">
+                    <?php }} ?>
+                    
+                    <input type="text" name="vss_combined_input_field" id="vss_combined_input_field" class="velsof_input_field" placeholder="<?php echo __("Enter you email"); ?>" value="">
+                    <span class="tooltiptext"></span></div>
+                    <input type="button" class="velsof_button" id="vss_try_your_luck_button" name="Rotate" value="<?php echo __("Try your luck"); ?>" onclick="rotateWheel(event)" />
+                    <input type="button" class="velsof_button" id="vss_next_time_button" name="next_time" value="<?php echo __("Next Time"); ?>" style="display: none;">
+                   	
+                    <?php if(isset($general_settings['progress_bar']) && $general_settings['progress_bar'] == 1){ ?>
+                    <div class="progressBar">
+                            <div class="meter">
+                                <span style="width: <?php echo $general_settings['progress_percentage']; ?>%"></span>
+                            </div>
+                            <p><?php echo $general_settings['progress_text']; ?></p>
+                    </div>
+                    <?php } ?>
+                    <div id="spinwheel_exit" class="velsof_subtitle cancel_button">
+                        <?php echo __("No, I do not feel lucky"); ?>
+                        <span class="spinwheel_close_icon"></span>
+                    </div>
+                    <div id="spinwheel_continue_btn" class="velsof_button exit_button" style="display: none;">
+                        <?php echo __("Continue"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="velsof_spinner_container">
+            <div id="velsof_spinners">
+                <div class="velsof_shadow"></div>
+                <div id="velsof_spinner" class="velsof_spinner<?php echo $lookandfeel_settings['wheel_design']; ?>">
+                    <?php 
+                        $count = 0;
+                        $number_of_slices = isset($slice_settings['number_of_slices'])?(int)$slice_settings['number_of_slices']:12;
+                        $rotate_angle = 360/$number_of_slices;                        
+                        
+                        foreach ($slice_settings as $slice) {
+                            if(isset($slice['label']) && $count < $number_of_slices){
+                        $angle_rotation = ($count * (-$rotate_angle));
+                        ?>
+                        <div class="wheelslices" style="transform: rotate(<?php echo $angle_rotation; ?>deg) translate(0px, -50%);">
+                            <?php echo $slice['label']; ?>
+                        </div>
+                        <?php $count++; }} ?>
+                </div>
+            </div>
+            <div id="velsof_wheel_pointer"> </div>
+        </div>
+    </div>
+</div>
+<script>
+      
+ var config = {
+        shim: {
+            'Knowband_Spinandwin/js/jquery.fireworks': ['jquery'],
+            'Knowband_Spinandwin/js/ouibounce': ['jquery'],
+            'Knowband_Spinandwin/js/front_script': ['jquery']
+        }
+    };
+  require.config(config);
+require([
+    'jquery','jquery/ui',
+    'Knowband_Spinandwin/js/jquery.fireworks',
+    'Knowband_Spinandwin/js/ouibounce',
+    'Knowband_Spinandwin/js/front_script'
+    ], function(jQuery){
+        jQuery(document).ready(function(){   
+            
+    /* Added by  Bhupendra 
+     * Added on 15-April-2020
+     * To animate the progress bar on the Popup
+    */
+            
+<?php if(isset($general_settings['progress_bar']) && $general_settings['progress_bar'] == 1){ ?>
+            jQuery(".meter > span").each(function() {
+                                       jQuery(this)
+                                               .data("origWidth", jQuery(this).width())
+                                               .width(0)
+                                               .animate({
+                                                       width: jQuery(this).data("origWidth")
+                                               }, 1200);
+                               });
+<?php } ?>
+        });
+});
+</script>
+<style>
+    /* Added by  Bhupendra 
+    * Added on 15-April-2020
+    * for multiple slices and wheel design
+    */
+    #velsof_spinner {
+        background: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel_main_'.$number_of_slices.'_slices_'.$lookandfeel_settings['wheel_design'].'.png'); ?>);
+        background-size: cover;
+        text-align: left;
+    }  
+    
+    
+        
+    <?php 
+    // Added by Bhupendra
+    // to animate the slice rotation according to the selected number of slices.
+    $rotation = 720;        
+    for($slice=1; $slice <= $number_of_slices; $slice++){ ?>    
+        @keyframes spinwheel_<?php echo $slice; ?> {
+            from {
+                transform: rotate(0deg); 
+            }
+            to {
+                transform: rotate(<?php echo $rotation; ?>deg); 
+            } 
+        } 
+    <?php
+    
+    $rotation += $rotate_angle; 
+    } ?>
+</style>
+<?php 
+                }
+            }
+        }
+    } 
+?>

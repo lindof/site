@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    
+    <event name="admin_system_config_changed_section_deliverydate">
+        <observer name="deliverydate" instance="Biztech\Deliverydate\Observer\checkKey" />
+    </event>
+
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="biztech_sales_model_service_quote_submit_before" instance="Biztech\Deliverydate\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
+    </event>
+
+    <!-- <event name="adminhtml_sales_order_create_process_data" >
+        <observer name="save_admin_deliverydate_info" instance="Biztech\Deliverydate\Observer\SaveDeliveryDetails" />
+    </event> -->
+
+    <event name="core_layout_render_element">
+        <observer name="biztech_deliverydate_add_to_order_view" instance="Biztech\Deliverydate\Model\Observer\AddHtmlToOrderShippingViewObserver" />
+    </event>
+    
+    <!--custom date--> 
+   
+</config>

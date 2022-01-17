@@ -1,0 +1,20 @@
+{
+  "name": "act/responsive-images",
+  "description": "Call block widget with responsive images in template",
+  "require": {
+      "php": "~7.0.0",
+      "magento/module-ui": "100.0.*"
+  },
+  "type": "magento2-module",
+  "version": "100.0.0",
+  "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+  ],
+  "autoload": {
+      "files": [ "registration.php" ],
+      "psr-4": {
+          "SR\\CheckoutAdditionalField\\": ""
+      }
+  }
+}

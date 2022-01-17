@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="IWD\StoreLocator\Block\Search" template="IWD_StoreLocator::container.phtml">
+                <block class="IWD\StoreLocator\Block\Search\Form" name="iwd_storelocator_form" template="IWD_StoreLocator::search/form.phtml"/>
+                <block class="IWD\StoreLocator\Block\Search\Grid" name="iwd_storelocator_grid" template="IWD_StoreLocator::search/grid.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

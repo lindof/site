@@ -1,0 +1,13 @@
+<!-- ko if: isDeliveryChargesDisplayed() -->
+<tr class="totals same_day_charges excl">
+    <th class="mark" scope="row">
+        <span class="label" data-bind="text: title"></span>
+        <span class="value" data-bind="i18n: getDate()"></span>
+    </th>
+    <td class="amount">
+        <span class="price"
+            data-bind="text: getValue(), attr: {'data-th': title}">
+        </span>
+    </td>
+</tr>
+<!-- /ko -->

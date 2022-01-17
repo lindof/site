@@ -1,0 +1,199 @@
+<?php $settings = $this->getSettings('knowband/spinandwin/settings'); 
+?>
+<style>
+    #mColorPickerImg{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/colorpicker.png'); ?>) !important;
+    }
+    #mColorPickerImgGray{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/graybar.jpg'); ?>) !important;
+    }
+    #mColorPickerFooter{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/grid.gif'); ?>) !important;
+    }
+    #wheel_preview{
+        width: 30%;
+        border: 1px solid whitesmoke;
+    }
+</style>
+<div class="fieldset-wrapper" id="look-and-feel">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Look and Feel")?></h1>
+        <fieldset class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_theme">
+                    <span><?php echo __("Theme")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[lookandfeel_settings][theme]" id="spinandwin_theme">
+                        <?php foreach ($this->getThemes() as $key => $value) { 
+                            if(isset($settings["lookandfeel_settings"]["theme"]) && $settings["lookandfeel_settings"]["theme"] == $key){?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                        <?php }else{ ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                        <?php }} ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="theme_preview">
+                    <span>
+                        <?php echo __("Theme Peview");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <img id="theme_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" style="margin: 0px 2px 3px 0px;" align="absmiddle">
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_wheel_design">
+                    <span>
+                        <?php echo __("Wheel Design")?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[lookandfeel_settings][wheel_design]" id="spinandwin_wheel_design">
+                        <?php foreach ($this->getWheelDesign() as $key => $value) { 
+                            if(isset($settings["lookandfeel_settings"]["wheel_design"]) && $settings["lookandfeel_settings"]["wheel_design"] == $key){?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                        <?php }else{ ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                        <?php }} ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="wheel_preview">
+                    <span>
+                        <?php echo __("Wheel Peview");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <img id="wheel_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" style="margin: 0px 2px 3px 0px;" align="absmiddle">
+                </div>
+            </div>
+            
+            <!--Starts- Added by Dhruw --> 
+            <div class="admin__field" id="spinandwin_wheel_color_holder">
+                <label class="admin__field-label" for="spinandwin_wheel_color">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Wheel Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change color of the wheel.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_wheel_color" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["wheel_color"])?$settings["lookandfeel_settings"]["wheel_color"]:"#ff0000"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][wheel_color]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["wheel_color"])?$settings["lookandfeel_settings"]["wheel_color"]:"#ff0000"?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_wheel_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_wheel_text_color">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Wheel Text Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change text color of the wheel.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_wheel_text_color" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["wheel_text_color"])?$settings["lookandfeel_settings"]["wheel_text_color"]:"#2ea2a7"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][wheel_text_color]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["wheel_text_color"])?$settings["lookandfeel_settings"]["wheel_text_color"]:"#2ea2a7"?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_wheel_text_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <!-- Ends- -->
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_wheel">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Wheel Background Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change background color of wheel.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_background_color_wheel" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["background_color_wheel"])?$settings["lookandfeel_settings"]["background_color_wheel"]:"#2ea2a7"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][background_color_wheel]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["background_color_wheel"])?$settings["lookandfeel_settings"]["background_color_wheel"]:"#2ea2a7"?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_wheel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_text_color_wheel">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Font Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of text on wheel.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_text_color_wheel" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["text_color_wheel"])?$settings["lookandfeel_settings"]["text_color_wheel"]:"#ffffff"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][text_color_wheel]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["text_color_wheel"])?$settings["lookandfeel_settings"]["text_color_wheel"]:"#ffffff"?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_text_color_wheel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_spin">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Button Background Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change background color of spin button.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_background_color_spin" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["background_color_spin"])?$settings["lookandfeel_settings"]["background_color_spin"]:"#00c74c"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][background_color_spin]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["background_color_spin"])?$settings["lookandfeel_settings"]["background_color_spin"]:"#00c74c"?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_spin" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            
+            <!-- Starts- Added by Dhruw --> 
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("`Try your luck` Button Text Color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of the front `Try your luck` button.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_try_luck_text_color" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["try_luck_text_color"])?$settings["lookandfeel_settings"]["try_luck_text_color"]:"#fffbf8"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][try_luck_text_color]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["try_luck_text_color"])?$settings["lookandfeel_settings"]["try_luck_text_color"]:"#fffbf8"?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_try_luck_text_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <!-- Ends -->
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_cancel">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("No, I do not feel lucky text color")?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of No, I do not feel lucky text.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_background_color_cancel" data-hex="true" value="<?php echo isset($settings["lookandfeel_settings"]["background_color_cancel"])?$settings["lookandfeel_settings"]["background_color_cancel"]:"#fffbf8"?>" class="mColorPicker admin__control-text" name="vss_spinandwin[lookandfeel_settings][background_color_cancel]"   type="text" style="background-color: <?php echo isset($settings["lookandfeel_settings"]["background_color_cancel"])?$settings["lookandfeel_settings"]["background_color_cancel"]:"#fffbf8"?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_cancel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            
+           
+            
+        </fieldset>
+    </div>
+</div>
+<style>
+  
+    <?php if (isset($settings["lookandfeel_settings"]["wheel_design"]) && ($settings["lookandfeel_settings"]["wheel_design"] == '2')) { ?>
+    #spinandwin_wheel_color_holder{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    #spinandwin_wheel_color_holder{
+       display:none;
+    }
+    <?php } ?>
+</style>
+

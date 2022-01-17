@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <css src="Knowband_Spinandwin::css/front_style.css"/>
+        <script src="Knowband_Spinandwin::js/jquery-1.10.0.min.js"/>
+        <script src="Knowband_Spinandwin::js/front_script.js"/>
+        <script src="Knowband_Spinandwin::js/jquery.fireworks.js"/>
+        <script src="Knowband_Spinandwin::js/ouibounce.js"/>
+		
+    </head>
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="Knowband\Spinandwin\Block\Spinandwin" name="front-spinandwin" cacheable="false" as="front-spinandwin" before="-" template="Knowband_Spinandwin::front/spinandwin.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

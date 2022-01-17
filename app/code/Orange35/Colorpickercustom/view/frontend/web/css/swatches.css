@@ -1,0 +1,41 @@
+.o35-swatches .swatch-option {
+  margin: 5px; }
+  .o35-swatches .swatch-option.textual {
+    color: #949494;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    background: #F0F0F0; }
+    .o35-swatches .swatch-option.textual:hover {
+      outline: 1px solid #999;
+      border: 1px solid #fff;
+      color: #333; }
+
+.o35-option .swatch-attribute-label.label {
+  margin: 0; }
+.o35-option .swatch-attribute-options {
+  margin-top: 5px; }
+.o35-option .swatch-attribute-options.slick-slider {
+  display: flex; }
+  .o35-option .swatch-attribute-options.slick-slider .btn-prev, .o35-option .swatch-attribute-options.slick-slider .btn-next {
+    flex: 0 0 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+    .o35-option .swatch-attribute-options.slick-slider .btn-prev.slick-disabled, .o35-option .swatch-attribute-options.slick-slider .btn-next.slick-disabled {
+      opacity: 0.35;
+      cursor: auto;
+      pointer-events: none; }
+  .o35-option .swatch-attribute-options.slick-slider .btn-prev {
+    margin-right: 2px; }
+  .o35-option .swatch-attribute-options.slick-slider .btn-next {
+    margin-left: 2px; }
+
+body.catalog-category-view .o35-option .swatch-attribute-options.slick-slider {
+  justify-content: center; }
+
+.product-items .swatch-attribute:last-child {
+  margin-bottom: 5px; }

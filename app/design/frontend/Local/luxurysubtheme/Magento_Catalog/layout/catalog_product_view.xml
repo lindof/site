@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageVision Blog37
+ *
+ * @category     MageVision
+ * @package      MageVision_Blog37
+ * @author       MageVision Team
+ * @copyright    Copyright (c) 2018 MageVision (https://www.magevision.com)
+ * @license      http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="tab.security_policy" template="Magento_Catalog::product_details_tab.phtml" group="detailed_info" after="tab.product_details">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Security Policy</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="product.security_policy.tab" as="security_policy.tab" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Security Policy</argument>
+                    <argument name="block_id" xsi:type="string">security-policy</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Cms\Block\Block" name="product.delivery.tab" as="delivery.tab" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Delivery Policy</argument>
+                    <argument name="block_id" xsi:type="string">delivery-policy</argument>
+                </arguments>
+            </block>
+        </referenceBlock> -->
+
+        <!-- <referenceBlock name="product.info.description" remove="false" />
+        <referenceBlock name="tab.product_details" remove="false" />
+        <referenceBlock name="product.info.details" remove="true" />
+        
+        <referenceContainer name="content">
+        <container name="product.info.custom_tabs" label="" htmlTag="div" htmlClass="custom-tabs col-md-12">
+            <block class="Magento\Cms\Block\Block" name="product.security_policy.tab" as="security_policy.tab" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Security Policy</argument>
+                    <argument name="block_id" xsi:type="string">security-policy</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="product.delivery.tab" as="delivery.tab" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Delivery Policy</argument>
+                    <argument name="block_id" xsi:type="string">delivery-policy</argument>
+                </arguments>
+            </block>
+        </container>
+        </referenceContainer> -->
+
+
+        <referenceContainer name="product.info.main" >
+            <block class="Magento\Catalog\Block\Product\View" name="promofreehat" template="Magento_Catalog::product/view/promo.phtml" before="product.info.price" /> 
+        </referenceContainer>
+
+
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View" name="optioncallapsablejs" template="Magento_Catalog::productcollapse.phtml" /> 
+            <!--<block class="Magento\Cms\Block\Block" name="product-social-media">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">product-social-media</argument>
+                            </arguments>
+                        </block>-->
+            <block class="Magento\Catalog\Block\Product\View" name="product-social-media"
+                   template="Magento_Catalog::product/view/social.phtml" />
+        </referenceContainer>
+
+        <move element="product-social-media" destination="product.info.social" after="product.info.mailto"/>
+        <referenceBlock name="product.info.mailto" remove="true" />
+        <referenceBlock name="product.info.tabs" remove="false" />
+        <referenceBlock name="askit_listing" remove="true" />
+
+
+        <referenceBlock name="view.addto.compare.luxuryAdditional" remove="true" />
+        <!-- <referenceBlock name="view.addto.wishlist.luxuryAdditional" remove="true" /> -->
+    
+        
+        <move element="product.info.tabs" destination="content"/>
+    
+
+    </body>
+</page>

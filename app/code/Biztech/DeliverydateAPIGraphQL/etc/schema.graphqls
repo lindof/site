@@ -1,0 +1,85 @@
+type Query {
+    deliveryInformationAtProductPage (id: Int): DeliveryAtProductPage @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\DeliveryAtProductPage") @doc(description: "Delivery Date required details") @cache(cacheable: false)
+    deliveryInformationAtCheckoutPage: DeliveryAtCheckoutPage @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\DeliveryAtCheckoutPage") @doc(description: "Delivery Date required details") @cache(cacheable: false)
+}
+
+type DeliveryAtProductPage {
+    productId: String
+    templateConfig: TemplateConfig,
+    general: GeneralSetting
+    calendar: calender
+    timeslot: Timeslot
+}
+
+type DeliveryAtCheckoutPage {
+    templateConfig: TemplateConfig,
+    general: GeneralSetting
+    calendar: calender
+    timeslot: Timeslot
+}
+
+type calender {
+    options: optionsData,
+}
+
+type Timeslot {
+    enabled_timeslots: [timeslotsdata]
+    timeslotTableLabel: String
+}
+type slotData {
+    slot_value_html: String
+    slot_value: String
+    slot_id: String
+    disabled: String
+}
+type timeslotsdata {
+    row_heading: String
+    delivery_date: String
+    slots: [slotData]
+}
+type optionsData {
+    showsTime: String
+    buttonImage: String
+    interval: String
+    buttonText: String
+    showAnim: String
+    showButtonPanel: String
+    isRTL: String
+    maxDate: String
+}
+type TemplateConfig {
+    useTemplate: String
+    deliverydateLabel: String
+    deliverydateComments: String
+    showHtml: String
+    displayHtml: String
+}
+type GeneralSetting {
+    enabled: String
+    disabledDates: [String]
+    dayOffs: String
+    dateFormat: String
+    timeFormat: String
+    dayDiff: String
+    timeDiff: String
+    isMandatory: String
+    useCallFeature: String
+    callMeLabel: String
+}
+type CustomerOrder @doc(description: "Order mapping fields") {
+    shipping_arrival_date: String
+        @doc(description: "Delivery date for the order.")
+        @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\Orders")
+    delivery_timeslot: String
+        @doc(description: "Delivery Timeslot for the order.")
+        @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\Orders")
+    shipping_arrival_comments: String
+        @doc(description: "Delivery Customer comment")
+        @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\Orders")
+    delivery_charges: Float
+        @doc(description: "Delivery Charges of timeslot")
+        @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\Orders")
+    same_day_charges: Float
+        @doc(description: "Same Day Delivery Charges")
+        @resolver(class: "Biztech\\DeliverydateAPIGraphQL\\Model\\Resolver\\Orders")
+}

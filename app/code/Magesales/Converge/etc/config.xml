@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <converge>
+                <active>0</active>
+                <title>Converge Payment</title>
+                <mode>production</mode>
+                <model>ConvergePaymentFacade</model>
+                <payment_action>authorize_capture</payment_action>
+                <cctypes>AE,VI,MC,DI,JCB,DN</cctypes>
+                <can_initialize>0</can_initialize>
+                <can_use_checkout>1</can_use_checkout>
+                <can_capture>1</can_capture>
+                <can_void>1</can_void>
+                <can_refund>1</can_refund>
+                <can_use_checkout>1</can_use_checkout>
+                <can_use_internal>1</can_use_internal>
+                <can_authorize>1</can_authorize>
+                <form_type>merchant</form_type>
+                <http_method>POST</http_method>
+                <is_gateway>1</is_gateway>
+                <useccv>1</useccv>
+                <demo_gateway_url>https://api.demo.convergepay.com/VirtualMerchantDemo/process.do</demo_gateway_url>
+                <production_gateway_url>https://www.myvirtualmerchant.com/VirtualMerchant/process.do</production_gateway_url>
+                <paymentInfoKeys>transaction_code,transaction_time,approval_code,approval_message,card_type,avs_response,cvv2_response,invoice_number,departure_date,completion_date</paymentInfoKeys>
+                <privateInfoKeys>transaction_code,transaction_time,approval_code,approval_message,avs_response,cvv2_response,invoice_number,departure_date,completion_date</privateInfoKeys>
+                <debugReplaceKeys>ssl_card_number,ssl_cvv2cvc2,ssl_pin</debugReplaceKeys>
+                <allowed_currencies>USD</allowed_currencies>
+                <demo_pin backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <production_pin backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+            </converge>
+        </payment>
+    </default>
+</config>

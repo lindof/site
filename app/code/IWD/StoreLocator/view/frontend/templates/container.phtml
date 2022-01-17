@@ -1,0 +1,59 @@
+<?php
+$init = $block->init();
+$cms = $block->getCmsBlock();
+
+?>
+
+<?php if (!empty($cms)) : ?>
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($cms)->toHtml(); ?>
+<?php endif ?>
+
+
+<div data-mage-init='<?php echo $init; ?>'>
+    <?php echo $this->getChildHtml('iwd_storelocator_form') ?>
+    <?php echo $this->getChildHtml('iwd_storelocator_grid') ?>
+</div>
+<?php
+if ($this->config->getApiType() === 'google') {
+
+
+    ?>
+    <script type="text/javascript">
+        var map;
+        var bounds;
+        var infoWindow = new Array();
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('storelocator-map'), {
+                center: {lat: 0, lng: 0},
+                zoom: 2,
+                scrollwheel: <?php echo $block->getScrollWheel()?>,
+                scaleControl: <?php echo $block->getScaleControl()?>,
+                mapTypeControl:<?php echo $block->getMapTypeControl()?>,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            bounds = new google.maps.LatLngBounds();
+        }
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=<?php echo $block->getGMBrowserApiKey() ?>&callback=initMap"></script>
+
+    <?php
+} else {
+    ?>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059"/>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+
+<?php } ?>
+<script type="text/javascript">
+    // require(['jquery','IWD_StoreLocator/js/storelocator'],function($, StoreLocator){
+    //     var locator = new StoreLocator();
+    //     locator.init();
+    // });
+</script>
+
+

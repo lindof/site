@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="amasty_affiliate">
+			<group id="cron" sortOrder="200" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+				<label>Cron</label>
+				<field id="enable" sortOrder="10" translate="label comment" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Enable Cron</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="minimum_affiliate_balance" sortOrder="20" translate="label comment" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Minimum Affiliate Balance for Conversion to Store Credit</label>
+					<depends>
+						<field id="enable">1</field>
+					</depends>
+				</field>
+			</group>
+		</section>
+    </system>
+</config>

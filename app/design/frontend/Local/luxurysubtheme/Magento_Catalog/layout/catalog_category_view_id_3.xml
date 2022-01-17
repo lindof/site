@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <!-- <referenceContainer name="columns.top">
+            <block class="Act\ResponsiveImages\Block\ResponsiveImages" name="act.responsive_images" template="Act_ResponsiveImages::default.phtml" before="category.view.container">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">mobile</argument>
+                    <argument name="value" xsi:type="string">responsive_images/600_Hero_Image.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">tablet</argument>
+                    <argument name="value" xsi:type="string">responsive_images/960_Hero_Image.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">desktop</argument>
+                    <argument name="value" xsi:type="string">responsive_images/1680_Hero_Image.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">xlarge</argument>
+                    <argument name="value" xsi:type="string">responsive_images/1920_Hero_Image.jpg</argument>
+                </action>
+            </block>
+    </referenceContainer> -->
+
+        <referenceContainer name="sidebar.additional">
+            <block class="MageSpark\Productname\Block\CatalogWidget\Product\ProductsList" name="products.pompoms" template="Magento_CatalogWidget::product/widget/content/grid.phtml" before="-">
+                <arguments>
+                    <argument name="products_count" xsi:type="string">10</argument>
+                    <argument name="title" xsi:type="string">Poms</argument>
+                    <argument name="show_pager" xsi:type="string">0</argument>
+                    <argument name="conditions_encoded" xsi:type="string">^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`4`^]^]</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+        <!-- <move element="wishlist_sidebar" destination="content"/> -->
+
+
+        <referenceBlock name="wishlist_sidebar" remove="true"></referenceBlock>
+
+
+    </body>
+</page>

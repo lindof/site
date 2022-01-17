@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Biztech_Deliverydate::css/calendar.css"/>
+        <css src="Biztech_Deliverydate::css/style.css"/>
+        <link src="Biztech_Deliverydate::js/dashboard.js"/>
+    </head>
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current"  name="customer-account-navigation-deliverydates-link" ifconfig="deliverydate/deliverydate_general/enabled">
+                <arguments>
+                    <argument name="path" xsi:type="string">deliverydate/index/deliveryview</argument>
+                    <argument name="label" xsi:type="string">My Delivery Dates</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

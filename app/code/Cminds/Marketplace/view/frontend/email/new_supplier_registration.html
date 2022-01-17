@@ -1,0 +1,21 @@
+<!--@subject New Supplier registration  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="action-content">
+                        <h1>Hi, {{var admin_name}}</h1>
+                        <p>The supplier <b> {{var supplier_first_name}} {{var supplier_last_name}} ({{var supplier_email}}) </b> self registered and must be approved by an Admin.</p>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="iwd_storelocator" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Store Locator</label>
+            <tab>iwd</tab>
+            <resource>IWD_StoreLocator::config_storelocator</resource>
+
+            <group id="info" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Info</label>
+                <field id="version" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Version</label>
+                    <frontend_model>IWD\StoreLocator\Block\Adminhtml\System\Config\Version</frontend_model>
+                </field>
+                <field id="documentation" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Documentation</label>
+                    <frontend_model>IWD\StoreLocator\Block\Adminhtml\System\Config\Documentation</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="is_active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/general/is_active</config_path>
+                </field>
+                <field id="meta_title" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>iwd_storelocator/general/title</config_path>
+                </field>
+                <field id="path" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>URL Path</label>
+                    <comment>Example: store-locator</comment>
+                    <config_path>iwd_storelocator/general/path</config_path>
+                </field>
+                <field id="link_visibility" translate="label comment" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Link in Header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/general/link_visibility</config_path>
+                    <comment>If yes, then a link to the store locator will be added in your store header</comment>
+                </field>
+                <field id="link_text" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Link Text</label>
+                    <depends>
+                        <field id="link_visability">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/general/link_text</config_path>
+                </field>
+                <field id="cms" translate="label comment" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>CMS Static Block</label>
+                    <source_model>IWD\StoreLocator\Model\Config\Source\Cms</source_model>
+                    <comment>Select the CMS block that will be displayed above the store locator map</comment>
+                    <config_path>iwd_storelocator/general/cms</config_path>
+                </field>
+                <field id="meta_keyword" translate="label comment" type="text" sortOrder="140" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords</label>
+                    <config_path>iwd_storelocator/general/meta_keyword</config_path>
+                </field>
+                <field id="meta_description" translate="label comment" type="text" sortOrder="150" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Meta Description</label>
+                    <config_path>iwd_storelocator/general/meta_description</config_path>
+                </field>
+            </group>
+            <group id="api_settings" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Maps API Configuration</label>
+                <field id="type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Maps Api Service</label>
+                    <source_model>IWD\StoreLocator\Model\Config\Source\MapsApi</source_model>
+                    <config_path>iwd_storelocator/api_settings/type</config_path>
+                </field>
+                <field id="google_browser_api_key" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Browser API Key</label>
+                    <depends>
+                        <field id="type">google</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/google_browser_api_key</config_path>
+                </field>
+
+                <field id="google_server_api_key" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Server API Key</label>
+                    <depends>
+                        <field id="type">google</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/google_server_api_key</config_path>
+                </field>
+                <field id="google_type_control" translate="label comment" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Map Type Control</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Control if users can change the type of map (satellite vs. map view).</comment>
+                    <depends>
+                        <field id="type">google</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/google_type_control</config_path>
+                </field>
+                <field id="google_scale_control" translate="label comment" type="select" sortOrder="50"
+                       showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Scale Control</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable / disable if the scale on the map is to be shown.</comment>
+                    <depends>
+                        <field id="type">google</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/google_scale_control</config_path>
+                </field>
+                <field id="google_scrollwheel_zooming" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Scrollwheel Zooming</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Control if users can zoom in or out of the map with the scroll wheel on their mouse.
+                    </comment>
+                    <depends>
+                        <field id="type">google</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/google_scrollwheel_zooming</config_path>
+                </field>
+
+
+
+                <field id="here_app_id" translate="label comment" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>App ID</label>
+                    <depends>
+                        <field id="type">here</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/here_app_id</config_path>
+                </field>
+
+                <field id="here_app_code" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>App Code</label>
+                    <depends>
+                        <field id="type">here</field>
+                    </depends>
+                    <config_path>iwd_storelocator/api_settings/here_app_code</config_path>
+                </field>
+
+
+                <field id="marker" translate="label comment" type="image" sortOrder="21" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Marker Icon</label>
+                    <comment>Upload the image used to identify locations on the map.</comment>
+                    <backend_model>IWD\StoreLocator\Model\Config\Backend\Image\Marker</backend_model>
+                    <base_url type="media" scope_info="1">storelocator</base_url>
+                    <config_path>iwd_storelocator/api_settings/marker</config_path>
+                </field>
+
+            </group>
+            <group id="search" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Search Configuration</label>
+                <field id="search_onload" translate="label comment" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Start Search After Page Load</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/search/search_onload</config_path>
+                </field>
+                <field id="pagination" translate="label comment" type="select" sortOrder="7" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Pagination</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/search/pagination</config_path>
+                </field>
+                <field id="page_size" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Store Per Page</label>
+                    <depends>
+                        <field id="pagination">1</field>
+                    </depends>
+                    <comment>Specify the number of stores to show per page.</comment>
+                    <config_path>iwd_storelocator/search/page_size</config_path>
+                </field>
+                <field id="filter_radius" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Filter by Radius</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/search/filter_radius</config_path>
+                </field>
+                <field id="radius_list" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>User's Radius Options</label>
+                    <comment>Specify the radius options a user can select in the radius drop-down filter. Example:
+                        5;50;100;250
+                    </comment>
+                    <depends>
+                        <field id="filter_radius">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/search/radius_list</config_path>
+                </field>
+                <field id="default_radius" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Default Radius</label>
+                    <config_path>iwd_storelocator/search/default_radius</config_path>
+                </field>
+                <field id="metric" translate="label comment" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Search Metric</label>
+                    <source_model>IWD\StoreLocator\Model\Config\Source\Metric</source_model>
+                    <comment>Specify whether to use kilometers or miles for the radius</comment>
+                    <config_path>iwd_storelocator/search/metric</config_path>
+                </field>
+                <field id="order" translate="label comment" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Search Results By</label>
+                    <source_model>IWD\StoreLocator\Model\Config\Source\Order</source_model>
+                    <config_path>iwd_storelocator/search/order</config_path>
+                </field>
+                <field id="message" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Not Found Message</label>
+                    <config_path>iwd_storelocator/search/message</config_path>
+                </field>
+            </group>
+            <group id="design" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Design</label>
+                <field id="full_width" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Disable Full Width</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/design/full_width</config_path>
+                </field>
+                <field id="hide_placeholders" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Hide All Placeholders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/design/hide_placeholders</config_path>
+                </field>
+                <field id="placeholder" translate="label comment" type="image" sortOrder="21" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Location Placeholder</label>
+                    <comment>Upload an image used by default if a location does not have an image.</comment>
+                    <depends>
+                        <field id="hide_placeholders">0</field>
+                    </depends>
+                    <backend_model>IWD\StoreLocator\Model\Config\Backend\Image\Marker</backend_model>
+                    <base_url type="media" scope_info="1">storelocator</base_url>
+                    <config_path>iwd_storelocator/design/placeholder</config_path>
+                </field>
+                <field id="highlight_result" translate="label comment" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Highlight Search Result</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/design/hightlight_result</config_path>
+                </field>
+                <field id="fill_color" translate="label comment" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Fill color</label>
+                    <comment>All CSS3 colors are supported except for extended named colors.</comment>
+                    <depends>
+                        <field id="highlight_result">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/design/fill_color</config_path>
+                </field>
+                <field id="opacity" translate="label comment" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Opacity</label>
+                    <depends>
+                        <field id="highlight_result">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/design/opacity</config_path>
+                </field>
+                <field id="stroke_color" translate="label comment" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Stroke Color</label>
+                    <comment>All CSS3 colors are supported except for extended named colors.</comment>
+                    <depends>
+                        <field id="highlight_result">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/design/stroke_color</config_path>
+                </field>
+                <field id="stroke_opacity" translate="label comment" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Stroke Opacity</label>
+                    <depends>
+                        <field id="highlight_result">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/design/stroke_opacity</config_path>
+                </field>
+                <field id="stroke_weight" translate="label comment" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Stroke Weight</label>
+                    <depends>
+                        <field id="highlight_result">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/design/stroke_weight</config_path>
+                </field>
+            </group>
+            <group id="auto_fill" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Get Location Auto Fill</label>
+                <field id="count" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Count of Stores</label>
+                    <comment>Limitation on count stores for filling location during one running</comment>
+                    <config_path>iwd_storelocator/auto_fill/count</config_path>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Enable Scheduled Auto Filling</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>iwd_storelocator/auto_fill/enabled</config_path>
+                </field>
+                <field id="time" translate="label" type="time" sortOrder="30" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Start Time</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <config_path>iwd_storelocator/auto_fill/time</config_path>
+                </field>
+                <field id="frequency" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Frequency</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <config_path>iwd_storelocator/auto_fill/frequency</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

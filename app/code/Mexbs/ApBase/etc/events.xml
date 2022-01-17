@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="salesrule_item_validate_for_rule">
+        <observer name="apItemValidate" instance="Mexbs\ApBase\Observer\UpdateValidationResult" />
+    </event>
+    <event name="salesrule_item_rule_validated">
+        <observer name="apItemRuleValidated" instance="Mexbs\ApBase\Observer\SetExtraMessagesToDisplay" />
+    </event>
+    <event name="sales_quote_item_save_before">
+        <observer name="apPrepareApDataInQuoteItemOnSaveBefore" instance="Mexbs\ApBase\Observer\PrepareApDataInQuoteItemOnSaveBefore" />
+        <observer name="apSalesQuoteItemSaveHintData" instance="Mexbs\ApBase\Observer\SaveHintDataToQuoteItem" />
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="apCopyDescriptionDetailsToOrder" instance="Mexbs\ApBase\Observer\CopyDescriptionDetailsToOrder" />
+    </event>
+    <event name="sales_quote_load_after">
+        <observer name="apSalesQuoteLoadHintMessages" instance="Mexbs\ApBase\Observer\LoadHintMessagesToQuote" />
+        <observer name="apSalesQuoteLoadData" instance="Mexbs\ApBase\Observer\LoadDataToQuote" />
+    </event>
+    <event name="sales_quote_save_before">
+        <observer name="apSalesQuoteSaveHintMessages" instance="Mexbs\ApBase\Observer\SaveHintMessagesToQuote" />
+        <observer name="apSalesQuoteSaveData" instance="Mexbs\ApBase\Observer\SaveDataToQuote" />
+    </event>
+    <event name="salesrule_rule_save_after">
+        <observer name="apSaveRuleInvalidateIndex" instance="Mexbs\ApBase\Observer\SaveRuleInvalidateIndex" />
+    </event>
+    <event name="catalog_product_save_after">
+        <observer name="apSaveProductReindex" instance="Mexbs\ApBase\Observer\SaveProductReindex" />
+    </event>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author CynoInfotech Team
+ * @package Cynoinfotech_PaymentRestrictions
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+	
+	<event name="payment_method_is_active">
+		<observer name="test_payment_method_is_active" instance="Cynoinfotech\PaymentRestrictions\Observer\DisabledPaymentByPaymentRestrictions" />
+	</event>
+		
+</config>

@@ -1,0 +1,23 @@
+<script>
+
+
+require(
+    [
+        'jquery'
+    ],
+    function(
+        $
+    ) {
+
+    $("document").ready(function($){
+
+        $(".product-options-wrapper div.collapsible").on("click",function(){
+            $(this).parent().toggleClass("active");
+        });  
+
+
+
+    });
+});
+
+</script>

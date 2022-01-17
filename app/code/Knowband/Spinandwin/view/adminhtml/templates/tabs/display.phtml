@@ -1,0 +1,278 @@
+<?php $settings = $this->getSettings(); ?>
+<div class="fieldset-wrapper" id="display-settings">
+    <h1 class="spinandwin-h1"><?php echo __("Display Settings")?></h1>
+    <div class="admin__fieldset-wrapper-content">
+        <fieldset class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_screensize">
+                    <span><?php echo __("Minimum Screen Size");?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][screen_size]" id="spinandwin_screensize">
+                        <option value="320_480" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "320_480")?'selected="selected"':''?>><?php echo __("Smartphone (320x480)")?></option>
+                        <option value="768_1024" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "768_1024")?'selected="selected"':''?>><?php echo __("Tablet Portrait(768x1024)")?></option>
+                        <option value="1024_768" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "1024_768")?'selected="selected"':''?>><?php echo __("Tablet Landscape (1024x768)")?></option>
+                        <option value="1366_768" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "1366_768")?'selected="selected"':''?>><?php echo __("Laptop (1366x768)")?></option>
+                        <option value="1600_1080" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "1600_1080")?'selected="selected"':''?>><?php echo __("Desktop(1600x1080)")?></option>
+                        <option value="6" <?php echo (isset($settings["display_settings"]["screen_size"]) && $settings["display_settings"]["screen_size"] == "6")?'selected="selected"':''?>><?php echo __("Smartphones only")?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_displayfrequency">
+                    <span>
+                        <?php echo __("Maximum Display Frequency");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][display_frequency]" id="spinandwin_displayfrequency">
+                        <option value="1" <?php echo (isset($settings["display_settings"]["display_frequency"]) && $settings["display_settings"]["display_frequency"] == "1")?'selected="selected"':''?>><?php echo __("Every Visit"); ?></option>
+                        <option value="2" <?php echo (isset($settings["display_settings"]["display_frequency"]) && $settings["display_settings"]["display_frequency"] == "2")?'selected="selected"':''?>><?php echo __("One Visit per hour"); ?></option>
+                        <option value="3" <?php echo (isset($settings["display_settings"]["display_frequency"]) && $settings["display_settings"]["display_frequency"] == "3")?'selected="selected"':''?>><?php echo __("One visit per day"); ?></option>
+                        <option value="4" <?php echo (isset($settings["display_settings"]["display_frequency"]) && $settings["display_settings"]["display_frequency"] == "4")?'selected="selected"':''?>><?php echo __("One visit per week"); ?></option>
+                        <option value="5" <?php echo (isset($settings["display_settings"]["display_frequency"]) && $settings["display_settings"]["display_frequency"] == "5")?'selected="selected"':''?>><?php echo __("One visit per month"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Show Spin Wheel on the front end after the specified time")?>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_hideafter">
+                    <span>
+                        <?php echo __("Hide Spin Wheel After");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][hide_after]" id="spinandwin_hideafter">
+                        <option value="1" <?php echo (isset($settings["display_settings"]["hide_after"]) && $settings["display_settings"]["hide_after"] == "1")?'selected="selected"':''?>><?php echo __("Always Display"); ?></option>
+                        <option value="2" <?php echo (isset($settings["display_settings"]["hide_after"]) && $settings["display_settings"]["hide_after"] == "2")?'selected="selected"':''?>><?php echo __("10 Seconds"); ?></option>
+                        <option value="3" <?php echo (isset($settings["display_settings"]["hide_after"]) && $settings["display_settings"]["hide_after"] == "3")?'selected="selected"':''?>><?php echo __("20 Seconds"); ?></option>
+                        <option value="4" <?php echo (isset($settings["display_settings"]["hide_after"]) && $settings["display_settings"]["hide_after"] == "4")?'selected="selected"':''?>><?php echo __("30 Seconds"); ?></option>
+                        <option value="5" <?php echo (isset($settings["display_settings"]["hide_after"]) && $settings["display_settings"]["hide_after"] == "5")?'selected="selected"':''?>><?php echo __("40 Seconds"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Choose the time interval after which the Spin Wheel on the front end will hide automatically")?>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_fix_time">
+                    <span><?php echo __("Set Fix Time")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_fix_time" name="vss_spinandwin[display_settings][fix_time]" value="1" <?php echo isset($settings["display_settings"]["fix_time"])?$settings["display_settings"]["fix_time"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_fix_time">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin__field spinandwin_fix_time_options">
+                <label class="admin__field-label" for="spinandwin_active_date">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("Active Date/Time")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_active_date" value="<?php echo isset($settings["display_settings"]["active_date"])?$settings["display_settings"]["active_date"]:""?>" class="admin__control-text" name="vss_spinandwin[display_settings][active_date]" type="text" style="width: 190px;">
+                        <script type="text/javascript">
+                        require([
+                            "jquery",
+                            "mage/calendar"
+                            ], function($){
+                              $('#spinandwin_active_date').datetimepicker({
+                                  showMonthAfterYear: true,
+                                  changeMonth: true,
+                                  changeYear: true,
+                                  dateFormat:'yy-mm-dd',
+                                  timeFormat: 'hh:mm:ss',
+                                  showsTime: true,
+                                  showOn: 'button',
+                                  showButtonPanel: true
+                                } 
+                              ).next("button").button({
+                                label: "<?php echo __("Select date")?>",
+                              });
+                            });
+                        </script>
+                </div>
+            </div>
+            
+            <div class="admin__field spinandwin_fix_time_options">
+                <label class="admin__field-label" for="spinandwin_expire_date">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("Expire Date/Time")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_expire_date" value="<?php echo isset($settings["display_settings"]["expire_date"])?$settings["display_settings"]["expire_date"]:""?>" class="admin__control-text _has-datetimepicker" name="vss_spinandwin[display_settings][expire_date]" type="text" style="width: 190px;">
+                        <script type="text/javascript">
+                        require([
+                            "jquery",
+                            "mage/calendar"
+                            ], function($){
+                              $('#spinandwin_expire_date').datetimepicker({
+                                  showMonthAfterYear: true,
+                                  changeMonth: true,
+                                  changeYear: true,
+                                  dateFormat:'yy-mm-dd',
+                                  timeFormat: 'hh:mm:ss',
+                                  showsTime: true,
+                                  showOn: 'button'
+                                } 
+                              ).next("button").button({
+                                label: "<?php echo __("Select date")?>",
+                              });;
+                            });
+                        </script>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_whom_to_show">
+                    <span>
+                        <?php echo __("Whom to show");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][whom_to_show]" id="spinandwin_whom_to_show">
+                        <option value="1" <?php echo (isset($settings["display_settings"]["whom_to_show"]) && $settings["display_settings"]["whom_to_show"] == "1")?'selected="selected"':''?>><?php echo __("All Visitors"); ?></option>
+                        <option value="2" <?php echo (isset($settings["display_settings"]["whom_to_show"]) && $settings["display_settings"]["whom_to_show"] == "2")?'selected="selected"':''?>><?php echo __("New Visitors"); ?></option>
+                        <option value="3" <?php echo (isset($settings["display_settings"]["whom_to_show"]) && $settings["display_settings"]["whom_to_show"] == "3")?'selected="selected"':''?>><?php echo __("Returning Visitors"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Select whom to show the popup.")?>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_when_to_show">
+                    <span>
+                        <?php echo __("When to Show");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][when_to_show]" id="spinandwin_when_to_show">
+                        <option value="1" <?php echo (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == "1")?'selected="selected"':''?>><?php echo __("Immediately"); ?></option>
+                        <option value="2" <?php echo (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == "2")?'selected="selected"':''?>><?php echo __("After Time(seconds)"); ?></option>
+                        <option value="3" <?php echo (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == "3")?'selected="selected"':''?>><?php echo __("When scroll down(%)"); ?></option>
+                        <option value="4" <?php echo (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == "4")?'selected="selected"':''?>><?php echo __("When Exit"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Select when to display the popup.")?>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin__field spinandwin_when_to_show_2">
+                <label class="admin__field-label" for="spinandwin_time_display">
+                    <span><?php echo __("Enter time (In Seconds)")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_time_display" value="<?php echo isset($settings["display_settings"]["time_display"])?$settings["display_settings"]["time_display"]:""?>" class="admin__control-text" name="vss_spinandwin[display_settings][time_display]"   type="text">
+                        <div class="vss_info">
+                            <?php echo __("Enter time in seconds after which you want to display spin wheel pop up.")?>
+                        </div>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_when_to_show_3">
+                <label class="admin__field-label" for="spinandwin_scroll_display">
+                    <span><?php echo __("Enter Scroll Percentage")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_scroll_display" value="<?php echo isset($settings["display_settings"]["scroll_display"])?$settings["display_settings"]["scroll_display"]:""?>" class="admin__control-text" name="vss_spinandwin[display_settings][scroll_display]"   type="text">
+                        <div class="vss_info">
+                            <?php echo __("Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.")?>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_geo_location">
+                    <span>
+                        <?php echo __("Geo Location");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[display_settings][geo_location]" id="spinandwin_geo_location">
+                        <option value="1" <?php echo (isset($settings["display_settings"]["geo_location"]) && $settings["display_settings"]["geo_location"] == "1")?'selected="selected"':''?>><?php echo __("World Wide"); ?></option>
+                        <option value="2" <?php echo (isset($settings["display_settings"]["geo_location"]) && $settings["display_settings"]["geo_location"] == "2")?'selected="selected"':''?>><?php echo __("Display selected areas only"); ?></option>
+                        <option value="3" <?php echo (isset($settings["display_settings"]["geo_location"]) && $settings["display_settings"]["geo_location"] == "3")?'selected="selected"':''?>><?php echo __("Do not display selected areas"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Select Geo Location where you want to show the popup.")?>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_geo_location_country">
+                <label class="admin__field-label" for="spinandwin_selected_country">
+                    <span>
+                        <?php echo __("Geo Location");?>
+                    </span>
+                </label>
+                <?php $blockObj= $block->getLayout()->createBlock('Knowband\Spinandwin\Block\Adminhtml\Country'); $countries = $blockObj->getCountries(); ?>
+                <div class="admin__field-control">
+                    <select multiple class="admin__control-multiselect" name="vss_spinandwin[display_settings][selected_country][]" id="spinandwin_selected_country">
+                        <?php foreach($countries as $country){ ?>
+                        <?php if(isset($settings["display_settings"]["selected_country"]) && in_array($country['value'], $settings["display_settings"]["selected_country"])){ ?>
+                            <option value="<?php echo __($country['value']); ?>" selected="selected"><?php echo __($country['label']); ?></option>
+                        <?php }else{ ?>
+                            <option value="<?php echo __($country['value']); ?>"><?php echo __($country['label']); ?></option>
+                        <?php }} ?>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Select countries.")?>
+                    </div>
+                </div>
+            </div>
+            
+        </fieldset>
+    </div>
+</div>
+<style>
+    <?php if (isset($settings["display_settings"]["fix_time"]) && $settings["display_settings"]["fix_time"] == '1') { ?>
+    .spinandwin_fix_time_options{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    .spinandwin_fix_time_options{
+       display:none;
+    }
+    <?php } ?>
+    
+    <?php if (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == '2') { ?>
+    .spinandwin_when_to_show_2{
+       display:block;
+    } 
+    .spinandwin_when_to_show_3{
+       display:none;
+    }
+    <?php }elseif (isset($settings["display_settings"]["when_to_show"]) && $settings["display_settings"]["when_to_show"] == '3') { ?>
+    .spinandwin_when_to_show_3{
+       display:block;
+    }
+    .spinandwin_when_to_show_2{
+       display:none;
+    }
+    <?php } else{?>
+    .spinandwin_when_to_show_3{
+       display:none;
+    }
+    .spinandwin_when_to_show_2{
+       display:none;
+    }
+    <?php }?>
+    
+    <?php if (isset($settings["display_settings"]["geo_location"]) && ($settings["display_settings"]["geo_location"] == '2' || $settings["display_settings"]["geo_location"] == '3')) { ?>
+    .spinandwin_geo_location_country{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    .spinandwin_geo_location_country{
+       display:none;
+    }
+    <?php } ?>
+</style>

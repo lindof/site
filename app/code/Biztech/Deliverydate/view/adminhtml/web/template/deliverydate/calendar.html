@@ -1,0 +1,51 @@
+<!-- ko if:deliverydateEnabled -->
+<div class="deliverydate-main-wrapper" id="deliverydate-main-wrapper">
+    <form id="deliverydate-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <div class="fieldset">
+            <div class="step-title" data-bind="i18n: 'Delivery Date Information'"></div>
+
+            <div class="field" name="shipping_arrival_date">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydateLabel"></label>
+                <!-- ko if: isMandatory -->
+                    <span>*</span>
+                <!-- /ko -->
+                <div class="control">
+                    <input class="admin__control-text" type="text" data-bind="
+                    datepicker: { storage: shiftedValue, options: options },
+                    valueUpdate: valueUpdate,
+                    attr: {
+                    value: shiftedValue,
+                    placeholder: placeholder,
+                    'aria-describedby': noticeId,
+                    disabled: disabled,
+                }" name="shipping_arrival_date"/>
+            </div>
+        </div>
+
+        <div class="field" name="shipping_arrival_comments">
+            <label class="label calender-comment-label" data-bind="i18n: deliverydatecommentLabel"></label>
+
+            <div class="control">
+                <textarea data-bind="attr : { id : 'shipping_arrival_comments', col: 65, row: 10 }, class: 'delivery-date-comment', name : 'shipping_arrival_comments' "></textarea>
+            </div>
+        </div>
+        <div class="field biz-comment-note" data-bind="visible: getShowHtml() === 1" name="show_html">
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <span data-bind="html: displayHtml"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hidden">
+            <input type="hidden" id="shipping_arrival_date" name="shipping_arrival_date" />
+            <input type="hidden" id="shipping_arrival_slot" name="shipping_arrival_slot" />
+            <input type="hidden" id="delivery_charges" name="delivery_charges" />
+        </div>
+    </div>
+</form>    
+</div>
+<!-- /ko -->

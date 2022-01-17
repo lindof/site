@@ -1,0 +1,121 @@
+<?php
+$helper = $this->helper('Biztech\Deliverydate\Helper\Data');
+$isMandatory = $block->getisMandatory();
+$deliverydateLabel = $block->getDeliverydatelabel();
+$deliverydateLabel = $deliverydateLabel ? $deliverydateLabel . ':' : 'Delivery Date:';
+$deliverydateCommentsLabel = $block->getDeliveryDateCommentsLabel();
+$deliverydateCommentsLabel = $deliverydateCommentsLabel ? $deliverydateCommentsLabel . ':' : 'Delivery Comments:';
+$class = 'input-text admin__control-text';
+$required = '';
+if ($isMandatory) {
+    $class .= ' required-entry _required';
+    $required = ' required-entry _required';
+}
+if ($helper->isEnable()) {
+    ?>
+    <div id="delivery-date_section" class="admin__page-section-item">
+        <fieldset class="admin__fieldset">
+
+
+            <div class="admin__form-field">
+
+                <div class="admin__form-field-control field-delivery-date <?php echo $required ?>"
+                     data-ui-id="shipping_arrival_date">
+                    <label class="label admin__field-label" for="shipping_arrival_date"
+                           data-ui-id="shipping_arrival_date">
+                        <span><?php echo __($deliverydateLabel) ?></span>
+                        <?php
+                        if ($isMandatory) {
+                            echo '<span class="' . $required . '"></span>';
+                        }
+                        ?>
+                    </label>
+
+                    <div class="admin__field-control value">
+                        <?php
+                        echo $this->getLayout()
+                            ->createBlock('Biztech\Deliverydate\Block\Adminhtml\Date')
+                            ->setName('shipping_arrival_date')
+                            ->setId('shipping_arrival_date')
+                            ->setClass($class)
+                            ->setExtraParams('readonly')
+                            ->setCalendarTime($block->getCalendarTime())
+                            ->setImage($this->getViewFileUrl('Magento_Theme::calendar.png'))
+                            ->setTimeFormat($helper->convertDateFormatToJQueryUi($block->getDeliveryTimeFormat()))
+                            ->setDateFormat($helper->convertDateFormatToJQueryUi($block->getDeliveryDateFormat()))
+                            ->setCloseText(__('Done'))
+                            ->setChangeYear(true)
+                            ->setChangeMonth(true)
+                            ->setMinDate('new Date()')
+                            ->setShowOn('both')
+                            ->getHtml();
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__form-field">
+                <div class="admin__field field field-delivery-date-comment" data-ui-id="shipping_arrival_comments">
+                    <label class="label admin__field-label" for="shipping_arrival_comments"
+                           data-ui-id="shipping_arrival_comments">
+                        <span><?php echo __($deliverydateCommentsLabel) ?></span>
+                    </label>
+
+                    <div class="admin__field-control value">
+                        <textarea cols="65" rows="8" name="shipping_arrival_comments"
+                                  id="shipping_arrival_comments"></textarea>
+                    </div>
+                    <?php if ($helper->useCallFeature()): ?>
+                        <div class="admin__field admin__field-option control">
+                            <input name="calL_before_delivery" type="checkbox" id="call_before_delivery" value="1" class="admin__control-checkbox">
+                            <label for="call_before_delivery" class="admin__field-label"><?= $helper->getDeliveryDateCallMeLabel(); ?></label>
+                        </div>
+                    <?php endif; ?>
+
+                </div>
+            </div>
+            <div class="hidden-values">
+                <input type="hidden" name="shipping_arrival_date" id="shipping_arrival_date"/>
+            </div>
+
+            <script>
+                require([
+                    "jquery",
+                    "mage/calendar"
+                ], function ($) {
+                    jQuery('#shipping_arrival_comments').blur(function (event) {
+                        var params = {
+                            shipping_arrival_comments: $('#shipping_arrival_comments').val()
+                        }
+
+                        jQuery.ajax({
+                            url: "<?php echo $this->getUrl('deliverydate/order/SaveDeliverydateComment'); ?>",
+                            type: 'POST',
+                            data: params,
+                        })
+                            .done(function (response) {
+                                order.loadArea('totals', true);
+                                jQuery('#order-totals').html(response);
+                            });
+
+                    });
+                    jQuery('#call_before_delivery').change(function (event) {
+                        var params = {
+                            call_before_delivery : $('#call_before_delivery').is(':checked')
+                        };
+                        
+                        jQuery.ajax({
+                            url: "<?php echo $this->getUrl('deliverydate/order/SaveCallBeforeDelivery'); ?>",
+                            type: 'POST',
+                            data: params,
+                        })
+                            .done(function (response) {
+                                order.loadArea('totals', true);
+                                jQuery('#order-totals').html(response);
+                            });
+
+                    });
+                });
+            </script>
+        </fieldset>
+    </div>
+<?php } ?>

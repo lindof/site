@@ -1,0 +1,49 @@
+<?php echo $block->getButtonHtml(); ?>
+<script type="text/javascript">
+    require(['jquery'],function($){
+		$("#instagrampics_oauth").click(function(){
+            new Ajax.Request(
+                '<?php echo $block->getSaveConfigUrl() ?>',
+                {
+                    parameters: {
+                        'client_id' : $('#instagrampics_api_client_id').val(),
+                        'client_secret' : $('#instagrampics_api_client_secret').val()
+                    },
+                    method: 'POST',
+                    onSuccess: function(transport) {
+
+					var response = null;
+                        try {
+                            response = eval('(' + transport.responseText + ')');
+                        } catch (exception) {
+                            response = {};
+                        }
+						
+						if (!response.success || !response.login_url) {
+                            location.reload();
+                        } else {
+							var popupWidth = 640;
+                            var popupHeight = 560;
+                            var popupLeftOffset = screen.width / 2 - 640 / 2;
+                            var popupTopOffset = screen.height / 2 - 480 / 2;
+                            popWin(
+                                response.login_url,
+                                'instagram_oauth',
+                                'width=' + popupWidth + ',height=' + popupHeight + ',left=' + popupLeftOffset + ',top=' + popupTopOffset + ',location=no,status=no,menubar=no,toolbar=no,resizable=no,scrollbars=no'
+                            );
+							
+							/*setTimeout(function() {
+							   location.reload();
+							}, 5000);*/
+							
+                        }
+                    },
+                    onFailure: function () {
+                        location.reload();
+                    }
+                }
+            );
+        });
+
+	});
+</script>

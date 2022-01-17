@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <head>
+        <css src="Knowband_Spinandwin::css/spinandwin-admin.css" />
+    </head>
+    <body>
+    	<referenceBlock name="menu">
+    	    <action method="setActive">
+    	        <argument name="itemId" xsi:type="string">Knowband_Spinandwin::spinwin_backend</argument>
+    	    </action>
+    	</referenceBlock>
+    	<referenceBlock name="page.title">
+    	    <action method="setPageTitle">
+    	        <argument translate="true" name="pageTitle" xsi:type="string">Theme Scheduling</argument>
+    	    </action>
+    	</referenceBlock>
+        <referenceContainer name="content">     
+            <block class="Knowband\Spinandwin\Block\Adminhtml\AddSchedule" name="add_edit_theme_schedule" template="tabs/add_schedule.phtml" />				
+    	</referenceContainer>
+        
+    </body>
+</page>

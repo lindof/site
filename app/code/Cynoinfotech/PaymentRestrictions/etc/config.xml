@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author CynoInfotech Team
+ * @package Cynoinfotech_PaymentRestrictions
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cynoinfotech_paymentrestrictions>		
+            <general>
+                <enable>1</enable>															
+			</general>			
+        </cynoinfotech_paymentrestrictions>
+    </default>
+</config>

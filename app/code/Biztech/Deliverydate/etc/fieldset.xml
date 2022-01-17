@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_quote">
+            <field name="delivery_charges">
+                <aspect name="to_order" targetField="delivery_charges" />
+            </field>
+            <field name="call_before_delivery">
+                <aspect name="to_order" targetField="call_before_delivery" />
+            </field>
+            <field name="same_day_charges">
+                <aspect name="to_order" targetField="same_day_charges" />
+            </field>
+            <field name="shipping_arrival_slot">
+                <aspect name="to_order" />
+            </field>
+            <field name="shipping_arrival_date">
+                <aspect name="to_order" />
+            </field>
+            <field name="shipping_arrival_comments">
+                <aspect name="to_order" />
+            </field>
+        </fieldset>
+
+        <fieldset id="sales_convert_order">
+            <field name="delivery_charges">
+                <aspect name="to_quote" targetField="delivery_charges" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+            <field name="call_before_delivery">
+                <aspect name="to_quote" targetField="call_before_delivery" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+            <field name="same_day_charges">
+                <aspect name="to_quote" targetField="same_day_charges" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+            <field name="shipping_arrival_slot">
+                <aspect name="to_quote" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+            <field name="shipping_arrival_date">
+                <aspect name="to_quote" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+            <field name="shipping_arrival_comments">
+                <aspect name="to_quote" />
+                <aspect name="to_invoice" />
+                <aspect name="to_shipment" />
+                <aspect name="to_cm" />
+            </field>
+        </fieldset>
+        
+    </scope>
+</config>

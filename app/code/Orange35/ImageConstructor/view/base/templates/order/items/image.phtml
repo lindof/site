@@ -1,0 +1,15 @@
+<?php
+    /** @var \Orange35\ImageConstructor\Block\OrderImage $block */
+
+    $url = $block->getImageUrl();
+    $thumbnailUrl = $block->getThumbnailUrl();
+?>
+<?php if ($thumbnailUrl) : ?>
+<span class="product-item-photo">
+    <?php if ($url) : ?><a href="<?= $url;?>" target="_blank"><?php endif; ?>
+        <img src="<?= $thumbnailUrl; ?>"
+             width="<?= $block->getThumbnailWidth(); ?>"
+             height="<?= $block->getThumbnailHeight(); ?>" />
+    <?php if ($url) : ?></a><?php endif; ?>
+<?php endif; ?>
+</span>

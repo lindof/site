@@ -1,0 +1,60 @@
+<!--@subject {{var subject}} @-->
+<!--@vars {
+"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url"
+} @-->
+<!--@styles 
+    body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+{{template config_path="design/email/header_template"}}
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650"
+                       style="border:1px solid #E0E0E0;">
+
+                    <tr height="0">
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Order#"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Purchased
+                            On"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Bill To
+                            Name"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Ship To
+                            Name"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "G.T.
+                            (Base)"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "G.T.
+                            (Purchased)"}}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Status" }}
+                        </th>
+                        <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px">{{trans "Delivery
+                            Date"}}
+                        </th>
+                    </tr>
+                    {{var orders|raw}}
+                    {{layout handle="deliverydate_email_notification" orders=$order area="frontend"}}
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <center><p style="font-size:12px; margin:0;">Thank you again, <strong>{{var
+                    store.getFrontendName()}}</strong></p></center>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="Amasty_AffiliateStoreCredit::css/conversion.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="amasty_affiliate.account.transaction" template="Amasty_AffiliateStoreCredit::customer/account/transaction.phtml">
+                <arguments>
+                    <argument name="conversion_view_model" xsi:type="object">Amasty\AffiliateStoreCredit\ViewModel\Conversion</argument>
+                </arguments>
+                <block class="Magento\Cms\Block\Block" name="amasty-affiliate-balance-static-block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">amasty-affiliate-balance-static-block</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

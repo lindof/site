@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Mexbs_ApBase::css/product-banners-badges.css"/>
+        <css src="Magento_Swatches::css/swatches.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Mexbs\ApBase\Block\Product\DisplayBannerBadge"
+                   name="ap.display.popup"
+                   template="Mexbs_ApBase::product/display-banner-badge.phtml"
+                    />
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Mexbs\ApBase\Block\Category\DisplayBadges"
+                   name="ap.display.category.badges"
+                   template="Mexbs_ApBase::category/display-badges.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

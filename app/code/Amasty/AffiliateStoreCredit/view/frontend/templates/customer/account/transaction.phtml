@@ -1,0 +1,156 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_Affiliate
+ */
+?>
+<?php
+/** @var \Amasty\Affiliate\Block\Account\Transaction $block */
+/** @var \Amasty\Affiliate\Model\Account $_account */
+/** @var \Amasty\AffiliateStoreCredit\ViewModel\Conversion $conversionViewModel */
+$conversionViewModel = $block->getConversionViewModel();
+$_account = $block->getAccount();
+?>
+<div class="affiliate-balance-info">
+    <div class="affiliate-price-field">
+        <span class="affiliate-title"><?php echo __('Affiliate Balance') ?></span> <span class="affiliate-price"><?php echo $block->escapeHtml($_account->getData('balance_with_currency')) ?></span>
+    </div>
+    <div class="affiliate-price-field">
+        <span class="affiliate-title"><?php echo __('Store Credit Balance') ?></span> <span class="affiliate-price"><?php echo $block->escapeHtml($conversionViewModel->getStoreCreditBalanceWithCurrency()) ?></span>
+    </div>
+</div>
+<?php if ($block->getBlockHtml('amasty-affiliate-balance-static-block')) : ?>
+    <div class="amasty-affiliate-balance-static">
+        <?= $block->getBlockHtml('amasty-affiliate-balance-static-block') ?>
+    </div>
+<?php endif ?>
+<form class="form-conversion"
+      action="<?= $block->escapeUrl($conversionViewModel->getConversionUrl()) ?>"
+      method="post"
+      id="form-validate"
+      enctype="multipart/form-data"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>">
+    <fieldset class="fieldset">
+        <?= $block->getBlockHtml('formkey') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit"
+                    class="action conversion primary"
+                    title="<?= $block->escapeHtmlAttr(__('Convert to Store Credit')) ?>">
+                <span><?= $block->escapeHtml(__('Convert to Store Credit')) ?></span>
+            </button>
+            <a href="<?= $block->getUrl('affiliate/account/withdrawal'); ?>" class="action conversion primary"><span><?= $block->escapeHtml(__('Request Withdrawal')) ?></span></a>
+        </div>
+    </div>
+</form>
+
+<?php echo $block->getChildHtml('info');?>
+<?php if ($block->getDescTransactions() && count($block->getDescTransactions())) : ?>
+    <div class="table-wrapper">
+        <table class="data table">
+            <thead>
+            <tr>
+                <th scope="col" class="col"><?php echo __('Date') ?></th>
+                <th scope="col" class="col"><?php echo __('Balance') ?></th>
+                <th scope="col" class="col"><?php echo __('Amount') ?></th>
+                <th scope="col" class="col"><?php echo __('Details') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php /** @var \Amasty\Affiliate\Model\Transaction $_transaction */
+            foreach ($block->getDescTransactions() as $_transaction) :
+            ?>
+                <tr>
+                    <td
+                            data-th="<?php echo $block->escapeHtml(__('Date')) ?>"
+                            class="col">
+                            <?php
+                            echo $block->formatDate(
+                                $_transaction->getUpdatedAt(),
+                                \IntlDateFormatter::SHORT,
+                                true
+                            )
+                            ?>
+                    </td>
+                    <td data-th="<?php echo $block->escapeHtml(__('Balance')) ?>" class="col">
+                        <?php echo $block->escapeHtml($block->convertToPrice($_transaction->getBalance())) ?>
+                    </td>
+                    <td
+                            data-th="<?php echo $block->escapeHtml(__('Amount')) ?>"
+                            class="col
+                            <?php echo $block->escapeHtml($block->getPriceClass($_transaction)) ?>">
+                        <?php echo $block->showCharacter($_transaction) ?>
+                        <?php echo $block->escapeHtml($block->convertToPrice($_transaction->getCommission())) ?>
+                    </td>
+                    <td data-th="<?php echo $block->escapeHtml(__('Details')) ?>" class="col">
+                        <?php echo $block->escapeHtml($block->prepareDetails($_transaction)) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()) : ?>
+        <div class="toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+    <div class="chart">
+        <?php $currency = $block->getCurrentCurrency(); ?>
+        <script type="text/javascript">
+            AmCharts.makeChart("chartdiv",
+                {
+                    "type": "serial",
+                    "categoryField": "date",
+                    "categoryAxis": {
+                        "parseDates": true
+                    },
+                    "chartCursor": {
+                        "enabled": true
+                    },
+                    "chartScrollbar": {
+                        "enabled": true
+                    },
+                    "trendLines": [],
+                    "graphs": [
+                        {
+                            "bullet": "square",
+                            "id": "Balance",
+                            "title": "Balance (<?php echo $block->escapeHtml($currency) ?>)",
+                            "valueField": "balance"
+                        }
+                    ],
+                    "guides": [],
+                    "valueAxes": [
+                        {
+                            "id": "Balance",
+                            "title": "Balance (<?php echo $block->escapeHtml($currency) ?>)"
+                        }
+                    ],
+                    "allLabels": [],
+                    "balloon": {},
+                    "legend": {
+                        "enabled": true,
+                        "useGraphSettings": true
+                    },
+                    "dataProvider": [
+                        <?php /** @var \Amasty\Affiliate\Model\Transaction $transaction */
+                        foreach ($block->getAscTransactions() as $transaction) :
+                        ?>
+                        {
+                            "date": "<?php echo $block->escapeHtml($transaction->getUpdatedAt()) ?>",
+                            "balance": <?php echo $block->escapeHtml($block->convertPriceToCurrentCurrency($transaction->getBalance())) ?>
+                        },
+                        <?php
+                        endforeach;
+                        ?>
+                    ]
+                }
+            );
+        </script>
+
+        <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+    </div>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('You have no transactions.'); ?></span></div>
+<?php endif ?>

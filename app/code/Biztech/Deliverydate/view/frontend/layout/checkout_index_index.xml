@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Biztech_Deliverydate::css/style.css"/>
+    </head>
+    <update handle="checkout_index_index"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Biztech\Deliverydate\Block\Deliverydate" after="deliverydateInformation" name="deliverydate.info" template="Biztech_Deliverydate::delivery_date_config.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="authentication" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="componentDisabled" xsi:type="boolean">true</item>
+                                    </item>
+                                </item>
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="deliverydateInformation" xsi:type="array">
+                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="displayArea" xsi:type="string">shippingAdditional</item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="additional_block" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Biztech_Deliverydate/js/deliverydate</item>
+                                                                    <item name="label" xsi:type="string">Deliverydate Information</item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                        <item name="required-entry" xsi:type="string">true</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="delivery_charges" xsi:type="array">
+                                                            <item name="component" xsi:type="string">Biztech_Deliverydate/js/view/checkout/summary/deliverycharges</item>
+                                                            <item name="sortOrder" xsi:type="string">20</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Biztech_Deliverydate/checkout/summary/deliverycharges</item>
+                                                                <item name="title" xsi:type="string" translate="true">Specific Timeslot Charges</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="same_day_charges" xsi:type="array">
+                                                            <item name="component"  xsi:type="string">Biztech_Deliverydate/js/view/checkout/summary/samedaycharges</item>
+                                                            <item name="sortOrder" xsi:type="string">21</item>
+                                                            <item name="config" xsi:type="array">
+                                                                 <item name="template" xsi:type="string">Biztech_Deliverydate/checkout/summary/samedaycharges</item>
+                                                                 <item name="title" xsi:type="string" translate="true">Same Day Delivery Charges</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="deliverydate-information" xsi:type="array">
+                                            <item name="component" xsi:type="string">Biztech_Deliverydate/js/view/deliverydate-information</item>
+                                            <item name="displayArea" xsi:type="string">shipping-information</item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\SalesRule\Model\Rule">
+        <plugin name="additionalPromotionsSalesRule" type="Mexbs\ApBase\Model\Plugin\SalesRule"/>
+    </type>
+    <type name="Magento\SalesRule\Model\Validator">
+        <plugin name="additionalPromotionsValidator" type="Mexbs\ApBase\Model\Plugin\Validator"/>
+    </type>
+    <type name="Magento\SalesRule\Model\Rule\Metadata\ValueProvider">
+        <plugin name="apMetadataValueProvider" type="Mexbs\ApBase\Model\Plugin\Rule\Metadata\ValueProvider"/>
+    </type>
+    <type name="Magento\SalesRule\Model\Rule\Condition\Product\Combine">
+        <plugin name="apConditionProductCombine" type="Mexbs\ApBase\Model\Plugin\Rule\Condition\Product\Combine"/>
+    </type>
+    <type name="Magento\Quote\Model\Cart\TotalsConverter">
+        <plugin name="apTotalsConverter" type="Mexbs\ApBase\Model\Plugin\Quote\Cart\TotalsConverter"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Address">
+        <plugin name="apQuoteAddress" type="Mexbs\ApBase\Model\Plugin\Quote\Address"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote">
+        <plugin name="apQuote" type="Mexbs\ApBase\Model\Plugin\Quote"/>
+    </type>
+    <type name="Magento\SalesRule\Api\Data\RuleInterface">
+        <plugin name="apRuleExtensionAttributes" type="Mexbs\ApBase\Model\Plugin\Rule"/>
+    </type>
+    <type name="Magento\SalesRule\Api\RuleRepositoryInterface">
+        <plugin name="apRuleRepositoryInterface"
+                type="Mexbs\ApBase\Model\Plugin\RuleRepository"/>
+    </type>
+    <type name="Mexbs\ApBase\Model\SalesRule\Rule\Condition\Product\CustomOptionTitleValue">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="form_name" xsi:type="string">sales_rule_form</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Mexbs\ApBase\Model\SalesRule\Rule\Condition\Product\CustomOptionSku">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="form_name" xsi:type="string">sales_rule_form</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Mexbs\ApBase\Api\Data\DiscountDetailsInterface" type="Mexbs\ApBase\Model\Calculation\DiscountDetails" />
+    <preference for="Mexbs\ApBase\Api\Data\DescriptionLinesInterface" type="Mexbs\ApBase\Model\Calculation\DescriptionLines" />
+    <preference for="Magento\SalesRule\Model\RulesApplier" type="Mexbs\ApBase\Model\Rewrite\SalesRule\RulesApplier" />
+    <preference for="Magento\OfflineShipping\Model\SalesRule\Calculator" type="Mexbs\ApBase\Model\Rewrite\SalesRule\OfflineShipping\Calculator" />
+    <preference for="Magento\SalesRule\Model\Rule\Condition\Product\Subselect" type="Mexbs\ApBase\Model\Rewrite\Rule\Condition\Product\Subselect" />
+    <preference for="Magento\SalesRule\Model\Rule\Condition\Product\Found" type="Mexbs\ApBase\Model\Rewrite\Rule\Condition\Product\Found" />
+    <preference for="Magento\SalesRule\Model\Rule\Condition\Combine" type="Mexbs\ApBase\Model\Rewrite\Rule\Condition\Combine" />
+    <preference for="Magento\SalesRule\Model\Rule\Condition\Address" type="Mexbs\ApBase\Model\Rewrite\Rule\Condition\Address" />
+    <preference for="Magento\Rule\Block\Editable" type="Mexbs\ApBase\Block\Editable" />
+    <preference for="Magento\Quote\Model\Quote" type="Mexbs\ApBase\Model\Rewrite\Quote" />
+    <preference for="Magento\SalesRule\Model\Validator" type="Mexbs\ApBase\Model\Rewrite\SalesRule\Validator" />
+    <type name="Mexbs\ApBase\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Mexbs\ApBase\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">apLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Mexbs\ApBase\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mexbs\ApBase\SalesRuleImageUpload" type="Mexbs\ApBase\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">additional_promotions/tmp/sales_rule</argument>
+            <argument name="basePath" xsi:type="string">additional_promotions/sales_rule</argument>
+            <argument name="allowedFileExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Mexbs\ApBase\Controller\Adminhtml\Promo\Quote\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Mexbs\ApBase\SalesRuleImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Mexbs\ApBase\Observer\MoveSalesRuleImageFromTmp">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Mexbs\ApBase\SalesRuleImageUpload</argument>
+        </arguments>
+    </type>
+</config>

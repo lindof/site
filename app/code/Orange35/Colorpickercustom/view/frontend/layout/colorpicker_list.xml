@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="colorpicker_swatches" />
+    <body>
+        <referenceBlock name="category.product.type.details.renderers">
+            <block class="Orange35\Colorpickercustom\Block\Product\Renderer\Listing\Swatches"
+                   name="category.product.type.details.renderers.simple"
+                   as="simple"
+                   template="Orange35_Colorpickercustom::product/listing/swatches.phtml"
+                   ifconfig="catalog/frontend/show_swatches_in_product_list">
+
+                <block class="Orange35\Colorpickercustom\Block\Product\Renderer\Swatches"
+                       name="category.product.option.swatches"
+                       as="swatches"/>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

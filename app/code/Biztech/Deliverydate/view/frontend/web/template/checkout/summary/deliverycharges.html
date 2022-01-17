@@ -1,0 +1,8 @@
+<!-- ko if: isDeliveryChargesDisplayed() -->
+<tr class="totals delivery_charges excl">
+    <th class="mark" colspan="1" scope="row" data-bind="i18n: 'Specific Timeslot Charges'"></th>
+    <td class="amount">
+        <span class="price" data-bind="text: getDeliveryCharges()"></span>
+    </td>
+</tr>
+<!-- /ko -->

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <iwd_storelocator>
+            <general>
+                <is_active>1</is_active>
+                <path>dealers</path>
+                <meta_title>Store Locator</meta_title>
+                <link_visability>1</link_visability>
+                <link_text>Store Locator</link_text>
+            </general>
+            <gm>
+                <scrollwheel_zooming>0</scrollwheel_zooming>
+                <type_control>1</type_control>
+                <scale_control>1</scale_control>
+            </gm>
+            <search>
+                <page_size>30</page_size>
+                <radius_list>1;2;3;4;5;10;15;25;40;50;6800</radius_list>
+                <default_radius>6800</default_radius>
+                <metric>1</metric>
+                <pagination>1</pagination>
+                <search_onload>0</search_onload>
+                <order>1</order>
+                <message>Sorry, no store were found near this location. Please try your search again.</message>
+                <filter_radius>1</filter_radius>
+            </search>
+            <design>
+                <full_width>0</full_width>
+                <hide_placeholders>0</hide_placeholders>
+                <hightlight_result>1</hightlight_result>
+                <fill_color>cd003a</fill_color>
+                <opacity>0.1</opacity>
+                <stroke_color>000000</stroke_color>
+                <stroke_opacity>0.3</stroke_opacity>
+                <stroke_weight>1</stroke_weight>
+            </design>
+            <auto_fill>
+                <count>200</count>
+                <enabled>0</enabled>
+            </auto_fill>
+        </iwd_storelocator>
+    </default>
+</config>

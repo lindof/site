@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()) : ?>
+        <?php if ($block->getCanViewOrder()) : ?>
+            <p><?= $block->escapeHtml(__('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl()), $block->getOrderId())), ['a', 'strong']) ?></p>
+        <?php else : ?>
+            <p><?= $block->escapeHtml(__('Your order # is: <span>%1</span>.', $block->getOrderId()), ['span']) ?></p>
+        <?php endif; ?>
+        <p><?= $block->escapeHtml(__('We\'ll email you an order confirmation with details and tracking info.')) ?></p>
+    <?php endif; ?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= $block->escapeUrl($block->getContinueUrl()) ?>"><span><?= $block->escapeHtml(__('Continue Shopping')) ?></span></a>
+        </div>
+    </div>
+</div>
+
+<!-- begin ShareASale.com affiliate tracking -->
+<?php
+$merchantid = "101780";
+$sscidmode = 6;
+$sscid = !empty($_COOKIE['shareasaleMagentoSSCID']) ? $_COOKIE['shareasaleMagentoSSCID'] : '';
+$objectManager  =  \Magento\Framework\App\ObjectManager::getInstance();
+$orderId        = $block->getOrderId();
+$order          = $objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($orderId);
+$subtotal       = $order->getSubtotal();
+$discount       = $order->getDiscountAmount();
+$affiliateTotal = ($subtotal + $discount);
+$ordered_items = $order->getAllVisibleItems();
+$skulist = '';
+$pricelist = '';
+$quantitylist = '';
+$last_index = array_search(end($ordered_items), $ordered_items, true);
+foreach ($ordered_items as $index => $item) {
+    $delimiter    = $index === $last_index ? '' : ',';
+    $skulist      .= $item->getSku() . $delimiter;
+    $quantitylist .= ceil($item->getQtyOrdered()) . $delimiter;
+    $pricelist    .= ($item->getProduct()->getFinalPrice() - ($item->getDiscountAmount() / $item->getQtyOrdered())) . $delimiter;
+}
+$couponcodes = $order->getCouponCode();
+$newcustomer = '';
+$customer = $order->getCustomerId();
+if ($customer) {
+    $orderCount =
+        $objectManager
+        ->create('\Magento\Sales\Model\ResourceModel\Order\CollectionFactory')
+        ->create()
+        ->addFieldToSelect('*')
+        ->addFieldToFilter('customer_id', $customer)
+        ->setOrder('created_at', 'desc')
+        ->count();
+    $newcustomer = ($orderCount > 1 ? 0 : 1);
+}
+$currency = $order->getOrderCurrencyCode();
+//render pixel below
+?>
+<img id="_SHRSL_img_1" src="https://shareasale.com/sale.cfm?tracking=<?php echo $orderId ?>&amp;amount=<?php echo $affiliateTotal ?>&amp;transtype=sale&amp;merchantID=<?php echo $merchantid ?>&amp;couponcode=<?php echo $couponcodes ?>&amp;skulist=<?php echo $skulist ?>&amp;quantitylist=<?php echo $quantitylist ?>&amp;pricelist=<?php echo $pricelist ?>&amp;newcustomer=<?php echo $newcustomer ?>&amp;currency=<?php echo $currency ?>&amp;v=2.1" width="1" height="1">
+<script defer async type="text/javascript" src="https://shareasale-analytics.com/j.js"></script>
+<!-- end ShareASale.com affiliate tracking -->

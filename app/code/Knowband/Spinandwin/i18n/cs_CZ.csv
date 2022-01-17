@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Něco pokazilo při generování kodu, zkuste to znovu."
+Schedule has been deleted successfully,Plán byl úspěšně odstraněn
+Invalid Data.,Neplatná data.
+Add/Edit Schedule,Přidat / Upravit plán
+Schedule has been saved successfully.,Plán byl úspěšně uložen.
+Email has been sent successfully.,E-mail byl úspěšně odeslán.
+"Something went wrong while sending the coupon email, please try again.","Něco pokazilo při odesílání e-mailu kuponu, zkuste to znovu."
+Spin and Win,Spin a Win
+Knowband,Knowband
+Settings saved successfully.,Nastavení úspěšně uloženo.
+New Customer,Nový zákazník
+No list found. (Verify Credentials),"Žádný seznam nalezen. (Zkontrolujte, zda pověření)"
+The Private Klaviyo API Key you have set is invalid.,Private Klaviyo API Key máte set je neplatná.
+The Private Klaviyo API key you have set is no longer valid.,API klíč Private Klaviyo máte soubor již není platný.
+Unable to verify Klaviyo Private API Key.,Nelze ověřit Klaviyo Soukromá API klíč.
+Mobile,"mobilní, pohybliví"
+Tablet,Tableta
+Desktop,plocha počítače
+You have already taken advantage of this offer. Please try another email.,Jste již využilo této nabídky. Zkuste jiný e-mail.
+Not your lucky day today. Better Luck Next Time.,Není to tvoje dnes šťastný den. Příště víc štěstí.
+Error occurred while subscribing. Please try again later.,zatímco předplacení došlo k chybě. Prosím zkuste to znovu později.
+Jan,leden
+Feb,února
+Mar,Mar
+Apr,dubna
+May,Smět
+Jun,června
+Jul,července
+Aug,srpnu
+Sep,září
+Oct,říjen
+Nov,listopad
+Dec,prosince
+None,Žádný
+Rose Day,Rose Day
+Propose Day,navrhovat den
+Chocolate Day,Chocolate Day
+Teddy Day,Teddy Day
+Promise Day,Promise Day
+Hug Day,Den objímání
+Kiss Day,kiss den
+Valentine\'s Day,Valentýn
+Xmas Theme 1,Xmas Theme 1
+Xmas Theme 2,Xmas Theme 2
+Merry Christmas - Theme 1,Merry Christmas - Téma 1
+Merry Christmas - Theme 2,Merry Christmas - Téma 2
+Merry Christmas - Theme 3,Merry Christmas - téma 3
+Merry Christmas - Theme 4,Merry Christmas - téma 4
+Merry Christmas - Theme 5,Merry Christmas - téma 5
+Black Friday Theme1,Černý pátek Theme1
+Black Friday Theme2,Černý pátek Theme2
+Black Friday Theme3,Černý pátek Theme3
+Black Friday Theme4,Černý pátek Theme4
+Diwali Theme1,Diwali Theme1
+Diwali Theme2,Diwali Theme2
+Diwali Theme3,Diwali Theme3
+Diwali Theme4,Diwali Theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,Easter Theme1
+Easter Theme2,Easter Theme2
+Easter Theme3,Easter Theme3
+Halloween Theme1,Halloween Theme1
+Halloween Theme2,Halloween Theme2
+Halloween Theme3,Halloween Theme3
+Halloween Theme4,Halloween Theme4
+Thanks Giving Theme1,Díky Dát Theme1
+Happy New Year Theme1,Šťastný Nový Rok Theme1
+Happy New Year Theme2,Šťastný Nový Rok Theme2
+Happy New Year Theme3,Šťastný Nový Rok Theme3
+Happy New Year Theme4,Šťastný Nový Rok Theme4
+Happy New Year Theme5,Šťastný Nový Rok Theme5
+Happy New Year Theme6,Šťastný Nový Rok Theme6
+Happy New Year Theme7,Šťastný Nový Rok Theme7
+Wheel Design 1,Kolo design 1
+Wheel Design 2,Kolo design 2
+Look and Feel,Look and feel
+General Settings,Obecné nastavení
+Display Settings,Nastavení obrazovky
+Theme Scheduling,téma Scheduling
+Text Settings,Nastavení textové
+Special bonus unlocked,Speciální bonus odemkl
+You have a chance to win a nice big fat discount. Are you ready?,Máte šanci vyhrát pěkný velký tlustý slevu. Jsi připraven?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Můžete točit volantem pouze jednou. Pokud vyhrajete, můžete nárokovat kupón jen 1 den!"
+Email Settings,Nastavení e-mailu
+Only on wheel,Pouze na kole
+Email Only,Email pouze
+Email & Wheel,Email & Wheel
+Fire,oheň
+Aqua,Aqua
+Wind,Vítr
+Void,prázdno
+Earth,Země
+Return Statuses,zpáteční Stavy
+Coupon Code,kupon Kód
+Customer Email,zákazník Email
+Country,Země
+Device,přístroj
+Coupon Used,kupón Použité
+No,Ne
+Yes,Ano
+Coupon Generated On,Kupón Generated On
+Statistics,Statistika
+Email Marketing,Emailový marketing
+User List,Seznam uživatelů
+Status,Postavení
+Enabled,povoleno
+Disabled,invalidní
+From Date,od Datum
+To Date,K datu
+Action,Akce
+Slice Settings,Nastavení plátek
+10% OFF,10% SLEVA
+Not Lucky Today,Není Lucky Dnes
+35% OFF,35% OFF
+Opps! Sorry,OPPS! Promiňte
+15% OFF,15% OFF
+Better Luck Next Time,Příště víc štěstí
+50% OFF,50% SLEVA
+Try Next Time,Zkuste příště
+12% OFF,12% OFF
+Come Again,Přijít znovu
+5% OFF,5% SLEVA
+Try Again,Zkus to znovu
+First Name,Jméno
+Last Name,Příjmení
+Email,E-mailem
+Created Date,Datum vytvoření
+CSV,CSV
+Edit,Upravit
+Delete,Delete
+Save Schedule,Save Schedule
+Back,Zadní
+Save Settings,Uložit nastavení
+Email cannot be left blank,E-mail nemůže být prázdné
+Not a valid email,Není platný e-mail
+a discount,sleva
+Code copied.,Kód kopírovat.
+First name cannot be left blank,Křestní jméno nemůže být prázdné
+Last name cannot be left blank,Poslední jméno nemůže být prázdné
+Hurrah! You've got,Hurá! Máte
+ discount. Lucky day!,sleva. Šťastný den!
+The coupon code has been sent to you through the email.,Kupon kód byl zaslán prostřednictvím e-mailu.
+Better luck next time!,Příště víc štěstí!
+Don't forget to use the discount code at checkout!,Nezapomeňte použít slevový kód u pokladny!
+Enter you email,Zadejte e-maily
+Try your luck,Zkus své štěstí
+Next Time,Příště
+"No, I do not feel lucky","Ne, nemám pocit štěstí"
+Continue,Pokračovat
+Enable Theme Scheduling,Aktivovat Theme Plánování
+Add New Schedule,Přidat nový plán
+Select number of slices,Vyberte počet plátků
+12 Slices,12 Plátky
+8 Slices,8 plátků
+6 Slices,6 plátků
+Select the number of slices to show.,Vyberte počet plátků ukázat.
+Slice Label,plátek Label
+Coupon Type,kupón Type
+Coupon Value,Hodnota kuponu
+Gravity (%),Gravity (%)
+Fixed,Pevný
+Percentage,Procento
+Free Shipping,Doprava zdarma
+Theme,Téma
+Theme Peview,téma Peview
+Wheel Design,kolo design
+Wheel Peview,kolo Peview
+Wheel Color,kolo Color
+Change color of the wheel.,Změna barvy kola.
+Wheel Text Color,Wheel Barva textu
+Change text color of the wheel.,Změna barvy textu kola.
+Wheel Background Color,Wheel Barva pozadí
+Change background color of wheel.,Změna barvy pozadí kola.
+Font Color,Barva fontu
+Change font color of text on wheel.,Změnit barvu písma textu na kole.
+Button Background Color,Tlačítko Barva pozadí
+Change background color of spin button.,Změnit barvu pozadí tlačítka odstřeďování.
+`Try your luck` Button Text Color,`Zkuste luck` tlačítko Barva textu
+Change font color of the front `Try your luck` button.,Změna barvy písma na přední `Zkuste tlačítko luck`.
+"No, I do not feel lucky text color","Ne, nemám pocit štěstí barvu textu"
+"Change font color of No, I do not feel lucky text.","Změnit barvu písma Ne, nemám pocit štěstí text."
+Schedule Status,plán Status
+Select Date,Vybrat datum
+Field cannot be empty.,Pole nemůže být prázdné.
+You can enter only numbers.,Můžete zadat pouze čísla.
+Number should be greater than 0.,Číslo by mělo být větší než 0.
+Field cannot be greater than {#} characters.,Pole nemůže být větší než {#} znaků.
+Field cannot be less than {#} character(s).,Pole nemůže být menší než {#} znak (y).
+Please enter Email.,Zadejte prosím e-mail.
+Please enter a valid Email.,Prosím zadejte platný email.
+Invalid date format.,Neplatný formát data.
+Number is not in the valid range. It should be between {1} and {100},Číslo není v platném rozsahu. To by mělo být v rozmezí od {1} a {100}
+Field should be numeric.,Pole by mělo být číslo.
+Field can have only upto two decimal values.,Pole může mít pouze aľ dvě desetinná čísla.
+Email cannot be greater than {#} characters.,E-mail nemůže být větší než {#} znaků.
+Zip should not have special characters.,Zip by neměla mít speciální znaky.
+Percentage should be in number.,Procento by mělo být v řadě.
+Percentage should be between 0 and 100.,Procento by měla být mezi 0 a 100.
+Size cannot be greater than {#} characters.,Velikost nemůže být větší než {#} znaků.
+Color could not be greater than {#} characters.,Barva by neměla být větší než {#} znaků.
+Color is not valid.,Barva není platný.
+Special characters are not allowed.,Speciální znaky nejsou povoleny.
+Script tags are not allowed.,Script tagy nejsou povoleny.
+Style tags are not allowed.,Styl značky nejsou povoleny.
+Iframe tags are not allowed.,Značky iframe nejsou povoleny.
+Uploaded file is not an image.,Nahraný soubor není obrázek.
+Uploaded file size must be less than #d.,Nahraný velikost souboru musí být menší než # d.
+Field should not contain HTML tags.,Pole nesmí obsahovat HTML tagy.
+You can enter only positive numbers.,Můžete zadat pouze kladná čísla.
+`From Date` should be smaller than `To Date`,`Z Date` by měla být menší než` To Date`
+`From Date` already present in a slot.,`Z Date` již v drážce.
+`To Date` already present in a slot.,`Pro Date` která se v jednom slotu.
+Coupon Display Options,Kupón Možnosti zobrazení
+Email Subject,Předmět emailu
+Email Template,Šablona e-mailu
+Email Content,Email Content
+Test Email,Test Email
+Send Email,Poslat e-mailem
+Enable the Extension,Povolit rozšíření
+Show pull-out tab,Kartu vysouvací
+Allow customer to hide/show popup,Umožňují zákazníkovi se skrýt / zobrazit vyskakovací okno
+Upload pull-out tab image,Nahrát pull-out tab image
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Pouze .png nebo formát JPG souboru přijat. Velikost souboru by neměla být větší než 2 MB.
+Display Logo,displej Logo
+Upload Logo,Nahrát Logo
+Remove logo,Odebrat logo
+Email Recheck,E-mail překontrolování
+Allow customer to provide coupon code more than one time.,Umožňují zákazníkům poskytovat kodu více než jednou.
+Enable Wheel Sound,Aktivovat kola Zvuk
+Allow sound on rotating the wheel.,Povolit zvuk při otáčení kola.
+Show Fireworks,Zobrazit Fireworks
+Show fireworks after a customer wins.,"Ukazují ohňostroj poté, co zákazník vyhraje."
+Show Customer Name,Show Customer Name
+Show First Name,Show First Name
+Show Last Name,Ukázat příjmení
+Show Both,Oba ukazují
+Show None,Show Žádné
+Show customer name on the front end,Zobrazovat jméno zákazníka na předním konci
+Require Customer Name,Vyžadují jméno zákazníka
+Require First Name,Vyžadují křestní jméno
+Require Last Name,Vyžadují příjmení
+Require Both,vyžadují Obě
+Require None,vyžadují Žádné
+Require customer name on the front end,Vyžadují jméno zákazníka na předním konci
+Wheel Display Interval,Kolečko Display Interval
+Days,dny
+Enter the display interval (in days) after which pop will show again (if not used).,"Zadejte interval zobrazení (ve dnech), po kterém pop ukáže znovu (pokud není použit)."
+Show Progress Meter,Show Progress Meter
+Progress Percentage,Progress Procentní
+Enter the percentage of the progress meter.,Zadejte procento elektroměru pokroku.
+Progress Text,Text Progress
+Enter the Text for the progress meter.,Zadejte text pro indikátor průběhu.
+Custom CSS,Custom CSS
+Add custom CSS code that you want to be executed on the front end,"Přidat vlastní CSS kód, který chcete být vykonán na předním konci"
+Custom JS,Custom JS
+Add custom JS code that you want to be executed on the front end,"Přidat vlastní JS kód, který chcete být vykonán na předním konci"
+Enable Mailchimp,aktivovat MailChimp
+Mailchimp Api Key,MailChimp Api Key
+Mailchimp List,MailChimp Seznam
+Select List,Select Seznam
+Enable Klaviyo,aktivovat Klaviyo
+Klaviyo Api Key,Klaviyo Api Key
+Klaviyo List,Klaviyo Seznam
+Enable Constant Contact,Aktivovat neustálém kontaktu
+Constant Contact Api Key,Neustálém kontaktu Api Key
+Constant Contact Api Token,Neustálém kontaktu Api Token
+Constant Contact List,Constant Seznam kontaktů
+Please select atleast one page,Prosím zvolte aspoň jednu stránku
+Please select atleast one country,Prosím zvolte aspoň jedné zemi
+Field cannot be empty,Pole nemůže být prázdné
+Total Coupons Generated,Celkem kupóny Vygenerovaný
+Total Coupons Unused,Celkem kupóny Nevyužitá
+Total Coupons Used,Celkem kupóny Použité
+`Active Date` cannot be greater than `Inactive Date`,`Active Date` nemůže být větší než` neaktivní Date`
+`From` Date cannot be greater than `To` Date,`From` Datum nemůže být větší než` To` Datum
+Date & Time should be greater than current date time.,Datum a čas musí být větší než aktuální datum a čas.
+Total Generated,Celkový generovaný
+Till,Až do
+Total Used,celková Použité
+Total Unused,celková Nevyužitá
+Coupon Statistics (Graphical),Kupon Statistics (Graphical)
+Select date,Vyberte datum
+Generate,generovat
+Other Statistics,Ostatní Statistics
+Country Statistics,Země Statistika
+Device Statistics,Statistiky zařízení
+Coupons List,Seznam kupony
+Minimum Screen Size,Minimální velikost obrazovky
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Tablet Portrait (768x1024)
+Tablet Landscape (1024x768),Tablet šířku (1024x768)
+Laptop (1366x768),Laptop (1366x768)
+Desktop(1600x1080),Desktop (1600x1080)
+Smartphones only,pouze smartphony
+Maximum Display Frequency,Maximální frekvence displeje
+Every Visit,každé návštěvě
+One Visit per hour,Jedna návštěva za hodinu
+One visit per day,Jedna návštěva za den
+One visit per week,Jedna návštěva za týden
+One visit per month,Jedna návštěva za měsíc
+Show Spin Wheel on the front end after the specified time,Show Spin kola na přední straně po stanovenou dobu
+Hide Spin Wheel After,Hide Spin Wheel Po
+Always Display,Always Display
+10 Seconds,10 Seconds
+20 Seconds,20 Seconds
+30 Seconds,30 sekund
+40 Seconds,40 Seconds
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Zvolte časový interval, po kterém se Spin kola na přední straně bude automaticky skrývat"
+Set Fix Time,Set Fix Time
+Active Date/Time,Aktivní Date / Time
+Expire Date/Time,Vyprší datum / čas
+Whom to show,Koho přehlídky
+All Visitors,Všichni návštěvníci
+New Visitors,noví návštěvníci
+Returning Visitors,vracející se návštěvníci
+Select whom to show the popup.,"Vybrat, na koho se zobrazí vyskakovací okno."
+When to Show,Kdy Zobrazit
+Immediately,Ihned
+After Time(seconds),Po určité době (v sekundách)
+When scroll down(%),Když se posunout dolů (%)
+When Exit,když Exit
+Select when to display the popup.,"Vyberte, kdy se zobrazí vyskakovací okno."
+Enter time (In Seconds),Zadejte čas (v sekundách)
+Enter time in seconds after which you want to display spin wheel pop up.,"Zadejte čas v sekundách, po které chcete zobrazit spin kola vyskočí."
+Enter Scroll Percentage,Vstoupit Scroll Procento
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,"Vstoupit navigační procenta, po které chcete zobrazit spin kola vyskočí. Ještě ne zadat znak%."
+Geo Location,Geografické umístění
+World Wide,World Wide
+Display selected areas only,Pouze zobrazení zvolených plochách
+Do not display selected areas,Nezobrazují vybraných oblastí
+Select Geo Location where you want to show the popup.,"Zvolit informace o poloze, kde chcete zobrazovat vyskakovací okno."
+Select countries.,Vybraných zemích.
+Title Text,Název Text
+Subtitle Text,Text Subtitle
+Rules Text,pravidla Text
+One rule should be entered in one line in order to show it on pop up point wise.,Jedno pravidlo by měly být uvedeny v jedné linii za účelem jeho zobrazení na pop-up bod moudré.
+Are your sure?,Jsi si jistý?
+Please enter a valid color code,Zadejte prosím platný kód barvy
+`Active Date` cannot be greater than `Expire Date`,`Active Date` nemůže být větší než` vyprší Date`
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Součet gravitace není v platném rozsahu. Mělo by být betwen 1 a 100. Celková je:
+No list exists for this API key.,Žádný seznam neexistuje pro tento klíč API.
+No. of times,Počet dob
+Date,datum
+Please upload an image file.,Nahrajte prosím soubor s obrázkem.
+Note: select time in GMT only.,Poznámka: select čas pouze v GMT.
+This slot is already available.,Tento slot je již k dispozici.

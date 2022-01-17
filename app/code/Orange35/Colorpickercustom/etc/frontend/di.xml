@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Block\Product\View\Options">
+        <plugin name="o35-color-picker-product-view-options-plugin" type="Orange35\Colorpickercustom\Block\Product\View\OptionsPlugin" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Model\Product\Type\Simple">
+        <plugin name="o35-color-picker-catalog-model-product-type-simple" type="Orange35\Colorpickercustom\Plugin\Catalog\Model\Product\Type\Simple" />
+    </type>
+    <type name="Magento\CatalogSearch\Block\Advanced\Result">
+        <plugin name="o35-color-picker-catalog-search-adbanced-result" type="Orange35\Colorpickercustom\Plugin\CatalogSearch\Block\Advanced\Result"/>
+    </type>
+</config>

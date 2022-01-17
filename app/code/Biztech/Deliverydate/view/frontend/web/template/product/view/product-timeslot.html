@@ -1,0 +1,84 @@
+<!-- ko if: deliverydateEnabled -->
+<div class="deliverydate-main-wrapper" id="deliverydate-main-wrapper">
+    <div class="fieldset">
+            <div class="field">
+                <label class="label">
+                    <span data-bind="i18n: 'Delivery Date Information'"></span>
+                </label>
+            </div>
+            
+            <div class="field checkout-timeslot" data-bind="visible: timeSlots().length > 0 , css: isRequired()" name="shipping_arrival_slot">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydateLabel"></label>
+                <div id="timeslottable">
+                    <table class="table-checkout-delivery-method" data-bind="afterRender: loadScrollBooster">
+                        <thead>
+                            <tr>
+                                <th data-bind="i18n: 'Date-Day'"></th>
+                                <th data-bind="i18n: timeslotTableLabel, attr : { colspan : timeSlots().length }" data-role="title"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="slots">
+                            <!-- ko foreach: {data : timeSlots(), as : 'timeSlot'} -->
+                            <tr class="row slots-data">
+                                <td class="col delivery-wrapper" data-bind="text: row_heading"></td>
+                                <!-- ko foreach: {data : slots, as : 'slot'} -->
+                                    <!-- ko if: disabled -->
+                                    <td class="col delivery-wrapper delivery-time-slots time-slot-disabled">
+                                        <input type="radio" name="radio" data-bind="attr : { id : slot_id, disabled : true }, value : slot_value" />
+                                        <span class="radio-checked"></span>
+                                        <label data-bind="html : slot_value_html, attr : { for : slot_id }"></label>
+                                    </td>
+                                    <!-- /ko -->
+                                    <!-- ko ifnot: disabled -->
+                                    <td class="col delivery-wrapper delivery-time-slots time-slot-enabled">
+                                        <input class="delivery-slot" type="radio" name="radio" data-bind="attr : { id : slot_id }, value: slot_value, selected: isSlected"  />
+                                        <span class="radio-checked"></span>
+                                        <label data-bind="html : slot_value_html, attr : { for : slot_id }"></label>
+                                    </td>
+                                    <!-- /ko -->
+                                <!-- /ko -->
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="field" data-bind="visible: timeSlots().length === 0" name="shipping_arrival_slot">
+                <p data-bind="i18n: 'No Timeslot available'"></p>
+            </div>
+
+            <div class="field" data-bind="visible: timeSlots().length > 0" name="shipping_arrival_comments">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydatecommentLabel"></label>
+
+                <div class="control">
+                    <textarea data-bind="attr : { id : 'shipping_arrival_comments', col: 65, row: 10 , name : 'shipping_arrival_comments' }, class: 'delivery-date-comment' "></textarea>
+                </div>
+
+                <div class="control choice" data-bind="visible: useCallMe">
+                    <input type="checkbox" data-bind="attr : { id : 'delivery_date_callme', name : 'deliverydate_callme' , value : 1 } , class: 'delivery-date-callme' , checked: callfordelivery" />
+                    <label class="label delivery-callme-label" for="delivery_date_callme" data-bind="style: { color: callfordelivery() ? 'Green' : 'black' , 'font-style' : callfordelivery() ? 'italic' : 'normal' } ">
+                        <span data-bind="i18n: deliverydatecallMeLabel">Call me before Delivery</span>
+                    </label>
+                </div>
+            </div>
+            <div class="field biz-comment-note" data-bind="visible: getShowHtml() === 1" name="show_html">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>
+                                <span data-bind="html: displayHtml"></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden">
+                <input type="hidden" id="shipping_arrival_date" name="shipping_arrival_date" />
+                <input type="hidden" id="shipping_arrival_slot" name="shipping_arrival_slot" />
+                <input type="hidden" id="delivery_charges" name="delivery_charges" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ko -->

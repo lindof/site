@@ -1,0 +1,20 @@
+<div id="result">
+    <?php
+    $isEnable = $block->EnableExtension();
+    if ($isEnable) {
+        /* $calendar = new Biztech\Deliverydate\Model\Calendar();
+          echo $calendar->show(); */
+        $calendar = \Biztech\Deliverydate\Model\Calendar::getInstance();
+        echo $calendar->show();
+    } else {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $geturl = $objectManager->create('\Magento\Store\Model\StoreManagerInterface');
+        $geturl1 = $geturl->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_DIRECT_LINK);
+
+        $redirect = $objectManager->create('\Magento\Framework\App\ResponseInterface');
+        $url = $geturl1 . "sales/order/history/";
+        //$this->$redirect->setRedirect($url);
+        $msg = $objectManager->create('\Magento\Framework\Message\ManagerInterface')->addSuccess(__('This feature is not available for now.'));
+    }
+    ?>
+</div>

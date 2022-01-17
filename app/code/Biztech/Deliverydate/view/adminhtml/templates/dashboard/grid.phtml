@@ -1,0 +1,148 @@
+<?php
+$orders = $block->getColumns();
+$numColumns = sizeof($block->getColumns());
+if (date('Y-m-d') != date('Y-m-d', strtotime($this->getDeliveryFrom())) || (date('Y-m-d') != date('Y-m-d', strtotime($this->getDeliveryTo())))) {
+    $dateStart = date('Y-m-d', strtotime($this->getDeliveryFrom()));
+    $dateTo = date('Y-m-d', strtotime($this->getDeliveryTo()));
+} else {
+    $dateStart = "";
+    $dateTo = "";
+}
+?>
+<?php if ($block->getCollection()): ?>
+
+    <div class="dashboard-item-content" style="text-align:left">
+        <div>
+            <form action="" enctype="multipart/form-data" method="post" id="edit_form">
+                <?php echo $this->getBlockHtml('formkey') ?>
+                <table cellspacing="0" class="admin__table-primary" id="deliverydateorders_table2" style="border:0;">
+
+                    <tbody>
+                    <tr class="filter">
+                        <th><?php echo __('Delivery Date') ?></th>
+                        <th>
+                            <div class="admin__form-field overview required" data-role="filter-form" id="date_range">
+                                <div class="admin__form-field">
+                                    <label class="admin__form-field-label" for="delivery_from">
+                                        <span><?php echo __('From') ?>:</span>
+                                    </label>
+                                    <input class="input-text admin__control-text required-entry"
+                                           type="text"
+                                           id="delivery_from"
+                                           name="from"
+                                           value="<?php echo $dateStart ?>"
+                                        />
+                                    <span id="delivery_from_advice"></span>
+                                </div>
+
+                                <div class="admin__form-field">
+                                    <label class="admin__form-field-label" for="delivery_to">
+                                        <span><?php echo __('To') ?>:</span>
+                                    </label>
+                                    <input class="input-text admin__control-text required-entry"
+                                           type="text"
+                                           id="delivery_to"
+                                           name="report_to"
+                                           value="<?php echo $dateTo ?>"
+                                        />
+                                    <span id="delivery_to_advice"></span>
+                                </div>
+
+                                <script>
+                                    require([
+                                        "jquery",
+                                        "mage/calendar"
+                                    ], function ($) {
+
+                                        $("#date_range").dateRange({
+                                            dateFormat: "yy-mm-dd",
+                                            buttonText: "<?php echo __('Select Date') ?>",
+                                            from: {
+                                                id: "delivery_from"
+                                            },
+                                            to: {
+                                                id: "delivery_to"
+                                            }
+                                        });
+                                    });
+                                </script>
+                            </div>
+
+                        </th>
+                        <th valign="middle" class="a-center">
+                            <?php $url = $this->getUrl('deliverydate/deliverydate/deliverydateorder'); ?>
+                            <?php $charturl = $this->getUrl('deliverydate/deliverydate/chartdeliverydateorders'); ?>
+                            <?php $exporturl = $this->getUrl('deliverydate/deliverydate/exportdeliverydateorders') ?>
+                            <button id="deliverysearch" name="deliverysearch" data-url="<?php echo $url ?>"
+                                    type="button" class="form-button"> <?php echo __('Search') ?></button>
+                            <?php if ($block->getCollection()->getSize() > 0) { ?>
+                                <button type="button" title="Charts" id="delivery-chart"
+                                        data-url="<?php echo $charturl ?>"><?php echo __('View Chart') ?></button>
+                                <button type="button" title="Export" id="delivery-export"
+                                        data-url="<?php echo $exporturl ?>"><?php echo __('Export') ?></button>
+                                <?php
+                            } else {
+                                ?>
+                                <button type="button" title="Charts" id="delivery-chart-disabled"
+                                        data-url="<?php echo $charturl ?>" disabled="disabled"
+                                        class="disabled"><?php echo __('View Chart') ?></button>
+                                <button type="button" title="Export" id="delivery-export-disabled"
+                                        data-url="<?php echo $exporturl ?>" disabled="disabled"
+                                        class="disabled"><?php echo __('Export') ?></button>
+                            <?php }
+                            ?>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <?php if ($block->getCollection()->getSize() > 0): ?>
+            <table class="admin__table-primary" id="<?php /* @escapeNotVerified */
+            echo $block->getId() ?>_table">
+                <?php
+                /* This part is commented to remove all <col> tags from the code. */
+                /* foreach ($block->getColumns() as $_column): ?>
+                  <col <?php echo $_column->getHtmlProperty() ?> />
+                  <?php endforeach; */
+                ?>
+                <?php if ($block->getHeadersVisibility() || $block->getFilterVisibility()): ?>
+                    <thead>
+                    <?php if ($block->getHeadersVisibility()): ?>
+                        <tr>
+                            <?php foreach ($block->getColumns() as $_column): ?>
+                                <?php echo $_column->getHeaderHtml() ?>
+                            <?php endforeach; ?>
+                        </tr>
+                    <?php endif; ?>
+                    </thead>
+                <?php endif; ?>
+                <?php if (!$block->getIsCollapsed()): ?>
+                    <tbody>
+                    <?php foreach ($block->getCollection() as $_index => $_item): ?>
+                        <tr>
+                            <?php
+                            $i = 0;
+                            foreach ($block->getColumns() as $_column):
+                                ?>
+                                <td class="<?php /* @escapeNotVerified */
+                                echo $_column->getCssProperty() ?> <?php echo ++$i == $numColumns ? 'last' : '' ?>"><?php echo(($_html = $_column->getRowField($_item)) != '' ? $_html : '&nbsp;') ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                <?php endif; ?>
+            </table>
+        <?php else: ?>
+
+            <!--filter according to delivery date -->
+
+            <div class="<?php /* @escapeNotVerified */
+            echo $block->getEmptyTextClass() ?>"><?php /* @escapeNotVerified */
+                echo $block->getEmptyText() ?></div>
+        <?php endif; ?>
+
+
+    </div>
+
+<?php endif; ?>

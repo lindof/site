@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Swatches::css/swatches.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Mexbs\ApBase\Block\InjectCartHints"
+                   name="ap.cart.hints"
+                   template="Mexbs_ApBase::inject-cart-hints.phtml"
+                    />
+            <block class="Mexbs\ApBase\Block\InjectExtraMessages"
+                   name="ap.extra.messages"
+                   template="Mexbs_ApBase::inject-extra-messages-in-cart.phtml"
+                    />
+            <referenceBlock name="ap.display.popup" remove="true" />
+        </referenceContainer>
+        <referenceContainer name="checkout.cart.items">
+            <block class="Mexbs\ApBase\Block\PromoProducts"
+                   name="ap.promo.products"
+                   template="Mexbs_ApBase::promo-products.phtml"
+                    />
+        </referenceContainer>
+    </body>
+</page>

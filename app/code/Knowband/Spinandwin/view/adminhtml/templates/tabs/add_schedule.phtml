@@ -1,0 +1,430 @@
+<?php
+/**
+* Added by Bhupendra Singh Bisht
+* TO add a new theme schedule.      
+*/
+    $schedule_id = $this->getRequest()->getParam('schedule_id',0);
+    $settings = $this->getScheduleSettings($schedule_id);
+?>
+<style>
+    #mColorPickerImg{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/colorpicker.png'); ?>) !important;
+    }
+    #mColorPickerImgGray{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/graybar.jpg'); ?>) !important;
+    }
+    #mColorPickerFooter{
+        background-image: url(<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/grid.gif'); ?>) !important;
+    }
+    #wheel_preview{
+        width: 30%;
+        border: 1px solid whitesmoke;
+    }
+</style>
+<form id="spinandwin_schedule_view" enctype="multipart/form-data" method="POST" action="">
+    <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+    <input type="hidden" name="schedule_id" value="<?php echo $schedule_id; ?>" />
+<div class="fieldset-wrapper" id="look-and-feel">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Add/Edit Schedule") ?></h1>
+        <fieldset class="admin__fieldset">
+            <input type="hidden" >
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_schedule_status">
+                    <span><?php echo __("Schedule Status") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_schedule_status" name="vss_spinandwin[schedule_status]" value="1" <?php echo isset($settings["schedule_status"]) ? $settings["schedule_status"] ? 'checked="checked"' : '' : ''; ?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_schedule_status">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_from_date">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("From Date") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_from_date" value="<?php echo isset($settings["from_date"]) ? $settings["from_date"] : "" ?>" class="admin__control-text _has-datetimepicker" name="vss_spinandwin[from_date]" type="text" style="width: 190px;">
+                    <script type="text/javascript">
+                        require([
+                            "jquery",
+                            "mage/calendar"
+                        ], function ($) {
+                            $('#spinandwin_from_date').datetimepicker({
+                                showMonthAfterYear: true,
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: 'yy-mm-dd',
+                                timeFormat: 'HH:mm:ss',
+                                showsTime: false,
+                                showOn: 'button'
+                            }
+                            ).next("button").button({
+                                label: "<?php echo __("Select Date") ?>",
+                            });
+                            ;
+                        });
+                    </script>
+                    <div class="vss_info">
+                            <?php echo __("Note: select time in GMT only.") ?>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_to_date">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("To Date") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_to_date" value="<?php echo isset($settings["to_date"]) ? $settings["to_date"] : "" ?>" class="admin__control-text _has-datetimepicker" name="vss_spinandwin[to_date]" type="text" style="width: 190px;">
+                    <script type="text/javascript">
+                        require([
+                            "jquery",
+                            "mage/calendar"
+                        ], function ($) {
+                            $('#spinandwin_to_date').datetimepicker({
+                                showMonthAfterYear: true,
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: 'yy-mm-dd',
+                                timeFormat: 'HH:mm:ss',
+                                showsTime: false,
+                                showOn: 'button'
+                            }
+                            ).next("button").button({
+                                label: "<?php echo __("Select Date") ?>",
+                            });
+                            ;
+                        });
+                    </script>
+                     <div class="vss_info">
+                            <?php echo __("Note: select time in GMT only.") ?>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_theme">
+                    <span><?php echo __("Theme") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[theme]" id="spinandwin_theme">
+                        <?php foreach ($this->getThemes() as $key => $value) {
+                            if (isset($settings["theme"]) && $settings["theme"] == $key) {
+                                ?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                            <?php } else { ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                                <?php }
+                            } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="theme_preview">
+                    <span>
+                        <?php echo __("Theme Peview"); ?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <img id="theme_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" style="margin: 0px 2px 3px 0px;" align="absmiddle">
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_wheel_design">
+                    <span>
+                        <?php echo __("Wheel Design") ?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[wheel_design]" id="spinandwin_wheel_design">
+                        <?php foreach ($this->getWheelDesign() as $key => $value) {
+                            if (isset($settings["wheel_design"]) && $settings["wheel_design"] == $key) {
+                                ?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                            <?php } else { ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                                <?php }
+                            } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="wheel_preview">
+                    <span>
+                        <?php echo __("Wheel Peview"); ?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <img id="wheel_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" style="margin: 0px 2px 3px 0px;" align="absmiddle">
+                </div>
+            </div>
+            <div class="admin__field" id="spinandwin_wheel_color_holder">
+                <label class="admin__field-label" for="spinandwin_wheel_color">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("Wheel Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change color of the wheel.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_wheel_color" data-hex="true" value="<?php echo isset($settings["wheel_color"]) ? $settings["wheel_color"] : "#ff0000" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[wheel_color]"   type="text" style="background-color: <?php echo isset($settings["wheel_color"]) ? $settings["wheel_color"] : "#ff0000" ?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_wheel_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_wheel_text_color">
+                    <span>
+                        <span class="vss_required">*</span>
+                         <?php echo __("Wheel Text Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change text color of the wheel.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_wheel_text_color" data-hex="true" value="<?php echo isset($settings["wheel_text_color"]) ? $settings["wheel_text_color"] : "#2ea2a7" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[wheel_text_color]"   type="text" style="background-color: <?php echo isset($settings["wheel_text_color"]) ? $settings["wheel_text_color"] : "#2ea2a7" ?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_wheel_text_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <!-- Ends- -->
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_wheel">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("Wheel Background Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change background color of wheel.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_background_color_wheel" data-hex="true" value="<?php echo isset($settings["background_color_wheel"]) ? $settings["background_color_wheel"] : "#2ea2a7" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[background_color_wheel]"   type="text" style="background-color: <?php echo isset($settings["background_color_wheel"]) ? $settings["background_color_wheel"] : "#2ea2a7" ?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_wheel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_text_color_wheel">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("Font Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of text on wheel.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_text_color_wheel" data-hex="true" value="<?php echo isset($settings["text_color_wheel"]) ? $settings["text_color_wheel"] : "#ffffff" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[text_color_wheel]"   type="text" style="background-color: <?php echo isset($settings["text_color_wheel"]) ? $settings["text_color_wheel"] : "#ffffff" ?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_text_color_wheel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_spin">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("Button Background Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change background color of spin button.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_background_color_spin" data-hex="true" value="<?php echo isset($settings["background_color_spin"]) ? $settings["background_color_spin"] : "#00c74c" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[background_color_spin]"   type="text" style="background-color: <?php echo isset($settings["background_color_spin"]) ? $settings["background_color_spin"] : "#00c74c" ?>; color: white;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_spin" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_try_luck_text_color">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("`Try your luck` Button Text Color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of the front `Try your luck` button.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_try_luck_text_color" data-hex="true" value="<?php echo isset($settings["try_luck_text_color"]) ? $settings["try_luck_text_color"] : "#fffbf8" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[try_luck_text_color]"   type="text" style="background-color: <?php echo isset($settings["try_luck_text_color"]) ? $settings["try_luck_text_color"] : "#fffbf8" ?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_try_luck_text_color" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            <!-- Ends -->
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_background_color_cancel">
+                    <span>
+                        <span class="vss_required">*</span>
+                            <?php echo __("No, I do not feel lucky text color") ?>
+                        <div class="vss_info">
+                            <?php echo __("Change font color of No, I do not feel lucky text.") ?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_background_color_cancel" data-hex="true" value="<?php echo isset($settings["background_color_cancel"]) ? $settings["background_color_cancel"] : "#fffbf8" ?>" class="mColorPicker admin__control-text" name="vss_spinandwin[background_color_cancel]"   type="text" style="background-color: <?php echo isset($settings["background_color_cancel"]) ? $settings["background_color_cancel"] : "#fffbf8" ?>; color: black;width: 147px;"><span style="cursor:pointer;border: 1px solid whitesmoke;padding: 6px;background: whitesmoke;" id="icp_spinandwin_background_color_cancel" class="mColorPickerTrigger input-group-addon" data-mcolorpicker="true"><img src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/color.png'); ?>" style="border:0;margin: 0px 2px 3px 0px;" align="absmiddle"></span>
+                </div>
+            </div>
+            
+        </fieldset>
+    </div>
+</div>
+</form>
+<style>
+<?php if (isset($settings["wheel_design"]) && ($settings["wheel_design"] == '2')) { ?>
+        #spinandwin_wheel_color_holder{
+            display:block;
+        }                                                    
+<?php } else { ?>
+        #spinandwin_wheel_color_holder{
+            display:none;
+        }
+<?php } ?>
+        
+        .kb_error_message {
+         display:inherit;   
+        }
+</style>
+
+<script>
+
+    require([
+        'jquery',
+        'jquery/ui',
+        'Knowband_Spinandwin/js/colorpicker/jquery.colorpicker',
+        'Knowband_Spinandwin/js/velovalidation',
+        'Knowband_Spinandwin/js/customScript',
+    ],
+            function (jQuery) {
+
+                jQuery(document).ready(function () {
+                    if (jQuery('#spinandwin_wheel_design').val() == 1) {
+                        jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel1.png'); ?>');
+                    } else {
+                        jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel2.png'); ?>');
+                        changeColor(jQuery("#spinandwin_wheel_color").val());
+                    }
+
+                    jQuery('#spinandwin_wheel_design').change(function () {
+                        if (this.value == 1) {
+                            jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel1.png'); ?>');
+                            changeColor('');
+                        } else if (this.value == 2) {
+                            jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel2.png'); ?>');
+                            changeColor(jQuery("#spinandwin_wheel_color").val());
+                        }
+                    });
+
+
+                    jQuery('[name="vss_spinandwin[wheel_design]"]').change(function () {
+                        var wheel_design = jQuery('[name="vss_spinandwin[wheel_design]"]').val();
+                        if (wheel_design == 2) {
+                            jQuery("#spinandwin_wheel_color_holder").show("slow");
+                            changeColor(jQuery("#spinandwin_wheel_color").val());
+                        } else {
+                            jQuery("#spinandwin_wheel_color_holder").hide("slow");
+                        }
+                    });
+
+                    jQuery('[name="vss_spinandwin[wheel_color]"]').change(function () {
+                        var wheel_design = jQuery('[name="vss_spinandwin[wheel_design]"]').val();
+                        if (wheel_design == 2) {
+                            changeColor(jQuery("#spinandwin_wheel_color").val());
+                        }
+                    });
+
+                    var theme_img_path = '';
+                    jQuery('[name="vss_spinandwin[theme]"]').on('change', function () {
+                        var theme_design = jQuery('[name="vss_spinandwin[theme]"]').val();
+                        if (theme_design == '1') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/none.png'); ?>';
+                        } else if (theme_design == '2') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme1.png'); ?>';
+                        } else if (theme_design == '3') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme2.png'); ?>';
+                        } else {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme'); ?>' + '/' + theme_design + '.png';
+                        }
+                        jQuery("#theme_preview").attr('src', theme_img_path);
+                    });
+
+                    var theme_img_path = '';
+                    if (jQuery('[name="vss_spinandwin[theme]"]').val() == '1') {
+                        theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/none.png'); ?>';
+                        jQuery("#theme_preview").attr('src', theme_img_path);
+                    } else if (jQuery('[name="vss_spinandwin[theme]"]').val() == '2') {
+                        theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme1.png'); ?>';
+                        jQuery("#theme_preview").attr('src', theme_img_path);
+                    } else if (jQuery('[name="vss_spinandwin[theme]"]').val() == '3') {
+                        theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme2.png'); ?>';
+                        jQuery("#theme_preview").attr('src', theme_img_path);
+                    } else {
+                        var selected_theme = jQuery('[name="vss_spinandwin[theme]"]').val();
+                        theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/'); ?>' + '/' + selected_theme + '.png';
+                        jQuery("#theme_preview").attr('src', theme_img_path);
+                    }
+
+
+
+                    toggleProgressMeter();
+                    jQuery('#spinandwin_enable_progress_bar').on('change', function () {
+                        toggleProgressMeter();
+                    });
+
+                    function toggleProgressMeter() {
+                        if (jQuery('#spinandwin_enable_progress_bar').prop("checked")) {
+                            jQuery('.progress_meter').show('slow');
+                        } else {
+                            jQuery('.progress_meter').hide('slow');
+                        }
+                    }
+                    
+                    
+                    jQuery("#save-schedule").on('click',function(){
+                        
+                        validateScheduleForm();
+                        
+                    });
+                        
+                        
+                });
+                
+                 //error messages for velovalidation.js
+                        velovalidation.setErrorLanguage({
+                            empty_field: "<?php echo __("Field cannot be empty."); ?>",
+                            number_field: "<?php echo __("You can enter only numbers."); ?>",
+                            positive_number: "<?php echo __("Number should be greater than 0."); ?>",
+                            maxchar_field: "<?php echo __("Field cannot be greater than {#} characters."); ?>",
+                            minchar_field: "<?php echo __("Field cannot be less than {#} character(s)."); ?>",
+                            empty_email: "<?php echo __("Please enter Email."); ?>",
+                            validate_email: "<?php echo __("Please enter a valid Email."); ?>",
+                            invalid_date: "<?php echo __("Invalid date format."); ?>",
+                            validate_range: "<?php echo __("Number is not in the valid range. It should be between {1} and {100}"); ?>",
+                            valid_amount: "<?php echo __("Field should be numeric."); ?>",
+                            valid_decimal: "<?php echo __("Field can have only upto two decimal values."); ?>",
+                            max_email: "<?php echo __("Email cannot be greater than {#} characters."); ?>",
+                            specialchar_zip: "<?php echo __("Zip should not have special characters."); ?>",
+                            valid_percentage: "<?php echo __("Percentage should be in number."); ?>",
+                            between_percentage: "<?php echo __("Percentage should be between 0 and 100."); ?>",
+                            maxchar_size: "<?php echo __("Size cannot be greater than {#} characters."); ?>",
+                            maxchar_color: "<?php echo __("Color could not be greater than {#} characters."); ?>",
+                            invalid_color: "<?php echo __("Color is not valid."); ?>",
+                            specialchar: "<?php echo __("Special characters are not allowed."); ?>",
+                            script: "<?php echo __("Script tags are not allowed."); ?>",
+                            style: "<?php echo __("Style tags are not allowed."); ?>",
+                            iframe: "<?php echo __("Iframe tags are not allowed."); ?>",
+                            not_image: "<?php echo __("Uploaded file is not an image."); ?>",
+                            image_size: "<?php echo __("Uploaded file size must be less than #d."); ?>",
+                            html_tags: "<?php echo __("Field should not contain HTML tags."); ?>",
+                            number_pos: "<?php echo __("You can enter only positive numbers."); ?>",
+                        });
+
+            });
+            var date_range_error = "<?php echo __('`From Date` should be smaller than `To Date`'); ?>"
+            var from_date_error = "<?php echo __("`From Date` already present in a slot."); ?>"
+            var to_date_error = "<?php echo __("`To Date` already present in a slot."); ?>"
+            var slot_already_available_error = "<?php echo __("This slot is already available."); ?>"
+            var validate_schedule_url = "<?php echo $this->getUrl('*/*/validateSchedule'); ?>";
+</script>

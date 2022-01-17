@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_Affiliate
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+<!--        <route id="amconversion" frontName="amconversion">
+            <module name="Amasty_AffiliateStoreCredit" />
+        </route>-->
+        <route id="amasty_affiliate">
+            <module name="Amasty_AffiliateStoreCredit" />
+        </route>
+    </router>
+</config>

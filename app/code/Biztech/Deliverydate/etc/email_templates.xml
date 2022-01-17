@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="sales_email_order_template" label="New Order" file="order_new.html" type="html" module="Biztech_Deliverydate" area="frontend"/>
+    <template id="sales_email_order_guest_template" label="New Order for Guest" file="order_new_guest.html" type="html" module="Biztech_Deliverydate" area="frontend"/>
+    <template id="deliverydate_email_notification_template" label="Delivery Date Notification" file="deliverydate_notification.html" type="html" module="Biztech_Deliverydate" area="frontend"/>
+</config>

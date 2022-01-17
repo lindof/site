@@ -1,0 +1,43 @@
+<?php
+$_order = $this->getOrder();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$config = $objectManager->create('Magento\Framework\App\Config\ScopeConfigInterface');
+$isEnable = $config->getValue('deliverydate/deliverydate_general/enabled');
+
+if ($isEnable) {
+    $shipping_arrival_date = $_order->getShippingArrivalDate();
+
+    $date_format = $config->getValue('deliverydate/deliverydate_general/deliverydate_format');
+    $time_format = $config->getValue('deliverydate/deliverydate_general/deliverytime_format');
+    $callmelabel = $config->getValue('deliverydate/deliverydate_general/deliverydate_callme_label', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+
+    if ($date_format == '') {
+        $date_format = 'd/M/Y';
+    }
+
+    if ($time_format == '') {
+        $date_format .= " ,g:i a";
+    }
+
+    if ($_order->getShippingArrivalSlot() == null) {
+        $date_format .= " " . $time_format;
+    }
+    if ($shipping_arrival_date != '') {
+        echo "<strong class='box-title'><span>" . __('Shipping Arrival Date') . "</span></strong><div class='box-content'>" . $currentDate = date($date_format, strtotime($shipping_arrival_date)) . ' ' . $_order->getShippingArrivalSlot() . '</div>';
+    } else {
+        echo "<strong class='box-title'><span>" . __('Shipping Arrival Date') . "</span></strong><div class='box-content'> N/A </div>";
+    }
+
+    ?>
+<br/>
+    <?php
+    if ($_order->getShippingArrivalComments() != '') {
+            echo nl2br($_order->getShippingArrivalComments());
+    }
+
+    if ($_order->getCallBeforeDelivery() == 1) {
+        echo "<br/>";
+        echo "<strong class='box-title'><span>" . __($callmelabel) . "</span></strong><div class='box-content'> Yes </div>";
+    }
+}
+?>

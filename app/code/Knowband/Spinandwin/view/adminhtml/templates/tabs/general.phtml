@@ -1,0 +1,321 @@
+<?php $settings = $this->getSettings(); 
+$pullout_file = $this->getSettings('knowband/spinandwin/pullout');
+$logo_file = $this->getSettings('knowband/spinandwin/logo');
+?>
+<div class="fieldset-wrapper" id="general-settings">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("General Settings")?></h1>
+        <fieldset class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_enable">
+                    <span><?php echo __("Enable the Extension")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_enable" name="vss_spinandwin[general_settings][enable]" value="1" <?php echo isset($settings["general_settings"]["enable"])?$settings["general_settings"]["enable"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_enable">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_pullouttab">
+                    <span>
+                        <?php echo __("Show pull-out tab")?>
+                        <div class="vss_info">
+                            <?php echo __("Allow customer to hide/show popup")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_pullouttab" name="vss_spinandwin[general_settings][pull_out]" value="1" <?php echo isset($settings["general_settings"]["pull_out"])?$settings["general_settings"]["pull_out"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_pullouttab">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Starts- Added by Dhruw -->
+            <div class="admin__field" id="spinandwin_pullout_enable_option">
+                <label class="admin__field-label" for="spinandwin_pullout_image">
+                    <span>
+                        <?php echo __("Upload pull-out tab image")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch">
+                        <div class="banner_block"><?php if($pullout_file['image']){ ?>
+                            <img id="pullout_image_preview" src="<?php echo $this->getMediaUrl().'Knowband_Spinandwin/'.$pullout_file['image']; ?>" style="margin: 0px 2px 3px 0px;width: 200px;border: 1px solid whitesmoke; max-width: 50px; max-height: 50px;" align="absmiddle">
+                        <?php }else{ ?>
+                            <img id="pull_out_image_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/default_pull_out_image.png'); ?>" style="margin: 0px 2px 3px 0px;width: 200px;border: 1px solid whitesmoke; max-width: 50px; max-height: 50px;" align="absmiddle">
+                        <?php } ?>
+                            
+                        </div>
+                        <input name="vss_spinandwin[general_settings][pullout_image]" id="pullout_image" type="file" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only banner-upload-btn" style="padding: 10px;background: whitesmoke;display: block;"/>
+                    </div>
+                    <div class="vss_info">
+                            <?php echo __("Only .png or .jpg file format accepted. File size should not be more than 2 MB.")?>
+                        </div>
+                </div>
+            </div>
+            
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_logo_enable">
+                    <span><?php echo __("Display Logo")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_logo_enable" name="vss_spinandwin[general_settings][logo_enable]" value="1" <?php echo isset($settings["general_settings"]["logo_enable"])?$settings["general_settings"]["logo_enable"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_logo_enable">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field" id="spinandwin_logo_enable_option">
+                <label class="admin__field-label" for="spinandwin_logo_image">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("Upload Logo")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch">
+                        <div class="banner_block"><?php if($logo_file['image']){ ?>
+                            <img id="logo_image_preview" src="<?php echo $this->getMediaUrl().'Knowband_Spinandwin/'.$logo_file['image']; ?>" style="margin: 0px 2px 3px 0px;width: 200px;border: 1px solid whitesmoke;" align="absmiddle">
+                            <input id="remove-button" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" value="<?php echo __('Remove logo'); ?>">
+                        <?php }else{ ?>
+                            <img id="logo_image_preview" src="<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>" style="margin: 0px 2px 3px 0px;width: 200px;border: 1px solid whitesmoke;" align="absmiddle">
+                        <?php } ?>
+                            
+                        </div>
+                        <input name="vss_spinandwin[general_settings][logo_image]" id="logo_image" type="file" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only banner-upload-btn" style="padding: 10px;background: whitesmoke;display: block;"/>
+                    </div>
+                    <div class="vss_info">
+                        <?php echo __("Only .png or .jpg file format accepted. File size should not be more than 2 MB.")?>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_emailrecheck">
+                    <span>
+                        <?php echo __("Email Recheck")?>
+                        <div class="vss_info">
+                            <?php echo __("Allow customer to provide coupon code more than one time.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_emailrecheck" name="vss_spinandwin[general_settings][email_recheck]" value="1" <?php echo isset($settings["general_settings"]["email_recheck"])?$settings["general_settings"]["email_recheck"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_emailrecheck">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_wheel_sound">
+                    <span>
+                        <?php echo __("Enable Wheel Sound")?>
+                        <div class="vss_info">
+                            <?php echo __("Allow sound on rotating the wheel.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_wheel_sound" name="vss_spinandwin[general_settings][wheel_sound]" value="1" <?php echo isset($settings["general_settings"]["wheel_sound"])?$settings["general_settings"]["wheel_sound"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_wheel_sound">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_fireworks">
+                    <span>
+                        <?php echo __("Show Fireworks")?>
+                        <div class="vss_info">
+                            <?php echo __("Show fireworks after a customer wins.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_fireworks" name="vss_spinandwin[general_settings][fireworks]" value="1" <?php echo isset($settings["general_settings"]["fireworks"])?$settings["general_settings"]["fireworks"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_fireworks">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- *=*=*=*=*=*=* Start Display name in frontend *=*=*=*=*=*=* -->
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_displaycustomername">
+                    <span>
+                        <?php echo __("Show Customer Name");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[general_settings][display_customer_name]" id="spinandwin_displaycustomername">
+                        <option value="1" <?php echo (isset($settings["general_settings"]["display_customer_name"]) && $settings["general_settings"]["display_customer_name"] == "1")?'selected="selected"':''?>><?php echo __("Show First Name"); ?></option>
+                        <option value="2" <?php echo (isset($settings["general_settings"]["display_customer_name"]) && $settings["general_settings"]["display_customer_name"] == "2")?'selected="selected"':''?>><?php echo __("Show Last Name"); ?></option>
+                        <option value="3" <?php echo (isset($settings["general_settings"]["display_customer_name"]) && $settings["general_settings"]["display_customer_name"] == "3")?'selected="selected"':''?>><?php echo __("Show Both"); ?></option>
+                        <option value="4" <?php echo (isset($settings["general_settings"]["display_customer_name"]) && $settings["general_settings"]["display_customer_name"] == "4")?'selected="selected"':''?>><?php echo __("Show None"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Show customer name on the front end")?>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- *=*=*=*=*=*=* End Display name in frontend *=*=*=*=*=*=* -->
+            
+            <!-- *=*=*=*=*=*=* Start required customer name *=*=*=*=*=*=* -->
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_displayrequired">
+                    <span>
+                        <?php echo __("Require Customer Name");?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[general_settings][display_required]" id="spinandwin_displayrequired">
+                        <option value="1" <?php echo (isset($settings["general_settings"]["display_required"]) && $settings["general_settings"]["display_required"] == "1")?'selected="selected"':''?>><?php echo __("Require First Name"); ?></option>
+                        <option value="2" <?php echo (isset($settings["general_settings"]["display_required"]) && $settings["general_settings"]["display_required"] == "2")?'selected="selected"':''?>><?php echo __("Require Last Name"); ?></option>
+                        <option value="3" <?php echo (isset($settings["general_settings"]["display_required"]) && $settings["general_settings"]["display_required"] == "3")?'selected="selected"':''?>><?php echo __("Require Both"); ?></option>
+                        <option value="4" <?php echo (isset($settings["general_settings"]["display_required"]) && $settings["general_settings"]["display_required"] == "4")?'selected="selected"':''?>><?php echo __("Require None"); ?></option>
+                    </select>
+                    <div class="vss_info">
+                        <?php echo __("Require customer name on the front end")?>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- *=*=*=*=*=*=* End required customer name *=*=*=*=*=*=* -->
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_displayinterval">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Wheel Display Interval")?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__control-addon">
+                        <input value="<?php echo isset($settings["general_settings"]["display_interval"])?$settings["general_settings"]["display_interval"]:""?>" class="admin__control-text" type="text" placeholder="" name="vss_spinandwin[general_settings][display_interval]" id="spinandwin_displayinterval">
+                        <label class="admin__addon-suffix">
+                            <span><?php echo __("Days")?></span>
+                        </label>
+                    </div>
+                    
+                        <div class="vss_info">
+                            <?php echo __("Enter the display interval (in days) after which pop will show again (if not used).")?>
+                        </div>
+                </div>
+            </div>
+            
+             <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_enable_progress_bar">
+                    <span><?php echo __("Show Progress Meter")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_enable_progress_bar" name="vss_spinandwin[general_settings][progress_bar]" value="1" <?php echo isset($settings["general_settings"]["progress_bar"])?$settings["general_settings"]["progress_bar"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_enable_progress_bar">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="admin__field progress_meter">
+                <label class="admin__field-label" for="spinandwin_progress_percentage">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Progress Percentage")?>
+                        <div class="vss_info">
+                            <?php echo __("Enter the percentage of the progress meter.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_progress_percentage" value="<?php echo isset($settings["general_settings"]["progress_percentage"])?$settings["general_settings"]["progress_percentage"]:""; ?>" class="admin__control-text" name="vss_spinandwin[general_settings][progress_percentage]" type="text">
+                </div>
+            </div>
+            
+            <div class="admin__field progress_meter">
+                <label class="admin__field-label" for="spinandwin_progress_text">
+                    <span>
+                        <span class="vss_required">*</span>
+                        <?php echo __("Progress Text")?>
+                        <div class="vss_info">
+                            <?php echo __("Enter the Text for the progress meter.")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_progress_text" value="<?php echo isset($settings["general_settings"]["progress_text"])?$settings["general_settings"]["progress_text"]:""; ?>" class="admin__control-text" name="vss_spinandwin[general_settings][progress_text]" type="text">
+                </div>
+            </div>
+                        
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_customcss">
+                    <span>
+                        <?php echo __("Custom CSS")?>
+                        <div class="vss_info">
+                            <?php echo __("Add custom CSS code that you want to be executed on the front end")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <textarea name="vss_spinandwin[general_settings][customcss]" id="spinandwin_customcss" class="admin__control-textarea"><?php echo isset($settings["general_settings"]["customcss"])?$settings["general_settings"]["customcss"]:""?></textarea>
+                </div>
+            </div>
+            
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_customjs">
+                    <span>
+                        <?php echo __("Custom JS")?>
+                        <div class="vss_info">
+                            <?php echo __("Add custom JS code that you want to be executed on the front end")?>
+                        </div>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <textarea name="vss_spinandwin[general_settings][customjs]" id="spinandwin_customjs" class="admin__control-textarea"><?php echo isset($settings["general_settings"]["customjs"])?$settings["general_settings"]["customjs"]:""?></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<style>
+    <?php if (isset($settings["general_settings"]["pull_out"]) && ($settings["general_settings"]["pull_out"] == '1')) { ?>
+    #spinandwin_pullout_enable_option{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    #spinandwin_pullout_enable_option{
+       display:none;
+    } 
+    <?php } ?>  
+    
+    <?php if (isset($settings["general_settings"]["logo_enable"]) && ($settings["general_settings"]["logo_enable"] == '1')) { ?>
+    #spinandwin_logo_enable_option{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    #spinandwin_logo_enable_option{
+       display:none;
+    }
+    <?php } ?>
+</style>

@@ -1,0 +1,37 @@
+<div class="drc-instagram">
+    <h2 style="text-align:center;"><a href="https://www.instagram.com/lindoffur/" target="_blank">@lindoffur</a></h2>
+  </div>
+
+<div id="simple-instagram-feed"></div>
+
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'instagramFeed'
+        ],
+        function(
+            $,
+            instagramFeed
+        ) {
+
+           $(window).on('load', function(){
+            $.instagramFeed({
+                'username': 'lindoffur',
+                'container': "#simple-instagram-feed",
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'callback': null,
+                'styling': true,
+                'items': 12,
+                'items_per_row': 4,
+                'margin': 1,
+                'lazy_load': true,
+                'on_error': console.error
+            });
+        });
+
+        }
+    );
+</script>

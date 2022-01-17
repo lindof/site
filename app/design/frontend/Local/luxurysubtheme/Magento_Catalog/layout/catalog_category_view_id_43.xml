@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns.top">
+            <block class="Act\ResponsiveImages\Block\ResponsiveImages" name="act.responsive_images"
+                   template="Act_ResponsiveImages::default.phtml" before="category.view.container">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">mobile</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Lindo-F-Pattern-Hats-567.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">tablet</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Lindo-F-Pattern-Hats-960.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">desktop</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Lindo-F-Pattern-Hats-1440.jpg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">xlarge</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Lindo-F-Pattern-Hats-1800.jpg</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

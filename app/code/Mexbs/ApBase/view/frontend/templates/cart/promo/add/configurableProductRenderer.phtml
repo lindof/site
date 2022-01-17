@@ -1,0 +1,21 @@
+<?php
+/**
+* @var \Mexbs\ApBase\Helper\Html $htmlHelper
+*/
+$htmlHelper = $this->helper('Mexbs\ApBase\Helper\Html');
+$escaper = $htmlHelper->getEscaper();
+?>
+<div class="swatch-opt-<?php echo intval($block->getProduct()->getId()) ?>"></div>
+<script>
+    require(["jquery", "jquery/ui", "Mexbs_ApBase/js/promo/add/swatch-renderer"], function ($) {
+        $('.swatch-opt-<?php echo intval($block->getProduct()->getId()) ?>').SwatchRenderer({
+            selectorProduct: '.product-item-details',
+            onlySwatches: false,
+            enableControlLabel: false,
+            numberToShow: <?php echo $escaper->escapeJs($block->getNumberSwatchesPerProduct()); ?>,
+            jsonConfig: <?php echo /* @noEscape */  $block->getJsonConfig(); ?>,
+            jsonSwatchConfig: <?php echo /* @noEscape */  $block->getJsonSwatchConfig(); ?>,
+            mediaCallback: '<?php echo $escaper->escapeJs($block->getMediaCallback()) ?>'
+        });
+    });
+</script>

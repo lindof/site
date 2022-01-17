@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <head>
+    	<title>Spin and Win</title>
+        <css src="Knowband_Spinandwin::css/spinandwin-admin.css" />
+<!--        <script src="Knowband_Spinandwin::js/jquery-1.7.1.min.js"/>
+        <script src="Knowband_Spinandwin::js/velovalidation.js"/>
+        <script src="Knowband_Spinandwin::js/customScript.js"/>
+        <script src="Knowband_Spinandwin::js/colorpicker/jquery.colorpicker.js"/>
+        <script src="Knowband_Spinandwin::js/flot/jquery.flot.min.js"/>
+        <script src="Knowband_Spinandwin::js/flot/jquery.flot.axislabels.js"/>
+        <script src="Knowband_Spinandwin::js/flot/jquery.flot.tooltip_0.5.js"/>
+        <script src="Knowband_Spinandwin::js/flot/jquery.flot.pie.min.js"/>
+        <script src="Knowband_Spinandwin::js/flot/excanvas.js"/>-->
+    </head>
+    <body>
+    	<referenceBlock name="menu">
+    	    <action method="setActive">
+    	        <argument name="itemId" xsi:type="string">Knowband_Spinandwin::spinwin_backend</argument>
+    	    </action>
+    	</referenceBlock>
+    	<referenceBlock name="page.title">
+    	    <action method="setPageTitle">
+    	        <argument translate="true" name="pageTitle" xsi:type="string">Spin and Win</argument>
+    	    </action>
+    	</referenceBlock>
+        <referenceContainer name="content">
+            <block class="Knowband\Spinandwin\Block\Adminhtml\Spinandwin" name="spinandwin" template="spinandwin.phtml">
+				
+				</block>
+    	</referenceContainer>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" name="adminhtml.system.config.switcher" template="Magento_Backend::store/switcher.phtml">
+                <arguments>
+                    <argument name="switch_websites" xsi:type="string">1</argument>
+                    <argument name="switch_store_groups" xsi:type="string">0</argument>
+                    <argument name="switch_store_views" xsi:type="string">1</argument>
+                    <argument name="default_selection_name" xsi:type="string" translate="true">Default Config</argument>
+                    <argument name="show_manage_stores_link" xsi:type="string">1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Knowband\Spinandwin\Block\Adminhtml\Tabs" name="spinandwin_tabs">
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\General" name="spinandwin_tab_general" template="tabs/general.phtml" />
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_general</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_general</argument>
+                </action>
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\Display" name="spinandwin_tab_display" template="tabs/display.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_display</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_display</argument>
+                </action>
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\LookAndFeel" name="spinandwin_tab_look_and_feel" template="tabs/look_and_feel.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_look_and_feel</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_look_and_feel</argument>
+                </action>
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\ThemeScheduling" name="spinandwin_tab_theme_scheduling" template="tabs/theme_scheduling.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_theme_scheduling</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_theme_scheduling</argument>
+                </action>
+                
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\TextSettings" name="spinandwin_tab_text_settings" template="tabs/text_settings.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_text_settings</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_text_settings</argument>
+                </action>
+				<block class="Knowband\Spinandwin\Block\Adminhtml\Tab\SliceSettings" name="spinandwin_tab_slice_settings" template="tabs/slice_settings.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_slice_settings</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_slice_settings</argument>
+                </action>
+				<block class="Knowband\Spinandwin\Block\Adminhtml\Tab\EmailMarketing" name="spinandwin_tab_email_marketing" template="tabs/email_marketing.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_email_marketing</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_email_marketing</argument>
+                </action>
+				<block class="Knowband\Spinandwin\Block\Adminhtml\Tab\EmailSettings" name="spinandwin_tab_email_settings" template="tabs/email_settings.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_email_settings</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_email_settings</argument>
+                </action>
+<!--                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\Statistics" name="spinandwin_tab_statistics" template="tabs/statistics.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_statistics</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_statistics</argument>
+                </action>-->
+                
+                <block class="Knowband\Spinandwin\Block\Adminhtml\Tab\SpinUserlist" name="spinandwin_tab_spinuserlist" template="tabs/spinuserlist.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">spinandwin_spinuserlist</argument>
+                    <argument name="block" xsi:type="string">spinandwin_tab_spinuserlist</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

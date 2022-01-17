@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Hiba történt a termelő a kupon kód, próbálja újra."
+Schedule has been deleted successfully,Menetrend sikeresen törölve
+Invalid Data.,Érvénytelen adat.
+Add/Edit Schedule,Hozzáadása / szerkesztése ütemezése
+Schedule has been saved successfully.,Menetrend sikeresen elmentve.
+Email has been sent successfully.,E-mail sikeresen elküldtük.
+"Something went wrong while sending the coupon email, please try again.","Hiba történt a küldés a kupon-mailt, kérjük, próbálja újra."
+Spin and Win,Centrifugálás és a Win
+Knowband,Knowband
+Settings saved successfully.,Beállítások sikeresen elmentve.
+New Customer,Új vevő
+No list found. (Verify Credentials),Nem talált lista. (Ellenőrzése bizonyítványok)
+The Private Klaviyo API Key you have set is invalid.,A Private Klaviyo API-kulcs van set érvénytelen.
+The Private Klaviyo API key you have set is no longer valid.,A Private Klaviyo API kulcs van készlet már nem érvényes.
+Unable to verify Klaviyo Private API Key.,Nem sikerült ellenőrizni Klaviyo Egyéni API kulcs.
+Mobile,Mobil
+Tablet,Tabletta
+Desktop,Desktop
+You have already taken advantage of this offer. Please try another email.,"Már kihasználták ezt az ajánlatot. Kérjük, próbálkozzon másik e-mailt."
+Not your lucky day today. Better Luck Next Time.,Nem szerencsés nap ez a mai. Legközelebb több szerencsét.
+Error occurred while subscribing. Please try again later.,"Hiba történt a feliratkozást. Kérlek, próbáld újra később."
+Jan,január
+Feb,Február
+Mar,elront
+Apr,április
+May,Lehet
+Jun,Június
+Jul,Július
+Aug,Augusztus
+Sep,szeptember
+Oct,Október
+Nov,November
+Dec,December
+None,Egyik sem
+Rose Day,Rose Day
+Propose Day,Javaslatot Day
+Chocolate Day,Csokoládé Day
+Teddy Day,Teddy Day
+Promise Day,Promise Day
+Hug Day,Ölelés nap
+Kiss Day,csók Day
+Valentine\'s Day,Valentin nap
+Xmas Theme 1,Xmas 1. téma
+Xmas Theme 2,Xmas 2. téma
+Merry Christmas - Theme 1,Merry Christmas - 1. téma
+Merry Christmas - Theme 2,Merry Christmas - 2. téma
+Merry Christmas - Theme 3,Merry Christmas - 3. téma
+Merry Christmas - Theme 4,Merry Christmas - 4. téma
+Merry Christmas - Theme 5,Merry Christmas - 5. téma
+Black Friday Theme1,Black Friday THEME1
+Black Friday Theme2,Black Friday THEME2
+Black Friday Theme3,Black Friday Theme3
+Black Friday Theme4,Black Friday Theme4
+Diwali Theme1,Diwali THEME1
+Diwali Theme2,Diwali THEME2
+Diwali Theme3,Diwali Theme3
+Diwali Theme4,Diwali Theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,Easter THEME1
+Easter Theme2,Easter THEME2
+Easter Theme3,Easter Theme3
+Halloween Theme1,Halloween THEME1
+Halloween Theme2,Halloween THEME2
+Halloween Theme3,Halloween Theme3
+Halloween Theme4,Halloween Theme4
+Thanks Giving Theme1,Hálaadás THEME1
+Happy New Year Theme1,Happy New Year THEME1
+Happy New Year Theme2,Happy New Year THEME2
+Happy New Year Theme3,Happy New Year Theme3
+Happy New Year Theme4,Happy New Year Theme4
+Happy New Year Theme5,Happy New Year Theme5
+Happy New Year Theme6,Happy New Year Theme6
+Happy New Year Theme7,Happy New Year Theme7
+Wheel Design 1,Wheel Design 1
+Wheel Design 2,Wheel Design 2
+Look and Feel,Nézz és érezz
+General Settings,Általános beállítások
+Display Settings,Megjelenítési beállítások
+Theme Scheduling,téma ütemezése
+Text Settings,szöveg beállításai
+Special bonus unlocked,Különleges bónusz kinyitotta
+You have a chance to win a nice big fat discount. Are you ready?,"Van egy esélyt, hogy nyerj egy szép nagy kövér kedvezmény. Kész vagy?"
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Akkor forgasd meg a kereket csak egyszer. Ha nyersz, akkor azt állítják, a kupon 1 napig csak!"
+Email Settings,E-mail beállítások
+Only on wheel,Csak kerék
+Email Only,csak e-mailben
+Email & Wheel,E-mail és kerék
+Fire,Tűz
+Aqua,Aqua
+Wind,Szél
+Void,Üres
+Earth,föld
+Return Statuses,Vissza Státusok
+Coupon Code,Kupon kód
+Customer Email,Ügyfél e-mail
+Country,Ország
+Device,Eszköz
+Coupon Used,Kupon Használt
+No,Nem
+Yes,Igen
+Coupon Generated On,Kupon generált
+Statistics,Statisztika
+Email Marketing,E-mail marketing
+User List,felhasználói lista
+Status,Állapot
+Enabled,Bekapcsolt
+Disabled,Tiltva
+From Date,Dátumtól
+To Date,Randizni
+Action,Akció
+Slice Settings,szelet beállításai
+10% OFF,10% KEDVEZMÉNY
+Not Lucky Today,Nem szerencsés ma
+35% OFF,35% OFF
+Opps! Sorry,Hoppá! Sajnálom
+15% OFF,15% OFF
+Better Luck Next Time,Legközelebb több szerencsét
+50% OFF,50% KEDVEZMÉNY
+Try Next Time,Próbálja Next Time
+12% OFF,12% OFF
+Come Again,Újra eljön
+5% OFF,5% OFF
+Try Again,Próbáld újra
+First Name,Keresztnév
+Last Name,Vezetéknév
+Email,Email
+Created Date,Létrehozás dátuma
+CSV,CSV
+Edit,szerkesztése
+Delete,Töröl
+Save Schedule,időzítés mentése
+Back,Vissza
+Save Settings,Beállítások mentése
+Email cannot be left blank,Az e-mailek nem maradhat üresen
+Not a valid email,Nem érvényes email
+a discount,kedvezmény
+Code copied.,Kód másolni.
+First name cannot be left blank,Első neve nem lehet üres
+Last name cannot be left blank,Az utolsó név nem lehet üres
+Hurrah! You've got,Hurrá! Megvan
+ discount. Lucky day!,kedvezmény. Szerencsés nap!
+The coupon code has been sent to you through the email.,A kuponkód küldtünk végig az e-mail.
+Better luck next time!,Legközelebb több szerencsét!
+Don't forget to use the discount code at checkout!,Ne felejtsd el használni a kedvezmény kódot fizetéskor!
+Enter you email,Írja levelezik
+Try your luck,Próbálj szerencsét
+Next Time,Legközelebb
+"No, I do not feel lucky","Nem, nem érzem szerencsésnek"
+Continue,Folytatni
+Enable Theme Scheduling,Engedélyezze téma ütemezése
+Add New Schedule,Új ütemezése
+Select number of slices,Válassza szeletek száma
+12 Slices,12 szeletek
+8 Slices,8 szelet
+6 Slices,6 szelet
+Select the number of slices to show.,Válassza ki a szeletek számát mutatni.
+Slice Label,szelet Label
+Coupon Type,Kupon típusa
+Coupon Value,A kupon értéke
+Gravity (%),Gravity (%)
+Fixed,Rögzített
+Percentage,Százalék
+Free Shipping,Ingyenes szállítás
+Theme,Téma
+Theme Peview,téma Peview
+Wheel Design,keréktárcsák
+Wheel Peview,kerék Peview
+Wheel Color,kerék Color
+Change color of the wheel.,Színe megváltozik a kerék.
+Wheel Text Color,Kerék Szövegszín
+Change text color of the wheel.,Szövegszín módosítása a kerék.
+Wheel Background Color,Kerék háttérszíne
+Change background color of wheel.,Változás háttérszín kerék.
+Font Color,Betű szín
+Change font color of text on wheel.,Változás szöveg betűtípus színét a kerék.
+Button Background Color,Gombháttérszín
+Change background color of spin button.,Változás háttérszín spin gombot.
+`Try your luck` Button Text Color,`Próbálja meg luck` gomb szövegének színe
+Change font color of the front `Try your luck` button.,A betűtípus színét az első `próbálja meg luck` gombra.
+"No, I do not feel lucky text color","Nem, nem érzem szerencsésnek szövegének színe"
+"Change font color of No, I do not feel lucky text.","Változás betűtípus színét Nem, nem érzem szerencsésnek szöveget."
+Schedule Status,Menetrend állapota
+Select Date,Válassza ki a dátum
+Field cannot be empty.,Mező nem lehet üres.
+You can enter only numbers.,Akkor meg csak számokat.
+Number should be greater than 0.,"Száma nagyobb kell legyen, mint 0."
+Field cannot be greater than {#} characters.,"A mező nem lehet nagyobb, mint {#} karakter."
+Field cannot be less than {#} character(s).,"Mező nem lehet kevesebb, mint {#} karakter (ek)."
+Please enter Email.,"Kérjük, adja meg e-mailben."
+Please enter a valid Email.,Kérlek létező email címet adj meg.
+Invalid date format.,Érvénytelen dátum formátumát.
+Number is not in the valid range. It should be between {1} and {100},Szám nem az érvényes tartományon. Között kell lennie {1} és {100}
+Field should be numeric.,Field legyen numerikus.
+Field can have only upto two decimal values.,A mező csak legfeljebb két tizedes értékeket.
+Email cannot be greater than {#} characters.,"E-mail nem lehet nagyobb, mint {#} karakter."
+Zip should not have special characters.,Zip nem kell speciális karaktereket.
+Percentage should be in number.,Százalékos kell lennie számát.
+Percentage should be between 0 and 100.,Százalékot kell 0 és 100 között.
+Size cannot be greater than {#} characters.,"Mérete nem lehet nagyobb, mint {#} karakter."
+Color could not be greater than {#} characters.,"Szín nem lehet nagyobb, mint {#} karakter."
+Color is not valid.,Szín nem érvényes.
+Special characters are not allowed.,Speciális karakterek használata nem lehetséges.
+Script tags are not allowed.,Script-címkék nem engedélyezett.
+Style tags are not allowed.,Stílus címkék használata nem megengedett.
+Iframe tags are not allowed.,Iframe címkék használata nem megengedett.
+Uploaded file is not an image.,A feltöltött fájl nem kép.
+Uploaded file size must be less than #d.,"A feltöltött fájl mérete ne legyen kisebb, mint #d."
+Field should not contain HTML tags.,Mező nem tartalmazhat HTML-címkéket.
+You can enter only positive numbers.,Akkor meg csak pozitív számok.
+`From Date` should be smaller than `To Date`,"`From-időpont kisebbnek kell lennie, mint a 'To-időpont"
+`From Date` already present in a slot.,`From-időpont már jelen lévő nyílásba.
+`To Date` already present in a slot.,`A-időpont már jelen lévő nyílásba.
+Coupon Display Options,A kupon Display Options
+Email Subject,Email tárgy
+Email Template,E-mail sablon
+Email Content,E-mail tartalma
+Test Email,teszt e-mail
+Send Email,Küldjön e-mailt
+Enable the Extension,Engedélyezze a bővítmény
+Show pull-out tab,Itt található kihúzható fül
+Allow customer to hide/show popup,Hagyjuk ügyfél elrejteni / megjeleníteni felugró
+Upload pull-out tab image,Feltöltés kihúzható fül kép
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,"Csak .png vagy .jpg file formátum elfogadott. A fájl mérete ne legyen több, mint 2 MB."
+Display Logo,kijelző Logo
+Upload Logo,Feltöltés Logo
+Remove logo,Remove logo
+Email Recheck,E-mail ismételt ellenőrzése
+Allow customer to provide coupon code more than one time.,"Hagyjuk ügyfél, hogy a szelvény kód egynél több alkalommal."
+Enable Wheel Sound,Engedélyezze Wheel Sound
+Allow sound on rotating the wheel.,Hagyjuk hang a kerék elforgatásával.
+Show Fireworks,megjelenítése Tűzijáték
+Show fireworks after a customer wins.,"Itt található tűzijáték, miután egy ügyfél nyer."
+Show Customer Name,Megjelenítése Ügyfél neve
+Show First Name,Megjelenítése Utónév
+Show Last Name,Itt található az utolsó név
+Show Both,"bizonyítja, hogy mindkét"
+Show None,megjelenítése Semmi
+Show customer name on the front end,Itt található az ügyfél nevét az eleje
+Require Customer Name,Megkövetelése ügyfél neve
+Require First Name,Megkövetelése Utónév
+Require Last Name,Megkövetelése Vezetéknév
+Require Both,egyaránt szükség
+Require None,megkövetelése Semmi
+Require customer name on the front end,Igényel az ügyfél nevét az eleje
+Wheel Display Interval,Kerék Display Interval
+Days,Napok
+Enter the display interval (in days) after which pop will show again (if not used).,"Adja meg a megjelenítési időtartam (napokban), ami után a pop megmutatja újra (ha nincs használatban)."
+Show Progress Meter,Megjelenítése Progress Meter
+Progress Percentage,haladás Százalék
+Enter the percentage of the progress meter.,Írja be a százalékos állapotjelző.
+Progress Text,haladás szöveg
+Enter the Text for the progress meter.,Írja be a szöveget az állapotjelző.
+Custom CSS,Egyéni CSS
+Add custom CSS code that you want to be executed on the front end,"Egyéni CSS kódot, amit szeretnénk, hogy végre kell hajtani az eleje"
+Custom JS,Egyedi JS
+Add custom JS code that you want to be executed on the front end,"Add egyéni JS kódot, amit szeretnénk, hogy végre kell hajtani az eleje"
+Enable Mailchimp,engedélyezze MailChimp
+Mailchimp Api Key,MailChimp API-kulcs
+Mailchimp List,MailChimp listája
+Select List,Select List
+Enable Klaviyo,engedélyezze Klaviyo
+Klaviyo Api Key,Klaviyo API-kulcs
+Klaviyo List,Klaviyo listája
+Enable Constant Contact,Engedélyezze Constant Contact
+Constant Contact Api Key,Állandó kapcsolatot API-kulcs
+Constant Contact Api Token,Állandó kapcsolatot Api Token
+Constant Contact List,Constant Contact List
+Please select atleast one page,"Kérjük, válasszon ki legalább egy oldalon"
+Please select atleast one country,"Kérjük, válasszon ki legalább egy országot"
+Field cannot be empty,Mező nem lehet üres
+Total Coupons Generated,Összes kupon generált
+Total Coupons Unused,Összes kupon Unused
+Total Coupons Used,Összes kupon Használt
+`Active Date` cannot be greater than `Inactive Date`,"`Active-időpont nem lehet nagyobb, mint a` Inaktív-időpont"
+`From` Date cannot be greater than `To` Date,"`From` dátum nem lehet nagyobb, mint` To` dátuma"
+Date & Time should be greater than current date time.,"Dátum és idő legyen nagyobb, mint az aktuális dátum idő."
+Total Generated,Összesen generált
+Till,Amíg
+Total Used,Összesen Használt
+Total Unused,Összesen Unused
+Coupon Statistics (Graphical),Kupon Statisztika (grafikus)
+Select date,Válassza ki a dátumot
+Generate,generál
+Other Statistics,egyéb statisztikák
+Country Statistics,Ország Statisztika
+Device Statistics,Device Statisztika
+Coupons List,Kupon listája
+Minimum Screen Size,Minimum képernyő mérete
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Tabletta Álló (768x1024)
+Tablet Landscape (1024x768),Tabletta Fekvő (1024x768)
+Laptop (1366x768),Laptop (1366x768)
+Desktop(1600x1080),Desktop (1600x1080)
+Smartphones only,Okostelefonok csak
+Maximum Display Frequency,Maximum kijelző frekvencia
+Every Visit,minden látogatás
+One Visit per hour,Egy látogatás óránként
+One visit per day,Egy látogatás naponta
+One visit per week,Egy kirándulás hetente
+One visit per month,Egy látogatás havonta
+Show Spin Wheel on the front end after the specified time,"Megjelenítése spin kerék elülső végén, miután a megadott időben"
+Hide Spin Wheel After,Elrejtése spin kerék után
+Always Display,mindig megjelenítése
+10 Seconds,10 másodperc
+20 Seconds,20 másodperc
+30 Seconds,30 másodperc
+40 Seconds,40 másodperc
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Válassza azt az időintervallumot, amely után a spin kerék felőli szélén elrejti automatikusan"
+Set Fix Time,Set Fix Idő
+Active Date/Time,Aktív dátum / idő
+Expire Date/Time,Lejárati dátum / idő
+Whom to show,Kihez mutat
+All Visitors,Minden látogató
+New Visitors,új látogatók
+Returning Visitors,Visszatérő látogatók
+Select whom to show the popup.,Válassza kinek kell mutatni a popup.
+When to Show,Ha a megjelenítésre
+Immediately,Azonnal
+After Time(seconds),Miután Idő (másodperc)
+When scroll down(%),Amikor lefelé görget (%)
+When Exit,amikor Exit
+Select when to display the popup.,"Akkor válassza, ha megjeleníti a popup."
+Enter time (In Seconds),Írja be az időt (másodpercben)
+Enter time in seconds after which you want to display spin wheel pop up.,Írja be az időt másodperc után a megjeleníteni kívánt centrifugálási kerék felbukkan.
+Enter Scroll Percentage,Írja Scroll Százalék
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,"Írja scroll százalék, amely után a megjeleníteni kívánt centrifugálási kerék felbukkan. Ne nem adja% jelet."
+Geo Location,földrajzi hely
+World Wide,World Wide
+Display selected areas only,Display kijelölt területeken
+Do not display selected areas,Ne jelenjen meg a kijelölt területek
+Select Geo Location where you want to show the popup.,"Válassza Földrajzi hely, ahol meg akarom mutatni a popup."
+Select countries.,Select országokban.
+Title Text,Cím szöveg
+Subtitle Text,feliratszövegsort
+Rules Text,szabályok szöveg
+One rule should be entered in one line in order to show it on pop up point wise.,"Egy szabály kell beírni egy sorban annak érdekében, hogy mutassa meg a pop-up pont bölcs."
+Are your sure?,Biztos vagy benne?
+Please enter a valid color code,Adjon meg egy érvényes színkódot
+`Active Date` cannot be greater than `Expire Date`,"`Active-időpont nem lehet nagyobb, mint a` Lejár-időpont"
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Az összeg gravitáció nem az érvényes tartományon. Meg kell betwen 1 és 100 A teljes:
+No list exists for this API key.,Nincs lista létezik erre API kulcsot.
+No. of times,Számú alkalommal
+Date,Dátum
+Please upload an image file.,Töltsön fel egy képfájlt.
+Note: select time in GMT only.,Megjegyzés: válasszuk idő GMT csak.
+This slot is already available.,Ez a nyílás már rendelkezésre áll.

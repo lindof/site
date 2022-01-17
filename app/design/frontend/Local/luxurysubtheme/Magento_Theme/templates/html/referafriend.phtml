@@ -1,0 +1,27 @@
+<div id="refer-box">
+  <div class="hide-refer"><button>X</button></div>
+  <div class="text"><a href="/referafriend">REFER A FRIEND :<br> GIVE 10% GET 10%</a></div>
+</div>
+
+<script type="text/javascript">
+
+    require(
+        [
+            'jquery',
+            'jquery/jquery.cookie'
+        ],
+        function(
+            $,
+            cookie
+        ) {
+          var ignorePopup = $.cookie("ignore_referafriend_popup");
+          if(ignorePopup)
+          $("#refer-box").fadeOut();
+
+          $("#refer-box button").click(function(){
+            $.cookie("ignore_referafriend_popup", "true");
+            $(this).parent().parent().fadeOut();
+          });
+        }
+    );
+</script>

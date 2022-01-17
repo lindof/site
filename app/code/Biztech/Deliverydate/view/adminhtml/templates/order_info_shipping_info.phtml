@@ -1,0 +1,41 @@
+<div id="delivery-date">
+    <p>
+        <strong><?php echo __('Shipping Arrival Date') ?></strong>
+        <span class="delivery-date"><?= $block->getShippingArrivalDate() ?></span>
+        <span class="delivery-slot"><?= $block->getShippingArrivalSlot() ?></span>
+    </p>
+
+    <p>
+        <strong><?php echo __('Delivery Comments') ?></strong>
+        <span class="delivery-comment"><?= $block->getShippingArrivalComments() ?></span>
+    </p>
+    <?php if ($block->getCallBeforeDelivery() == 1): ?> 
+        <p>
+            <strong><?php echo __($block->getCallMeLabel()) ?></strong>
+            <span class="delivery-callmebeforedelivery"><?= __('Yes'); ?></span>
+        </p>
+    <?php endif; ?>
+</div>
+<?php
+$class = '.order-shipping-method';
+switch ($this->getViewMode()) {
+    case 'order_shipping_view':
+        $class = '.order-shipping-method';
+        break;
+    case 'shipment_tracking':
+        $class = '.shipping-description-wrapper';
+        break;
+    default:
+        $class = '.shipping-description-wrapper';
+        break;
+}
+?>
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function ($) {
+            var element = $('#delivery-date').detach();
+            $('<?= $class ?>').append(element);
+        }
+    );
+</script>

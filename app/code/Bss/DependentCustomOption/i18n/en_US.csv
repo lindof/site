@@ -1,0 +1,21 @@
+Be Enabled Only If the Parent Option Value is Selected,Be Enabled Only If the Parent Option Value is Selected
+Always Be Displayed But Customers Can’t Pick If the Parent Option Value isn’t Selected,Always Be Displayed But Customers Can’t Pick If the Parent Option Value isn’t Selected
+Be Enabled If At Least One Parent Value is Selected,Be Enabled If At Least One Parent Value is Selected
+Be Enabled Only If All Parent Values are Selected,Be Enabled Only If All Parent Values are Selected
+Option ID,Option ID
+Dependent Options' IDs,Dependent Options' IDs
+Please add the valid IDs,Please add the valid IDs
+Parent and children values can't be in the same custom option,Parent and children values can't be in the same custom option
+Change,Change
+Delete,Delete
+Compatible file extensions to upload,Compatible file extensions to upload
+Maximum image width,Maximum image width
+px.,px.
+Maximum image height,Maximum image height
+Maximum number of characters:,Maximum number of characters:
+Only when parent value is selected,Only when parent value is selected
+Always, but can't be selected if the parent value is not selected,Always, but can't be selected if the parent value is not selected
+When at least one parent value is selected,When at least one parent value is selected
+When all parent values are selected,When all parent values are selected
+Display child values that have only one parent value,Display child values that have only one parent value
+Display child values that have multiple parent values,Display child values that have multiple parent values

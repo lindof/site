@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+	
+		<add id="Cynoinfotech_PaymentRestrictions::paymentrestrictions" title="Payment Restrictions" translate="title" module="Cynoinfotech_PaymentRestrictions" sortOrder="21" parent="Magento_Sales::sales" resource="Cynoinfotech_PaymentRestrictions::paymentrestrictions"/>		
+		
+		<add id="Cynoinfotech_PaymentRestrictions::paymentrestrictions_manage" title="Payment Restrictions Manage" translate="title" module="Cynoinfotech_PaymentRestrictions" sortOrder="10" parent="Cynoinfotech_PaymentRestrictions::paymentrestrictions" action="paymentrestrictions/index/index" resource="Cynoinfotech_PaymentRestrictions::paymentrestrictions_manage"/>
+		
+		<add id='Cynoinfotech_PaymentRestrictions::paymentrestrictions_configuration' title='Payment Restrictions Configuration' module='Cynoinfotech_PaymentRestrictions' sortOrder='12' action='adminhtml/system_config/edit/section/cynoinfotech_paymentrestrictions/' resource='Cynoinfotech_PaymentRestrictions::paymentrestrictions_configuration'  parent="Cynoinfotech_PaymentRestrictions::paymentrestrictions" />
+		
+    </menu>
+</config>

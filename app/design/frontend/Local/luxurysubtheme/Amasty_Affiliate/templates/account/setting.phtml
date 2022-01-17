@@ -1,0 +1,106 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_Affiliate
+ */
+?>
+<?php
+/** @var \Amasty\Affiliate\Block\Account\Setting $block */
+?>
+<?php if (!$block->getAccount()->getIsAffiliateActive() && $block->getAccount()->getAccountId()): ?>
+    <div class="message info empty">
+        <span>
+            <?php echo __("Your account has been disabled by store administrator. Please contact us for details."); ?>
+        </span>
+    </div>
+<?php else: ?>
+    <form
+            class="form"
+            action="<?php echo $block->escapeHtml($block->getUrl('amasty_affiliate/account/editPost')) ?>"
+            method="post"
+            id="form-validate"
+            enctype="multipart/form-data"
+            data-hasrequired="<?php echo __('* Required Fields') ?>"
+            autocomplete="off"
+    >
+        <fieldset class="fieldset">
+            <?php echo $block->getBlockHtml('formkey')?>
+            <legend class="legend"><span><?php echo __('Refer a Friend') ?></span></legend><br>
+            <input type="hidden" name="referring_website" value=""/>
+            <input type="hidden" name="paypal_email" value=""/>
+
+            <div class="referal-description">
+            <h4>Welcome to <strong>Refer A Friend</strong> Program at Lindo F!</h4>
+            <p>Please review and accept Terms and Conditions of the Refer a Friend Program and click <b>"Save"</b>.</p>
+            <p>You are now ready! Just click on My Links under Refer a Friend menu to get your personalized Lindo F links and start sharing and saving!</p>
+        
+        
+            </div>
+<!-- 
+            <div class="field referring_website">
+                <label for="referring-website" class="label"><span><?php echo __('Test') ?></span></label>
+                <div class="control">
+                    <input
+                            value="<?php echo $block->escapeHtml($block->getAccount()->getReferringWebsite()) ?>"
+                            class="input-text"
+                            type="text"
+                            name="referring_website"
+                            id="referring-website"
+                            title="<?php  echo __('Referring Website') ?>"
+                    >
+                </div>
+            </div>
+            <div class="field paypal_email">
+                <label for="paypal-email" class="label"><span><?php echo __('Paypal Email') ?></span></label>
+                <div class="control">
+                    <input
+                            value="<?php echo $block->escapeHtml($block->getAccount()->getPaypalEmail()) ?>"
+                            class="input-text"
+                            type="text"
+                            name="paypal_email"
+                            id="paypal-email"
+                            title="<?php  echo __('Paypal Email') ?>"
+                    >
+                </div> -->
+            <!-- </div> -->
+            <div class="field choice">
+                <input
+                    <?php echo $block->escapeHtml($block->checkSubscribe()) ?>
+                        class="checkbox"
+                        type="checkbox"
+                        name="receive_notifications"
+                        id="receive-notifications"
+                        title="<?php echo __('Subscribe to Email Notifications') ?>"
+                />
+                <label class="label" for="receive-notifications">
+                    <span><?php echo __('Subscribe to Email Notifications') ?></span>
+                </label>
+            </div>
+            <div class="field choice required">
+                <input
+                    <?php echo $block->escapeHtml($block->checkConditions()) ?>
+                        required class="checkbox"
+                        type="checkbox"
+                        name="accepted_terms_conditions"
+                        id="accepted-terms-conditions"
+                        title="<?php echo __('Accept Terms and Conditions') ?>"
+                />
+                <label value="1" class="label" for="accepted-terms-conditions">
+                    <!-- <a href="<?php echo $block->escapeHtml($block->getTermsUrl()) ?>" target="_blank"> -->
+                    <a href="/referafriend-conditions" target="_blank">
+                        <?php echo $block->escapeHtml($block->getConditionsCheckboxText()) ?>
+                    </a>
+                </label>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" class="action save primary" title="<?php echo __('Save') ?>">
+                        <span><?php echo __('Save') ?></span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+<?php endif; ?>
+

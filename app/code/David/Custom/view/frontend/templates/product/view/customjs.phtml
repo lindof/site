@@ -1,0 +1,26 @@
+<script>
+    require(['jquery'], function($){
+        $(document).one('swatch.initialized', function(){
+            var search = location.search.substring(1);
+            var queryObj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+            console.log(queryObj)
+            $.each(queryObj, function(key, value){
+                value= processValue(value);
+                $('.swatch-attribute.'+key+' [data-option-label="'+value+'"], .swatch-attribute.'+key+' [option-label="'+value+'"]').trigger('click');
+                // $('.swatch-attribute.'+key+' [option-label="'+value+'"]').trigger('click');
+                // console.log('.swatch-attribute.'+key+' [option-label="'+value+'"]')
+            });
+        });
+
+        function processValue(value){
+            if (value.indexOf('_') != -1) {
+                value = value.replace('_', ' ');
+            }
+            return (value + '')
+            .replace(/^(.)|\s+(.)/g, function ($1) {
+            return $1.toUpperCase()
+            })
+        }
+    })
+    
+</script>

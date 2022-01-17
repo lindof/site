@@ -1,0 +1,12 @@
+.instagram_status + div {
+    width: 280px;
+    text-align: center;
+}
+.instagram_status.success + div{
+    color:#008000;
+	font-weight: bold;
+}
+.instagram_status.error + div{
+    color:#FF0000;
+	font-weight: bold;
+}

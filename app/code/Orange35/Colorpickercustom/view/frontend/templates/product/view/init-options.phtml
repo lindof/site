@@ -1,0 +1,24 @@
+<?php
+
+/** @var \Orange35\Colorpickercustom\Block\Product\View\Options $block * */
+/** @var \Magento\Catalog\Model\Product $product */
+$product = $block->getProduct();
+$options = $block->getColorPickerOptions();
+$jsonOptions = $block->getOptionHelper()->getJsonOptions($product, $options);
+$jsonOptions['selectors']['form'] = '#product_addtocart_form';
+$jsonOptions['option']['selectors'] = [
+    'selected' => '#product-options-wrapper [data-role="o35-option"][data-id={id}] .swatch-attribute-selected-option',
+    'swatches' => '#product-options-wrapper [data-role="o35-option"][data-id={id}] [data-role="o35-swatch"]',
+];
+?>
+<?php if ($block->hasSwatches()) : ?>
+<!-- Orange35 Colorpickercustom -->
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Orange35_Colorpickercustom/js/options": <?= json_encode($jsonOptions, JSON_PRETTY_PRINT); ?>
+    }
+}
+</script>
+<?php endif; ?>
+<!-- Orange35 Colorpickercustom end -->

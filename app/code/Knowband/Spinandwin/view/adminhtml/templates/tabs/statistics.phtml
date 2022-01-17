@@ -1,0 +1,162 @@
+<?php $settings = $this->getSettings('knowband/spinandwin/settings'); 
+$header_count_data = $this->getCountStatsData();
+$devicepie_data = $this->getDevicePieChartsData();
+$countrypie_data = $this->getCountryPieChartsData();
+$today_date = date('m/d/Y', time());
+$todayminusthirty_date = date('m/d/Y', strtotime('-2 weeks'));
+?>
+<script>
+    var device_data = <?php echo json_encode($devicepie_data); ?>;
+    var country_data = <?php echo json_encode($countrypie_data); ?>;
+    var stats_ajax_url = "<?php echo $this->getUrl("spinwinadmin/spinandwin/linechartsajax/", ['_secure' => $this->getRequest()->isSecure()]); ?>";
+    var selected_pages_error = "<?php echo __('Please select atleast one page'); ?>";
+    var selected_country_error = "<?php echo __('Please select atleast one country'); ?>";
+    var empty_field = "<?php echo __('Field cannot be empty'); ?>";
+    var c_g_label = "<?php echo __('Total Coupons Generated'); ?>";
+    var c_un_label = "<?php echo __('Total Coupons Unused'); ?>";
+    var c_u_label = "<?php echo __('Total Coupons Used'); ?>";
+    var date_range_error ="<?php echo __('`Active Date` cannot be greater than `Inactive Date`'); ?>";
+    var stats_date_range_error ="<?php echo __('`From` Date cannot be greater than `To` Date'); ?>";
+    var current_date_time = "<?php echo date('Y-m-d H:i:s', time()); ?>";
+    var datetime_greterthan_current_time = "<?php echo __('Date & Time should be greater than current date time.'); ?>";
+    var userlists_ajax_url = "<?php echo $this->getUrl("spinwinadmin/spinandwin/userlistajax/", ['_secure' => $this->getRequest()->isSecure()]); ?>";
+    var loader_image = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/loader-1.gif'); ?>';
+</script>
+<div class="fieldset-wrapper" id="statistics">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Statistics")?></h1>
+        <div class="dashboard-totals" id="dashboard_diagram_totals">
+            <ul class="dashboard-totals-list">
+                <li class="dashboard-totals-item">
+                    <span class="dashboard-totals-label"><?php echo __("Total Generated"); ?></span>
+                    <strong class="dashboard-totals-value">
+                        <span class="price"><?php echo $header_count_data['total_generated']; ?></span><span class="dashboard-totals-decimals"></span>
+                        <div class="vss_info">
+                            <?php echo __("Till"); ?> <?php echo date('d M, Y', time()); ?>
+                        </div>
+                    </strong>
+                </li>
+                        <li class="dashboard-totals-item">
+                    <span class="dashboard-totals-label"><?php echo __("Total Used"); ?></span>
+                    <strong class="dashboard-totals-value">
+                        <span class="price"><?php echo $header_count_data['total_used']; ?></span>                    <span class="dashboard-totals-decimals"></span>
+                        <div class="vss_info">
+                            <?php echo __("Till"); ?> <?php echo date('d M, Y', time()); ?>
+                        </div>
+                    </strong>
+                </li>
+                        <li class="dashboard-totals-item">
+                    <span class="dashboard-totals-label"><?php echo __("Total Unused"); ?></span>
+                    <strong class="dashboard-totals-value">
+                        <span class="price"><?php echo ($header_count_data['total_generated'] - $header_count_data['total_used']);  ?></span>                    <span class="dashboard-totals-decimals"></span>
+                        <div class="vss_info">
+                            <?php echo __("Till"); ?> <?php echo date('d M, Y', time()); ?>
+                        </div>
+                    </strong>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <div class="dashboard-totals" id="dashboard_diagram_totals">
+            <div class="vss_head">
+                <h3 class="heading"  style="text-align: left;"><?php echo __("Coupon Statistics (Graphical)"); ?></h3>
+            </div>
+            <div class="vss_block_body">
+                <ul class="vss_center_align_ul">
+                    <li>
+                        <div class="col-md-12">
+                            <span class="col-md-4">
+                                <input id="start_date" value="<?php echo $todayminusthirty_date; ?>" class="admin__control-text" name="vss_spinandwin[statistics][start_date]" type="text" style="width: 190px;">
+                                <script type="text/javascript">
+                                require([
+                                    "jquery",
+                                    "mage/calendar"
+                                    ], function($){
+                                      $('#start_date').datepicker({
+                                          showMonthAfterYear: true,
+                                          changeMonth: true,
+                                          changeYear: true,
+                                          dateFormat:'mm/dd/yy',
+                                          showsTime: false,
+                                          showOn: 'button',
+                                          showButtonPanel: true
+                                        } 
+                                      ).next("button").button({
+                                        label: "<?php echo __("Select date")?>",
+                                      });
+                                    });
+                                </script>
+                            </span>
+                            <span class="col-md-4">
+                                <input id="end_date" value="<?php echo $today_date; ?>" class="admin__control-text" name="vss_spinandwin[statistics][end_date]" type="text" style="width: 190px;">
+                                <script type="text/javascript">
+                                require([
+                                    "jquery",
+                                    "mage/calendar"
+                                    ], function($){
+                                      $('#end_date').datepicker({
+                                          showMonthAfterYear: true,
+                                          changeMonth: true,
+                                          changeYear: true,
+                                          dateFormat:'mm/dd/yy',
+                                          showsTime: false,
+                                          showOn: 'button',
+                                          showButtonPanel: true
+                                        } 
+                                      ).next("button").button({
+                                        label: "<?php echo __("Select date")?>",
+                                      });
+                                    });
+                                </script>
+                            </span>
+                            <span class="col-md-3">
+                                <a class="action-default scalable action-secondary" id="generateLineChartButton" style="cursor: pointer">
+                                    <span><?php echo __("Generate"); ?></span>
+                                </a>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+                <div id="vss_spinandwin_graph_stats" style="margin-top: 40px;">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-totals" id="dashboard_diagram_totals">
+            <div class="vss_head">
+                <h3 class="heading" style="text-align: left;"><?php echo __("Other Statistics"); ?></h3>
+            </div>
+            <div class="vss_block_body">
+                <span class="vss_50width">
+                    <div class="vss_head">
+                        <h3 class="heading"><?php echo __("Country Statistics"); ?></h3>
+                    </div>
+                    <div class="vss_block_body">
+                        <div id="vss_spinandwin_country_stats"></div>
+                    </div>
+                </span>
+                <span class="vss_50width">
+                    <div class="vss_head">
+                        <h3 class="heading"><?php echo __("Device Statistics"); ?></h3>
+                    </div>
+                    <div class="vss_block_body">
+                        <div id="vss_spinandwin_device_stats"></div>
+                    </div>
+                </span>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+        <div class="dashboard-totals" id="dashboard_diagram_totals">
+            <div class="vss_head">
+                <h3 class="heading" style="text-align: left;"><?php echo __("Coupons List"); ?></h3>
+            </div>
+            <div class="vss_block_body">
+                <?php
+                    $blockObj= $this->getLayout()->createBlock('Knowband\Spinandwin\Block\Adminhtml\Tab\UserList');
+                    echo $blockObj->toHtml();
+                    ?>
+            </div>
+        </div>
+    </div>
+</div>

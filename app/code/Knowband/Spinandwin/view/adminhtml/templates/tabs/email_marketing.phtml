@@ -1,0 +1,150 @@
+<?php $settings = $this->getSettings('knowband/spinandwin/settings');
+
+ ?>
+<script>
+    var lists_ajax_url = '<?php echo $this->getUrl("spinwinadmin/spinandwin/listajax/", ['_secure' => $this->getRequest()->isSecure()]); ?>';
+    var email_marketing_values = <?php echo json_encode($settings['email_marketing']); ?>;
+</script>
+
+<div class="fieldset-wrapper" id="email-marketing">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Email Marketing") ?></h1>
+        <fieldset class="admin__fieldset">
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_mailchimp_enable">
+                    <span><?php echo __("Enable Mailchimp") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_mailchimp_enable" name="vss_spinandwin[email_marketing][mailchimp_enable]" value="1" <?php echo isset($settings["email_marketing"]["mailchimp_enable"]) ? $settings["email_marketing"]["mailchimp_enable"] ? 'checked="checked"' : '' : ''; ?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_mailchimp_enable">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_mailchimp_enable_option">
+                <label class="admin__field-label" for="spinandwin_mailchimp_api">
+                    <span><span class="vss_required">*</span><?php echo __("Mailchimp Api Key") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_mailchimp_api" value="<?php echo isset($settings["email_marketing"]["mailchimp_api"]) ? $settings["email_marketing"]["mailchimp_api"] : "" ?>" class="admin__control-text" name="vss_spinandwin[email_marketing][mailchimp_api]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_mailchimp_enable_option">
+                <label class="admin__field-label" for="spinandwin_mailchimp_list">
+                    <span><?php echo __("Mailchimp List") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[email_marketing][mailchimp_list]" id="spinandwin_mailchimp_list">
+                        <option value=""><?php echo __("Select List"); ?></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_klaviyo_enable">
+                    <span><?php echo __("Enable Klaviyo") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_klaviyo_enable" name="vss_spinandwin[email_marketing][klaviyo_enable]" value="1" <?php echo isset($settings["email_marketing"]["klaviyo_enable"]) ? $settings["email_marketing"]["klaviyo_enable"] ? 'checked="checked"' : '' : ''; ?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_klaviyo_enable">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_klaviyo_enable_option">
+                <label class="admin__field-label" for="spinandwin_klaviyo_api">
+                    <span><span class="vss_required">*</span><?php echo __("Klaviyo Api Key") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_klaviyo_api" value="<?php echo isset($settings["email_marketing"]["klaviyo_api"]) ? $settings["email_marketing"]["klaviyo_api"] : "" ?>" class="admin__control-text" name="vss_spinandwin[email_marketing][klaviyo_api]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_klaviyo_enable_option">
+                <label class="admin__field-label" for="spinandwin_klaviyo_list">
+                    <span><?php echo __("Klaviyo List") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[email_marketing][klaviyo_list]" id="spinandwin_klaviyo_list">
+                        <option value=""><?php echo __("Select List"); ?></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_constant_contact_enable">
+                    <span><?php echo __("Enable Constant Contact") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_constant_contact_enable" name="vss_spinandwin[email_marketing][constant_contact_enable]" value="1" <?php echo isset($settings["email_marketing"]["constant_contact_enable"]) ? $settings["email_marketing"]["constant_contact_enable"] ? 'checked="checked"' : '' : ''; ?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_constant_contact_enable">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_constant_contact_api spinandwin_constant_contact_enable_option">
+                <label class="admin__field-label" for="spinandwin_constant_contact_api">
+                    <span><span class="vss_required">*</span><?php echo __("Constant Contact Api Key") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_constant_contact_api" value="<?php echo isset($settings["email_marketing"]["constant_contact_api"]) ? $settings["email_marketing"]["constant_contact_api"] : "" ?>" class="admin__control-text" name="vss_spinandwin[email_marketing][constant_contact_api]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_constant_contact_token spinandwin_constant_contact_enable_option">
+                <label class="admin__field-label" for="spinandwin_constant_contact_token">
+                    <span><span class="vss_required">*</span><?php echo __("Constant Contact Api Token") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_constant_contact_token" value="<?php echo isset($settings["email_marketing"]["constant_contact_token"]) ? $settings["email_marketing"]["constant_contact_token"] : "" ?>" class="admin__control-text" name="vss_spinandwin[email_marketing][constant_contact_token]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_constant_contact_list spinandwin_constant_contact_enable_option">
+                <label class="admin__field-label" for="spinandwin_constant_contact_list">
+                    <span><?php echo __("Constant Contact List") ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[email_marketing][constant_contact_list]" id="spinandwin_constant_contact_list">
+                        <option value=""><?php echo __("Select List"); ?></option>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</div>
+<style>
+<?php if (isset($settings["email_marketing"]["mailchimp_enable"]) && ($settings["email_marketing"]["mailchimp_enable"] == '1')) { ?>
+        .spinandwin_mailchimp_enable_option{
+            display:block;
+        }                                                    
+<?php } else { ?>
+        .spinandwin_mailchimp_enable_option{
+            display:none;
+        }
+<?php } ?>
+<?php if (isset($settings["email_marketing"]["klaviyo_enable"]) && ($settings["email_marketing"]["klaviyo_enable"] == '1')) { ?>
+        .spinandwin_klaviyo_enable_option{
+            display:block;
+        }                                                    
+<?php } else { ?>
+        .spinandwin_klaviyo_enable_option{
+            display:none;
+        }
+<?php } ?>
+<?php if (isset($settings["email_marketing"]["constant_contact_enable"]) && ($settings["email_marketing"]["constant_contact_enable"] == '1')) { ?>
+        .spinandwin_constant_contact_enable_option{
+            display:block;
+        }                                                    
+<?php } else { ?>
+        .spinandwin_constant_contact_enable_option{
+            display:none;
+        }
+<?php } ?>
+</style>
+

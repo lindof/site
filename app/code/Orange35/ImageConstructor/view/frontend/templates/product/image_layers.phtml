@@ -1,0 +1,10 @@
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+<?php foreach ((array) $block->getLayers() as $layer) : ?>
+    <img class="product-image-photo"
+
+         style="position: absolute; top:0; left: 0"
+         src="<?= /* @escapeNotVerified */ $layer['src'] ?>"
+         width="<?= /* @escapeNotVerified */ $layer['width'] ?>"
+         height="<?= /* @escapeNotVerified */ $layer['height'] ?>"
+         alt="<?= /* @escapeNotVerified */ $block->stripTags($block->getLabel(), null, true) ?>"/>
+<?php endforeach; ?>

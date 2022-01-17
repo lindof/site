@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magento\Catalog\Block\Product\View" type="Biztech\Deliverydate\Block\Product\View" />
+    <preference for="Magento\Backend\Block\Dashboard\Diagrams" type="Biztech\Deliverydate\Block\Adminhtml\Dashboard\Diagrams" />
+    <preference for="Magento\Backend\Block\Dashboard\Grids" type="Biztech\Deliverydate\Block\Adminhtml\Dashboard\Grids" />
+
+    <preference for="Magento\Sales\Block\Order\Info" type="Biztech\Deliverydate\Block\Order\Info" />
+
+    <!--custom date-->
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save-in-quote" type="Biztech\Deliverydate\Model\Checkout\ShippingInformationManagementPlugin" sortOrder="1" disabled="false"/>
+    </type>
+
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="shipping_arrival_date" xsi:type="string">sales_order.shipping_arrival_date</item>
+            </argument>
+            <argument name="columns" xsi:type="array">
+                <item name="shipping_arrival_slot" xsi:type="string">sales_order.shipping_arrival_slot</item>
+            </argument>
+            <argument name="columns" xsi:type="array">
+                <item name="shipping_arrival_comments" xsi:type="string">sales_order.shipping_arrival_comments</item>
+            </argument>
+            <argument name="columns" xsi:type="array">
+                <item name="call_before_delivery" xsi:type="string">sales_order.call_before_delivery</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!--rewrite dashborad block-->
+    <!-- <type name="Magento\Backend\Block\Dashboard">
+        <plugin name="add-custom_tab_delivery-date" type="Biztech\Deliverydate\Model\Backend\Dashboard\DiagramsPlugin" sortOrder="15"/>
+    </type> -->
+
+    <type name="Magento\Quote\Model\Quote\Item\ToOrderItem">
+        <plugin name="add-delivery-date-to-order" type="Biztech\Deliverydate\Plugin\ToOrderItem" sortOrder="1" />
+    </type>
+
+    <!-- order print pdf -->
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="add-delivery-date-to-shipping-description" type="Biztech\Deliverydate\Plugin\Sales\OrderPlugin" sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Invoice">
+        <plugin name="set-flag-for-plugin-pdf" type="Biztech\Deliverydate\Plugin\Sales\Order\Pdf\InvoicePlugin" sortOrder="11"/>
+    </type>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Shipment">
+        <plugin name="set-flag-for-plugin-pdf" type="Biztech\Deliverydate\Plugin\Sales\Order\Pdf\ShipmentPlugin" sortOrder="12"/>
+    </type>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Creditmemo">
+        <plugin name="set-flag-for-creditmemo-pdf" type="Biztech\Deliverydate\Plugin\Sales\Order\Pdf\CreditmemoPlugin" sortOrder="13"/>
+    </type>
+
+    <type name="Magento\Sales\Block\Adminhtml\Items\Column\DefaultColumn">
+        <plugin name="display-delivery-option-for-productwise-backend" type="Biztech\Deliverydate\Plugin\Sales\DisplayDeliverydateProduct" sortOrder="14"/>
+    </type>
+    <type name="Magento\Sales\Model\Order\Pdf\Items\AbstractItems">
+        <plugin name="display-delivery-option-for-productwise-pdf" type="Biztech\Deliverydate\Plugin\Sales\DisplayDeliverydateProduct" sortOrder="15" />
+    </type>
+
+    <type name="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer">
+        <plugin name="display-delivery-option-for-productwise-frontend" type="Biztech\Deliverydate\Plugin\Sales\DisplayDeliverydateProductFrontend" sortOrder="16" />
+    </type>
+
+</config>

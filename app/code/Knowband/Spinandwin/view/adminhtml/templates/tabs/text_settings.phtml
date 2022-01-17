@@ -1,0 +1,36 @@
+<?php $settings = $this->getSettings('knowband/spinandwin/settings'); if(!isset($settings["text_settings"])) $settings['text_settings'] = $this->getDefaultSettings(); ?>
+<div class="fieldset-wrapper" id="text-settings">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Text Settings")?></h1>
+        <fieldset class="admin__fieldset">
+            <div class="admin__field spinandwin_title_text_1">
+                <label class="admin__field-label" for="spinandwin_title_text_1">
+                    <span><span class="vss_required">*</span>
+                        <?php echo __("Title Text")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_title_text_1" value="<?php echo isset($settings["text_settings"]["title_text_1"])?$settings["text_settings"]["title_text_1"]:""?>" class="admin__control-text" name="vss_spinandwin[text_settings][title_text_1]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_title_text_2">
+                <label class="admin__field-label" for="spinandwin_title_text_2">
+                    <span><span class="vss_required">*</span><?php echo __("Subtitle Text")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_title_text_2" value="<?php echo isset($settings["text_settings"]["title_text_2"])?$settings["text_settings"]["title_text_2"]:""?>" class="admin__control-text" name="vss_spinandwin[text_settings][title_text_2]"   type="text">
+                </div>
+            </div>
+            <div class="admin__field spinandwin_title_text_3">
+                <label class="admin__field-label" for="spinandwin_title_text_3">
+                    <span><span class="vss_required">*</span><?php echo __("Rules Text")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <textarea id="spinandwin_title_text_3" class="admin__control-text" name="vss_spinandwin[text_settings][title_text_3]"><?php echo isset($settings["text_settings"]["title_text_3"])?$settings["text_settings"]["title_text_3"]:""?></textarea>
+                        <div class="vss_info">
+                            <?php echo __("One rule should be entered in one line in order to show it on pop up point wise.")?>
+                        </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

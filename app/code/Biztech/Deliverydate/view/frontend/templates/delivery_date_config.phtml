@@ -1,0 +1,180 @@
+<?php
+
+// if ($this->getHelper()->isEnable()) :
+$enabledMethod = $block->getenabledMethod();
+$off_days = [];
+$nonworking_days = $this->getHelper()->getFormattedNonWorkingDays();
+$nonworking_period = $this->getHelper()->getFormattedNonWorkingPeriod();
+$off_days = array_merge((array)$nonworking_days, (array)$nonworking_period);
+
+$dailyQuota = $this->getHelper()->disableSameDayBasedOnDailyQuota();
+
+if ($dailyQuota['disable'] === true) {
+    $off_days = array_values(array_unique(array_merge($off_days, $dailyQuota['day_to_disable']), SORT_REGULAR));
+}
+
+$cutoff = $this->getHelper()->disableDayBasedOnCutoff();
+if ($cutoff['status'] === true) {
+    $off_days = array_values(array_unique(array_merge($off_days, $cutoff['day_to_disable']), SORT_REGULAR));
+}
+
+switch ($enabledMethod) {
+    case 1:
+        $template = 'Biztech_Deliverydate/deliverydate/calendar';
+        break;
+
+    case 2:
+        $template = 'Biztech_Deliverydate/deliverydate/timeslot';
+        break;
+    default:
+        $template = 'Biztech_Deliverydate/deliverydate/calendar';
+        break;
+}
+
+
+$deliverydateLabel = $block->getDeliverydatelabel() ? $block->getDeliverydatelabel() : 'Deliverydate Date';
+$deliverydateCommentsLabel = $block->getDeliveryDateCommentsLabel() ? $block->getDeliveryDateCommentsLabel() : 'Deliverydate Comments';
+$timeslotTableLabel = $block->getTableLabel();
+$timeslotTableLabel = $timeslotTableLabel ? $timeslotTableLabel : 'Timeslot\'s';
+$dayOffs = $block->getDayOffs();
+$dayDiff = $block->getDayDiff() ? $block->getDayDiff() : 0;
+$timeDiff = $block->getTimeDiff() ? $block->getTimeDiff() : 0;
+
+$timeslot = $block->getavailableTimeslot();
+$sameDayCharges = $this->getHelper()->getSameDayCharges();
+
+$config = [
+    'templateConfig' => [
+        'template' => $template,
+        'enabledMethod' => $enabledMethod,
+        'deliverydateLabel' => __($deliverydateLabel),
+        'deliverydateComments' => __($deliverydateCommentsLabel),
+        'showHtml' => (int)$block->getShowHtml(),
+        'displayHtml' => nl2br($block->getDeliveryHtml()),
+    ],
+    'general' => [
+        'enabled' => (int)$block->enableExtension(),
+        'disabledDates' => $off_days,
+        'dayOffs' => $dayOffs,
+        'dateFormat' => $this->getHelper()->convertDateFormatToJQueryUi($block->getDeliveryDateFormat()),
+        'timeFormat' => $this->getHelper()->convertDateFormatToJQueryUi($block->getDeliveryTimeFormat()),
+        'dayDiff' => (int)$dayDiff,
+        'timeDiff' => $timeDiff,
+        'sameDayCharges' => $sameDayCharges,
+        'sameDayChargesWithCurruncy' => $this->getHelper()->displaySamedaycharges(),
+        'isMandatory' => (int)$block->getisMandatory(),
+        'useCallFeature' => (int) $block->getConfigValue('deliverydate/deliverydate_general/show_callme', \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
+        'callMeLabel' => $this->getHelper()->getDeliveryDateCallMeLabel()
+    ],
+    'calendar' => [
+        'options' => [
+
+            'showsTime' => (int)$block->getCalendarTime(),
+            'buttonImage' => $this->getViewFileUrl('Biztech_Deliverydate::images/datepicker.png'),
+            'buttonText' => __('Select Date'),
+            'interval' => (int) $block->getConfigValue('deliverydate/deliverydate_general/datepicker_time_mininterval'),
+            'buttonText' => __('Select Date'),
+            'showAnim' => $block->getConfigValue('deliverydate/deliverydate_general/datepicker_enable_animation'),
+            'showButtonPanel' => (boolean) $block->getConfigValue('deliverydate/deliverydate_general/datepicker_buttom_bar'),
+            'isRTL' => (boolean) $block->getConfigValue('deliverydate/deliverydate_general/datepicker_rtl'),
+            'maxDate' => (int) $block->getConfigValue('deliverydate/deliverydate_general/datepicker_delivery_intervals'),
+        ]
+    ],
+    'timeslot' => [
+        'enabled_timeslots' => $timeslot,
+        'timeslotTableLabel' => __($timeslotTableLabel),
+    ]
+];
+?>
+
+    <script>
+        window.deliverydateConfig = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($config); ?>;
+    </script>
+    <script type="text/javascript">
+        require([
+            'jquery',
+            'Magento_Ui/js/modal/alert',
+            'mage/translate',
+            'Magento_Checkout/js/model/full-screen-loader'
+        ], function ($, alert, $t, fullScreenLoader) {
+            jQuery(document).ready(function () {
+
+                if(window.deliverydateConfig.general.enabled !== 0 ){
+
+                    var enabledMethod = "<?php echo $enabledMethod; ?>";
+                        jQuery(document).on('click', '.continue', function (event) {
+
+                            if (enabledMethod == 2) {
+                                if (jQuery(this).data('role') === 'opc-continue') {
+                                    if (!jQuery('.delivery-slot').is(':checked')) {
+                                        if (window.deliverydateConfig.general.isMandatory === 1) {
+
+                                            alert({
+                                                title: $t('Attention'),
+                                                content: $t('Please Select A Timeslot'),
+                                                actions: {
+                                                    always: function () {
+                                                        fullScreenLoader.stopLoader();
+                                                    }
+                                                }
+                                            });
+                                            event.preventDefault();
+                                        }
+                                    }
+                                }
+                            }
+                            if (enabledMethod == 1) {
+                                if (jQuery(this).data('role') === 'opc-continue') {
+                                    if (jQuery("input[name=shipping_arrival_date]").val() == "") {
+
+                                        if (window.deliverydateConfig.general.isMandatory === 1) {
+                                            alert({
+                                                title: $t('Attention'),
+                                                content: $t('Please Select Delivery Date'),
+                                                actions: {
+                                                    always: function () {
+                                                        fullScreenLoader.stopLoader();
+                                                    }
+                                                }
+                                            });
+                                            event.preventDefault();
+                                        }
+                                    }
+                                }
+                            }
+
+                        });
+
+                    jQuery(document).on('click', '.delivery-slot', function (event) {
+                        var res = this.id.split('_');
+                        var selecteddate = res[0];
+                        var visiblesamedayCharges = false ;
+                        selecteddate = selecteddate.split("-");
+                        selecteddate = new Date(selecteddate[2],( selecteddate[1] - 1) , selecteddate[0]);
+                        today = new Date();
+                        visiblesamedayCharges = (selecteddate.getDate() == today.getDate() &&
+                        selecteddate.getMonth() == today.getMonth() &&
+                        selecteddate.getFullYear() == today.getFullYear());
+
+                        if(visiblesamedayCharges && window.deliverydateConfig.general.sameDayCharges){
+                            jQuery("#delivery_charges_day").fadeIn();
+                        }else{
+                            jQuery("#delivery_charges_day").fadeOut();
+                        }
+
+                        fullScreenLoader.startLoader();
+
+                        jQuery('#shipping_arrival_date').val(res[0]);
+                        window.localStorage.setItem('selecteddeliverydate', res[0]);
+                        jQuery('#shipping_arrival_slot').val(jQuery(this).val());
+                        window.localStorage.setItem('selectedslot',jQuery(this).val());
+                        jQuery('#delivery_charges').val(res[2]);
+
+                        fullScreenLoader.stopLoader();
+                    });
+                }
+
+            });
+        });
+    </script>
+<?php //endif;?>

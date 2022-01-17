@@ -1,0 +1,47 @@
+<div id="delivery_detail">
+    <div>
+        <?php
+        $data = $this->getRequest()->getParams('orders');
+        $orders = $data['orders'];
+        $orders = explode('&', $orders);
+        $_orders = '';
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $orders_collection = $objectManager->get('\Magento\Sales\Model\ResourceModel\Order\Collection');
+        $_orders = $orders_collection->addFieldToFilter('increment_id', ['in', $orders]);
+        $_orders1 = $_orders->getData();
+
+        $i = 1;
+        foreach ($_orders as $_order):
+            ?>
+            <p class="title"><?php echo 'Order No: ' . $i; ?></p>
+            <p><b><?php echo __('Order ID: '); ?> </b> <?php echo $_order->getIncrementId(); ?> </p>
+            <p><b><?php echo __('Status: '); ?> </b> <?php echo $_order->getStatus(); ?> </p>
+            <p><b><?php echo __('Customer Name: '); ?></b>
+                <?php echo $_order->getCustomerFirstname() . ' ' . $_order->getCustomerLastname(); ?> </p>
+            <p><b><?php echo __('Customer Email Address: '); ?> </b> <?php echo $_order->getcustomerEmail(); ?> </p>
+            <p><b><?php echo __('Order Grand Total: '); ?> </b>
+                <?php
+                $obj_currency = $objectManager->create('\Magento\Directory\Model\Currency');
+                $gtbase = $obj_currency->getCurrencySymbol() . $_order->getBaseGrandTotal();
+                echo $gtbase;
+                ?> </p>
+
+            <?php if ($_order->getShippingArrivalSlot() != null): ?>
+            <p><b><?php echo __('Shipping Arrival Slot: '); ?> </b> <?php echo $_order->getShippingArrivalSlot(); ?>
+            </p>
+            <?php endif; ?>
+
+            <?php if ($_order->getShippingArrivalComments() != null): ?>
+            <p>
+                <b><?php echo __('Shipping Arrival Comments: '); ?> </b> <?php echo nl2br($_order->getShippingArrivalComments()); ?>
+            </p>
+            <?php endif; ?>
+            <?php if (!($i >= count($orders))): ?>
+            <hr>
+                <?php
+            endif;
+            $i++;
+        endforeach;
+        ?>
+    </div>
+</div>

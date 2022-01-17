@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="Act_Dialog::dialog" title="Dialog Box" translate="title" module="Act_Dialog" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="Act_Dialog" resource="Act_Dialog::dialog"/>
+      <add id="Act_Dialog::dialogconfig" title="Configure" translate="title" module="Act_Dialog" parent="Act_Dialog::dialog" sortOrder="10" dependsOnModule="Act_Dialog" action="actadmindialog/dialog" resource="Act_Dialog::dialog"/>
+    </menu>
+</config>

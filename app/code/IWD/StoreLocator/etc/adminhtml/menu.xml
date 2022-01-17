@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- <add id="IWD_StoreLocator::content_elements" title="IWD" module="Magento_Backend" sortOrder="100" parent="Magento_Backend::content" resource="IWD_StoreLocator::content_elements"/>
+        <add id="IWD_StoreLocator::storelocator_item" title="Store Locator" module="IWD_StoreLocator" sortOrder="0" parent="IWD_StoreLocator::content_elements" action="storelocator/item" resource="IWD_StoreLocator::Item"/> -->        
+        
+        <add id="IWD_StoreLocator::storelocator_item" title="Store Locator" module="IWD_StoreLocator" sortOrder="100" parent="Magento_Backend::content_elements" action="storelocator/item" resource="IWD_StoreLocator::Item"/>
+    </menu>
+</config>

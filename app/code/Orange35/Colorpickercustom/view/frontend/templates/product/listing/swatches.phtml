@@ -1,0 +1,42 @@
+<?php
+/** @noinspection ALL */
+
+/** @var \Orange35\Colorpickercustom\Block\Product\Renderer\Listing\Swatches $block */
+/** @var \Magento\Catalog\Model\Product $product */
+/** @var \Magento\Catalog\Model\Product\Option $option */
+/** @var \Magento\Catalog\Model\Product\Option\Value $value */
+
+use Magento\Swatches\Model\Swatch;
+
+$optionHelper = $block->getOptionHelper();
+$product = $block->getProduct();
+$options = $block->getColorPickerOptions();
+$jsonOptions = $block->getOptionHelper()->getJsonOptions($product, $options);
+$jsonOptions['selectors']['form'] = 'form[data-product-sku="' . $product->getSku() . '"]';
+$jsonOptions['selectors']['addToWishlistButton'] = [
+    'form[data-product-sku="' . $product->getSku() . '"]',
+    'closest' => '.product-item-details',
+    'find'    => 'a[data-action=add-to-wishlist]'
+];
+$jsonOptions['option']['selectors'] = [
+    'swatches' => '.o35-option[data-product-id=' . $product->getId() . '] [data-role=o35-option][data-id={id}] [data-role=o35-swatch]',
+];
+?>
+<?php if ($options) : ?>
+<div class="o35-option" data-product-id="<?= $product->getId() ?>">
+<?php foreach ($options as $option) :?>
+    <div class="swatch-attribute" data-role="o35-option" data-id="<?= $option->getId(); ?>">
+        <?= $block->getChildBlock('swatches')->setOption($option)->toHtml(); ?>
+    </div>
+<?php endforeach;?>
+</div>
+<!-- Orange35 Colorpickercustom -->
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Orange35_Colorpickercustom/js/options": <?= json_encode($jsonOptions, JSON_PRETTY_PRINT); ?>
+    }
+}
+</script>
+<?php endif; ?>
+<!-- Orange35 Colorpickercustom end -->

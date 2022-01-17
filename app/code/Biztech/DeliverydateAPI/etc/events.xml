@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_load_after">
+        <observer name="Biztech_DeliverydateAPI_Observer_delivery_details" instance="Biztech\DeliverydateAPI\Observer\Sales\OrderLoadAfter" />
+    </event>
+</config>

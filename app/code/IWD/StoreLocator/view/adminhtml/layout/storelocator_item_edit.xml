@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+    </head>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="IWD\StoreLocator\Block\Adminhtml\Item\Edit" name="storelocator_store_edit"/>
+        </referenceContainer>
+        
+        <referenceContainer name="left">
+            <block class="IWD\StoreLocator\Block\Adminhtml\Item\Edit\Tabs" name="storelocator_store_edit_tabs">
+                <block class="IWD\StoreLocator\Block\Adminhtml\Item\Edit\Tab\Main" name="storelocator_store_edit_tab_main" />
+                <block class="IWD\StoreLocator\Block\Adminhtml\Item\Edit\Tab\Content" name="storelocator_store_edit_tab_content"/>
+                
+                 <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">storelocator_store_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">content_section</argument>
+                    <argument name="block" xsi:type="string">storelocator_store_edit_tab_content</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

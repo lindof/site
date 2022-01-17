@@ -1,0 +1,13 @@
+<?php
+$result = $block->getTermsAndConditions();
+$supplier = $result['supplier_name'];
+?>
+<div>
+    <h2><?php echo __('Shipping terms and conditions of ') . $supplier; ?>.</h2>
+    <?php if (isset($result['terms']) && $result['terms'] != '') : ?>
+        <?= $result['terms']; ?>
+    <?php else: ?>
+        <p><?php echo __('There is not shipping terms and conditions for this supplier.'); ?></p>
+    <?php endif; ?>
+</div>
+

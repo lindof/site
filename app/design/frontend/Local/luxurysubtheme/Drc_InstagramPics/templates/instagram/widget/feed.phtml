@@ -1,0 +1,50 @@
+<?php if ($block->canShow()): ?>
+    <?php $imageList = $block->getImageList(); ?>
+    <?php 
+    $statusCode='';
+    foreach ($imageList->meta as $code) {
+        $statusCode=$code;
+    }
+
+    ?>
+    <?php if (count($imageList) && $statusCode==200) : ?>
+        <div class="drc-instagram">
+            <?php if ($block->getTitle()) : ?>
+                <div class="drc-instagram-title">
+                    <span><?php echo $block->escapeHtml($block->getTitle()) ?></span>
+                </div>
+            <?php endif; ?>
+        </div>
+        <?php if ($block->getDescription()) : ?>
+            <div class="drc-instagram-description">
+                <span><?php echo nl2br($block->escapeHtml($block->getDescription())) ?></span>
+            </div>
+        <?php endif; ?>
+        <ul class="drc-instagram-list">
+            
+            <?php foreach ($imageList->data as $value):?>
+                <?php $count=1;?>
+               <?php foreach ($value->images as $image):?>
+                    <?php if($count==3):?>
+                        <li class="col-sm-6 col-md-4 col-lg-3">
+                            <a href="<?php echo $value->link; ?>" target="_blank" title="View instagram">
+                                <i class="drc-instagram-over"></i>
+                                <picture>
+                                    <img
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    data-src="<?php echo $image->url; ?>"
+                                    class="instagram-image lazyload"
+                                    alt="Instagram Image" 
+                                    width="<?php echo intval($block->getImageWidth()) ?>"
+                                    height="<?php echo intval($block->getImageHeight()) ?>"
+                                    />
+                                </picture>
+                            </a>
+                        </li>
+                    <?php endif;?>
+                    <?php $count++;?>
+               <?php endforeach;?>   
+           <?php endforeach;?>
+        </ul>
+       <?php endif; ?> 
+   <?php endif; ?>

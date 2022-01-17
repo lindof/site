@@ -1,0 +1,92 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Shipment for order from %store_name " store_name=$store.frontend_name}} @-->
+<!--@vars {
+"var formattedBillingAddress|raw":"Billing Address",
+"var this.getUrl($store,'customer/account/',[_nosid:1])":"Customer Account URL",
+"var order_data.customer_name":"Customer Name",
+"layout area=\"frontend\" handle=\"sales_email_order_items\" order=$order":"Order Items Grid",
+"var order.increment_id":"Order Id",
+"var formattedShippingAddress|raw":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"var store.frontend_name":"Store Frontend Name",
+"var store_phone":"Store Phone",
+"var store_email":"Store Email",
+"var order": "Order",
+"var order_data.is_not_virtual": "Order Type",
+"var supplier_logo": "Supplier Logo",
+"var supplier_name": "Supplier Name",
+"var supplier_email": "Supplier Email",
+
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+
+    <tr class="email-intro">
+        <td>
+            <!--p class="greeting">{{trans "%name," name=$order_data.customer_name}}</p-->
+            <p><b>
+                {{trans "Order #%order_id is ready for shipment from %store_name." order_id=$order.increment_id store_name=$store.frontend_name}}
+            </b></p>
+        </td>
+    </tr>
+
+    <tr class="supplier-info">
+        <td>
+            {{depend supplier_logo}}
+            <p class="logo-supplier"><img style="width: 150px" src="{{var supplier_logo}}" alt="Supplier Logo"/></p>
+            {{/depend}}
+            {{depend supplier_name}}
+            <p class="name-supplier">{{var supplier_name}} ({{var supplier_email}})</p>
+            {{/depend}}
+            {{depend supplier_address}}
+            <p class="name-supplier">{{var supplier_address}}</p>
+            {{/depend}}
+        </td>
+    </tr>
+ 
+    <tr class="email-summary">
+        <td>
+            <h1>{{trans "Order #%order_id" order_id=$order.increment_id}}</h1>
+        </td>
+    </tr>
+    <tr class="email-information">
+        <td>
+            {{depend comment}}
+            <table class="message-info">
+                <tr>
+                    <td>
+                        {{var comment|escape|nl2br}}
+                    </td>
+                </tr>
+            </table>
+            {{/depend}}
+            <table class="order-details">
+                <tr>
+  
+                    {{depend order_data.is_not_virtual}}
+                    <td class="address-details">
+                        <h3>{{trans "Shipping Info"}}</h3>
+                        <p>{{var formattedShippingAddress|raw}}</p>
+                    </td>
+
+                    <td class="method-info">
+                        <h3>{{trans "Shipping Method"}}</h3>
+                        <p>{{var order.shipping_description}}</p>
+                    </td>
+
+                    {{/depend}}
+                </tr>
+  
+            </table>
+            {{layout area="frontend" handle="sales_email_order_items" order=$order}}
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="main">
+
+            <!-- <block class="Drc\InstagramPics\Block\Widget\Feed" name="instagram_title" template="Drc_InstagramPics::instagram_title.phtml" before="WwfkUuMz5eVWVWi8bUNSGVZmVWv4NXPE">
+            </block> -->
+
+            <block class="Act\ResponsiveImages\Block\ResponsiveImages" name="act.responsive_images" template="Act_ResponsiveImages::default.phtml" before="-">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">mobile</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Dec2021_Billboard_Hero_600.jpeg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">tablet</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Dec2021_Billboard_Hero_960.jpeg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">desktop</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Dec2021_Billboard_Hero_1600.jpeg</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">xlarge</argument>
+                    <argument name="value" xsi:type="string">responsive_images/Dec2021_Billboard_Hero_1920.jpeg</argument>
+                </action>
+            </block>
+
+
+
+            <!-- <block class="Drc\InstagramPics\Block\Widget\Feed" name="WwfkUuMz5eVWVWi8bUNSGVZmVWv4NXPE" template="Drc_InstagramPics::instagram/widget/feed.phtml">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">is_enabled</argument>
+                    <argument name="value" xsi:type="string">1</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">mode</argument>
+                    <argument name="value" xsi:type="string">2</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">hashtag</argument>
+                    <argument name="value" xsi:type="string">lindof</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">title</argument>
+                    <argument name="value" xsi:type="string"></argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">limit_items</argument>
+                    <argument name="value" xsi:type="string">12</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">image_width</argument>
+                    <argument name="value" xsi:type="string">200</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">image_height</argument>
+                    <argument name="value" xsi:type="string">200</argument>
+                </action>
+            </block> -->
+
+          <!--  <block class="Act\ResponsiveImages\Block\InstagramImages" name="act.instagram_images" template="Act_ResponsiveImages::instagram.phtml">
+                <action method="setData">
+                    <argument name="name" xsi:type="string">image_width</argument>
+                    <argument name="value" xsi:type="string">200</argument>
+                </action>
+                <action method="setData">
+                    <argument name="name" xsi:type="string">image_height</argument>
+                    <argument name="value" xsi:type="string">200</argument>
+                </action>
+                <arguments>
+                    <argument name="cache_lifetime" xsi:type="number">3600</argument>
+                </arguments>
+            </block>-->
+
+        </referenceContainer>
+    </body>
+</page>
+
+

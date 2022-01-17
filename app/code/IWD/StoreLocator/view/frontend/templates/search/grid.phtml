@@ -1,0 +1,11 @@
+<div class="storelocator-wrapper">
+    <?php $collection = $block->getItemsCollection(); ?>
+    <?php if ($collection->getSize() > 0) : ?>
+        <h3 class="header"></h3>
+        <div class="storelocator-items" data-role="result"></div>
+        <div class="storelocator-wrapper-loader"></div>
+        <div class="storelocator-back" style="display:none">
+            <a href=""><?php echo __('Back To Top') ?></a>
+        </div>
+    <?php endif ?>
+</div>

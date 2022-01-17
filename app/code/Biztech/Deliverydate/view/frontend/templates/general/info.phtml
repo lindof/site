@@ -1,0 +1,48 @@
+<?php
+
+$_order = $this->getOrder();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$area = $objectManager->get('Magento\Framework\App\State');
+$areaCode = $area->getAreaCode();
+$request = $objectManager->get('\Magento\Framework\App\Request\Http');
+$requestname = $areaCode ."_". $request->getFullActionName();
+$config = $objectManager->create('Magento\Framework\App\Config\ScopeConfigInterface');
+$isEnable = $config->getValue('deliverydate/deliverydate_general/enabled');
+$enableview = $config->getValue('deliverydate/deliverydate_general/display_on');
+if (strlen($enableview) > 0) {
+    $enableview = explode(",", $enableview);
+} else {
+    $enableview = [];
+}
+
+if ($isEnable && (in_array($requestname, $enableview) || in_array("all", $enableview))) {
+    
+    $shipping_arrival_date = $_order->getShippingArrivalDate();
+    if ($shipping_arrival_date != '' && !is_null($shipping_arrival_date)) {
+        $date_format = $config->getValue('deliverydate/deliverydate_general/deliverydate_format');
+        $time_format = $config->getValue('deliverydate/deliverydate_general/deliverytime_format');
+        if ($date_format == '') {
+            $date_format = 'd/M/Y';
+        }
+
+        if ($time_format == '') {
+            $date_format .= " ,g:i a";
+        }
+
+        if ($_order->getShippingArrivalSlot() == null) {
+            $date_format .= " " . $time_format;
+        }
+        if ($shipping_arrival_date != '') {
+            echo "<br/><br/><strong class='box-title'><span>" . __('Shipping Arrival Date') . "</span></strong><div class='box-content'>" . $currentDate = date($date_format, strtotime($shipping_arrival_date)) . ' ' . $_order->getShippingArrivalSlot() . '</div>';
+        } else {
+            echo "<br/><br/><strong class='box-title'><span>" . __('Shipping Arrival Date') . "</span></strong><div class='box-content'> N/A </div>";
+        }
+        ?>
+        <br/>
+        <?php
+        if ($_order->getShippingArrivalComments() != '') {
+            echo nl2br($_order->getShippingArrivalComments());
+        }
+    }
+}
+?>

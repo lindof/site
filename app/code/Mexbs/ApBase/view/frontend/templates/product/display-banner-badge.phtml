@@ -1,0 +1,75 @@
+<?php
+/**
+ * @var \Mexbs\ApBase\Block\Product\DisplayBannerBadge $block
+ * @var \Mexbs\ApBase\Helper\Html $htmlHelper
+ */
+$htmlHelper = $this->helper('Mexbs\ApBase\Helper\Html');
+$escaper = $htmlHelper->getEscaper();
+?>
+<script type="text/javascript">
+    require(
+        [
+            'jquery'
+        ],
+        function(
+            $
+            ) {
+
+            var waitForEl = function (selector, callback, maxTimes = false) {
+                if ($(selector).length) {
+                    callback();
+                } else {
+                    if (maxTimes === false || maxTimes > 0) {
+                        (maxTimes != false) && maxTimes-- ;
+                        setTimeout(function () {
+                            waitForEl(selector, callback, maxTimes);
+                        }, 300);
+                    }
+                }
+            };
+
+            var wrapAndInsertBannerImages = function(bannerImages){
+                var html = '<div class="ap-product-banners-wrapper">';
+
+                for (var i = 0; i < bannerImages.length; i++) {
+                    html += '<div class="ap-product-banner"><img src="'+ bannerImages[i] +'" /></div>'
+                }
+
+                html += '</div>';
+                $(".product-info-price").ready(function(){
+                    waitForEl(".product-info-price", function(){$(".product-info-price").after(html);}, 5);
+                });
+            };
+
+            var wrapAndInsertBadgeImages = function(badgeImages){
+                var html = '<div class="ap-product-badge-wrapper-top-right">';
+
+                for (var i = 0; i < badgeImages.length; i++) {
+                    html += '<div class="ap-product-badge-top-right"><img src="'+ badgeImages[i] +'" /></div>'
+                }
+
+                html += '</div>';
+
+                $(".fotorama__spinner").ready(function(){
+                    waitForEl(".fotorama__spinner", function(){$(".fotorama__spinner").after(html);}, 10);
+                });
+            };
+
+            $(document).ready(function(){
+                $.post("<?php echo $escaper->escapeJs($block->escapeUrl($this->getUrl('apromotions/action/getProductBannerBadgeData', ['_secure' => $this->getRequest()->isSecure()]))) ?>",
+                    {product_id: $("form#product_addtocart_form input[name='product']").val()},
+                    function(response){
+                        if(!$.isEmptyObject(response)){
+                            if(response.hasOwnProperty("banners")){
+                                wrapAndInsertBannerImages(response["banners"]);
+                            }
+                            if(response.hasOwnProperty("badges")){
+                                wrapAndInsertBadgeImages(response["badges"]);
+                            }
+                        }
+                });
+            });
+        }
+    );
+</script>
+<div class="rule-popup-modal-wrapper"></div>

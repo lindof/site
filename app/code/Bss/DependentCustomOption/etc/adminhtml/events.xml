@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_DependentCustomOption
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="bss_custom_options_select_type_add_child_before">
+        <observer name="add_dco_backend_select_field" instance="Bss\DependentCustomOption\Observer\Adminhtml\AddBackendSelectTypeField" />
+    </event>
+    <event name="bss_custom_options_common_container_add_child_before">
+        <observer name="add_dco_backend_field" instance="Bss\DependentCustomOption\Observer\Adminhtml\AddBackendCommonField" />
+    </event>
+    <event name="controller_action_catalog_product_save_entity_after">
+        <observer name="save_example_data" instance="Bss\DependentCustomOption\Observer\ReplaceDependData" />
+    </event>
+    <event name="admin_system_config_changed_section_dependent_co">
+        <observer name="custom_admin_system_config_changed_section_dependent_co" instance="Bss\DependentCustomOption\Observer\SetRequireCustomOptionsObserver"/>
+    </event>
+</config>

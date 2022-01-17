@@ -1,0 +1,97 @@
+<?php
+/**
+ * @var \Mexbs\ApBase\Block\Category\DisplayBadges $block
+ * @var \Mexbs\ApBase\Helper\Html $htmlHelper
+ */
+$htmlHelper = $this->helper('Mexbs\ApBase\Helper\Html');
+$escaper = $htmlHelper->getEscaper();
+?>
+<script type="text/javascript">
+    require(
+        [
+            'jquery'
+        ],
+        function(
+            $
+            ) {
+
+            var waitForEl = function (selectorFunctions, selectorParams, callbackParameters, callback, maxTimes = false) {
+                var allElementsLoaded = true;
+                var selectedObject, selectorFunction;
+                for (var index = 0; index < selectorFunctions.length; index++) {
+                    selectorFunction = selectorFunctions[index];
+                    selectedObject = selectorFunction(selectorParams);
+                    if((selectedObject == 'undefined') || !selectedObject.length){
+                        allElementsLoaded = false;
+                    }
+                }
+
+                if (allElementsLoaded) {
+                    callback(selectorFunctions, callbackParameters);
+                } else {
+                    if (maxTimes === false || maxTimes > 0) {
+                        (maxTimes != false) && maxTimes-- ;
+                        setTimeout(function () {
+                            waitForEl(selectorFunctions, selectorParams, callbackParameters, callback, maxTimes);
+                        }, 300);
+                    }
+                }
+            };
+
+
+            var wrapAndInsertBadgeImages = function(badgesForCategory){
+                var badgesArrContainer;
+                var badgesArr;
+                for (var productId in badgesForCategory) {
+                    if (badgesForCategory.hasOwnProperty(productId)) {
+                        badgesArrContainer = badgesForCategory[productId];
+                        if (badgesArrContainer.hasOwnProperty('badges')) {
+                            badgesArr = badgesArrContainer['badges'];
+
+                            var htmlToInsert = '<div class="ap-product-badge-wrapper-top-right">';
+                            $(badgesArr).each(function(key, badgeImg){
+                                htmlToInsert += '<div class="ap-product-badge-top-right"><img src="'+ badgeImg +'" /></div>'
+                            });
+                            htmlToInsert += '</div>';
+
+                            var imagePhotoToInsertAfter = $(".price-box[data-product-id='"+ productId +"']").closest(".product-item:visible").find(".product-image-photo");
+                            imagePhotoToInsertAfter.after(htmlToInsert);
+                        }
+                    }
+                }
+            };
+
+            $(document).ready(function(){
+
+                var fetchIdsOnPageAndGetBadges = function(){
+                    var productIdsInPage = [];
+                    var productId;
+                    $('.price-box:visible').each(function(){
+                        productId = $(this).attr("data-product-id");
+                        if (productIdsInPage.indexOf(productId) == -1){
+                            productIdsInPage.push(productId);
+                        }
+                    });
+
+                    $.post("<?php echo $escaper->escapeJs($block->escapeUrl($this->getUrl('apromotions/action/getCategoryBadgesData', ['_secure' => $this->getRequest()->isSecure()]))) ?>",
+                        {product_ids_in_page: productIdsInPage},
+                        function(response){
+                            if(!$.isEmptyObject(response)){
+                                if(response.hasOwnProperty("badges_for_category")){
+                                    wrapAndInsertBadgeImages(response["badges_for_category"]);
+                                }
+                            }
+                        },
+                        'json'
+                    );
+                };
+
+                var categoryProductSquareSelectorFunction = function(){
+                    return $(".product-item:visible");
+                };
+                waitForEl([categoryProductSquareSelectorFunction], [], [], fetchIdsOnPageAndGetBadges, 10);
+            });
+        }
+    );
+</script>
+<div class="rule-popup-modal-wrapper"></div>

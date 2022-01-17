@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var \Mexbs\ApBase\Block\InjectExtraMessages $block
+ * @var \Mexbs\ApBase\Helper\Html $htmlHelper
+ */
+$htmlHelper = $this->helper('Mexbs\ApBase\Helper\Html');
+$escaper = $htmlHelper->getEscaper();
+?>
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Mexbs_ApBase/js/model/extra-messages'
+        ],
+        function(
+            $,
+            extraMessages
+            ) {
+
+            $(document).ready(function(){
+                extraMessages.injectMessages($("#authenticationPopup"), "<?php echo $escaper->escapeJs($block->escapeUrl($this->getUrl('apromotions/action/getExtraMessages', ['_secure' => $this->getRequest()->isSecure()]))) ?>");
+            });
+        }
+    );
+</script>

@@ -1,0 +1,15 @@
+{
+  "name": "mexbs/ap-base",
+  "description": "A Magento 2 module that extends the cart rule functionality by creating a base platform for additional promotions types like BOGO, N+M and more",
+  "type": "magento2-module",
+  "version": "1.6.18",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Mexbs\\ApBase\\": ""
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<?php echo $block->getButtonHtml(); ?>
+<script type="text/javascript">
+	require(['jquery'],function($){
+		$("#instagrampics_oauth").click(function(){
+            confirmSetLocation('<?php echo __('Are you sure?') ?>', '<?php echo $block->getDisconnectUrl(); ?>');
+        });
+	});
+</script>

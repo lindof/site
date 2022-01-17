@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Quelque chose a mal tourné tout en générant le code de coupon, s'il vous plaît essayer à nouveau."
+Schedule has been deleted successfully,Annexe a été supprimé
+Invalid Data.,Données invalides.
+Add/Edit Schedule,Ajouter / Modifier la planification
+Schedule has been saved successfully.,Calendrier a été enregistré avec succès.
+Email has been sent successfully.,Le courriel a été envoyé avec succès.
+"Something went wrong while sending the coupon email, please try again.","Quelque chose a mal tourné lors de l'envoi de l'e-mail coupon, s'il vous plaît essayer à nouveau."
+Spin and Win,Spin et Win
+Knowband,Knowband
+Settings saved successfully.,Paramètres sauvegardés avec succès.
+New Customer,Nouveau client
+No list found. (Verify Credentials),Aucune liste trouvée. (Vérification des pouvoirs)
+The Private Klaviyo API Key you have set is invalid.,L'API Private Klaviyo Key vous avez défini est invalide.
+The Private Klaviyo API key you have set is no longer valid.,La clé API privée Klaviyo que vous avez défini n'est plus valide.
+Unable to verify Klaviyo Private API Key.,Impossible de vérifier Klaviyo API clé privée.
+Mobile,Mobile
+Tablet,Tablette
+Desktop,bureau
+You have already taken advantage of this offer. Please try another email.,Vous avez déjà profité de cette offre. S'il vous plaît essayer un autre e-mail.
+Not your lucky day today. Better Luck Next Time.,Pas votre jour de chance aujourd'hui. Plus de chance la prochaine fois.
+Error occurred while subscribing. Please try again later.,Une erreur est survenue tout en souscrivant. Veuillez réessayer plus tard.
+Jan,Jan
+Feb,fév
+Mar,Mar
+Apr,avr
+May,Peut
+Jun,juin
+Jul,juil
+Aug,août
+Sep,SEP
+Oct,oct
+Nov,nov
+Dec,déc
+None,Aucun
+Rose Day,jour Rose
+Propose Day,proposer jour
+Chocolate Day,Jour de chocolat
+Teddy Day,jour Teddy
+Promise Day,Day Promise
+Hug Day,Jour des câlins
+Kiss Day,baiser jour
+Valentine\'s Day,La Saint-Valentin
+Xmas Theme 1,Noël Thème 1
+Xmas Theme 2,Thème de Noël 2
+Merry Christmas - Theme 1,Joyeux Noël - Thème 1
+Merry Christmas - Theme 2,Joyeux Noël - Thème 2
+Merry Christmas - Theme 3,Joyeux Noël - Thème 3
+Merry Christmas - Theme 4,Joyeux Noël - Thème 4
+Merry Christmas - Theme 5,Joyeux Noël - Thème 5
+Black Friday Theme1,Black Friday Theme1
+Black Friday Theme2,Black Friday Theme2
+Black Friday Theme3,Black Friday Thème 3
+Black Friday Theme4,Black Friday theme4
+Diwali Theme1,Diwali Theme1
+Diwali Theme2,Diwali Theme2
+Diwali Theme3,Diwali Thème 3
+Diwali Theme4,Diwali theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,Pâques Theme1
+Easter Theme2,Pâques Theme2
+Easter Theme3,Pâques Thème 3
+Halloween Theme1,Halloween Theme1
+Halloween Theme2,Halloween Theme2
+Halloween Theme3,Halloween Thème 3
+Halloween Theme4,Halloween theme4
+Thanks Giving Theme1,Merci Giving Theme1
+Happy New Year Theme1,Bonne année Theme1
+Happy New Year Theme2,Bonne année Theme2
+Happy New Year Theme3,Bonne année Thème 3
+Happy New Year Theme4,Bonne année theme4
+Happy New Year Theme5,Bonne année Theme5
+Happy New Year Theme6,Bonne année Theme6
+Happy New Year Theme7,Bonne année Theme7
+Wheel Design 1,Roue Design 1
+Wheel Design 2,Roue Design 2
+Look and Feel,Regarde et ressent
+General Settings,réglages généraux
+Display Settings,Paramètres d'affichage
+Theme Scheduling,Programmation thématique
+Text Settings,Paramètres du texte
+Special bonus unlocked,Bonus spécial déverrouillé
+You have a chance to win a nice big fat discount. Are you ready?,Vous avez une chance de gagner une belle grande remise en gras. Es-tu prêt?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Vous pouvez faire tourner la roue une seule fois. Si vous gagnez, vous pouvez demander votre coupon pour 1 jour seulement!"
+Email Settings,Paramètres de messagerie
+Only on wheel,Seulement sur la roue
+Email Only,Envoyer uniquement
+Email & Wheel,Email & Wheel
+Fire,Feu
+Aqua,Aqua
+Wind,Vent
+Void,Néant
+Earth,Terre
+Return Statuses,retour Statuses
+Coupon Code,Code du coupon
+Customer Email,Email client
+Country,Pays
+Device,Dispositif
+Coupon Used,coupon Utilisé
+No,Non
+Yes,Oui
+Coupon Generated On,Coupon généré sur
+Statistics,Statistiques
+Email Marketing,Publicité par e-mail
+User List,liste d'utilisateur
+Status,Statut
+Enabled,Activée
+Disabled,désactivé
+From Date,Partir de la date
+To Date,À ce jour
+Action,action
+Slice Settings,Paramètres tranche
+10% OFF,10% DE RÉDUCTION
+Not Lucky Today,Pas chanceux Aujourd'hui
+35% OFF,35% de réduction
+Opps! Sorry,Opps! Pardon
+15% OFF,15% de réduction
+Better Luck Next Time,Plus de chance la prochaine fois
+50% OFF,50% DE RÉDUCTION
+Try Next Time,Essayez la prochaine fois
+12% OFF,12% de réduction
+Come Again,Répète
+5% OFF,5% OFF
+Try Again,Réessayer
+First Name,Prénom
+Last Name,Nom de famille
+Email,Email
+Created Date,date de création
+CSV,CSV
+Edit,Éditer
+Delete,Supprimer
+Save Schedule,Enregistrer annexe
+Back,Arrière
+Save Settings,Enregistrer les paramètres
+Email cannot be left blank,Email ne peut pas être laissée en blanc
+Not a valid email,Pas un email valide
+a discount,un rabais
+Code copied.,Code copié.
+First name cannot be left blank,D'abord le nom ne peut pas être laissée en blanc
+Last name cannot be left blank,Nom ne peut pas être laissée en blanc
+Hurrah! You've got,Hourra! Tu as
+ discount. Lucky day!,remise. Jour de chance!
+The coupon code has been sent to you through the email.,Le code promo vous a été envoyé par courrier électronique.
+Better luck next time!,Plus de chance la prochaine fois!
+Don't forget to use the discount code at checkout!,Ne pas oublier d'utiliser le code de réduction à la caisse!
+Enter you email,Présentez-vous email
+Try your luck,Tente ta chance
+Next Time,La prochaine fois
+"No, I do not feel lucky","Non, je ne me sens pas la chance"
+Continue,Continuer
+Enable Theme Scheduling,Activer Scheduling Thème
+Add New Schedule,Ajouter un nouvel annexe
+Select number of slices,Sélectionnez le nombre de tranches
+12 Slices,12 tranches
+8 Slices,8 tranches
+6 Slices,6 tranches
+Select the number of slices to show.,Sélectionnez le nombre de tranches pour montrer.
+Slice Label,Étiquette tranche
+Coupon Type,Type de coupon
+Coupon Value,Valeur du coupon
+Gravity (%),La gravité (%)
+Fixed,Fixé
+Percentage,Pourcentage
+Free Shipping,Livraison gratuite
+Theme,Thème
+Theme Peview,thème Peview
+Wheel Design,Conception roue
+Wheel Peview,roue Peview
+Wheel Color,Color Wheel
+Change color of the wheel.,Changer la couleur de la roue.
+Wheel Text Color,Couleur du texte Roue
+Change text color of the wheel.,Changer la couleur de texte de la roue.
+Wheel Background Color,Arrière-plan Roue de couleur
+Change background color of wheel.,Changer la couleur de fond de la roue.
+Font Color,Couleur de la police
+Change font color of text on wheel.,Changer la couleur de police du texte sur la roue.
+Button Background Color,Bouton Arrière-plan de couleur
+Change background color of spin button.,Changer la couleur de fond du bouton de rotation.
+`Try your luck` Button Text Color,`Essayez votre bouton luck` Couleur du texte
+Change font color of the front `Try your luck` button.,Changer la couleur de la police de l'avant `Essayez votre bouton luck`.
+"No, I do not feel lucky text color","Non, je ne me sens pas la couleur du texte chanceux"
+"Change font color of No, I do not feel lucky text.","Changer la couleur de police de Non, je ne me sens pas du texte de la chance."
+Schedule Status,calendrier Statut
+Select Date,Sélectionner une date
+Field cannot be empty.,Le champ ne peut être vide.
+You can enter only numbers.,Vous pouvez entrer des chiffres.
+Number should be greater than 0.,Le nombre doit être supérieur à 0.
+Field cannot be greater than {#} characters.,Le champ ne peut être supérieure à caractères {n}.
+Field cannot be less than {#} character(s).,Le champ ne peut être inférieur à caractère {n} (s).
+Please enter Email.,S'il vous plaît entrer e-mail.
+Please enter a valid Email.,S'il vous plaît entrer un courriel valide.
+Invalid date format.,Format de date non valide.
+Number is not in the valid range. It should be between {1} and {100},Nombre n'est pas dans la plage valide. Il doit être compris entre {1} et {100}
+Field should be numeric.,Champ doit être numérique.
+Field can have only upto two decimal values.,Le champs ne peut avoir jusqu'à deux valeurs décimales.
+Email cannot be greater than {#} characters.,Email ne peut pas être supérieure à caractères {n}.
+Zip should not have special characters.,Zip ne devrait pas avoir des caractères spéciaux.
+Percentage should be in number.,Pourcentage devrait être en nombre.
+Percentage should be between 0 and 100.,Pourcentage devrait être compris entre 0 et 100.
+Size cannot be greater than {#} characters.,Taille ne peut pas être supérieure à caractères {n}.
+Color could not be greater than {#} characters.,Couleur ne pouvait pas être plus que les caractères {n}.
+Color is not valid.,La couleur est pas valide.
+Special characters are not allowed.,Les caractères spéciaux ne sont pas autorisés.
+Script tags are not allowed.,balises de script ne sont pas autorisés.
+Style tags are not allowed.,étiquettes ne sont pas permis.
+Iframe tags are not allowed.,tags iframe ne sont pas autorisés.
+Uploaded file is not an image.,fichier téléchargé n'est pas une image.
+Uploaded file size must be less than #d.,Téléchargé taille du fichier doit être inférieur à # d.
+Field should not contain HTML tags.,Champ ne doit pas contenir des balises HTML.
+You can enter only positive numbers.,Vous pouvez entrer uniquement des nombres positifs.
+`From Date` should be smaller than `To Date`,`De Date` devrait être inférieur à` Pour Date`
+`From Date` already present in a slot.,`De Date` déjà présent dans une fente.
+`To Date` already present in a slot.,`Pour Date` déjà présent dans une fente.
+Coupon Display Options,Afficher coupon options
+Email Subject,Sujet du courriel
+Email Template,Modèle Email
+Email Content,Contenu Email
+Test Email,Email Test
+Send Email,Envoyer un email
+Enable the Extension,Activer l'extension
+Show pull-out tab,Afficher l'onglet gigogne
+Allow customer to hide/show popup,Autoriser client de masquer / afficher pop-up
+Upload pull-out tab image,Ajouter onglet extractible l'image
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,.png ou format de fichier .jpg accepté. Taille du fichier ne doit pas être plus de 2 MB.
+Display Logo,affichage Logo
+Upload Logo,Télécharger le logo
+Remove logo,Supprimer logo
+Email Recheck,Envoyer Revérifier
+Allow customer to provide coupon code more than one time.,Permettre de fournir le code de coupon plus d'une fois.
+Enable Wheel Sound,Activer son de la molette
+Allow sound on rotating the wheel.,Laisser son sur la rotation de la roue.
+Show Fireworks,Feux d'artifice
+Show fireworks after a customer wins.,Feux d'artifice après un client gagne.
+Show Customer Name,Afficher le nom du client
+Show First Name,Afficher Prénom
+Show Last Name,Afficher Nom
+Show Both,Afficher les deux
+Show None,Afficher Aucun
+Show customer name on the front end,Afficher le nom du client sur l'extrémité avant
+Require Customer Name,Exiger Nom du client
+Require First Name,Exiger Prénom
+Require Last Name,Exiger Nom
+Require Both,exiger deux
+Require None,Aucun besoin
+Require customer name on the front end,Exiger le nom du client sur l'extrémité avant
+Wheel Display Interval,Intervalle affichage roue
+Days,Journées
+Enter the display interval (in days) after which pop will show again (if not used).,"Entrez l'intervalle d'affichage (en jours), après quoi la pop affichera à nouveau (si non utilisé)."
+Show Progress Meter,Afficher la barre de progression
+Progress Percentage,progrès Pourcentage
+Enter the percentage of the progress meter.,Entrez le pourcentage du compteur de progression.
+Progress Text,progrès texte
+Enter the Text for the progress meter.,Entrez le texte de la barre de progression.
+Custom CSS,CSS personnalisé
+Add custom CSS code that you want to be executed on the front end,Ajouter code personnalisé CSS que vous voulez exécuter sur l'extrémité avant
+Custom JS,JS personnalisé
+Add custom JS code that you want to be executed on the front end,Ajouter le code JS personnalisé que vous souhaitez exécuter sur l'extrémité avant
+Enable Mailchimp,activer Mailchimp
+Mailchimp Api Key,Mailchimp Api Key
+Mailchimp List,Liste Mailchimp
+Select List,Sélectionnez Liste
+Enable Klaviyo,activer Klaviyo
+Klaviyo Api Key,Klaviyo Api Key
+Klaviyo List,Liste Klaviyo
+Enable Constant Contact,Activer Constant Contact
+Constant Contact Api Key,Constant Contact Api Key
+Constant Contact Api Token,Constant Contact Api Token
+Constant Contact List,Constant Liste des contacts
+Please select atleast one page,S'il vous plaît sélectionner au moins une page
+Please select atleast one country,S'il vous plaît sélectionner au moins un pays
+Field cannot be empty,Le champ ne peut être vide
+Total Coupons Generated,Total des coupons générés
+Total Coupons Unused,Total des billets non utilisés
+Total Coupons Used,Total des coupons d'occasion
+`Active Date` cannot be greater than `Inactive Date`,`Active Date` ne peut pas être supérieure à` inactif Date`
+`From` Date cannot be greater than `To` Date,`From` date ne peut pas être supérieure à` To` date
+Date & Time should be greater than current date time.,Date et heure doit être supérieure à date heure actuelle.
+Total Generated,Production totale
+Till,à
+Total Used,total utilisé
+Total Unused,total inutilisé
+Coupon Statistics (Graphical),Statistiques du coupon (graphique)
+Select date,Sélectionner une date
+Generate,produire
+Other Statistics,autres statistiques
+Country Statistics,Statistiques pays
+Device Statistics,Statistiques du périphérique
+Coupons List,coupons Liste
+Minimum Screen Size,Taille de l'écran minimum
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Portrait Tablet (768x1024)
+Tablet Landscape (1024x768),Paysage comprimé (1024x768)
+Laptop (1366x768),Ordinateur portable (1366x768)
+Desktop(1600x1080),Bureau (1600x1080)
+Smartphones only,Smartphones uniquement
+Maximum Display Frequency,Fréquence d'affichage maximale
+Every Visit,chaque visite
+One Visit per hour,Une visite par heure
+One visit per day,Une visite par jour
+One visit per week,Une visite par semaine
+One visit per month,Une visite par mois
+Show Spin Wheel on the front end after the specified time,Afficher le patinage des roues sur l'extrémité avant après l'heure indiquée
+Hide Spin Wheel After,Hide Spin Wheel Après
+Always Display,Affichage toujours
+10 Seconds,10 secondes
+20 Seconds,20 secondes
+30 Seconds,30 secondes
+40 Seconds,40 secondes
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Choisissez l'intervalle de temps, après quoi le patinage des roues sur l'extrémité avant cachera automatiquement"
+Set Fix Time,Set Time Fix
+Active Date/Time,Actif Date / Heure
+Expire Date/Time,Expireront Date / Heure
+Whom to show,À qui montrent
+All Visitors,tous les visiteurs
+New Visitors,nouveaux visiteurs
+Returning Visitors,De retour Visiteurs
+Select whom to show the popup.,Sélectionnez qui pour afficher le menu contextuel.
+When to Show,Quand Afficher
+Immediately,Immédiatement
+After Time(seconds),Après un temps (secondes)
+When scroll down(%),Lorsque défiler vers le bas (%)
+When Exit,lorsque la sortie
+Select when to display the popup.,Sélectionnez cette option pour afficher le menu contextuel.
+Enter time (In Seconds),Entrez le temps (en secondes)
+Enter time in seconds after which you want to display spin wheel pop up.,Entrez le temps en secondes après que vous souhaitez afficher pop up le patinage des roues.
+Enter Scroll Percentage,Entrez Parchemin Pourcentage
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,Entrez défilement pourcentage après lequel vous souhaitez afficher pop up le patinage des roues. Ne saisissez aucun signe de%.
+Geo Location,Emplacement géographique
+World Wide,À l'échelle mondiale
+Display selected areas only,Afficher les zones sélectionnées uniquement
+Do not display selected areas,Ne pas afficher les zones sélectionnées
+Select Geo Location where you want to show the popup.,Sélectionnez Emplacement géographique où vous souhaitez afficher le menu contextuel.
+Select countries.,certains pays.
+Title Text,Titre texte
+Subtitle Text,Sous-titre texte
+Rules Text,règles texte
+One rule should be entered in one line in order to show it on pop up point wise.,Une règle doit être inscrit dans une ligne afin de le montrer sur le point pop up sage.
+Are your sure?,Êtes-vous sûr?
+Please enter a valid color code,S'il vous plaît entrer un code de couleur valide
+`Active Date` cannot be greater than `Expire Date`,`Active Date` ne peut pas être supérieure à` Expirez Date`
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,La somme de gravité n'est pas dans la plage valide. Il devrait être 1 et 100. Situés entre Le total est:
+No list exists for this API key.,Aucune liste existe pour cette clé API.
+No. of times,Nombre de fois
+Date,Date
+Please upload an image file.,S'il vous plaît télécharger un fichier image.
+Note: select time in GMT only.,Remarque: sélectionnez l'heure GMT seulement.
+This slot is already available.,Cet emplacement est déjà disponible.

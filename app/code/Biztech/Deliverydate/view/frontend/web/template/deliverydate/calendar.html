@@ -1,0 +1,59 @@
+<!-- ko if:deliverydateEnabled -->
+<div class="deliverydate-main-wrapper" id="deliverydate-main-wrapper">
+    <form id="deliverydate-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <div class="fieldset">
+            <div class="step-title" data-bind="i18n: 'Delivery Date Information'"></div>
+
+            <div class="field checkout-deliverydate" data-bind="css: isMandatory" name="shipping_arrival_date">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydateLabel"></label>
+                <div class="control" data-bind="css: isRtl">
+                    <input class="admin__control-text" type="text" data-bind="
+                    datepicker: { storage: shiftedValue, options: options },
+                    valueUpdate: valueUpdate,
+                    attr: {
+                    autocomplete : 'off' ,
+                    readonly : 'readonly',
+                    value: shiftedValue,
+                }" name="shipping_arrival_date" id="deliverypicker" />
+            </div>
+        </div>
+
+        <div role="alert" class="message warning" style="display: none;" id="delivery_charges_day">
+            <span data-bind="i18n: showcharges"></span>
+        </div>
+
+        <div class="field" name="shipping_arrival_comments">
+            <label class="label calender-comment-label" data-bind="i18n: deliverydatecommentLabel"></label>
+
+            <div class="control">
+                <textarea data-bind="attr : { id : 'shipping_arrival_comments', col: 65, row: 10 }, class: 'delivery-date-comment', name : 'shipping_arrival_comments' "></textarea>
+            </div>
+
+            <div class="control choice" data-bind="visible: useCallMe">
+                <input type="checkbox" data-bind="attr : { id : 'delivery_date_callme', name : 'deliverydate_callme' , value : 1 } , class: 'delivery-date-callme' , checked: callfordelivery" />
+                <label class="label delivery-callme-label" for="delivery_date_callme" data-bind="style: { color: callfordelivery() ? 'Green' : 'black' , 'font-style' : callfordelivery() ? 'italic' : 'normal' } ">
+                    <span data-bind="i18n: deliverydatecallMeLabel">Call me before Delivery</span>
+                </label>
+            </div>
+
+        </div>
+        <div class="field biz-comment-note" data-bind="visible: getShowHtml() === 1" name="show_html">
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <span data-bind="html: displayHtml"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hidden">
+            <input type="hidden" id="shipping_arrival_date" name="shipping_arrival_date" />
+            <input type="hidden" id="shipping_arrival_slot" name="shipping_arrival_slot" />
+            <input type="hidden" id="delivery_charges" name="delivery_charges" />
+        </div>
+    </div>
+</form>    
+</div>
+<!-- /ko -->

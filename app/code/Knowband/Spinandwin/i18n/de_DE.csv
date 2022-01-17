@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Etwas schief gelaufen ist, während der Gutschein-Code zu erzeugen, versuchen Sie es erneut."
+Schedule has been deleted successfully,Zeitplan wurde erfolgreich gelöscht
+Invalid Data.,Ungültige Daten.
+Add/Edit Schedule,Hinzufügen / Zeitplan bearbeiten
+Schedule has been saved successfully.,Zeitplan wurde erfolgreich gespeichert.
+Email has been sent successfully.,E-Mail wurde erfolgreich gesendet.
+"Something went wrong while sending the coupon email, please try again.","Etwas schief gelaufen ist, während den Gutschein E-Mail zu senden, bitte versuchen Sie es erneut."
+Spin and Win,Spin and Win
+Knowband,Knowband
+Settings saved successfully.,Einstellungen erfolgreich gespeichert.
+New Customer,Neukunde
+No list found. (Verify Credentials),Keine Liste gefunden. (Verify Credentials)
+The Private Klaviyo API Key you have set is invalid.,"Der private Klaviyo API-Schlüssel Sie festgelegt haben, ist ungültig."
+The Private Klaviyo API key you have set is no longer valid.,"Der private Klaviyo API-Schlüssel Sie Satz haben, ist nicht mehr gültig."
+Unable to verify Klaviyo Private API Key.,Unfähig Klaviyo privaten API-Schlüssel zu überprüfen.
+Mobile,"Handy, Mobiltelefon"
+Tablet,Tablette
+Desktop,Desktop
+You have already taken advantage of this offer. Please try another email.,Sie haben bereits die Vorteile dieses Angebots genommen. Bitte versuchen Sie einen anderen E-Mail.
+Not your lucky day today. Better Luck Next Time.,Nicht Ihr Glückstag heute. Better Luck Next Time.
+Error occurred while subscribing. Please try again later.,Fehler beim abonnieren möchte. Bitte versuchen Sie es später noch einmal.
+Jan,Jan
+Feb,Februar
+Mar,Beschädigen
+Apr,April
+May,Kann
+Jun,Juni
+Jul,Juli
+Aug,August
+Sep,September
+Oct,Oktober
+Nov,November
+Dec,Dezember
+None,Keiner
+Rose Day,Rose Day
+Propose Day,vorschlagen Tag
+Chocolate Day,Schokoladen-Tag
+Teddy Day,Teddy Day
+Promise Day,Versprechen Tag
+Hug Day,Tag der Umarmung
+Kiss Day,Kuss Tag
+Valentine\'s Day,Valentinstag
+Xmas Theme 1,Weihnachten Theme 1
+Xmas Theme 2,Weihnachten Thema 2
+Merry Christmas - Theme 1,Frohe Weihnachten - Thema 1
+Merry Christmas - Theme 2,Frohe Weihnachten - Thema 2
+Merry Christmas - Theme 3,Frohe Weihnachten - Thema 3
+Merry Christmas - Theme 4,Frohe Weihnachten - Thema 4
+Merry Christmas - Theme 5,Frohe Weihnachten - Thema 5
+Black Friday Theme1,Black Friday theme1
+Black Friday Theme2,Black Friday Theme2
+Black Friday Theme3,Black Friday theme3
+Black Friday Theme4,Black Friday theme4
+Diwali Theme1,Diwali theme1
+Diwali Theme2,Diwali Theme2
+Diwali Theme3,Diwali theme3
+Diwali Theme4,Diwali theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,Ostern theme1
+Easter Theme2,Ostern Theme2
+Easter Theme3,Ostern theme3
+Halloween Theme1,Halloween theme1
+Halloween Theme2,Halloween Theme2
+Halloween Theme3,Halloween theme3
+Halloween Theme4,Halloween theme4
+Thanks Giving Theme1,Thanks Giving theme1
+Happy New Year Theme1,Frohes Neues Jahr theme1
+Happy New Year Theme2,Frohes Neues Jahr Theme2
+Happy New Year Theme3,Frohes Neues Jahr theme3
+Happy New Year Theme4,Frohes Neues Jahr theme4
+Happy New Year Theme5,Frohes Neues Jahr Theme5
+Happy New Year Theme6,Frohes Neues Jahr Theme6
+Happy New Year Theme7,Frohes Neues Jahr Theme7
+Wheel Design 1,Rad-Entwurf 1
+Wheel Design 2,Rad Design 2
+Look and Feel,Look and Feel
+General Settings,Allgemeine Einstellungen
+Display Settings,Bildschirmeinstellungen
+Theme Scheduling,Thema Scheduling
+Text Settings,Texteinstellungen
+Special bonus unlocked,Sonderbonus entriegelt
+You have a chance to win a nice big fat discount. Are you ready?,"Sie haben eine Chance, einen schönen großen fetten Rabatt zu gewinnen. Sind Sie bereit?"
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Sie können das Rad nur einmal drehen. Wenn Sie gewinnen, können Sie Ihren Gutschein für 1 Tag nur behaupten!"
+Email Settings,Email Einstellungen
+Only on wheel,Nur auf dem Rad
+Email Only,E-mail Nur
+Email & Wheel,E-Mail & Rad
+Fire,Feuer
+Aqua,Wasser
+Wind,Wind
+Void,Leere
+Earth,Erde
+Return Statuses,Zurück Status
+Coupon Code,Gutscheincode
+Customer Email,Kunden-eMail
+Country,Land
+Device,Gerät
+Coupon Used,Coupon Gebraucht
+No,Nein
+Yes,Ja
+Coupon Generated On,Coupon generiert On
+Statistics,Statistiken
+Email Marketing,E-Mail Marketing
+User List,Benutzerliste
+Status,Status
+Enabled,aktiviert
+Disabled,Deaktiviert
+From Date,Ab Datum
+To Date,Miteinander ausgehen
+Action,Aktion
+Slice Settings,Slice-Einstellungen
+10% OFF,10% REDUZIERT
+Not Lucky Today,Nicht glücklich Heute
+35% OFF,35% aus
+Opps! Sorry,Upps! Es tut uns leid
+15% OFF,15% RABATT
+Better Luck Next Time,Better Luck Next Time
+50% OFF,50% RABATT
+Try Next Time,Das nächste Mal versuchen
+12% OFF,12%!
+Come Again,Komm wieder
+5% OFF,5% OFF
+Try Again,Versuchen Sie es nochmal
+First Name,Vorname
+Last Name,"Familienname, Nachname"
+Email,Email
+Created Date,Erstellungs-Datum
+CSV,CSV
+Edit,Bearbeiten
+Delete,Löschen
+Save Schedule,Zeitplan speichern
+Back,Zurück
+Save Settings,Einstellungen speichern
+Email cannot be left blank,E-Mail kann nicht leer sein
+Not a valid email,Keine gültige E-Mail
+a discount,ein Rabatt
+Code copied.,Code kopiert.
+First name cannot be left blank,Vorname darf nicht leer gelassen werden
+Last name cannot be left blank,Nachname nicht leer sein kann links
+Hurrah! You've got,Hurra! Du hast
+ discount. Lucky day!,Rabatt. Glückstag!
+The coupon code has been sent to you through the email.,Der Gutscheincode wurde Ihnen durch die E-Mail gesendet.
+Better luck next time!,Mehr Glück beim nächsten Mal!
+Don't forget to use the discount code at checkout!,"Vergessen Sie nicht, den Rabatt-Code an der Kasse zu verwenden!"
+Enter you email,Geben Sie Sie email an
+Try your luck,Versuch dein Glück
+Next Time,Nächstes Mal
+"No, I do not feel lucky","Nein, ich habe nicht das Gefühl, das Glück"
+Continue,Fortsetzen
+Enable Theme Scheduling,Aktivieren Theme Scheduling
+Add New Schedule,Hinzufügen Neuer Zeitplan
+Select number of slices,Wählen Sie die Anzahl der Scheiben
+12 Slices,12 Scheiben
+8 Slices,8 Scheiben
+6 Slices,6 Scheiben
+Select the number of slices to show.,Wählen Sie die Anzahl der Scheiben zu zeigen.
+Slice Label,Scheibe-Aufkleber
+Coupon Type,Coupon-Typ
+Coupon Value,Der Wert des Gutscheins
+Gravity (%),Schwere (%)
+Fixed,Fest
+Percentage,Prozentsatz
+Free Shipping,Kostenloser Versand
+Theme,Thema
+Theme Peview,Thema Peview
+Wheel Design,Raddesign
+Wheel Peview,Rad Peview
+Wheel Color,Rad Farbe
+Change color of the wheel.,Farbe ändern des Rades.
+Wheel Text Color,Rad Textfarbe
+Change text color of the wheel.,Ändern Textfarbe des Rades.
+Wheel Background Color,Rad Hintergrundfarbe
+Change background color of wheel.,Ändern Sie Hintergrundfarbe des Rades.
+Font Color,Schriftfarbe
+Change font color of text on wheel.,Ändere Schriftfarbe des Textes auf dem Rad.
+Button Background Color,Button Hintergrundfarbe
+Change background color of spin button.,Ändern Sie Hintergrundfarbe der Spin-Taste.
+`Try your luck` Button Text Color,`Versuchen Sie luck` Knopf Textfarbe
+Change font color of the front `Try your luck` button.,"Ändere Schriftfarbe der Front `Versuchen Sie, Ihre luck` Taste."
+"No, I do not feel lucky text color","Nein, ich fühle mich nicht glücklich Textfarbe"
+"Change font color of No, I do not feel lucky text.","Ändern Sie Schriftfarbe Nein, ich fühle mich nicht glücklich Text."
+Schedule Status,Planstatus
+Select Date,Datum auswählen
+Field cannot be empty.,Feld kann nicht leer sein.
+You can enter only numbers.,Sie können nur Nummern eingeben.
+Number should be greater than 0.,Zahl sollte größer als 0 sein.
+Field cannot be greater than {#} characters.,Feld kann nicht größer sein als {#} Zeichen.
+Field cannot be less than {#} character(s).,Feld kann nicht weniger als {#} Zeichen (s).
+Please enter Email.,Bitte geben Sie E-Mail.
+Please enter a valid Email.,Bitte geben Sie eine gültige Email-Adresse ein.
+Invalid date format.,Ungültiges Datumsformat.
+Number is not in the valid range. It should be between {1} and {100},Anzahl ist nicht im gültigen Bereich. Es sollte zwischen {1} und {100}
+Field should be numeric.,Feld sollte numerisch sein.
+Field can have only upto two decimal values.,Feld kann nur bis zu zwei Dezimalwerte haben.
+Email cannot be greater than {#} characters.,E-Mail kann nicht größer sein als {#} Zeichen.
+Zip should not have special characters.,Zip sollte keine Sonderzeichen haben.
+Percentage should be in number.,Prozentsatz sollte in Zahl sein.
+Percentage should be between 0 and 100.,Prozentsatz sollte zwischen 0 und 100 liegen.
+Size cannot be greater than {#} characters.,Größe kann nicht größer sein als {#} Zeichen.
+Color could not be greater than {#} characters.,Farbe könnte nicht größer sein als {#} Zeichen.
+Color is not valid.,Die Farbe ist nicht gültig.
+Special characters are not allowed.,Sonderzeichen sind nicht erlaubt.
+Script tags are not allowed.,Script-Tags sind nicht erlaubt.
+Style tags are not allowed.,Style-Tags sind nicht erlaubt.
+Iframe tags are not allowed.,Iframe-Tags sind nicht erlaubt.
+Uploaded file is not an image.,Die hochgeladene Datei ist kein Bild.
+Uploaded file size must be less than #d.,Uploaded Dateigröße muss als # d kleiner sein.
+Field should not contain HTML tags.,Feld sollte keine HTML-Tags enthalten.
+You can enter only positive numbers.,Sie können nur positive Zahlen eingeben.
+`From Date` should be smaller than `To Date`,`Von Date` sollte kleiner sein als` Um Date` sein
+`From Date` already present in a slot.,`Von Date` bereits in einem Schlitz.
+`To Date` already present in a slot.,`Um Date` bereits in einem Schlitz präsentieren.
+Coupon Display Options,Coupon Anzeigeoptionen
+Email Subject,E-Mail Betreff
+Email Template,E-Mail-Vorlage
+Email Content,E-Mail-Inhalt
+Test Email,Test-Email
+Send Email,E-Mail senden
+Enable the Extension,Aktivieren Sie die Erweiterung
+Show pull-out tab,Zeigen ausziehbare Registerkarte
+Allow customer to hide/show popup,Lassen Sie Kunden zu hide / show Popup
+Upload pull-out tab image,Hochladen ausziehbares Registerkarte Bild
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Nur .png oder .jpg-Datei-Format akzeptiert. Die Dateigröße sollte nicht mehr als 2 MB sein.
+Display Logo,Display-Logo
+Upload Logo,Logo hochladen
+Remove logo,Remove logo
+Email Recheck,Eine E-Mail erneut prüfen
+Allow customer to provide coupon code more than one time.,Lassen Sie Kunden Gutscheincode bieten mehr als einmal.
+Enable Wheel Sound,Aktivieren Rad Ton
+Allow sound on rotating the wheel.,Erlauben Ton auf das Rad dreht.
+Show Fireworks,Show Feuerwerk
+Show fireworks after a customer wins.,Zeigen Feuerwerk nach Kunden gewinnen.
+Show Customer Name,Anzeigen Kundenname
+Show First Name,Show Vorname
+Show Last Name,Zeigen Nachname
+Show Both,Beides anzeigen
+Show None,Show None
+Show customer name on the front end,Zeigen Kundennamen auf dem vorderen Ende
+Require Customer Name,Erfordern Kundenname
+Require First Name,Erfordern Vorname
+Require Last Name,Erfordern Nachname
+Require Both,erfordern Beide
+Require None,erfordern Keine
+Require customer name on the front end,Erfordern Kundennamen auf dem vorderen Ende
+Wheel Display Interval,Rad Anzeigeintervall
+Days,Tage
+Enter the display interval (in days) after which pop will show again (if not used).,"Geben Sie die Anzeigedauer (in Tagen), nach dem Pop wieder zeigen wird (wenn nicht verwendet)."
+Show Progress Meter,Fortschrittsbalken zeigen
+Progress Percentage,Fortschritt in Prozent
+Enter the percentage of the progress meter.,Geben Sie den Prozentsatz des Fortschrittsanzeige.
+Progress Text,Fortschritt Text
+Enter the Text for the progress meter.,Geben Sie den Text für die Fortschrittsanzeige.
+Custom CSS,Benutzerdefinierte CSS
+Add custom CSS code that you want to be executed on the front end,"Fügen Sie benutzerdefinierte CSS-Code, dass Sie auf dem vorderen Ende ausgeführt werden soll"
+Custom JS,benutzerdefinierte JS
+Add custom JS code that you want to be executed on the front end,"Fügen Sie benutzerdefinierte JS-Code, dass Sie auf dem vorderen Ende ausgeführt werden soll"
+Enable Mailchimp,Aktivieren Mailchimp
+Mailchimp Api Key,Mailchimp Api Key
+Mailchimp List,Mailchimp Liste
+Select List,Auswahlliste
+Enable Klaviyo,Aktivieren Klaviyo
+Klaviyo Api Key,Klaviyo Api Key
+Klaviyo List,Klaviyo Liste
+Enable Constant Contact,Aktivieren Sie Constant Contact
+Constant Contact Api Key,Constant Contact Api Key
+Constant Contact Api Token,Constant Contact Api Token
+Constant Contact List,Konstante Kontaktliste
+Please select atleast one page,Bitte wählen Sie atleast eine Seite
+Please select atleast one country,Bitte wählen Sie atleast ein Land
+Field cannot be empty,Feld kann nicht leer sein
+Total Coupons Generated,Insgesamt Coupons generiert
+Total Coupons Unused,Insgesamt Coupons Ungenutzte
+Total Coupons Used,Insgesamt Coupons Gebraucht
+`Active Date` cannot be greater than `Inactive Date`,`Aktive Date` kann nicht größer sein als` Inaktive Date`
+`From` Date cannot be greater than `To` Date,`From` Datum kann nicht größer sein als` To` Datum
+Date & Time should be greater than current date time.,Datum & Zeit sollte größer sein als die aktuelle Datum Zeit sein.
+Total Generated,insgesamt generiert
+Till,Bis
+Total Used,insgesamt Gebraucht
+Total Unused,insgesamt Ungenutzte
+Coupon Statistics (Graphical),Coupon Statistik (Graphical)
+Select date,Datum auswählen
+Generate,Generieren
+Other Statistics,andere Statistiken
+Country Statistics,Länderstatistik
+Device Statistics,Gerätestatistik
+Coupons List,Coupons Liste
+Minimum Screen Size,Minimale Bildschirmgröße
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Tablet Portrait (768x1024)
+Tablet Landscape (1024x768),Tablet Landschaft (1024x768)
+Laptop (1366x768),Laptop (1366x768)
+Desktop(1600x1080),Desktop (1600x1080)
+Smartphones only,Smartphones nur
+Maximum Display Frequency,Maximale Anzeigefrequenz
+Every Visit,jeder Besuch
+One Visit per hour,Ein Besuch pro Stunde
+One visit per day,Ein Besuch pro Tag
+One visit per week,Ein Besuch pro Woche
+One visit per month,Ein Besuch pro Monat
+Show Spin Wheel on the front end after the specified time,Show Spin Rad am vorderen Ende nach der angegebenen Zeit
+Hide Spin Wheel After,Ausblenden Spin-Rad nach
+Always Display,immer anzeigen
+10 Seconds,10 Sekunden
+20 Seconds,20 Sekunden
+30 Seconds,30 Sekunden
+40 Seconds,40 Sekunden
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Wählen Sie die Zeitspanne, nach der das Spin-Rad am vorderen Ende verstecken automatisch"
+Set Fix Time,Set Fixzeit
+Active Date/Time,Aktive Datum / Uhrzeit
+Expire Date/Time,Expire Datum / Uhrzeit
+Whom to show,Wen zu zeigen
+All Visitors,Alle Besucher
+New Visitors,neue Besucher
+Returning Visitors,Wiederkehrende Besucher
+Select whom to show the popup.,Wählen Sie den das Popup zu zeigen.
+When to Show,Wann anzeigen
+Immediately,Sofort
+After Time(seconds),Nach Zeit (Sekunden)
+When scroll down(%),Wenn nach unten scrollen (%)
+When Exit,wenn Beenden
+Select when to display the popup.,"Wählen Sie, wenn Sie das Popup angezeigt werden soll."
+Enter time (In Seconds),Geben Sie die Zeit (in Sekunden)
+Enter time in seconds after which you want to display spin wheel pop up.,"Geben Sie die Zeit in Sekunden, nach der Du Pop-up-Spin-Rad angezeigt werden soll."
+Enter Scroll Percentage,Geben Sie Scroll Prozentual
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,Geben Sie Scroll-Prozentsatz nach dem Sie Pop-up-Spin-Rad angezeigt werden soll. Sie kein% Zeichen eingeben.
+Geo Location,Geo Location
+World Wide,World Wide
+Display selected areas only,nur Anzeige ausgewählten Bereichen
+Do not display selected areas,Keine Anzeige von ausgewählten Bereichen
+Select Geo Location where you want to show the popup.,"Wählen Sie Geo Ort, an dem Sie das Popup angezeigt werden soll."
+Select countries.,Länder auswählen.
+Title Text,Titel Text
+Subtitle Text,Untertitel Text
+Rules Text,Regeltext
+One rule should be entered in one line in order to show it on pop up point wise.,"Eine Regel soll in einer Zeile eingegeben werden, um es auf zu zeigen, wiese Pop-up-Punkt."
+Are your sure?,Bist du sicher?
+Please enter a valid color code,Bitte geben Sie eine gültige Farbcode
+`Active Date` cannot be greater than `Expire Date`,`Aktive Date` kann nicht größer sein als` Ablaufen Date`
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Die Summe der Schwerkraft ist nicht im gültigen Bereich. Es sollte seinen betwen 1 und 100. Das Ganze ist:
+No list exists for this API key.,Keine Liste existiert für diesen API-Schlüssel.
+No. of times,Anzahl der Zeiten
+Date,Datum
+Please upload an image file.,Bitte laden Sie eine Bilddatei.
+Note: select time in GMT only.,Hinweis: Wählen Sie Zeit in GMT nur.
+This slot is already available.,Dieser Slot ist bereits verfügbar.

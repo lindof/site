@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd"> 
+    <head>
+        <css src="Biztech_Deliverydate::css/calendar.css"/>
+        <css src="Biztech_Deliverydate::css/style.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block 
+                class="Biztech\Deliverydate\Block\Adminhtml\Dashboard\Deliverydatecalendar" 
+                name="biztech_deliverydate">
+            </block>                       
+        </referenceContainer>
+    </body>
+</layout>

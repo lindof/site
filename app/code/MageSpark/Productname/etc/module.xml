@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * DISCLAIMER
+ * Do not edit or add to this file if you wish to upgrade this module to newer
+ * versions in the future.
+ *
+ * @category  MageSpark
+ * @package   MageSpark_Productname
+ * @author    MageSpark team
+ * @copyright 2021 MageSpark
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="MageSpark_Productname" setup_version="1.0.0">
+    </module>
+</config>

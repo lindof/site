@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data_converge">
+        <observer name="converge_gateway_data_assign" instance="Magesales\Converge\Observer\DataAssignObserver" />
+    </event>
+    <event name="checkout_multishipping_refund_all">
+        <observer name="converge_multishipping_refund_all" instance="Magesales\Converge\Observer\Multishipping\Refund"/>
+    </event>
+</config>

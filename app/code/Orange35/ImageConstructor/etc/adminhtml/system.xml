@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="orange35_tab" translate="label" sortOrder="1000">
+            <label>Orange35</label>
+        </tab>
+        <section id="orange35_image_constructor" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Image Constructor</label>
+            <tab>orange35_tab</tab>
+            <resource>Orange35_ImageConstrctor::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="single_image_strategy" translate="label" type="select" sortOrder="100"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Single Image Strategy</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Check off this checkbox if you have conflicts with custom theme image zoom</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

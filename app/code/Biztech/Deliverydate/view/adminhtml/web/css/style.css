@@ -1,0 +1,39 @@
+.delivery-date-admin.data-grid th { padding: 10px; }
+.field-delivery-date-comment { padding: 10px 0; }
+.field-delivery-date-comment .admin__field-label span { padding: 0 !important; }
+.delivery-date-admin { display: block; overflow-x: auto; text-align: center; }
+.delivery-date-admin label { display: block; }
+#diagram_tab_content .cal > thead, #diagram_tab_content .cal > tbody { display: table; width: 100%; text-align: center; }
+#diagram_tab_content .cal td { text-align: center; }
+#deliverydateorders_table2 .admin__form-field { display: inline-block; padding: 0 5px; }
+#deliverydateorders_table2 ._has-datepicker + .ui-datepicker-trigger { height: 24px; }
+#deliverydateorders_table2 ._has-datepicker + .ui-datepicker-trigger::after { font-size: 18px; line-height: 20px; }
+#DeliveryDate_Calendar #calendar .cal-nav { background: #e3e3e3 none repeat scroll 0 0; border: 0.1rem solid #adadad; color: #41362f; display: inline-block; line-height: 14px; margin: 0 10px; padding: 6px; vertical-align: middle; }
+#DeliveryDate_Calendar #calendar .cal-nav:hover { background: #D6D6D6 none repeat scroll 0 0; text-decoration: none; }
+#DeliveryDate_Calendar #calendar { text-align: center; }
+#DeliveryDate_Calendar .cal { margin-top: 10px; }
+.deliverydate-main-wrapper .delivery-date-admin.data-grid-draggable {display: table;}
+#delivery-date_section ._has-datepicker.admin__control-text, #delivery-date_section .admin__field-control.value, #delivery-date_section .admin__field-control.value textarea {width: 100%;}
+.hideloader{ background: none !important; }
+.design_theme_ua_regexp {
+max-width: 500px; max-height: 500px;
+overflow-y: auto;
+position: relative;
+}
+
+
+
+/*21/8/2019*/
+
+#deliverydateorders_table2 .admin__form-field{position: relative;}
+#Todays_Delivery_Date_Orders #deliverydate_orders_table, #deliverydateorders_table2{width: 100%; overflow: auto; white-space: nowrap;}
+
+@media(max-width: 1440px){
+	#deliverydateorders_table2 .admin__table-primary th{padding: 10px !important;}
+	#deliverydateorders_table2 .a-center #deliverysearch{padding: 5px 10px !important;}
+}
+
+@media (max-width: 1200px){
+	#Todays_Delivery_Date_Orders #deliverydate_orders_table, #deliverydateorders_table2{width: 100%; display: inline-block; overflow: auto; white-space: nowrap;}
+}
+

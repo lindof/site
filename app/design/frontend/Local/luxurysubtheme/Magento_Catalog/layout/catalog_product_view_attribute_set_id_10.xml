@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageVision Blog37
+ *
+ * @category     MageVision
+ * @package      MageVision_Blog37
+ * @author       MageVision Team
+ * @copyright    Copyright (c) 2018 MageVision (https://www.magevision.com)
+ * @license      http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <container name="product.info.resistance" label="" htmlTag="div" htmlClass="product-resitance col-md-12" before="product.info.price">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.resistance" template="Magento_Catalog::product/view/resistance.phtml">
+                    <arguments>
+                        <argument name="icons" xsi:type="string">true</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <container name="container.build_your_own" label="" htmlTag="div" htmlClass="build-your-own-container col-md-12" before="product.info.details">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="build_your_own" template="Magento_Catalog::product/view/build_your_own.phtml" />
+            </container>
+        </referenceContainer>
+
+        <!-- <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\ProductList\Related" name="colorbox.catalog.product.related" template="Magento_Catalog::product/list/related_items.phtml" group="detailed_info" before="-">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">templates</argument>
+                    <argument name="at_label" xsi:type="string">none</argument>
+                    <argument name="title" translate="true" xsi:type="string">Related Products</argument>
+                    <argument name="type" xsi:type="string">related</argument>
+                    <argument name="region" xsi:type="string">colorbox</argument>
+                </arguments>
+            </block>
+        </referenceBlock> -->
+
+    </body>
+</page>

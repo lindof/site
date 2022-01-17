@@ -1,0 +1,158 @@
+<?php 
+$settings = $this->getSettings('knowband/spinandwin/settings'); $logo_file = $this->getSettings('knowband/spinandwin/logo');
+$storeDetails = $this->getStoreDetails();
+$version1 = $this->getVersion();
+$version2 = '2.3.0';
+?>
+<div class="fieldset-wrapper" id="email-settings">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Email Settings")?></h1>
+        <fieldset class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_coupon_display_options">
+                    <span>
+                        <?php echo __("Coupon Display Options")?>
+                    </span>
+                </label>
+                <div class="admin__field-control">
+                    <select class="admin__control-select" name="vss_spinandwin[email_settings][coupon_display_options]" id="spinandwin_coupon_display_options">
+                        <?php foreach ($this->getCouponDisplayOptions() as $key => $value) { 
+                            if(isset($settings["email_settings"]["coupon_display_options"]) && $settings["email_settings"]["coupon_display_options"] == $key){?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                        <?php }else{ ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                        <?php }} ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_coupon_display_options">
+                <label class="admin__field-label" for="spinandwin_email_subject">
+                    <span><span class="vss_required">*</span><?php echo __("Email Subject")?></span>
+                </label>
+                <div class="admin__field-control">
+                        <input id="spinandwin_email_subject" value="<?php echo isset($settings["email_settings"]["email_subject"])?$settings["email_settings"]["email_subject"]:""?>" class="admin__control-text" name="vss_spinandwin[email_settings][email_subject]"   type="text">
+                        <input type="hidden" name="vss_spinandwin[email_settings][template_id]" value="<?php if (isset($settings["email_settings"]['template_id'])) echo $settings["email_settings"]['template_id']; ?>" class="form-control"/>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_coupon_display_options">
+                <label class="admin__field-label" for="spinandwin_email_template">
+                    <span>
+                        <?php echo __("Email Template")?>
+                    </span>
+                </label>
+                <div class="admin__field-control spinandwin_coupon_display_options">
+                    <select class="admin__control-select" name="vss_spinandwin[email_settings][email_template]" id="spinandwin_email_template">
+                        <?php foreach ($this->getEmailTemplates() as $key => $value) { 
+                            if(isset($settings["email_settings"]["email_template"]) && $settings["email_settings"]["email_template"] == $key){?>
+                                <option value="<?php echo $key; ?>" selected="selected"><?php echo __($value); ?></option>
+                        <?php }else{ ?>
+                                <option value="<?php echo $key; ?>"><?php echo __($value); ?></option>
+                        <?php }} ?>
+                    </select>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_coupon_display_options">
+                <label class="admin__field-label" for="spinandwin_email_content">
+                    <span><span class="vss_required">*</span><?php echo __("Email Content")?></span>
+                </label>
+                <div class="admin__field-control admin__control-wysiwig" style="width: 670px;">
+                    <textarea id="spinandwin_email_content" class="textarea" name="vss_spinandwin[email_settings][email_content]"><?php echo isset($settings["email_settings"]["email_content"])?$settings["email_settings"]["email_content"]:""?></textarea>
+                </div>
+            </div>
+            <div class="admin__field spinandwin_coupon_display_options">
+                <label class="admin__field-label" for="spinandwin_test_email">
+                    <span><?php echo __("Test Email")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <input id="spinandwin_test_email" value="" class="admin__control-text" name="vss_spinandwin[email_settings][test_email]" type="text">
+                    <br><a class="action-default scalable action-secondary" id="test_email_send" style="margin-top: 18px;display: inline-block;cursor: pointer">
+                        <span><?php echo __('Send Email') ?></span>
+                    </a>
+                </div>
+                
+            </div>
+        </fieldset>
+    </div>
+</div>
+<style>
+    <?php if (isset($settings["email_settings"]["coupon_display_options"]) && ($settings["email_settings"]["coupon_display_options"] != '1')) { ?>
+    .spinandwin_coupon_display_options{
+       display:block;
+    }                                                    
+    <?php }else{ ?>
+    .spinandwin_coupon_display_options{
+       display:none;
+    }
+    <?php } ?>
+</style>
+
+<script type="text/javascript">
+               window.tinyMCE_GZ = window.tinyMCE_GZ || {}; 
+                window.tinyMCE_GZ.loaded = true;
+                require(["jquery", "mage/translate", "mage/adminhtml/events", "mage/adminhtml/wysiwyg/tiny_mce/setup", "mage/adminhtml/wysiwyg/widget"], function(jQuery){
+                    (function($) {$.mage.translate.add({"Insert Image...":"Insert Image...","Insert Media...":"Insert Media...","Insert File...":"Insert File..."})})(jQuery);
+                    
+                    <?php if(version_compare($version1, $version2,'>=')){?>
+                    wysiwygspinandwin_email_content = new wysiwygSetup("spinandwin_email_content", 
+                    {
+                        "enabled":true,
+                        "hidden":false,
+                        "use_container":false,
+                        "add_variables":false,
+                        "add_widgets":false,
+                        "no_display":false,
+                        "encode_directives":true,
+                        convert_urls: false,
+                        relative_urls : false,
+                        "baseStaticUrl":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/",
+                        "baseStaticDefaultUrl":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/",
+                        "directives_url":"http:\/\/magento2demo.firebearstudio.com\/admin_1vbjqf\/cms\/wysiwyg\/directive\/key\/6823756496599031f6ad20375cb63e5be69b50fc92c4b4d356e6316440ef5f5f\/",
+                        "popup_css":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/adminhtml\/Magento\/backend\/en_US\/mage\/adminhtml\/wysiwyg\/tiny_mce\/themes\/advanced\/skins\/default\/dialog.css",
+                        "tinymce4":{
+                                "width":"100%","height":"500px",
+                                "plugins":[],
+                                
+                        },     
+                        "directives_url_quoted":"http\\:\/\/magento2demo\\.firebearstudio\\.com\/admin_1vbjqf\/cms\/wysiwyg\/directive\/key\/6823756496599031f6ad20375cb63e5be69b50fc92c4b4d356e6316440ef5f5f\/",
+                        "add_images":true,
+                        "files_browser_window_url":"http:\/\/magento2demo.firebearstudio.com\/admin_1vbjqf\/cms\/wysiwyg_images\/index\/key\/f4129ab13180c0bffaf3b78c2eb10b46bb9ece7bd0f634f758d622bab97aab82\/",
+                        "files_browser_window_width":"1000",
+                        "files_browser_window_height":"600"
+                    });
+                    <?php }else{ ?>
+                    wysiwygspinandwin_email_content = new tinyMceWysiwygSetup("spinandwin_email_content",
+                     {
+                        "enabled":true,
+                        "hidden":false,
+                        "use_container":false,
+                        "add_variables":false,
+                        "add_widgets":false,
+                        "no_display":false,
+                        "encode_directives":true,
+                        "baseStaticUrl":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/",
+                        "baseStaticDefaultUrl":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/",
+                        "directives_url":"http:\/\/magento2demo.firebearstudio.com\/admin_1vbjqf\/cms\/wysiwyg\/directive\/key\/6823756496599031f6ad20375cb63e5be69b50fc92c4b4d356e6316440ef5f5f\/",
+                        "popup_css":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/adminhtml\/Magento\/backend\/en_US\/mage\/adminhtml\/wysiwyg\/tiny_mce\/themes\/advanced\/skins\/default\/dialog.css",
+                        "content_css":"http:\/\/magento2demo.firebearstudio.com\/pub\/static\/adminhtml\/Magento\/backend\/en_US\/mage\/adminhtml\/wysiwyg\/tiny_mce\/themes\/advanced\/skins\/default\/content.css","width":"100%","height":"500px",
+                        "plugins":[],
+                        "directives_url_quoted":"http\\:\/\/magento2demo\\.firebearstudio\\.com\/admin_1vbjqf\/cms\/wysiwyg\/directive\/key\/6823756496599031f6ad20375cb63e5be69b50fc92c4b4d356e6316440ef5f5f\/",
+                        "add_images":true,
+                        "files_browser_window_url":"http:\/\/magento2demo.firebearstudio.com\/admin_1vbjqf\/cms\/wysiwyg_images\/index\/key\/f4129ab13180c0bffaf3b78c2eb10b46bb9ece7bd0f634f758d622bab97aab82\/",
+                        "files_browser_window_width":"1000",
+                        "files_browser_window_height":"600"
+                    });
+                    <?php } ?>
+                        
+                    wysiwygspinandwin_email_content.setup("exact");   
+                    editorFormValidationHandler = wysiwygspinandwin_email_content.onFormValidation.bind(wysiwygspinandwin_email_content);
+                    //Event.observe("togglespinandwin_email_content", "click", wysiwygspinandwin_email_content.toggle.bind(wysiwygspinandwin_email_content));
+                    varienGlobalEvents.attachEventHandler("formSubmit", editorFormValidationHandler);
+                    varienGlobalEvents.clearEventHandlers("open_browser_callback");
+                    varienGlobalEvents.attachEventHandler("open_browser_callback", wysiwygspinandwin_email_content.openFileBrowser);
+                //
+                
+                });
+
+var scope = '<?php echo $storeDetails['scope']; ?>';
+var scope_id = '<?php echo $storeDetails['scope_id']; ?>';
+</script>

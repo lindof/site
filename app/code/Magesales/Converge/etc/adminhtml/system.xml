@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="converge" translate="label" type="text" sortOrder="20"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Converge Elavon]]></label>
+                <field id="active" translate="label" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable this Solution</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/converge/active</config_path>
+                </field>
+                <field id="mode" translate="label" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Operating Mode</label>
+                    <source_model>Magesales\Converge\Data\Source\Environment</source_model>
+                    <config_path>payment/converge/mode</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Title</label>
+                    <config_path>payment/converge/title</config_path>
+                </field>
+                <field id="form_type" translate="label comment" type="select" sortOrder="50"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Form Type</label>
+                    <source_model>Magesales\Converge\Data\Source\FormType</source_model>
+                    <config_path>payment/converge/form_type</config_path>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment Action</label>
+                    <source_model>Magesales\Converge\Data\Source\PaymentAction</source_model>
+                    <config_path>payment/converge/payment_action</config_path>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="70"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                    <config_path>payment/converge/allowspecific</config_path>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="80"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <config_path>payment/converge/specificcountry</config_path>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="allowspecific">1</field>
+                    </depends>
+                </field>
+                <field id="allowed_currencies" translate="label" type="multiselect" sortOrder="90"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Accepted Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                    <config_path>payment/converge/allowed_currencies</config_path>
+                </field>
+
+                <field id="demo_merchant_id" translate="label" type="text" sortOrder="100"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                    <config_path>payment/converge/demo_merchant_id</config_path>
+                    <depends>
+                        <field id="mode">demo</field>
+                    </depends>
+                </field>
+                <field id="demo_user_id" translate="label" type="text" sortOrder="110"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>User ID</label>
+                    <config_path>payment/converge/demo_user_id</config_path>
+                    <depends>
+                        <field id="mode">demo</field>
+                    </depends>
+                </field>
+                <field id="demo_pin" translate="label" type="obscure" sortOrder="120"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>PIN</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <config_path>payment/converge/demo_pin</config_path>
+                    <depends>
+                        <field id="mode">demo</field>
+                    </depends>
+                </field>
+                <field id="demo_gateway_url" translate="label" type="text" sortOrder="130"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Gateway URL</label>
+                    <config_path>payment/converge/demo_gateway_url</config_path>
+                    <depends>
+                        <field id="mode">demo</field>
+                    </depends>
+                </field>
+
+                <field id="production_merchant_id" translate="label" type="text" sortOrder="140"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                    <config_path>payment/converge/production_merchant_id</config_path>
+                    <depends>
+                        <field id="mode">production</field>
+                    </depends>
+                </field>
+                <field id="production_user_id" translate="label" type="text" sortOrder="150"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>User ID</label>
+                    <config_path>payment/converge/production_user_id</config_path>
+                    <depends>
+                        <field id="mode">production</field>
+                    </depends>
+                </field>
+                <field id="production_pin" translate="label" type="obscure" sortOrder="160"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>PIN</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <config_path>payment/converge/production_pin</config_path>
+                    <depends>
+                        <field id="mode">production</field>
+                    </depends>
+                </field>
+                <field id="production_gateway_url" translate="label" type="text" sortOrder="170"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Gateway URL</label>
+                    <config_path>payment/converge/production_gateway_url</config_path>
+                    <depends>
+                        <field id="mode">production</field>
+                    </depends>
+                </field>
+                <field id="debug" translate="label comment" type="select" sortOrder="180"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Debug</label>
+                    <comment>
+                        <![CDATA[Request and response calls are stored in the `converge_debug.log` file.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/converge/debug</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

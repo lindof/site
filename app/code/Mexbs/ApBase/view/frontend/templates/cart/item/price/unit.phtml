@@ -1,0 +1,42 @@
+<?php
+/** @var $block \Magento\Tax\Block\Item\Price\Renderer */
+
+$item = $block->getItem();
+
+/**
+ * @var \Mexbs\ApBase\Helper\Data $apHelper
+ */
+$apHelper = $this->helper("Mexbs\ApBase\Helper\Data");
+?>
+<?php if ($block->displayPriceInclTax() || $block->displayBothPrices()): ?>
+    <span class="price-including-tax" data-label="<?= $block->escapeHtml(__('Excl. Tax')) ?>">
+    <span class="cart-price<?php echo ($item->getDiscountAmount() > 0 ? " discounted" : "") ?>">
+        <?= $apHelper->escapeHtmlExcludingSpan(
+            $block->formatPrice($item->getPriceInclTax())
+        ) ?>
+    </span>
+        <?php if($item->getDiscountAmount() > 0): ?>
+            <span class="cart-price">
+        <?= $apHelper->escapeHtmlExcludingSpan(
+            $block->formatPrice($item->getPriceInclTax() - ($item->getDiscountAmount() / $item->getQty()))
+        ) ?>
+    </span>
+        <?php endif ;?>
+</span>
+<?php endif; ?>
+<?php if ($block->displayPriceExclTax() || $block->displayBothPrices()): ?>
+<span class="price-excluding-tax" data-label="<?= $block->escapeHtml(__('Excl. Tax')) ?>">
+    <span class="cart-price<?php echo ($item->getDiscountAmount() > 0 ? " discounted" : "") ?>">
+        <?= $apHelper->escapeHtmlExcludingSpan(
+            $block->formatPrice($item->getCalculationPrice())
+        ) ?>
+    </span>
+    <?php if($item->getDiscountAmount() > 0): ?>
+    <span class="cart-price">
+        <?= $apHelper->escapeHtmlExcludingSpan(
+            $block->formatPrice($item->getCalculationPrice() - ($item->getDiscountAmount() / $item->getQty()))
+        ) ?>
+    </span>
+    <?php endif ;?>
+</span>
+<?php endif; ?>

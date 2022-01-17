@@ -1,0 +1,78 @@
+<!-- ko if:deliverydateEnabled -->
+<div class="deliverydate-main-wrapper" id="deliverydate-main-wrapper">
+    <div class="field checkout-deliverydate" name="shipping_arrival_date">
+
+        <div class="fieldset">
+
+            <div class="field">
+                <label class="label">
+                    <span data-bind="i18n: 'Delivery Date Information'"></span>
+                </label>
+            </div>
+            <div class="field" name="shipping_arrival_date" data-bind="css: isRequired()">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydateLabel"></label>
+                <div class="control" data-bind="css: isRtl">
+                    <!-- ko if: isRequired() === 'required' -->
+                    <input
+                    type="text"
+                    data-bind="attr : {
+                                autocomplete : 'off' ,
+                                readonly : 'readonly',
+                                value: shiftedValue ,
+                                id : 'date-picker',
+                            },
+                    valueUpdate: valueUpdate,
+                    datepicker: { storage: shiftedValue , options: options }"
+                    name="shipping_arrival_date"
+                    data-validate="{required:true}"
+                    />
+                    <!-- /ko -->
+                    <!-- ko ifnot: isRequired() === 'required' -->
+                    <input
+                    type="text"
+                    data-bind="attr : {
+                                autocomplete : 'off' ,
+                                readonly : 'readonly',
+                                value: shiftedValue ,
+                                id : 'date-picker',
+                            },
+                    valueUpdate: valueUpdate,
+                    datepicker: { storage: shiftedValue , options: options }"
+                    name="shipping_arrival_date"
+                    data-validate="{required:false}"
+                    />
+                    <!-- /ko -->
+                </div>
+            </div>
+
+            <div class="field" name="shipping_arrival_comments">
+                <label class="label calender-comment-label" data-bind="i18n: deliverydatecommentLabel"></label>
+
+                <div class="control">
+                    <textarea data-bind="attr : { id : 'shipping_arrival_comments', col: 65, row: 10 , name : 'shipping_arrival_comments' , class: 'delivery-date-comment'}"></textarea>
+                </div>
+
+                <div class="control choice" data-bind="visible: useCallMe">
+                    <input type="checkbox" data-bind="attr : { id : 'delivery_date_callme', name : 'deliverydate_callme' , value : 1 } , class: 'delivery-date-callme' , checked: callfordelivery" />
+                    <label class="label delivery-callme-label" for="delivery_date_callme" data-bind="style: { color: callfordelivery() ? 'Green' : 'black' , 'font-style' : callfordelivery() ? 'italic' : 'normal' } ">
+                        <span data-bind="i18n: deliverydatecallMeLabel">Call me before Delivery</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="field biz-comment-note" data-bind="visible: getShowHtml() === 1" name="show_html">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>
+                                <span data-bind="html: displayHtml"></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /ko -->

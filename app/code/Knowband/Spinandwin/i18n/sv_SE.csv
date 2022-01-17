@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Något gick fel när genererar kupongkod, försök igen."
+Schedule has been deleted successfully,Schema har tagits bort
+Invalid Data.,Ogiltiga data.
+Add/Edit Schedule,Lägg till / redigera Schedule
+Schedule has been saved successfully.,Schemat har sparats.
+Email has been sent successfully.,E-post har skickats.
+"Something went wrong while sending the coupon email, please try again.","Något gick fel när du skickar kupongen e-post, försök igen."
+Spin and Win,Spin och vinn
+Knowband,Knowband
+Settings saved successfully.,Inställningar sparats.
+New Customer,Ny kund
+No list found. (Verify Credentials),Ingen lista hittas. (Verifiera Credentials)
+The Private Klaviyo API Key you have set is invalid.,Den privata Klaviyo API-nyckel du har ställt är ogiltig.
+The Private Klaviyo API key you have set is no longer valid.,Den privata Klaviyo API-nyckel som du har ställt in är inte längre giltigt.
+Unable to verify Klaviyo Private API Key.,Det går inte att kontrollera Klaviyo Private API-nyckel.
+Mobile,Mobil
+Tablet,Läsplatta
+Desktop,Desktop
+You have already taken advantage of this offer. Please try another email.,Du har redan dragit nytta av detta erbjudande. Försök med en annan e-post.
+Not your lucky day today. Better Luck Next Time.,Inte din lyckodag idag. Bättre lycka nästa gång.
+Error occurred while subscribing. Please try again later.,Ett fel uppstod när prenumerera. Vänligen försök igen senare.
+Jan,jan
+Feb,februari
+Mar,mar
+Apr,april
+May,Maj
+Jun,juni
+Jul,juli
+Aug,augusti
+Sep,september
+Oct,oktober
+Nov,november
+Dec,december
+None,Ingen
+Rose Day,Rose Day
+Propose Day,föreslå Day
+Chocolate Day,chokladdag
+Teddy Day,Teddy Day
+Promise Day,Promise Day
+Hug Day,Kram dag
+Kiss Day,Kiss Day
+Valentine\'s Day,Alla hjärtans dag
+Xmas Theme 1,Xmas Tema 1
+Xmas Theme 2,Xmas Tema 2
+Merry Christmas - Theme 1,Merry Christmas - Tema 1
+Merry Christmas - Theme 2,God jul - Tema 2
+Merry Christmas - Theme 3,God jul - Tema 3
+Merry Christmas - Theme 4,God jul - Tema 4
+Merry Christmas - Theme 5,God jul - Tema 5
+Black Friday Theme1,Black Friday Theme1
+Black Friday Theme2,Black Friday Theme2
+Black Friday Theme3,Black Friday Theme3
+Black Friday Theme4,Black Friday Theme4
+Diwali Theme1,Diwali Theme1
+Diwali Theme2,Diwali Theme2
+Diwali Theme3,Diwali Theme3
+Diwali Theme4,Diwali Theme4
+Diwali Theme5,Diwali Theme5
+Easter Theme1,påsk Theme1
+Easter Theme2,påsk Theme2
+Easter Theme3,påsk Theme3
+Halloween Theme1,Halloween Theme1
+Halloween Theme2,Halloween Theme2
+Halloween Theme3,Halloween Theme3
+Halloween Theme4,Halloween Theme4
+Thanks Giving Theme1,Tack Ge Theme1
+Happy New Year Theme1,Gott Nytt År Theme1
+Happy New Year Theme2,Gott Nytt År Theme2
+Happy New Year Theme3,Gott Nytt År Theme3
+Happy New Year Theme4,Gott Nytt År Theme4
+Happy New Year Theme5,Gott Nytt År Theme5
+Happy New Year Theme6,Gott Nytt År Theme6
+Happy New Year Theme7,Gott Nytt År Theme7
+Wheel Design 1,Wheel Design 1
+Wheel Design 2,Wheel Design 2
+Look and Feel,Titta och känna
+General Settings,Allmänna Inställningar
+Display Settings,Bildskärmsinställningar
+Theme Scheduling,tema Schemaläggning
+Text Settings,Textinställningar
+Special bonus unlocked,Special bonus olåst
+You have a chance to win a nice big fat discount. Are you ready?,Du har en chans att vinna en fin stor fet rabatt. Är du redo?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!",Du kan snurra hjulet en gång. Om du vinner kan du få din kupong för endast en dag!
+Email Settings,E-postinställningar
+Only on wheel,Endast på hjul
+Email Only,E-post Only
+Email & Wheel,E-post & Wheel
+Fire,Brand
+Aqua,Aqua
+Wind,Vind
+Void,Tomhet
+Earth,Earth
+Return Statuses,Return Status
+Coupon Code,kupongskod
+Customer Email,Kund Email
+Country,Land
+Device,Enhet
+Coupon Used,kupong Används
+No,Nej
+Yes,Ja
+Coupon Generated On,Kupong som genereras på
+Statistics,Statistik
+Email Marketing,E-post marknadsföring
+User List,ANVÄNDARLISTA
+Status,Status
+Enabled,Aktiverad
+Disabled,Inaktiverad
+From Date,Från datum
+To Date,Hittills
+Action,Verkan
+Slice Settings,skiva Inställningar
+10% OFF,10% REA
+Not Lucky Today,Inte tur i dag
+35% OFF,35% OFF
+Opps! Sorry,Opps! Förlåt
+15% OFF,15% OFF
+Better Luck Next Time,Bättre lycka nästa gång
+50% OFF,50% RABATT
+Try Next Time,Prova nästa gång
+12% OFF,12% OFF
+Come Again,Kom igen
+5% OFF,5% REA
+Try Again,Försök igen
+First Name,Förnamn
+Last Name,Efternamn
+Email,E-post
+Created Date,Skapat Datum
+CSV,CSV
+Edit,Redigera
+Delete,Radera
+Save Schedule,Spara Schedule
+Back,Tillbaka
+Save Settings,Spara inställningar
+Email cannot be left blank,E-post kan inte lämnas tomt
+Not a valid email,Inte en giltig e
+a discount,en rabatt
+Code copied.,Code kopieras.
+First name cannot be left blank,Förnamn kan inte lämnas tomt
+Last name cannot be left blank,Efternamn kan inte lämnas tomt
+Hurrah! You've got,Hurra! Du har
+ discount. Lucky day!,rabatt. Lyckodag!
+The coupon code has been sent to you through the email.,Kupongen koden har skickats till dig via e-post.
+Better luck next time!,Bättre lycka nästa gång!
+Don't forget to use the discount code at checkout!,Glöm inte att använda rabattkod i kassan!
+Enter you email,Ange du e
+Try your luck,Testa din tur
+Next Time,Nästa gång
+"No, I do not feel lucky","Nej, jag känner inte lycklig"
+Continue,Fortsätta
+Enable Theme Scheduling,Aktivera tema Schemaläggning
+Add New Schedule,Lägg till ny Schedule
+Select number of slices,Välj antal skivor
+12 Slices,12 skivor
+8 Slices,8 skivor
+6 Slices,6 skivor
+Select the number of slices to show.,Välj antal skivor för att visa.
+Slice Label,Slice Label
+Coupon Type,kupong Typ
+Coupon Value,kupong Värde
+Gravity (%),Vikt (%)
+Fixed,Fast
+Percentage,Procentsats
+Free Shipping,Gratis frakt
+Theme,Tema
+Theme Peview,tema Peview
+Wheel Design,Wheel Design
+Wheel Peview,Wheel Peview
+Wheel Color,Wheel Color
+Change color of the wheel.,Byt färg på hjulet.
+Wheel Text Color,Hjultextfärg
+Change text color of the wheel.,Ändra textfärg av hjulet.
+Wheel Background Color,Hjulbakgrundsfärg
+Change background color of wheel.,Ändra bakgrundsfärg på hjul.
+Font Color,Fontfärg
+Change font color of text on wheel.,Ändra teckenfärg text på hjul.
+Button Background Color,Button bakgrundsfärg
+Change background color of spin button.,Ändra bakgrundsfärg spin-knappen.
+`Try your luck` Button Text Color,`Prova luck` Button Textfärg
+Change font color of the front `Try your luck` button.,Ändra teckenfärg på den främre `Prova luck` knapp.
+"No, I do not feel lucky text color","Nej, jag känner inte lycklig textfärg"
+"Change font color of No, I do not feel lucky text.","Ändra teckenfärg Nej, jag känner inte lycklig text."
+Schedule Status,schema Status
+Select Date,Välj Datum
+Field cannot be empty.,Fältet kan inte vara tomt.
+You can enter only numbers.,Du kan endast ange siffror.
+Number should be greater than 0.,Number bör vara större än 0.
+Field cannot be greater than {#} characters.,Fältet kan inte vara större än {#} tecken.
+Field cannot be less than {#} character(s).,Fältet kan inte vara mindre än {#} tecken (s).
+Please enter Email.,Ange E-post.
+Please enter a valid Email.,Ange ett giltigt e-post.
+Invalid date format.,Ogiltigt datumformat.
+Number is not in the valid range. It should be between {1} and {100},Antalet är inte det giltiga intervallet. Det bör vara mellan {1} och {100}
+Field should be numeric.,Område bör numeriskt.
+Field can have only upto two decimal values.,Fältet kan bara ha upp till två decimalvärden.
+Email cannot be greater than {#} characters.,E-post kan inte vara större än {#} tecken.
+Zip should not have special characters.,Zip bör inte ha specialtecken.
+Percentage should be in number.,Procent ska vara i antal.
+Percentage should be between 0 and 100.,Procentsats bör vara mellan 0 och 100.
+Size cannot be greater than {#} characters.,Storlek kan inte vara större än {#} tecken.
+Color could not be greater than {#} characters.,Color kunde inte vara större än {#} tecken.
+Color is not valid.,Färg är inte giltigt.
+Special characters are not allowed.,Specialtecken är inte tillåtna.
+Script tags are not allowed.,Script-taggar är inte tillåtna.
+Style tags are not allowed.,Style taggar är inte tillåtna.
+Iframe tags are not allowed.,Iframe-taggar är inte tillåtna.
+Uploaded file is not an image.,Uppladdade filen är inte en bild.
+Uploaded file size must be less than #d.,Uppladdade filstorleken måste vara mindre än #d.
+Field should not contain HTML tags.,Fältet får inte innehålla HTML-taggar.
+You can enter only positive numbers.,Du kan ange bara positiva tal.
+`From Date` should be smaller than `To Date`,`Från möjliga tillfälle bör vara mindre än 'Att möjliga tillfälle
+`From Date` already present in a slot.,'Från möjliga tillfälle redan finns i en slits.
+`To Date` already present in a slot.,'För att möjliga tillfälle redan närvarande i en slits.
+Coupon Display Options,Kupong Visningsalternativ
+Email Subject,E-post Ämne
+Email Template,e-postmall
+Email Content,e-innehåll
+Test Email,Test E
+Send Email,Skicka epost
+Enable the Extension,Aktivera Extension
+Show pull-out tab,Visa utdragsflik
+Allow customer to hide/show popup,Låt kunden att dölja / visa popup
+Upload pull-out tab image,Ladda upp utdragsflik image
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Endast .png eller .jpg-format accepteras. Filstorleken får inte vara mer än 2 MB.
+Display Logo,display Logo
+Upload Logo,Ladda upp Logo
+Remove logo,Ta bort logo
+Email Recheck,E-post Kontrollera igen
+Allow customer to provide coupon code more than one time.,Låt kunden att ge kupongkoden mer än en gång.
+Enable Wheel Sound,Aktivera Wheel Sound
+Allow sound on rotating the wheel.,Låt ljudet på roterande hjulet.
+Show Fireworks,Visa Fireworks
+Show fireworks after a customer wins.,Visa fyrverkerier efter att en kund vinner.
+Show Customer Name,Visa Kundens namn
+Show First Name,Visa Förnamn
+Show Last Name,Visa Efternamn
+Show Both,Visa Båda
+Show None,Visa None
+Show customer name on the front end,Visa kundens namn på den främre änden
+Require Customer Name,Kräv Kundens namn
+Require First Name,Kräv Förnamn
+Require Last Name,Kräv Efternamn
+Require Both,kräver både
+Require None,Kräv Inget
+Require customer name on the front end,Kräv kundens namn på den främre änden
+Wheel Display Interval,Hjul Display Intervall
+Days,dagar
+Enter the display interval (in days) after which pop will show again (if not used).,"Ange visningsintervallet (i dagar), varefter pop kommer att visa igen (om den inte används)."
+Show Progress Meter,Visa Progress Meter
+Progress Percentage,framsteg Andel
+Enter the percentage of the progress meter.,Ange hur stor andel av framsteg mätaren.
+Progress Text,Progress Text
+Enter the Text for the progress meter.,Ange text för framstegsmätaren.
+Custom CSS,Anpassad CSS
+Add custom CSS code that you want to be executed on the front end,Lägg till anpassad CSS-kod som du vill ska utföras på den främre änden
+Custom JS,Anpassad JS
+Add custom JS code that you want to be executed on the front end,Lägg till anpassad JS-kod som du vill ska utföras på den främre änden
+Enable Mailchimp,aktivera Mailchimp
+Mailchimp Api Key,MailChimp API-nyckel
+Mailchimp List,MailChimp Lista
+Select List,Välj Lista
+Enable Klaviyo,aktivera Klaviyo
+Klaviyo Api Key,Klaviyo API-nyckel
+Klaviyo List,Klaviyo Lista
+Enable Constant Contact,Aktivera Constant Contact
+Constant Contact Api Key,Constant Contact API-nyckel
+Constant Contact Api Token,Constant Contact Api Token
+Constant Contact List,Constant kontaktlistan
+Please select atleast one page,Välj minst en sida
+Please select atleast one country,Välj minst ett land
+Field cannot be empty,Fältet får inte vara tomt
+Total Coupons Generated,Totalt kuponger Generated
+Total Coupons Unused,Totalt kuponger Oanvänd
+Total Coupons Used,Totalt kuponger Begagnade
+`Active Date` cannot be greater than `Inactive Date`,`Active möjliga tillfälle inte kan vara större än 'inaktiv möjliga tillfälle
+`From` Date cannot be greater than `To` Date,`From` Datum kan inte vara större än 'till` Datum
+Date & Time should be greater than current date time.,Datum och tid bör vara större än aktuellt datum tid.
+Total Generated,Totalt Generated
+Till,Till
+Total Used,Totalt Används
+Total Unused,total Oanvänt
+Coupon Statistics (Graphical),Kupong Statistik (Graphical)
+Select date,Välj datum
+Generate,Generera
+Other Statistics,Övrig statistik
+Country Statistics,land Statistik
+Device Statistics,Enhetsstatistik
+Coupons List,kuponger Lista
+Minimum Screen Size,Minsta skärmstorlek
+Smartphone (320x480),Smartphone (320x480)
+Tablet Portrait(768x1024),Tablett Stående (768x1024)
+Tablet Landscape (1024x768),Tablett Liggande (1024x768)
+Laptop (1366x768),Laptop (1366x768)
+Desktop(1600x1080),Desktop (1600x1080)
+Smartphones only,endast Smartphones
+Maximum Display Frequency,Maximal Visning Frekvens
+Every Visit,varje besök
+One Visit per hour,Ett besök per timme
+One visit per day,Ett besök per dag
+One visit per week,Ett besök per vecka
+One visit per month,Ett besök per månad
+Show Spin Wheel on the front end after the specified time,Visa Spin Wheel på den främre änden efter den angivna tiden
+Hide Spin Wheel After,Hide Spin Wheel Efter
+Always Display,alltid Display
+10 Seconds,10 sekunder
+20 Seconds,20 sekunder
+30 Seconds,30 sekunder
+40 Seconds,40 sekunder
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,Välj det tidsintervall efter vilket Spin Wheel på den främre änden kommer att dölja automatiskt
+Set Fix Time,Set Fix Tid
+Active Date/Time,Aktiv datum / tid
+Expire Date/Time,Utgångsdatum / tid
+Whom to show,Vem man show
+All Visitors,alla besökare
+New Visitors,nya besökare
+Returning Visitors,Återkommande besökare
+Select whom to show the popup.,Välj vem för att visa popup.
+When to Show,När ska Visa
+Immediately,Omedelbart
+After Time(seconds),Efter Tid (sekunder)
+When scroll down(%),När rulla ner (%)
+When Exit,när Exit
+Select when to display the popup.,Välj när du vill visa popup.
+Enter time (In Seconds),Ange tid (i sekunder)
+Enter time in seconds after which you want to display spin wheel pop up.,Ange i sekunder efter vilken du vill visa spin hjul dyker upp.
+Enter Scroll Percentage,Ange Scroll Procent
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,Ange rullnings procentsats efter vilken du vill visa spin hjul dyker upp. Gör ingen anger% tecken.
+Geo Location,geografisk plats
+World Wide,World Wide
+Display selected areas only,bara visa utvalda områden
+Do not display selected areas,Visa inte utvalda områden
+Select Geo Location where you want to show the popup.,Välj Geo plats där du vill visa popup.
+Select countries.,Utvalda länder.
+Title Text,Titel Text
+Subtitle Text,undertext Text
+Rules Text,regler Text
+One rule should be entered in one line in order to show it on pop up point wise.,En regel bör införas i en linje för att visa den på dyka upp punkt klokt.
+Are your sure?,Är du säker?
+Please enter a valid color code,Ange ett giltigt färgkod
+`Active Date` cannot be greater than `Expire Date`,`Active möjliga tillfälle inte kan vara större än 'Upphör möjliga tillfälle
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Summan av Gravity är inte det giltiga intervallet. Det bör vara betwen en och 100. Den totala är:
+No list exists for this API key.,Ingen lista finns för denna API-nyckel.
+No. of times,Antal gånger
+Date,Datum
+Please upload an image file.,Ladda upp en bildfil.
+Note: select time in GMT only.,Obs: Välj tid endast GMT.
+This slot is already available.,Denna plats är redan tillgänglig.

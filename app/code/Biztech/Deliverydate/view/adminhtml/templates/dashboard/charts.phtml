@@ -1,0 +1,82 @@
+<head></head>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$config = $objectManager->create('Magento\Framework\App\Config\ScopeConfigInterface');
+$geturl_obj = $objectManager->create('\Magento\Store\Model\StoreManagerInterface');
+$geturl = $geturl_obj->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_STATIC);
+
+//echo $geturl;
+$delivery_from = $this->getRequest()->getParam("delivery_from");
+$delivery_to = $this->getRequest()->getParam("delivery_to");
+if (isset($delivery_from) && $delivery_from != "") {
+    $url = $this->getUrl('deliverydate/deliverydate/getchartdata') . '?delivery_from=' . $delivery_from . '&delivery_to=' . $delivery_to;
+} else {
+    $url = $this->getUrl('deliverydate/deliverydate/getchartdata');
+}
+
+$date_format = $config->getValue('deliverydate/deliverydate_general/deliverydate_format');
+
+if ($date_format == '') {
+    $date_format = 'd/M/Y';
+}
+
+if ($delivery_from == "") {
+    $delivery_from = date('Y-m-d 00:00:00', strtotime(date('Y-m-d', time())));
+}
+if ($delivery_to == "") {
+    $delivery_to = date('Y-m-d 23:59:59', strtotime(date('Y-m-d', time())));
+}
+$delivery_from = date($date_format, strtotime($delivery_from));
+$delivery_to = date($date_format, strtotime($delivery_to));
+//echo $url;
+?>
+
+<!-- Load Google JSAPI -->
+<script type="text/javascript" src="<?php echo $block->getUrlJ() ?>"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        url = "<?php echo $url ?>";
+        jQuery.ajax({
+            url: url,
+            success: function (transport) {
+                var obj = window.JSON.stringify(transport);
+                var obj = jQuery.parseJSON(transport);
+                var data = google.visualization.arrayToDataTable(obj);
+                var obj = window.JSON.stringify(transport);
+                var obj = window.JSON.parse(transport);
+                var data = google.visualization.arrayToDataTable(obj);
+
+                <?php if ($delivery_to != "") {
+                    ?>
+                var options = {
+                    'title': 'Total numbers of orders From Date : <?php echo $delivery_from ?> To : <?php echo $delivery_to ?>',
+                    is3D: 'true',
+                    'width': 1000,
+                    'height': 1000
+                };
+                    <?php
+                } else {
+                    $delivery_to = date('Y-m-d 23:59:59', strtotime(date('Y-m-d', time())));
+                    ?>
+                var options = {
+                    'title': 'Total numbers of orders From Date : <?php echo $delivery_from ?> To : <?php echo $delivery_to ?>',
+                    is3D: 'true',
+                    'width': 1200,
+                    'height': 1000
+                };
+                <?php } ?>
+                var chart = new google.visualization.PieChart(
+                    document.getElementById('chart_div'));
+                chart.draw(data, options);
+            },
+            contentType: 'json',
+            async: false
+        });
+    }
+
+
+</script>
+<div id="chart_div" style="margin: 0 auto;width: 1000px; height: auto;">
+</div>

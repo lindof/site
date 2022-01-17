@@ -1,0 +1,282 @@
+"Sort ","Sort "
+"From Date","From Date"
+"From Month","From Month"
+"From Year","From Year"
+"To Date","To Date"
+"To Month","To Month"
+"To Year","To Year"
+"Add Non-Working Period","Add Non-Working Period"
+Day,Day
+"Time Slot","Time Slot"
+"Add Time Slot To Disable","Add Time Slot To Disable"
+Date,Date
+Month,Month
+Year,Year
+Sort,Sort
+"Add Non-Working Day","Add Non-Working Day"
+"Start Time","Start Time"
+"End Time","End Time"
+price,price
+"Add Time Slot","Add Time Slot"
+"Please enter a valid key","Please enter a valid key"
+Order#,Order#
+"Purchased on","Purchased on"
+"Bill-to Name","Bill-to Name"
+"Ship-to Name","Ship-to Name"
+"Same day charges","Same day charges"
+"Specific timeslot charges","Specific timeslot charges"
+"G.T. (Purchased)","G.T. (Purchased)"
+"G.T. (Base)","G.T. (Base)"
+Status,Status
+"Delivery date","Delivery date"
+CSV,CSV
+Orders,Orders
+Amounts,Amounts
+"DeliveryDate Calendar","DeliveryDate Calendar"
+Bestsellers,Bestsellers
+"Most Viewed Products","Most Viewed Products"
+"New Customers","New Customers"
+Customers,Customers
+"Today's Delivery Date Orders","Today's Delivery Date Orders"
+"Delivery Date Calendar","Delivery Date Calendar"
+"Select Date","Select Date"
+"Please buy additional domains","Please buy additional domains"
+"Please select a website","Please select a website"
+"Order # %1","Order # %1"
+"Same Day Delivery Charges","Same Day Delivery Charges"
+"Delivery Date Chart","Delivery Date Chart"
+"My Delivery Dates","My Delivery Dates"
+"No Delivery Date Specified.","No Delivery Date Specified."
+"Delivery Date Notification Order","Delivery Date Notification Order"
+". ': Available All DayOff can not be selected.'",". ': Available All DayOff can not be selected.'"
+"Invalid disabled time slot of particular date ","Invalid disabled time slot of particular date "
+"Invalid Single Day Off ","Invalid Single Day Off "
+Jan,Jan
+Feb,Feb
+Mar,Mar
+Apr,Apr
+May,May
+Jun,Jun
+Jul,Jul
+Aug,Aug
+Sep,Sep
+Oct,Oct
+Nov,Nov
+Dec,Dec
+"Fade in","Fade in"
+"Slide down","Slide down"
+Clip,Clip
+Show,Show
+None,None
+.,.
+d/M/Y,d/M/Y
+M/d/y,M/d/y
+d-M-Y,d-M-Y
+M-d-y,M-d-y
+m.d.y,m.d.y
+d.M.Y,d.M.Y
+M.d.y,M.d.y
+"F j, Y","F j, Y"
+"D M j","D M j"
+Y-m-d,Y-m-d
+"No Day","No Day"
+Sunday,Sunday
+Monday,Monday
+Tuesday,Tuesday
+Wedenesday,Wedenesday
+Thursday,Thursday
+Friday,Friday
+Saturday,Saturday
+"All Pages","All Pages"
+"Display on All Pages","Display on All Pages"
+"Admin Pages","Admin Pages"
+"Order Details page (Backend)","Order Details page (Backend)"
+"Invoice Create page (Backend)","Invoice Create page (Backend)"
+"Invoice Details page (Backend)","Invoice Details page (Backend)"
+"Shipment Create page (Backend)","Shipment Create page (Backend)"
+"Shipment Details page (Backend)","Shipment Details page (Backend)"
+"Credit Memo Details page Create (Backend)","Credit Memo Details page Create (Backend)"
+"Credit Memo Details page (Backend)","Credit Memo Details page (Backend)"
+"Print In Credit Memo (Backend)","Print In Credit Memo (Backend)"
+"Print In Shipment (Backend)","Print In Shipment (Backend)"
+"Print In Invoice (Backend)","Print In Invoice (Backend)"
+"Frontend Pages","Frontend Pages"
+"Order Details page (Frontend)","Order Details page (Frontend)"
+"Invoice Details page (Frontend)","Invoice Details page (Frontend)"
+"Shipment Details page (Frontend)","Shipment Details page (Frontend)"
+"Print Order (Frontend)","Print Order (Frontend)"
+"Print In Invoice (Frontend)","Print In Invoice (Frontend)"
+"Print In Shipment (Frontend)","Print In Shipment (Frontend)"
+"Please Select","Please Select"
+"1 Day Ago","1 Day Ago"
+"2 Days Ago","2 Days Ago"
+"3 Days Ago","3 Days Ago"
+"4 Days Ago","4 Days Ago"
+"5 Days Ago","5 Days Ago"
+"Calender View","Calender View"
+"TimeSlot View","TimeSlot View"
+"Checkout Shipping Method","Checkout Shipping Method"
+"Product Detail Page","Product Detail Page"
+"g:i a","g:i a"
+H:i:s,H:i:s
+No,No
+Yes,Yes
+"Specific Timeslot Charges","Specific Timeslot Charges"
+"Delivery date - ","Delivery date - "
+" "," "
+"Order ID: ","Order ID: "
+"Status: ","Status: "
+"Customer Name: ","Customer Name: "
+"Customer Email Address: ","Customer Email Address: "
+"Order Grand Total: ","Order Grand Total: "
+"Shipping Arrival Slot: ","Shipping Arrival Slot: "
+"Shipping Arrival Comments: ","Shipping Arrival Comments: "
+"Delivery Date","Delivery Date"
+From,From
+To,To
+Search,Search
+"View Chart","View Chart"
+Export,Export
+Done,Done
+Date-Day,Date-Day
+row_heading,row_heading
+"Shipping Arrival Date","Shipping Arrival Date"
+"Delivery Comments","Delivery Comments"
+"Delivery Date Information","Delivery Date Information"
+"Update Cart","Update Cart"
+Qty,Qty
+"Add to Cart","Add to Cart"
+"This feature is not available for now.","This feature is not available for now."
+"Order Information","Order Information"
+"Shipping Address","Shipping Address"
+"Shipping Method","Shipping Method"
+"No shipping information available","No shipping information available"
+"Billing Address","Billing Address"
+"Payment Method","Payment Method"
+"Refund #%1","Refund #%1"
+"Items Refunded","Items Refunded"
+"Product Name","Product Name"
+SKU,SKU
+Price,Price
+Subtotal,Subtotal
+"Discount Amount","Discount Amount"
+"Row Total","Row Total"
+"Invoice #","Invoice #"
+"Items Invoiced","Items Invoiced"
+"Qty Invoiced","Qty Invoiced"
+"Shipment #%1","Shipment #%1"
+"Qty Shipped","Qty Shipped"
+"No Timeslot available","No Timeslot available"
+"Purchased
+                            On","Purchased
+                            On"
+"Bill To
+                            Name","Bill To
+                            Name"
+"Ship To
+                            Name","Ship To
+                            Name"
+"G.T.
+                            (Base)","G.T.
+                            (Base)"
+"G.T.
+                            (Purchased)","G.T.
+                            (Purchased)"
+"Delivery
+                            Date","Delivery
+                            Date"
+"Your %store_name order confirmation","Your %store_name order confirmation"
+"%customer_name,","%customer_name,"
+"Thank you for your order from %store_name.","Thank you for your order from %store_name."
+"Once your package ships we will send you a tracking number.","Once your package ships we will send you a tracking number."
+"You can check the status of your order by <a href=""%account_url"">logging into your account</a>.","You can check the status of your order by <a href=""%account_url"">logging into your account</a>."
+"If you have questions about your order, you can email us at <a href=""mailto:%store_email"">%store_email</a>","If you have questions about your order, you can email us at <a href=""mailto:%store_email"">%store_email</a>"
+"or call us at <a href=""tel:%store_phone"">%store_phone</a>","or call us at <a href=""tel:%store_phone"">%store_phone</a>"
+"Our hours are <span class=""no-link"">%store_hours</span>.","Our hours are <span class=""no-link"">%store_hours</span>."
+"Your Order <span class=""no-link"">#%increment_id</span>","Your Order <span class=""no-link"">#%increment_id</span>"
+"Placed on <span class=""no-link"">%created_at</span>","Placed on <span class=""no-link"">%created_at</span>"
+"Billing Info","Billing Info"
+"Shipping Info","Shipping Info"
+"Deliverydate Information","Deliverydate Information"
+"%name,","%name,"
+"Once your package ships we will send an email with a link to track your order.","Once your package ships we will send an email with a link to track your order."
+"Selected Delivery Date:","Selected Delivery Date:"
+edit,edit
+Attention,Attention
+"Please Select A Timeslot","Please Select A Timeslot"
+"Please Select Delivery Date","Please Select Delivery Date"
+Today,Today
+Sun,Sun
+Mon,Mon
+Tue,Tue
+Wed,Wed
+Thu,Thu
+Fri,Fri
+Sat,Sat
+"Same day delivery charges are ","Same day delivery charges are "
+AppJetty,AppJetty
+"Activation Key","Activation Key"
+"Select Websites","Select Websites"
+Enabled,Enabled
+"Enabled at admin","Enabled at admin"
+"Display selected delivery date on","Display selected delivery date on"
+"Display at","Display at"
+"Define same day delivery charges","Define same day delivery charges"
+"Quota per day","Quota per day"
+"Return quota per day when order is cancelled","Return quota per day when order is cancelled"
+"Show delivery schedule in","Show delivery schedule in"
+"Date picker animations","Date picker animations"
+"Use datepicker bottom bar","Use datepicker bottom bar"
+"Enable RTL(Right to Left) in datepicker","Enable RTL(Right to Left) in datepicker"
+"Maximum Number of Days for Delivery Intervals","Maximum Number of Days for Delivery Intervals"
+"Enable Cut Off time","Enable Cut Off time"
+"Disable same day delivery after (Cut-off time)","Disable same day delivery after (Cut-off time)"
+"Make delivery date mandatory","Make delivery date mandatory"
+"Label for delivery date","Label for delivery date"
+"Label for delivery date comments","Label for delivery date comments"
+"Enable call me before delivery","Enable call me before delivery"
+"Label for call me before delivery","Label for call me before delivery"
+"Show additional info","Show additional info"
+"Additional info for customers","Additional info for customers"
+"Delivery date for customer groups","Delivery date for customer groups"
+"Customers groups","Customers groups"
+"Delivery date for category's products","Delivery date for category's products"
+"Product category","Product category"
+"Date format","Date format"
+"Time format","Time format"
+"Minimum interval of days between the order and delivery date","Minimum interval of days between the order and delivery date"
+"Do you want email notification ?","Do you want email notification ?"
+"Email Notification Period","Email Notification Period"
+"Email notification id","Email notification id"
+"Day off","Day off"
+"Single day off","Single day off"
+"Period : From - To","Period : From - To"
+"Label For time slot view table","Label For time slot view table"
+"Add number of delivery days","Add number of delivery days"
+"Minimum interval of hours between the order placing time and delivery time","Minimum interval of hours between the order placing time and delivery time"
+"Add time slot","Add time slot"
+"Disable time slot of day","Disable time slot of day"
+"Disable time slot of particular date","Disable time slot of particular date"
+"Create New Order","Create New Order"
+"All Store Views","All Store Views"
+"Purchase Point","Purchase Point"
+Cancel,Cancel
+Hold,Hold
+Unhold,Unhold
+"Print Invoices","Print Invoices"
+"Print Packing Slips","Print Packing Slips"
+"Print Credit Memos","Print Credit Memos"
+"Print All","Print All"
+"Print Shipping Labels","Print Shipping Labels"
+ID,ID
+"Purchase Date","Purchase Date"
+"Grand Total (Base)","Grand Total (Base)"
+"Grand Total (Purchased)","Grand Total (Purchased)"
+"Shipping Information","Shipping Information"
+"Customer Email","Customer Email"
+"Customer Group","Customer Group"
+"Shipping and Handling","Shipping and Handling"
+"Customer Name","Customer Name"
+"Total Refunded","Total Refunded"
+"Call Before Delivery","Call Before Delivery"
+"Delivery Charges","Delivery Charges"

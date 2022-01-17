@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="Knowband_Plugins::knowband_main_menu"
+            title="Knowband"
+            module="Knowband_Spinandwin"
+            sortOrder="9999"
+            resource="Knowband_Spinandwin::main"
+        />
+        <add id="Knowband_Spinandwin::spinwin_backend_option"
+            title="Spin and Win"
+            module="Knowband_Spinandwin"
+            sortOrder="2"
+            resource="Knowband_Spinandwin::index"
+            parent="Knowband_Plugins::knowband_main_menu"
+            action="spinwinadmin/spinandwin/index"
+        />
+    </menu>
+</config>

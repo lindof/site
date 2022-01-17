@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Mageside. All rights reserved.
+ * See MS-LICENSE.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--Fix for create tag issue(module Ebizmarts_MailChimp)-->
+        <referenceBlock name="head.additional">
+            <block class="Ebizmarts\MailChimp\Block\Mailchimpjs" name="mailchimp.block.mcjs" template="Mageside_Lindof::mailchimpjs.phtml" ifconfig="mailchimp/general/active"/>
+        </referenceBlock>
+    </body>
+</page>

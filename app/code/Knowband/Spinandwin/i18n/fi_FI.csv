@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Jokin meni vikaan luotaessa kuponkikoodi, yritä uudelleen."
+Schedule has been deleted successfully,Aikataulu on poistettu onnistuneesti
+Invalid Data.,Virheellinen tieto.
+Add/Edit Schedule,Lisää / Muokkaa aikataulua
+Schedule has been saved successfully.,Aikataulu on tallennettu.
+Email has been sent successfully.,Sähköposti on lähetetty onnistuneesti.
+"Something went wrong while sending the coupon email, please try again.","Jokin meni vikaan lähettämällä kupongin sähköpostin, yritä uudelleen."
+Spin and Win,Spin ja Win
+Knowband,Knowband
+Settings saved successfully.,Asetukset tallennettu.
+New Customer,Uusi asiakas
+No list found. (Verify Credentials),Ei lista löytynyt. (Vahvista käyttäjätiedot)
+The Private Klaviyo API Key you have set is invalid.,Private Klaviyo sovellusliittymäavaimen olet asettanut on virheellinen.
+The Private Klaviyo API key you have set is no longer valid.,Private Klaviyo sovellusliittymäavain olet määrittänyt ei ole enää voimassa.
+Unable to verify Klaviyo Private API Key.,Voineet vahvistaa Klaviyo Yksityinen sovellusliittymäavain.
+Mobile,mobile
+Tablet,Tabletti
+Desktop,pöytä-
+You have already taken advantage of this offer. Please try another email.,Olet jo käyttänyt tätä tilaisuutta hyväkseen. Kokeile toista sähköpostiosoite.
+Not your lucky day today. Better Luck Next Time.,Ei onnen päivä tänään. Parempi onni ensi kerralla.
+Error occurred while subscribing. Please try again later.,Virhe tilaamalla. Yritä uudelleen myöhemmin.
+Jan,tammikuu
+Feb,helmikuu
+Mar,maaliskuu
+Apr,huhtikuu
+May,saattaa
+Jun,kesäkuu
+Jul,heinäkuu
+Aug,elokuu
+Sep,syyskuu
+Oct,lokakuu
+Nov,marraskuu
+Dec,joulukuu
+None,Ei mitään
+Rose Day,Ruusuvoide
+Propose Day,ehdottaa Päivä
+Chocolate Day,suklaa Päivä
+Teddy Day,Teddy Päivä
+Promise Day,Promise Päivä
+Hug Day,Halauspäivä
+Kiss Day,suudella päivä
+Valentine\'s Day,Ystävänpäivä
+Xmas Theme 1,Xmas teema 1
+Xmas Theme 2,Xmas Teema 2
+Merry Christmas - Theme 1,Merry Christmas - Teema 1
+Merry Christmas - Theme 2,Merry Christmas - Teema 2
+Merry Christmas - Theme 3,Merry Christmas - Teema 3
+Merry Christmas - Theme 4,Merry Christmas - Teema 4
+Merry Christmas - Theme 5,Merry Christmas - Teema 5
+Black Friday Theme1,Black Friday THEME1
+Black Friday Theme2,Black Friday theme2
+Black Friday Theme3,Black Friday Theme3
+Black Friday Theme4,Black Friday Theme4
+Diwali Theme1,diwali THEME1
+Diwali Theme2,diwali theme2
+Diwali Theme3,diwali Theme3
+Diwali Theme4,diwali Theme4
+Diwali Theme5,diwali Theme5
+Easter Theme1,Pääsiäinen THEME1
+Easter Theme2,Pääsiäinen theme2
+Easter Theme3,Pääsiäinen Theme3
+Halloween Theme1,Halloween THEME1
+Halloween Theme2,Halloween theme2
+Halloween Theme3,Halloween Theme3
+Halloween Theme4,Halloween Theme4
+Thanks Giving Theme1,Kiitospäivän THEME1
+Happy New Year Theme1,Hyvää uutta vuotta THEME1
+Happy New Year Theme2,Hyvää uutta vuotta theme2
+Happy New Year Theme3,Hyvää uutta vuotta Theme3
+Happy New Year Theme4,Hyvää uutta vuotta Theme4
+Happy New Year Theme5,Hyvää uutta vuotta Theme5
+Happy New Year Theme6,Hyvää uutta vuotta Theme6
+Happy New Year Theme7,Hyvää uutta vuotta Theme7
+Wheel Design 1,Pyörän suunnittelu 1
+Wheel Design 2,Pyörän suunnittelu 2
+Look and Feel,Katso ja tunne
+General Settings,Yleiset asetukset
+Display Settings,Näyttöasetukset
+Theme Scheduling,teema ajoitus
+Text Settings,teksti Asetukset
+Special bonus unlocked,Erikoisbonuksista lukitsematon
+You have a chance to win a nice big fat discount. Are you ready?,Sinulla on mahdollisuus voittaa mukava iso rasvaa alennus. Oletko valmis?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Voit pyöräyttää pyörää vain kerran. Jos voitat, voit lunastaa kupongin 1 päivän vain!"
+Email Settings,Sähköposti asetukset
+Only on wheel,Vain pyörän
+Email Only,vain sähköposti
+Email & Wheel,Sähköposti ja Wheel
+Fire,Antaa potkut
+Aqua,aqua
+Wind,Tuuli
+Void,mitätön
+Earth,maa
+Return Statuses,Return Tilat
+Coupon Code,Kuponkikoodi
+Customer Email,asiakkaan sähköposti
+Country,Maa
+Device,Laite
+Coupon Used,kuponki Käytetty
+No,Ei
+Yes,Joo
+Coupon Generated On,Kuponki Generated On
+Statistics,tilasto
+Email Marketing,email Marketing
+User List,Käyttäjäluettelon
+Status,Tila
+Enabled,käytössä
+Disabled,Liikuntarajoitteinen
+From Date,Päivämäärästä
+To Date,Tähän mennessä
+Action,Toiminta
+Slice Settings,siivu Asetukset
+10% OFF,10% ALENNUS
+Not Lucky Today,Ei Lucky Tänään
+35% OFF,35% OFF
+Opps! Sorry,Opps! anteeksi
+15% OFF,15% OFF
+Better Luck Next Time,Parempi onni ensi kerralla
+50% OFF,50% OFF
+Try Next Time,Kokeile seuraavalla kerralla
+12% OFF,12% OFF
+Come Again,Tule uudestaan
+5% OFF,5% OFF
+Try Again,Yritä uudelleen
+First Name,Etunimi
+Last Name,Sukunimi
+Email,Sähköposti
+Created Date,Luontipäiväys
+CSV,CSV
+Edit,Muokata
+Delete,Poistaa
+Save Schedule,Tallenna aikataulu
+Back,Takaisin
+Save Settings,Tallenna asetukset
+Email cannot be left blank,Sähköposti ei voi jättää tyhjäksi
+Not a valid email,Ole kelvollinen sähköpostiosoite
+a discount,alennus
+Code copied.,Koodi kopioitu.
+First name cannot be left blank,Etunimi ei voi jättää tyhjäksi
+Last name cannot be left blank,Sukunimi ei voi jättää tyhjäksi
+Hurrah! You've got,Hurraa! Sinulla on
+ discount. Lucky day!,alennus. Onnenpäivä!
+The coupon code has been sent to you through the email.,Kuponkikoodi on lähetetty läpi sähköpostitse.
+Better luck next time!,Parempi onni ensi kerralla!
+Don't forget to use the discount code at checkout!,Älä unohda käyttää alennus koodi kassalla!
+Enter you email,Anna sinulle sähköpostia
+Try your luck,Kokeile onneasi
+Next Time,Seuraavalla kerralla
+"No, I do not feel lucky","Ei, en tunne onnekas"
+Continue,Jatkaa
+Enable Theme Scheduling,Ota teema Ajoitus
+Add New Schedule,Lisää uusi aikataulu
+Select number of slices,Valitse määrä viipaleita
+12 Slices,12 viipaletta
+8 Slices,8 viipaletta
+6 Slices,6 viipaletta
+Select the number of slices to show.,Valitse määrä viipaleita näyttää.
+Slice Label,siivu Label
+Coupon Type,Kupongin tyyppi
+Coupon Value,Kupongin arvo
+Gravity (%),Painovoima (%)
+Fixed,kiinteät
+Percentage,prosenttimäärä
+Free Shipping,Ilmainen toimitus
+Theme,Teema
+Theme Peview,teema Peview
+Wheel Design,pyörän suunnittelu
+Wheel Peview,pyörän Peview
+Wheel Color,Pyöräilyssä värin
+Change color of the wheel.,Vaihtaa väriä pyörän.
+Wheel Text Color,Pyörän tekstin väri
+Change text color of the wheel.,Muuta tekstin väriä pyörän.
+Wheel Background Color,Pyörän taustaväri
+Change background color of wheel.,Muuta taustaväri pyörän.
+Font Color,Fontin väri
+Change font color of text on wheel.,Muuta fontin väriä tekstin pyörän.
+Button Background Color,Painike taustaväri
+Change background color of spin button.,Muuta taustaväri askelluspainikkeen.
+`Try your luck` Button Text Color,`Kokeile luck` painikkeen tekstin väri
+Change font color of the front `Try your luck` button.,Muuta fontin väriä etu- `Kokeile luck` painiketta.
+"No, I do not feel lucky text color","Ei, en tunne onnekas tekstin väri"
+"Change font color of No, I do not feel lucky text.","Muuta fontin väriä Ei, en tunne onnekas tekstiä."
+Schedule Status,aikataulu Tilanne
+Select Date,Valitse päivä
+Field cannot be empty.,Kenttä ei voi olla tyhjä.
+You can enter only numbers.,Voit kirjoittaa vain numeroita.
+Number should be greater than 0.,Numeron on oltava suurempi kuin 0.
+Field cannot be greater than {#} characters.,Kenttä ei voi olla suurempi kuin {#} merkkiä.
+Field cannot be less than {#} character(s).,Kenttä ei voi olla pienempi kuin {#} merkki (s).
+Please enter Email.,Anna sähköposti.
+Please enter a valid Email.,Anna kelvollinen sähköposti.
+Invalid date format.,Virheellinen päivämäärän muoto.
+Number is not in the valid range. It should be between {1} and {100},Numero ei ole kelvollisella alueella. Sen tulisi olla välillä {1} ja {100}
+Field should be numeric.,Kenttä on oltava numeerinen.
+Field can have only upto two decimal values.,Kenttä voi olla vain enintään kahden desimaalin arvoja.
+Email cannot be greater than {#} characters.,Sähköpostia ei voi olla suurempi kuin {#} merkkiä.
+Zip should not have special characters.,Zip pitäisi olla erikoismerkkejä.
+Percentage should be in number.,Prosenttiosuuden tulisi olla numero.
+Percentage should be between 0 and 100.,Prosenttiosuus tulisi olla välillä 0 ja 100.
+Size cannot be greater than {#} characters.,Koko ei voi olla suurempi kuin {#} merkkiä.
+Color could not be greater than {#} characters.,Väri ei voi olla suurempi kuin {#} merkkiä.
+Color is not valid.,Väri ei kelpaa.
+Special characters are not allowed.,Erikoismerkit eivät ole sallittuja.
+Script tags are not allowed.,Koodit eivät ole sallittuja.
+Style tags are not allowed.,Tyyli koodit eivät ole sallittuja.
+Iframe tags are not allowed.,Iframe-tunnisteet eivät ole sallittuja.
+Uploaded file is not an image.,Lähetetty tiedosto ei ole kuva.
+Uploaded file size must be less than #d.,Ladattu tiedostokoko on oltava alle #D.
+Field should not contain HTML tags.,Kenttä ei saa sisältää HTML-tunnisteita.
+You can enter only positive numbers.,Voit antaa ainoastaan ​​positiivisia lukuja.
+`From Date` should be smaller than `To Date`,'From täyttöajankohdassa pitäisi olla pienempi kuin `To täyttöajankohdassa
+`From Date` already present in a slot.,'From täyttöajankohdassa jo uraan.
+`To Date` already present in a slot.,`Jotta täyttöajankohdassa jo esittää uraan.
+Coupon Display Options,Kuponki näyttövalinnat
+Email Subject,Sähköpostin aihe
+Email Template,sähköpostimalli
+Email Content,sähköpostien sisältöä
+Test Email,testi Sähköposti
+Send Email,Lähettää sähköpostia
+Enable the Extension,Ota laajennus
+Show pull-out tab,Näytä ulosvedettävä välilehti
+Allow customer to hide/show popup,Salli asiakkaan piilottaa / näyttää popup
+Upload pull-out tab image,Upload ulosvedettävä välilehden kuva
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Vain .png tai .jpg-muodossa hyväksyä. Tiedoston koko ei saisi olla enempää kuin 2 megatavua.
+Display Logo,logoa
+Upload Logo,Logon lähettämiseen
+Remove logo,Poista logo
+Email Recheck,Sähköposti Tarkista uudelleen
+Allow customer to provide coupon code more than one time.,Salli asiakas voi tarjota kuponkikoodi useammin kuin kerran.
+Enable Wheel Sound,Ota Wheel Sound
+Allow sound on rotating the wheel.,Sallia äänen pyörän pyörittämiseksi.
+Show Fireworks,Näytä Ilotulitus
+Show fireworks after a customer wins.,"Näytä ilotulitteet, kun asiakas voittaa."
+Show Customer Name,Näytä Asiakkaan nimi
+Show First Name,Näytä Etunimi
+Show Last Name,Näytä Sukunimi
+Show Both,Näytä Molemmat
+Show None,ei ilmene
+Show customer name on the front end,Näytä asiakkaan nimi etuosa
+Require Customer Name,Vaadi Asiakkaan nimi
+Require First Name,Vaadi Etunimi
+Require Last Name,Vaadi Sukunimi
+Require Both,edellyttävät sekä
+Require None,vaadi None
+Require customer name on the front end,Vaadi asiakkaan nimi etuosa
+Wheel Display Interval,Pyörän Esitysnopeuden
+Days,päivää
+Enter the display interval (in days) after which pop will show again (if not used).,"Anna esitysnopeudeksi (päivinä), jonka jälkeen pop näyttää uudelleen (jos sitä ei käytetä)."
+Show Progress Meter,Show Progress Meter
+Progress Percentage,Progress Prosenttiosuus
+Enter the percentage of the progress meter.,Anna prosenttiosuus Tilanneilmaisinikkunan.
+Progress Text,Progress teksti
+Enter the Text for the progress meter.,Kirjoita teksti Tilanneilmaisinikkunan.
+Custom CSS,Custom CSS
+Add custom CSS code that you want to be executed on the front end,"Lisää oma CSS, jonka haluat suoritettavaksi etuosa"
+Custom JS,muokattu JS
+Add custom JS code that you want to be executed on the front end,"Lisää muokattu JS-koodi, jonka haluat suoritettavaksi etuosa"
+Enable Mailchimp,Ota Mailchimp
+Mailchimp Api Key,Mailchimp sovellusliittymäavain
+Mailchimp List,Mailchimp List
+Select List,Valitse List
+Enable Klaviyo,Ota Klaviyo
+Klaviyo Api Key,Klaviyo sovellusliittymäavain
+Klaviyo List,Klaviyo List
+Enable Constant Contact,Ota jatkuvassa yhteydessä
+Constant Contact Api Key,Jatkuvassa yhteydessä sovellusliittymäavain
+Constant Contact Api Token,Jatkuvassa yhteydessä sovellusliittymätunnuksellasi
+Constant Contact List,Jatkuva yhteystietoluettelo
+Please select atleast one page,Valitse atleast yksi sivu
+Please select atleast one country,Valitse atleast yksi maa
+Field cannot be empty,Kenttä ei voida tyhjentää
+Total Coupons Generated,Yhteensä kuponkeja Luotu
+Total Coupons Unused,Yhteensä kuponkeja Käyttämättömät
+Total Coupons Used,Yhteensä kuponkeja Käytetty
+`Active Date` cannot be greater than `Inactive Date`,`Aktiivinen täyttöajankohdassa ei voi olla suurempi kuin` Toimeton täyttöajankohdassa
+`From` Date cannot be greater than `To` Date,`Lta Päivämäärä ei voi olla suurempi kuin` To` Päivämäärä
+Date & Time should be greater than current date time.,Päivä ja aika tulisi olla suurempi kuin nykyinen päivämäärä kellonaika.
+Total Generated,Yhteensä Luotu
+Till,asti
+Total Used,Käytetystä
+Total Unused,Yhteensä Käyttämättömät
+Coupon Statistics (Graphical),Kuponki Tilastot (graafinen)
+Select date,Valitse päivämäärä
+Generate,Tuottaa
+Other Statistics,Muut tilastot
+Country Statistics,Maatilastot
+Device Statistics,Laitetilastot
+Coupons List,kuponkeja List
+Minimum Screen Size,Pienin Näytön koko
+Smartphone (320x480),Älypuhelin (320x480)
+Tablet Portrait(768x1024),Tabletti Pysty (768x1024)
+Tablet Landscape (1024x768),Tabletti Vaaka (1024x768)
+Laptop (1366x768),Kannettava tietokone (1366x768)
+Desktop(1600x1080),Desktop (1600x1080)
+Smartphones only,Älypuhelimet vain
+Maximum Display Frequency,Maksimi Näyttö Frequency
+Every Visit,joka käynnillä
+One Visit per hour,Yksi vierailu tunnissa
+One visit per day,Yhden käynnin päivässä
+One visit per week,Yhden käynnin viikossa
+One visit per month,Yhden käynnin kuukaudessa
+Show Spin Wheel on the front end after the specified time,Näytä Spin Pyörän etupään määritetyn ajan jälkeen
+Hide Spin Wheel After,Piilota Spin Wheel jälkeen
+Always Display,aina Näyttö
+10 Seconds,10 sekuntia
+20 Seconds,20 Seconds
+30 Seconds,30 sekuntia
+40 Seconds,40 Seconds
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Valitse aikaväli, jonka kuluttua Spin Wheel etuosa piilottaa automaattisesti"
+Set Fix Time,Set Fix Time
+Active Date/Time,Aktiivinen Päivämäärä / aika
+Expire Date/Time,Päättyvät Päivämäärä / aika
+Whom to show,Kenelle näyttää
+All Visitors,kaikki vierailijat
+New Visitors,uudet kävijät
+Returning Visitors,Palaavat kävijät
+Select whom to show the popup.,Valitse kenelle näyttää popup.
+When to Show,Milloin Näytä
+Immediately,Heti
+After Time(seconds),-Ajan jälkeen (sekuntia)
+When scroll down(%),Kun selaa alaspäin (%)
+When Exit,kun Exit
+Select when to display the popup.,"Valitse, milloin näyttää popup."
+Enter time (In Seconds),Anna aika (sekunneissa)
+Enter time in seconds after which you want to display spin wheel pop up.,"Anna sekunneissa, jonka jälkeen haluat näyttää spin pyörän pop up."
+Enter Scroll Percentage,Anna Scroll Prosenttiosuus
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,"Anna selaa prosenttiosuus, jonka jälkeen haluat näyttää spin pyörän pop up. Älä ole kirjoita% -merkki."
+Geo Location,maantieteellinen sijainti
+World Wide,Maailmanlaajuinen
+Display selected areas only,Näyttö valituilla alueilla vain
+Do not display selected areas,Älä näytä valituilla alueilla
+Select Geo Location where you want to show the popup.,"Valitse Maantieteellinen sijainti, jossa haluat näyttää popup."
+Select countries.,Valitse maat.
+Title Text,Otsikko teksti
+Subtitle Text,tekstitys teksti
+Rules Text,säännöt teksti
+One rule should be entered in one line in order to show it on pop up point wise.,"Yksi sääntö olisi kirjattava yhdelle riville, jotta voidaan osoittaa sen pop up piste viisasta."
+Are your sure?,Oletko varma?
+Please enter a valid color code,Anna kelvollinen värikoodi
+`Active Date` cannot be greater than `Expire Date`,`Aktiivinen täyttöajankohdassa ei voi olla suurempi kuin` Vanhenna täyttöajankohdassa
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Summa Gravity ei ole kelvollisella alueella. Sen pitäisi olla betwen 1 100. Yhteensä on:
+No list exists for this API key.,Listalla olemassa API avaimen.
+No. of times,Nro kertoja
+Date,Päivämäärä
+Please upload an image file.,Lataa kuvatiedosto.
+Note: select time in GMT only.,Huomautus: Valitse ajat GMT vain.
+This slot is already available.,Tämä paikka on jo saatavilla.

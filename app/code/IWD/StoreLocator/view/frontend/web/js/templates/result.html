@@ -1,0 +1,33 @@
+<% if (data.items.length) { %> 
+    <% _.each(data.items, function(item) { %> 
+         <div class="storelocator-item <% if (placeholder_visability==false) { %>storelocator-item-short<% }%>">
+             <% if (placeholder_visability==true) { %>
+                <div class="image-section">
+                    <% if (item.image==null) { %>
+                        <img src="<%- placeholder %>" />
+                    <% } else {%>
+                        <img src="<%- url %><%- item.image %>" />
+                    <% }%>
+                </div>
+            <% }%>
+            <div class="storelocator-name">
+                <h4><%- item.name %> <small>(<%- item.distance %> <%- metric %>)</small></h4>
+            </div>
+            <span class="storelocator-phone"><%- item.phone %></span>
+            <div class="storelocator-text"><%- item.street %>,</div>
+            <div class="storelocator-text"><%- item.city %>, <%- item.region %>,</div>
+            <div class="storelocator-text"><%- item.country_id %>, <%- item.postal_code %></div>
+            
+            <div class="storelocator-itema-action">
+            <% if (item.website!=null) { %>
+                <a href="<%- item.website %>" target="_blank" class="item-website">Website <i class="fa fa-angle-right"></i></a>
+            <% } %>
+                <a  class="item-get-direction" target="_blank" href="https://maps.google.com/maps?daddr=<%- item.street %>+<%- item.city %>+<%- item.region %>+<%- item.country_id %>+<%- item.postal_code %>">Get Directions <i class="fa fa-angle-right"></i></a>
+            </div>
+            
+            <div class="storelocator-divider"></div>
+        </div>
+    <% }); %>
+<% } else { %>
+<p><%- window.jQuery.mage.__(empty_message) %></p>
+<% } %>

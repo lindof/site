@@ -1,0 +1,346 @@
+"Something went wrong while generating the coupon code, please try again.","Что-то пошло не так, генерируя код купона, пожалуйста, попробуйте еще раз."
+Schedule has been deleted successfully,Расписание было успешно удалено
+Invalid Data.,Неверные данные.
+Add/Edit Schedule,Добавить / Изменить расписание
+Schedule has been saved successfully.,Расписание было успешно сохранено.
+Email has been sent successfully.,Email был отправлен успешно.
+"Something went wrong while sending the coupon email, please try again.","Что-то пошло не так во время отправки купона по электронной почте, пожалуйста, попробуйте еще раз."
+Spin and Win,Спин и Win
+Knowband,Knowband
+Settings saved successfully.,Настройки успешно сохранены.
+New Customer,Новый клиент
+No list found. (Verify Credentials),Ни в одном списке не найдено. (Проверки полномочий)
+The Private Klaviyo API Key you have set is invalid.,Частный Klaviyo ключ API у вас есть набор недопустим.
+The Private Klaviyo API key you have set is no longer valid.,Не Ключ API Private Klaviyo у вас есть набор уже не действует.
+Unable to verify Klaviyo Private API Key.,Невозможно проверить Klaviyo Private API Key.
+Mobile,мобильный
+Tablet,таблетка
+Desktop,рабочий стол
+You have already taken advantage of this offer. Please try another email.,"Вы уже воспользовались этим предложением. Пожалуйста, попробуйте другой адрес электронной почты."
+Not your lucky day today. Better Luck Next Time.,Не ваш счастливый день сегодня. Повезет в следующий раз.
+Error occurred while subscribing. Please try again later.,"Ошибка при подписке. Пожалуйста, попробуйте позже."
+Jan,январь
+Feb,февраль
+Mar,март
+Apr,апрель
+May,май
+Jun,июнь
+Jul,июль
+Aug,август
+Sep,сентябрь
+Oct,октябрь
+Nov,ноябрь
+Dec,декабрь
+None,Никто
+Rose Day,День розы
+Propose Day,Предлагать день
+Chocolate Day,День шоколада
+Teddy Day,День Тедди
+Promise Day,День Promise
+Hug Day,День Hug
+Kiss Day,Поцелуй День
+Valentine\'s Day,День Святого Валентина
+Xmas Theme 1,Xmas Theme 1
+Xmas Theme 2,Xmas Theme 2
+Merry Christmas - Theme 1,С Рождеством Христовым - Тема 1
+Merry Christmas - Theme 2,Merry Christmas - Theme 2
+Merry Christmas - Theme 3,С Рождеством Христовым - Тема 3
+Merry Christmas - Theme 4,Merry Christmas - Theme 4
+Merry Christmas - Theme 5,Merry Christmas - Тема 5
+Black Friday Theme1,Черная пятница Theme1
+Black Friday Theme2,Черная пятница Theme2
+Black Friday Theme3,Черная пятница Theme3
+Black Friday Theme4,Черная пятница Theme4
+Diwali Theme1,Дивали Theme1
+Diwali Theme2,Дивали Theme2
+Diwali Theme3,Дивали Theme3
+Diwali Theme4,Дивали Theme4
+Diwali Theme5,Дивали Theme5
+Easter Theme1,Пасха Theme1
+Easter Theme2,Пасха Theme2
+Easter Theme3,Пасха Theme3
+Halloween Theme1,Хэллоуин Theme1
+Halloween Theme2,Хэллоуин Theme2
+Halloween Theme3,Хэллоуин Theme3
+Halloween Theme4,Хэллоуин Theme4
+Thanks Giving Theme1,Благодаря Давать Theme1
+Happy New Year Theme1,С Новым годом Theme1
+Happy New Year Theme2,С Новым годом Theme2
+Happy New Year Theme3,С Новым годом Theme3
+Happy New Year Theme4,С Новым годом Theme4
+Happy New Year Theme5,С Новым годом Theme5
+Happy New Year Theme6,С Новым годом Theme6
+Happy New Year Theme7,С Новым годом Theme7
+Wheel Design 1,Колеса Дизайн 1
+Wheel Design 2,Колесо Design 2
+Look and Feel,Смотреть и чувствовать
+General Settings,общие настройки
+Display Settings,Настройки отображения
+Theme Scheduling,тема Планирование
+Text Settings,Настройки текста
+Special bonus unlocked,Специальный бонус разблокированы
+You have a chance to win a nice big fat discount. Are you ready?,У вас есть шанс выиграть хорошую большой жир скидку. Вы готовы?
+"You can spin the wheel only once. If you win, you can claim your coupon for 1 day only!","Вы можете вращать колесо только один раз. Если вы выиграете, вы можете претендовать купон всего за 1 день!"
+Email Settings,Настройки электронной почты
+Only on wheel,Только на колесе
+Email Only,электронная почта только
+Email & Wheel,Электронная почта и колеса
+Fire,Пожар
+Aqua,вода
+Wind,ветер
+Void,пустота
+Earth,земной шар
+Return Statuses,Возврат Статусы
+Coupon Code,код купона
+Customer Email,Клиент электронной почты
+Country,Страна
+Device,устройство
+Coupon Used,Купон Б
+No,нет
+Yes,да
+Coupon Generated On,Купон генерируется на
+Statistics,Статистика
+Email Marketing,Рекламная рассылка
+User List,Список пользователей
+Status,Статус
+Enabled,Включено
+Disabled,Отключено
+From Date,С даты
+To Date,На сегодняшний день
+Action,действие
+Slice Settings,Настройки Slice
+10% OFF,СКИДКА 10
+Not Lucky Today,Не повезло сегодня
+35% OFF,35% OFF
+Opps! Sorry,Opps! сожалею
+15% OFF,15% OFF
+Better Luck Next Time,Повезет в следующий раз
+50% OFF,50% СКИДКА
+Try Next Time,Попробуйте в следующий раз
+12% OFF,12% OFF
+Come Again,Приходи еще
+5% OFF,5% OFF
+Try Again,Попробуйте еще раз
+First Name,Имя
+Last Name,Фамилия
+Email,Электронное письмо
+Created Date,Дата создания
+CSV,CSV
+Edit,редактировать
+Delete,удалять
+Save Schedule,Сохранить расписание
+Back,назад
+Save Settings,Сохранить настройки
+Email cannot be left blank,Email не может быть оставлено пустым
+Not a valid email,Не действительный адрес электронной почты
+a discount,скидка
+Code copied.,Код скопирован.
+First name cannot be left blank,Имя не может быть оставлено пустым
+Last name cannot be left blank,Фамилия не может быть оставлено пустым
+Hurrah! You've got,Ура! У тебя есть
+ discount. Lucky day!,скидка. Счастливый день!
+The coupon code has been sent to you through the email.,Код купона был послан к вам через электронную почту.
+Better luck next time!,Повезет в следующий раз!
+Don't forget to use the discount code at checkout!,Не забудьте использовать код скидки при оформлении заказа!
+Enter you email,Введите адрес электронной
+Try your luck,Испытай удачу
+Next Time,В следующий раз
+"No, I do not feel lucky","Нет, я не считаю, повезло"
+Continue,Продолжить
+Enable Theme Scheduling,Включить Theme Scheduling
+Add New Schedule,Добавить расписание
+Select number of slices,Выберите количество срезов
+12 Slices,12 Ломтики
+8 Slices,8 ломтиков
+6 Slices,6 Ломтики
+Select the number of slices to show.,"Выберите количество кусочков, чтобы показать."
+Slice Label,Кусочек этикетки
+Coupon Type,Купон Тип
+Coupon Value,Купон Значение
+Gravity (%),Сила тяжести (%)
+Fixed,Исправлена
+Percentage,процент
+Free Shipping,Бесплатная доставка
+Theme,тема
+Theme Peview,тема Peview
+Wheel Design,колеса Дизайн
+Wheel Peview,Колесо Peview
+Wheel Color,Колесо цвета
+Change color of the wheel.,Изменение цвета колеса.
+Wheel Text Color,Колесо цвета текста
+Change text color of the wheel.,цвет текста Изменение колеса.
+Wheel Background Color,Колесо Цвет фона
+Change background color of wheel.,Изменение цвета фона колеса.
+Font Color,Цвет шрифта
+Change font color of text on wheel.,Изменить цвет шрифта текста на колесе.
+Button Background Color,Кнопка Цвет фона
+Change background color of spin button.,Изменить цвет фона кнопки спины.
+`Try your luck` Button Text Color,`Попробуйте luck` кнопки Цвет текста
+Change font color of the front `Try your luck` button.,Изменить цвет шрифта передней `Попробуйте luck` кнопку.
+"No, I do not feel lucky text color","Нет, я не чувствую себя счастливой цвет текста"
+"Change font color of No, I do not feel lucky text.","Изменить цвет шрифта Нет, я не чувствую себя счастливой текст."
+Schedule Status,Расписание Статус
+Select Date,Выбор даты
+Field cannot be empty.,Поле не может быть пустым.
+You can enter only numbers.,Можно ввести только цифры.
+Number should be greater than 0.,Количество должно быть больше 0.
+Field cannot be greater than {#} characters.,"Поле не может быть больше, чем {#} символов."
+Field cannot be less than {#} character(s).,"Поле не может быть меньше, чем {#} символ (ы)."
+Please enter Email.,"Пожалуйста, введите e-mail."
+Please enter a valid Email.,"Введите, пожалуйста, действительный адрес электронной почты."
+Invalid date format.,Неверный формат даты.
+Number is not in the valid range. It should be between {1} and {100},Номер не в допустимом диапазоне. Оно должно быть между {1} ​​и {100}
+Field should be numeric.,Поле должно быть числовым.
+Field can have only upto two decimal values.,Поле может иметь только ДО двух десятичных значений.
+Email cannot be greater than {#} characters.,"Email не может быть больше, чем {#} символов."
+Zip should not have special characters.,Zip не должен иметь специальные символы.
+Percentage should be in number.,Процент должен быть числом.
+Percentage should be between 0 and 100.,Процент должен быть в пределах от 0 до 100.
+Size cannot be greater than {#} characters.,"Размер не может быть больше, чем {#} символов."
+Color could not be greater than {#} characters.,"Цвет не может быть больше, чем {#} символов."
+Color is not valid.,Цвет не является действительным.
+Special characters are not allowed.,Спецсимволы не допустимы.
+Script tags are not allowed.,теги сценария не допускаются.
+Style tags are not allowed.,Стиль-теги не допускаются.
+Iframe tags are not allowed.,Iframe-теги не допускаются.
+Uploaded file is not an image.,Загруженный файл не является изображением.
+Uploaded file size must be less than #d.,"Загруженный размер файла должен быть меньше, чем #d."
+Field should not contain HTML tags.,Поле не должно содержать HTML-тегов.
+You can enter only positive numbers.,Вы можете ввести только положительные числа.
+`From Date` should be smaller than `To Date`,"`Из date` должно быть меньше, чем` To date`"
+`From Date` already present in a slot.,`Из date` уже присутствует в слот.
+`To Date` already present in a slot.,`Для date` уже присутствует в слот.
+Coupon Display Options,Варианты купона Показать
+Email Subject,Тема письма
+Email Template,Шаблон сообщения электронной почты
+Email Content,Email Содержание
+Test Email,Тест E-mail
+Send Email,Отправить E-mail
+Enable the Extension,Включить расширение
+Show pull-out tab,Показать выдвижную вкладку
+Allow customer to hide/show popup,"Разрешить клиенту, чтобы скрыть / показать всплывающее окно"
+Upload pull-out tab image,выдвижная Загрузить изображение вкладки
+Only .png or .jpg file format accepted. File size should not be more than 2 MB.,Только .png или .jpg формат файла принят. Размер файла не должен быть больше 2 Мб.
+Display Logo,Дисплей Логотип
+Upload Logo,Загрузить логотип
+Remove logo,Удалить логотип
+Email Recheck,электронная почта Проверить еще
+Allow customer to provide coupon code more than one time.,Разрешить клиенту предоставить код купона более чем один раз.
+Enable Wheel Sound,Включить звук колеса
+Allow sound on rotating the wheel.,Разрешить звук при повороте колеса.
+Show Fireworks,Показать Fireworks
+Show fireworks after a customer wins.,"Показать фейерверк после того, победы клиента."
+Show Customer Name,Показать Имя клиента
+Show First Name,Показать Имя
+Show Last Name,Показать Фамилия
+Show Both,Показать Оба
+Show None,Показать None
+Show customer name on the front end,Показать имя клиента на переднем конце
+Require Customer Name,Требовать имя клиента
+Require First Name,Требуется Имя
+Require Last Name,Требовать Фамилия
+Require Both,Требовать Оба
+Require None,Не требует None
+Require customer name on the front end,Требовать имя клиента на переднем конце
+Wheel Display Interval,Колесо дисплея Interval
+Days,дней
+Enter the display interval (in days) after which pop will show again (if not used).,"Введите интервал отображения (в днях), после чего поп покажет снова (если не используется)."
+Show Progress Meter,Показать Progress Meter
+Progress Percentage,Процент Прогресс
+Enter the percentage of the progress meter.,Введите процент счетчика прогресса.
+Progress Text,Текст Прогресс
+Enter the Text for the progress meter.,Введите текст для счетчика прогресса.
+Custom CSS,Пользовательские CSS
+Add custom CSS code that you want to be executed on the front end,"Добавить пользовательский код CSS, который вы хотите быть выполнен на переднем конце"
+Custom JS,Пользовательские JS
+Add custom JS code that you want to be executed on the front end,"Добавить пользовательский код JS, который вы хотите быть выполнен на переднем конце"
+Enable Mailchimp,Включить Mailchimp
+Mailchimp Api Key,Mailchimp Api Key
+Mailchimp List,Список Mailchimp
+Select List,Выберите Список
+Enable Klaviyo,Включить Klaviyo
+Klaviyo Api Key,Klaviyo Api Key
+Klaviyo List,Список Klaviyo
+Enable Constant Contact,Включить постоянный контакт
+Constant Contact Api Key,Constant Contact Api Key
+Constant Contact Api Token,Постоянный контакт Api Токен
+Constant Contact List,Постоянный список контактов
+Please select atleast one page,"Пожалуйста, выберите по крайней мере одну страницу"
+Please select atleast one country,"Пожалуйста, выберите по крайней мере в одной стране"
+Field cannot be empty,Поле не может быть пустым
+Total Coupons Generated,Всего купоны Сформированы
+Total Coupons Unused,Всего купоны Неиспользованный
+Total Coupons Used,Всего купоны Подержанные
+`Active Date` cannot be greater than `Inactive Date`,"`Активный date` не может быть больше, чем` неактивной date`"
+`From` Date cannot be greater than `To` Date,"`От` Дата не может быть больше, чем` в` Дата"
+Date & Time should be greater than current date time.,"Дата и время должна быть больше, чем текущее время даты."
+Total Generated,Всего Сформирован
+Till,До
+Total Used,Всего использовано
+Total Unused,Всего Неиспользованный
+Coupon Statistics (Graphical),Скидочные Статистики (графические)
+Select date,Выбрать дату
+Generate,генерировать
+Other Statistics,Другие статистики
+Country Statistics,Статистика по странам
+Device Statistics,Статистика устройства
+Coupons List,Список бон
+Minimum Screen Size,Минимальный размер экрана
+Smartphone (320x480),Смартфон (320х480)
+Tablet Portrait(768x1024),Tablet Портрет (768x1024)
+Tablet Landscape (1024x768),Таблетка Пейзаж (1024x768)
+Laptop (1366x768),Ноутбук (1366x768)
+Desktop(1600x1080),Настольный (1600x1080)
+Smartphones only,только смартфоны
+Maximum Display Frequency,Максимальная частота дисплея
+Every Visit,Каждый визит
+One Visit per hour,Один визит в час
+One visit per day,Одно посещение в день
+One visit per week,Одно посещение в неделю
+One visit per month,Одно посещение в месяц
+Show Spin Wheel on the front end after the specified time,Показать Спин колеса на переднем конце после указанного времени
+Hide Spin Wheel After,Скрыть Спин колеса После
+Always Display,Всегда Показать
+10 Seconds,10 секунд
+20 Seconds,20 секунд
+30 Seconds,30 секунд
+40 Seconds,40 секунд
+Choose the time interval after which the Spin Wheel on the front end will hide automatically,"Выберите интервал времени, по истечении которого Спин колеса на переднем конце будет скрывать автоматически"
+Set Fix Time,Set Fix Time
+Active Date/Time,Активный Дата / время
+Expire Date/Time,Удалено Дата / время
+Whom to show,Кого шоу
+All Visitors,Все посетители
+New Visitors,Новые посетители
+Returning Visitors,Вернувшиеся посетители
+Select whom to show the popup.,"Выберите, кому показывать всплывающее окно."
+When to Show,Когда Показать
+Immediately,Немедленно
+After Time(seconds),По истечению времени (в секундах)
+When scroll down(%),При прокручивать вниз (%)
+When Exit,Когда выход
+Select when to display the popup.,"Выберите, когда для отображения всплывающего окна."
+Enter time (In Seconds),Введите время (в секундах)
+Enter time in seconds after which you want to display spin wheel pop up.,"Введите время в секундах, после которого вы хотите отобразить пробуксовки всплывали."
+Enter Scroll Percentage,Введите Scroll Процент
+Enter scroll percentage after which you want to display spin wheel pop up. Do no enter % sign.,"Введите свитку процента, после которого вы хотите отобразить пробуксовки всплывали. У не вводить знак%."
+Geo Location,Гео Расположение
+World Wide,По всему миру
+Display selected areas only,Только Показать области отбирались
+Do not display selected areas,Не показывать выбранные области
+Select Geo Location where you want to show the popup.,"Выберите Географическое положение, где вы хотите, чтобы показать всплывающее окно."
+Select countries.,Выберите страны.
+Title Text,Текст заголовка
+Subtitle Text,Текст подзаголовка
+Rules Text,Правила Текст
+One rule should be entered in one line in order to show it on pop up point wise.,"Одно правило должно быть введено в одну линию, чтобы показать его на выскакивают точечно."
+Are your sure?,Ты уверен?
+Please enter a valid color code,"Пожалуйста, введите код цвета"
+`Active Date` cannot be greater than `Expire Date`,"`Активный date` не может быть больше, чем` Expire date`"
+The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: ,Сумма тяжести не находится в допустимом диапазоне. Это должно быть betwen 1 и 100. Всего:
+No list exists for this API key.,Список не существует для этого ключа API.
+No. of times,Кол-во раз
+Date,Дата
+Please upload an image file.,"Пожалуйста, загрузите файл изображения."
+Note: select time in GMT only.,Примечание: выберите время только по Гринвичу.
+This slot is already available.,Этот слот уже доступен.

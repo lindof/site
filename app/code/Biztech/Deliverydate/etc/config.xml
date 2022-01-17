@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <deliverydate>
+            <deliverydate_general>
+                <enabled>0</enabled>
+                <display_on>all</display_on>
+                <show_html>1</show_html>     
+                <deliverydate_html>Please choose your preferrable future delivery time for current #order.</deliverydate_html>
+                <deliverydate_label>Delivery Date</deliverydate_label>
+                <deliverydate_comments_label>Delivery Date Comments</deliverydate_comments_label>
+                <deliverydate_format>d/M/Y</deliverydate_format>
+                <deliverytime_format>g:i a</deliverytime_format>
+                <datepicker_enable_animation>fadeIn</datepicker_enable_animation>
+                <datepicker_buttom_bar>0</datepicker_buttom_bar>
+                <deliverytime_day_diff>0</deliverytime_day_diff>
+                <deliverydate_callme_label>Call me before delivery</deliverydate_callme_label>
+                <quota_limit>0</quota_limit>
+                <return_quota>1</return_quota>
+                <same_day_deliverycharges>0</same_day_deliverycharges>
+            </deliverydate_general>
+            <deliverydate_dayoff>
+                <deliverydate_dayoff></deliverydate_dayoff>
+            </deliverydate_dayoff>
+            <deliverydate_timeslots>
+                <table_label>Timeslot's</table_label>
+                <no_of_deliverydays>6</no_of_deliverydays>
+            </deliverydate_timeslots>
+        </deliverydate>
+    </default>
+</config>

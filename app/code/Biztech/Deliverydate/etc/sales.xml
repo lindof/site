@@ -1,0 +1,20 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/sales.xsd">
+    <section name="quote">
+        <group name="totals">
+            <item name="delivery_charges" instance="Biztech\Deliverydate\Model\Total\Quote\DeliveryCharges" sort_order="140"/>
+            <item name="same_day_charges" instance="Biztech\Deliverydate\Model\Total\Quote\SameDayCharges" sort_order="150"/>
+        </group>
+    </section>
+    <section name="order_invoice">
+        <group name="totals">
+            <item name="delivery_charges" instance="Biztech\Deliverydate\Model\Total\Invoice\DeliveryCharges" sort_order="140"/>
+            <item name="same_day_charges" instance="Biztech\Deliverydate\Model\Total\Invoice\SameDayCharges" sort_order="150"/>
+        </group>
+    </section>
+    <section name="order_creditmemo">
+        <group name="totals">
+            <item name="delivery_charges" instance="Biztech\Deliverydate\Model\Total\Creditmemo\DeliveryCharges" sort_order="140"/>
+            <item name="same_day_charges" instance="Biztech\Deliverydate\Model\Total\Creditmemo\SameDayCharges" sort_order="150"/>
+        </group>
+    </section>
+</config>

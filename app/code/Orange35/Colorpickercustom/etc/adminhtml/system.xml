@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="orange35_tab" translate="label" sortOrder="1000">
+            <label>Orange35</label>
+        </tab>
+        <section id="colorpickercustom_section" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Colorpicker for Custom Options</label>
+            <tab>orange35_tab</tab>
+            <resource>Orange35_Colorpickercustom::config</resource>
+            <group id="swatch" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Swatch</label>
+                <field id="category_mode" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Show in list</label>
+                    <source_model>Orange35\Colorpickercustom\Model\Config\Source\CategoryMode</source_model>
+                    <comment><![CDATA[
+                        Show swatches in product lists: category page, search results.<br/>
+                        <strong>Custom</strong> - means options marked by <strong>Show in list</strong> checkbox which will appear on a product edit page.
+                    ]]></comment>
+                </field>
+                <field id="choice_method" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Swatch Choice Method</label>
+                    <source_model>Orange35\Colorpickercustom\Model\Config\Source\ChoiceMethod</source_model>
+                    <comment><![CDATA[
+                        <strong>Toggle Method:</strong> click to select/unselect a swatch;<br/>
+                        <strong>Select Method:</strong> <br/>
+                        - Click to select a swatch<br/>
+                        - Ctrl+Click to unselect a swatch or select/unselect multiple swatches
+                    ]]></comment>
+                </field>
+                <field id="swatch_width" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Swatch Width</label>
+                    <validate>validate-greater-than-zero validate-number integer</validate>
+                    <comment><![CDATA[
+                        - Leave empty to use a theme default value<br/>
+                        - This value can be overridden on a product edit page
+                    ]]></comment>
+                </field>
+                <field id="swatch_height" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Swatch Height</label>
+                    <validate>validate-greater-than-zero validate-number integer</validate>
+                    <comment><![CDATA[
+                        - Leave empty to use a theme default value.<br/>
+                        - This value can be overridden on a product edit page
+                    ]]></comment>
+                </field>
+                <field id="selected_outline_width" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Selected Swatch Outline</label>
+                    <source_model>Orange35\Colorpickercustom\Model\Config\Source\CssWidth</source_model>
+                </field>
+                <field id="selected_outline_color" translate="label" type="Orange35\ColorPickerElement\Data\Form\Element\Color" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Selected Swatch Outline Color</label>
+                    <depends>
+                        <field id="selected_outline_width" separator="," negative="1">0,</field>
+                    </depends>
+                </field>
+                <field id="show_price" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Price</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="tooltip" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tooltip</label>
+                <field id="width" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Swatch Width</label>
+                    <validate>validate-greater-than-zero validate-number integer</validate>
+                    <comment>Leave empty to use a theme default value</comment>
+                </field>
+                <field id="height" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Swatch Height</label>
+                    <validate>validate-greater-than-zero validate-number integer</validate>
+                    <comment>Leave empty to use a theme default value</comment>
+                </field>
+                <field id="padding" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Tooltip Padding</label>
+                    <validate>validate-number integer</validate>
+                    <comment>Leave empty to use a theme default value</comment>
+                </field>
+            </group>
+            <group id="slider" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Slider</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Slider</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="arrows_color" translate="label" type="Orange35\ColorPickerElement\Data\Form\Element\Color" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Arrows Color</label>
+                    <depends>
+                        <field id="colorpickercustom_section/slider/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="swatches_per_slide" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Swatches per Slide</label>
+                    <validate>validate-number</validate>
+                    <depends>
+                        <field id="colorpickercustom_section/slider/enabled">1</field>
+                    </depends>
+                    <comment><![CDATA[
+                        - Leave blank to define automatically<br/>
+                        - Showing swatches per slide can be automatically decreased if there is no enough container width
+                    ]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

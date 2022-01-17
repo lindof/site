@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_DependentCustomOption
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="bss_custom_options_render_select_after_control">
+        <observer name="dco_add_select_render_after_control" instance="Bss\DependentCustomOption\Observer\Render\AddSelectRenderAfterControl" />
+    </event>
+    <event name="bss_custom_options_render_file_before_control">
+        <observer name="dco_file_add_render" instance="Bss\DependentCustomOption\Observer\Render\AddCommonFieldAfterControl" />
+    </event>
+    <event name="bss_custom_options_render_text_before_control">
+        <observer name="dco_text_add_render" instance="Bss\DependentCustomOption\Observer\Render\AddCommonFieldAfterControl" />
+    </event>
+    <event name="bss_custom_options_render_date_before_control">
+        <observer name="dco_date_add_render" instance="Bss\DependentCustomOption\Observer\Render\AddCommonFieldAfterControl" />
+    </event>
+</config>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Widget/etc/widget.xsd">
+	<widget id="drc_instagrampics_widget" class="Drc\InstagramPics\Block\Widget\Feed">
+		<label translate="true">[DRC] Instagram Widget</label>
+		<description>Instagram feed widget</description>
+		<parameters>
+			<parameter name="is_enabled" xsi:type="select" source_model="Magento\Config\Model\Config\Source\Yesno" visible="true" sort_order="0" >
+				<label translate="true">Is Enabled</label>
+			</parameter>
+			
+			<parameter name="mode" xsi:type="select" source_model="Drc\InstagramPics\Model\Source\Mode" visible="true" sort_order="1" >
+				<label translate="true">Mode</label>
+			</parameter>
+			
+			<parameter name="user_id" xsi:type="text" visible="true" sort_order="2" >
+				<label translate="true">User ID</label>
+				<description>{how-to-get-user-id}</description>
+				<depends>
+					<parameter name="mode" value="1"/>
+				</depends>
+			</parameter>
+			
+			<parameter name="hashtag" xsi:type="text" visible="true" sort_order="3" >
+				<label translate="true">Hashtag</label>
+				<depends>
+					<parameter name="mode" value="2"/>
+				</depends>
+			</parameter>
+			
+			<parameter name="user_name" xsi:type="text" visible="true" sort_order="4" >
+				<label translate="true">User Name</label>
+				<depends>
+					<parameter name="mode" value="4"/>
+				</depends>
+			</parameter>
+			
+			<parameter name="title" xsi:type="text" visible="true" sort_order="5" >
+				<label translate="true">Title</label>
+			</parameter>
+
+			<parameter name="description" xsi:type="block" visible="true" sort_order="6">
+				<label translate="true">Description</label>
+				<block class="Drc\InstagramPics\Block\Adminhtml\Widget\TextareaField" />
+			</parameter> 
+			
+			<parameter name="limit_items" xsi:type="text" visible="true" sort_order="7" >
+				<label translate="true">Limit</label>
+				<value>5</value>
+			</parameter>
+			
+			<parameter name="image_width" xsi:type="text" visible="true" sort_order="8" >
+				<label translate="true">Thumbnail Width</label>
+				<value>200</value>
+			</parameter>
+			
+			<parameter name="image_height" xsi:type="text" visible="true" sort_order="9" >
+				<label translate="true">Thumbnail Height</label>
+				<value>200</value>
+			</parameter>
+			
+			<parameter name="template" xsi:type="select" visible="true" sort_order="10">
+                <options>
+                    <option name="instagram_template" value="Drc_InstagramPics::instagram/widget/feed.phtml">
+                        <label translate="true">Instagram Widget Default Template</label>
+                    </option>
+                </options>
+            </parameter>
+			
+		</parameters>
+	</widget>
+</widgets>

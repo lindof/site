@@ -1,0 +1,540 @@
+<form id="spinandwin_view" enctype="multipart/form-data" method="POST" action="">
+    <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+</form>
+<script type="text/javascript" src="<?php echo $this->getBaseUrl(); ?>/static/adminhtml/Magento/backend/en_US/Knowband_Spinandwin/js/velovalidation.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->getBaseUrl(); ?>/static/adminhtml/Magento/backend/en_US/Knowband_Spinandwin/js/customScript.min.js"></script>
+<script type="text/javascript">
+var spinandwin_ajax_url = '<?php echo $this->getUrl("spinwinadmin/spinandwin/ajax", ['_secure' => $this->getRequest()->isSecure()]); ?>';
+var spinandwin_testemail_url = '<?php echo $this->getUrl("spinwinadmin/spinandwin/testemail", ['_secure' => $this->getRequest()->isSecure()]); ?>';                   
+
+    var config = {
+        shim: {
+            'Knowband_Spinandwin/js/velovalidation': ['jquery'],
+            'Knowband_Spinandwin/js/colorpicker/jquery.colorpicker': ['jquery'],
+            'Knowband_Spinandwin/js/flot/jquery.flot.min': ['jquery'], 
+            'Knowband_Spinandwin/js/flot/jquery.flot.pie.min': ['Knowband_Spinandwin/js/flot/jquery.flot.min'],
+            'Knowband_Spinandwin/js/flot/jquery.flot.axislabels': ['Knowband_Spinandwin/js/flot/jquery.flot.pie.min'],
+            'Knowband_Spinandwin/js/flot/jquery.flot.tooltip_0.5': ['Knowband_Spinandwin/js/flot/jquery.flot.axislabels'],
+            'Knowband_Spinandwin/js/flot/excanvas': ['Knowband_Spinandwin/js/flot/jquery.flot.tooltip_0.5'],
+            'Knowband_Spinandwin/js/customScript': ['Knowband_Spinandwin/js/flot/excanvas']
+        }
+    };
+    require.config(config);
+
+    require([
+        'jquery',
+        'jquery/ui',
+        'mage/backend/tabs',
+        'jquery/jquery.cookie',
+        'Knowband_Spinandwin/js/velovalidation',
+        'Knowband_Spinandwin/js/colorpicker/jquery.colorpicker',
+        'Knowband_Spinandwin/js/flot/jquery.flot.min',
+        'Knowband_Spinandwin/js/flot/jquery.flot.pie.min',
+        'Knowband_Spinandwin/js/flot/jquery.flot.tooltip_0.5',
+        'Knowband_Spinandwin/js/flot/jquery.flot.axislabels',
+        'Knowband_Spinandwin/js/flot/excanvas',
+        'Knowband_Spinandwin/js/customScript',
+        "mage/adminhtml/wysiwyg/tiny_mce/setup",
+        "mage/adminhtml/wysiwyg/widget"
+        ],
+        function (jQuery) {
+
+                    jQuery(document).ready(function () {
+                        jQuery("#save-spinandwin").click(function () {
+                            var spinandwin_tab = "";
+                            spinandwin_tab = jQuery.cookie('spinandwin-admin-tab');
+                            jQuery.cookie('spinandwin-admin-tab', "");
+                            var active_tab = "general";
+                            if (spinandwin_tab == "general-settings") {
+                                active_tab = "general";
+                            }
+                            if (spinandwin_tab == "display-settings") {
+                                active_tab = "display";
+                            }
+                            if (spinandwin_tab == "text-settings") {
+                                active_tab = "text";
+                            }
+                            if (spinandwin_tab == "email-settings") {
+                                active_tab = "email";
+                            }
+                            if (spinandwin_tab == "slice-settings") {
+                                active_tab = "slice";
+                            }
+                            if (spinandwin_tab == "email-marketing") {
+                                active_tab = "marketing";
+                            }
+                            if (spinandwin_tab == "statistics-settings") {
+                                active_tab = "stats";
+                            }
+                            if (spinandwin_tab == "look-and-feel") {
+                                active_tab = "look-and-feel";
+                            }
+                            jQuery('#spinandwin_view_tabs').tabs({
+                                active: 'spinandwin_view_tabs_spinandwin_' + active_tab,
+                                destination: '#spinandwin_view',
+                                shadowTabs: [],
+                                tabsBlockPrefix: 'spinandwin_view_tabs',
+                                tabIdArgument: 'active_tab'
+                            });
+                            jQuery("#spinandwin_view .fieldset-wrapper").each(function (i, ele) {
+                                jQuery(ele).click(function () {
+                                    jQuery.cookie("spinandwin-admin-tab", jQuery(this).prop("id"));
+                                });
+                            });
+                            if (validateConfigurationsForm()) {
+                                jQuery("#spinandwin_view").submit();
+                                jQuery('body').loader('show');
+                            }
+                        });
+
+
+                        /*General settings tab */
+
+                        //error messages for velovalidation.js
+                        velovalidation.setErrorLanguage({
+                            empty_field: "<?php echo __("Field cannot be empty."); ?>",
+                            number_field: "<?php echo __("You can enter only numbers."); ?>",
+                            positive_number: "<?php echo __("Number should be greater than 0."); ?>",
+                            maxchar_field: "<?php echo __("Field cannot be greater than {#} characters."); ?>",
+                            minchar_field: "<?php echo __("Field cannot be less than {#} character(s)."); ?>",
+                            empty_email: "<?php echo __("Please enter Email."); ?>",
+                            validate_email: "<?php echo __("Please enter a valid Email."); ?>",
+                            invalid_date: "<?php echo __("Invalid date format."); ?>",
+                            validate_range: "<?php echo __("Number is not in the valid range. It should be between {1} and {100}"); ?>",
+                            valid_amount: "<?php echo __("Field should be numeric."); ?>",
+                            valid_decimal: "<?php echo __("Field can have only upto two decimal values."); ?>",
+                            max_email: "<?php echo __("Email cannot be greater than {#} characters."); ?>",
+                            specialchar_zip: "<?php echo __("Zip should not have special characters."); ?>",
+                            valid_percentage: "<?php echo __("Percentage should be in number."); ?>",
+                            between_percentage: "<?php echo __("Percentage should be between 0 and 100."); ?>",
+                            maxchar_size: "<?php echo __("Size cannot be greater than {#} characters."); ?>",
+                            maxchar_color: "<?php echo __("Color could not be greater than {#} characters."); ?>",
+                            invalid_color: "<?php echo __("Color is not valid."); ?>",
+                            specialchar: "<?php echo __("Special characters are not allowed."); ?>",
+                            script: "<?php echo __("Script tags are not allowed."); ?>",
+                            style: "<?php echo __("Style tags are not allowed."); ?>",
+                            iframe: "<?php echo __("Iframe tags are not allowed."); ?>",
+                            not_image: "<?php echo __("Uploaded file is not an image."); ?>",
+                            image_size: "<?php echo __("Uploaded file size must be less than #d."); ?>",
+                            html_tags: "<?php echo __("Field should not contain HTML tags."); ?>",
+                            number_pos: "<?php echo __("You can enter only positive numbers."); ?>",
+                        });
+
+
+                        jQuery('#spinandwin_pullouttab').change(function () {
+                            if (this.checked) {
+                                jQuery('#spinandwin_pullout_enable_option').show('slow');
+                            } else {
+                                jQuery('#spinandwin_pullout_enable_option').hide('slow');
+                            }
+                        });
+
+                        jQuery('#pullout_image').change(function () {
+                            var imgPath = jQuery(this)[0].value;
+                            /*Knowband image validation start*/
+                            if (jQuery('#front_pull_out_image_upload').val() != '') {
+                                var image_holder = jQuery("#pullout_image_preview");
+                                image_holder.empty();
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    image_holder.attr('src', e.target.result);
+                                }
+                                image_holder.show();
+                                reader.readAsDataURL(jQuery(this)[0].files[0]);
+
+                            }
+                            /*Knowband image validation end*/
+                        });
+
+                        if (jQuery('#spinandwin_wheel_design').val() == 1) {
+                            jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel1.png'); ?>');
+                        } else {
+                            jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel2.png'); ?>');
+                            changeColor(jQuery("#spinandwin_wheel_color").val());
+                        }
+
+                        jQuery('#spinandwin_wheel_design').change(function () {
+                            if (this.value == 1) {
+                                jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel1.png'); ?>');
+                                changeColor('');
+                            } else if (this.value == 2) {
+                                jQuery('#wheel_preview').attr('src', '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/wheel2.png'); ?>');
+                                changeColor(jQuery("#spinandwin_wheel_color").val());
+                            }
+                        });
+
+                        jQuery("#logo_image").change(function () {
+                            readURL(this);
+                        });
+
+
+                        jQuery('[name="vss_spinandwin[lookandfeel_settings][wheel_design]"]').change(function () {
+                            var wheel_design = jQuery('[name="vss_spinandwin[lookandfeel_settings][wheel_design]"]').val();
+                            if (wheel_design == 2) {
+                                jQuery("#spinandwin_wheel_color_holder").show("slow");
+                                changeColor(jQuery("#spinandwin_wheel_color").val());
+                            } else {
+                                jQuery("#spinandwin_wheel_color_holder").hide("slow");
+                            }
+                        });
+
+                        jQuery('[name="vss_spinandwin[lookandfeel_settings][wheel_color]"]').change(function () {
+                            var wheel_design = jQuery('[name="vss_spinandwin[lookandfeel_settings][wheel_design]"]').val();
+                            if (wheel_design == 2) {
+                                changeColor(jQuery("#spinandwin_wheel_color").val());
+                            }
+                        });
+
+                        var theme_img_path = '';
+                        jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').on('change', function () {
+                            var theme_design = jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').val();
+                            if (theme_design == '1') {
+                                theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/none.png'); ?>';
+                            } else if (theme_design == '2') {
+                                theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme1.png'); ?>';
+                            } else if (theme_design == '3') {
+                                theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme2.png'); ?>';
+                            } else {
+                                theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme'); ?>' + '/' + theme_design + '.png';
+                            }
+                            jQuery("#theme_preview").attr('src', theme_img_path);
+                        });
+
+                        var theme_img_path = '';
+                        if (jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').val() == '1') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/none.png'); ?>';
+                            jQuery("#theme_preview").attr('src', theme_img_path);
+                        } else if (jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').val() == '2') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme1.png'); ?>';
+                            jQuery("#theme_preview").attr('src', theme_img_path);
+                        } else if (jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').val() == '3') {
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/theme2.png'); ?>';
+                            jQuery("#theme_preview").attr('src', theme_img_path);
+                        } else {
+                            var selected_theme = jQuery('[name="vss_spinandwin[lookandfeel_settings][theme]"]').val();
+                            theme_img_path = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/theme/'); ?>' + '/' + selected_theme + '.png';
+                            jQuery("#theme_preview").attr('src', theme_img_path);
+                        }
+
+
+
+                        function readURL(input) {
+
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    jQuery('#logo_image_preview').attr('src', e.target.result);
+
+                                    jQuery('#logo_image_preview').hide();
+                                    jQuery('#logo_image_preview').fadeIn(650);
+
+                                }
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+
+                        /*Look and feel tab*/
+                        jQuery("#remove-button").click(function () {
+                            removeImage();
+                        });
+
+                        function removeImage() {
+                            if (confirm('<?php echo __("Are your sure?"); ?>')) {
+                                var default_image = '<?php echo $this->getViewFileUrl('Knowband_Spinandwin::images/no_image.jpg'); ?>';
+                                jQuery('#logo_image_preview').attr('src', default_image);
+                                jQuery('#logo_image_preview').hide();
+                                jQuery('#logo_image_preview').fadeIn(650);
+                                jQuery('#remove-button').hide();
+
+                            }
+                        }
+
+                        jQuery('#spinandwin_logo_enable').change(function () {
+                            if (this.checked) {
+                                jQuery('#spinandwin_logo_enable_option').show('slow');
+                            } else {
+                                jQuery('#spinandwin_logo_enable_option').hide('slow');
+                            }
+                        });
+                        
+                        /**
+                        * Added by Bhupendra Singh Bisht
+                        * To Toggle the progress bar settings.         
+                        */
+                        
+                        toggleProgressMeter();
+                        jQuery('#spinandwin_enable_progress_bar').on('change',function(){
+                           toggleProgressMeter();
+                        });
+
+                        function toggleProgressMeter(){
+                             if (jQuery('#spinandwin_enable_progress_bar').prop("checked")) {
+                                jQuery('.progress_meter').show('slow');
+                            } else {
+                                jQuery('.progress_meter').hide('slow');
+                            }
+                        }
+                        /*Theme Scheduling*/
+                        toggleThemeScheduling();
+                        jQuery("#spinandwin_enable_theme_scheduling").on('change',function(){
+                            toggleThemeScheduling();                            
+                        });
+                        
+                        function toggleThemeScheduling(){
+                             if (jQuery('#spinandwin_enable_theme_scheduling').prop("checked")) {
+                                jQuery('#theme_scheduling_grid').show();
+                            } else {
+                                jQuery('#theme_scheduling_grid').hide();
+                            }
+                        }
+                        
+                        /*Slice settings*/
+
+                        toogleSliceSelection();
+                        jQuery("#spinandwin_number_of_slices").on('change', function () {
+                            toogleSliceSelection();
+                        });
+
+                        function toogleSliceSelection() {
+                            var number_of_slices = parseInt(jQuery("#spinandwin_number_of_slices").val()) + 1;
+                            jQuery(".kb_slices").show();
+                            for (var slice_number = number_of_slices; slice_number <= 12; slice_number++) {
+                                jQuery("#kb_slice_" + slice_number).hide();
+                            }
+                        }
+
+                        /*Email Settings tab*/
+
+                        function getTemplateContent()
+                        {
+                            var theme = jQuery('#spinandwin_email_template').val();
+                            jQuery.ajax({
+                                type: 'post',
+                                url: spinandwin_ajax_url,
+                                data: {ajax: true, theme: theme,form_key:window.FORM_KEY},
+                                dataType: 'json',
+                                showLoader: true,
+                                success: function (retjson) {
+                                    jQuery('#spinandwin_email_subject').val(retjson['template_subject']);
+                                    jQuery('input[name="vss_spinandwin[email_settings][template_id]"]').val(retjson['template_id']);
+                                    tinyMCE.get('spinandwin_email_content').setContent(retjson['template_content']);
+                                }
+                            });
+                        }
+
+                        jQuery("#test_email_send").click(function (ele) {
+                            sendTestEmail(ele);
+                        });
+                        /*
+                         * Function for handling the functionality to send a test email
+                         */
+                        function sendTestEmail(ele)
+                        {
+                            var is_error = false;
+
+                            jQuery('.kb_error_message').remove();
+                            jQuery('.kb_email_success_message').remove();
+                            jQuery('#spinandwin_test_email').removeClass('kb_error_message');
+                            jQuery('[name="spinandwin[email_settings][email_subject]"]').removeClass('kb_error_message');
+
+                            /*Knowband validation start*/
+                            var email_man_err = velovalidation.checkMandatory(jQuery('#spinandwin_test_email'));
+                            if (email_man_err != true)
+                            {
+                                is_error = true;
+                                jQuery('#spinandwin_test_email').addClass('kb_error_field');
+                                jQuery('#spinandwin_test_email').after('<span class="kb_error_message">' + email_man_err + '</span>');
+                            } else
+                            {
+                                var email_err = velovalidation.checkEmail(jQuery('#spinandwin_test_email'));
+                                if (email_err != true)
+                                {
+                                    is_error = true;
+                                    jQuery('#spinandwin_test_email').addClass('kb_error_field');
+                                    jQuery('#spinandwin_test_email').after('<span class="kb_error_message">' + email_err + '</span>');
+                                }
+                            }
+
+                            var email_subject_man_err = velovalidation.checkMandatory(jQuery('#spinandwin_email_subject'));
+                            if (email_subject_man_err != true)
+                            {
+                                is_error = true;
+                                email_setting_error = true;
+                                jQuery('#spinandwin_email_subject').addClass('kb_error_field');
+                                jQuery('#spinandwin_email_subject').after('<span class="kb_error_message">' + email_subject_man_err + '</span>');
+                            }
+
+                            jQuery('#email_template_content_tbl').removeClass('kb_error_field');
+                            var validate_template_mandatory = checkTinyMCERequired(tinyMCE.get('spinandwin_email_content').getContent());
+                            if (validate_template_mandatory != true) {
+                                is_error = true;
+                                email_setting_error = true;
+                                jQuery('#vss_email_template_content_tbl').addClass('kb_error_field');
+                                jQuery('#spinandwin_email_content').parent().append('<span class="kb_error_message">' + validate_template_mandatory + '</span>');
+                            }
+                            /*Knowband validation end*/
+
+                            if (is_error) {
+                                return false;
+                            }
+
+                            /*Knowband button validation start*/
+                            jQuery(ele).attr('onclick', 'javascript:void(0)');
+                            jQuery(ele).attr('disabled', 'disabled');
+                            jQuery(ele).css('background-color', '#b9b9b9');
+                            jQuery(ele).css('border-color', '#b9b9b9');
+                            /*Knowband button validation end*/
+
+
+                            jQuery.ajax({
+                                type: 'post',
+                                url: spinandwin_testemail_url,
+                                data: {ajax: true, subject: template_subject, html_content: template_content, email: jQuery('#spinandwin_test_email').val(), scope: scope, scope_id: scope_id},
+                                dataType: 'json',
+                                showLoader: true,
+                                success: function (retjson) {
+                                    if (typeof retjson['success'] != 'undefined') {
+                                        jQuery('#spinandwin_test_email').after('<span class="kb_email_success_message">' + retjson['success'] + '</span>');
+                                        jQuery('#spinandwin_test_email').val('');
+                                    } else {
+                                        jQuery('#spinandwin_test_email').after('<span class="kb_error_message">' + retjson['error'] + '</span>');
+                                    }
+                                    jQuery(ele).attr('onclick', 'sendTestEmail()');
+                                    jQuery(ele).removeAttr('disabled');
+                                    jQuery(ele).css('background-color', '#35302c');
+                                    jQuery(ele).css('border-color', '#35302c');
+                                }
+                            });
+                        }
+                        /*
+                         * Function for the validation of TinyMCE Editor's content
+                         */
+                        function checkTinyMCERequired(val) {
+                            var new_str = str_replace_all(val, '<p>', '');
+                            new_str = str_replace_all(new_str, '</p>', '');
+                            new_str = new_str.trim();
+                            var return_val = true;
+                            if (new_str == '') {
+                                return_val = empty_field;
+                            }
+                            return return_val;
+                        }
+
+                        /*
+                         * Function for replacing all occurences of a sub-string inside a string
+                         */
+                        function str_replace_all(string, str_find, str_replace) {
+                            try {
+                                return string.replace(new RegExp(str_find, "gi"), str_replace);
+                            } catch (ex) {
+                                return string;
+                            }
+                        }
+
+
+                        jQuery('#spinandwin_coupon_display_options').change(function () {
+                            if (this.value != '1') {
+                                jQuery('.spinandwin_coupon_display_options').show('slow');
+                            } else {
+                                jQuery('.spinandwin_coupon_display_options').hide('slow');
+                            }
+                        });
+
+                        getTemplateContent();
+                        jQuery("#spinandwin_email_template").on("change", function () {
+                            getTemplateContent();
+                        });
+
+                        var template_subject = jQuery('[name="vss_spinandwin[email_settings][email_subject]"]').val();
+                        var template_content = '';
+                        try {
+                            template_content = tinyMCE.get('spinandwin_email_content').getContent();
+                        } catch (ex) {
+                            console.log(ex);
+                        }
+
+
+                        /*Email marketing tab*/
+                        jQuery('#spinandwin_mailchimp_enable').change(function () {
+                            if (this.checked) {
+                                jQuery('.spinandwin_mailchimp_enable_option').show('slow');
+                            } else {
+                                jQuery('.spinandwin_mailchimp_enable_option').hide('slow');
+                            }
+                        });
+                        jQuery('#spinandwin_klaviyo_enable').change(function () {
+                            if (this.checked) {
+                                jQuery('.spinandwin_klaviyo_enable_option').show('slow');
+                            } else {
+                                jQuery('.spinandwin_klaviyo_enable_option').hide('slow');
+                            }
+                        });
+                        jQuery('#spinandwin_constant_contact_enable').change(function () {
+                            if (this.checked) {
+                                jQuery('.spinandwin_constant_contact_enable_option').show('slow');
+                            } else {
+                                jQuery('.spinandwin_constant_contact_enable_option').hide('slow');
+                            }
+                        });
+
+                        /*Display settings tab*/
+                        jQuery('#spinandwin_fix_time').change(function () {
+                            if (this.checked) {
+                                jQuery('.spinandwin_fix_time_options').show('slow');
+                            } else {
+                                jQuery('.spinandwin_fix_time_options').hide('slow');
+                            }
+                        });
+
+                        jQuery('#spinandwin_when_to_show').change(function () {
+                            if (this.value == 2) {
+                                jQuery('.spinandwin_when_to_show_2').show('slow');
+                                jQuery('.spinandwin_when_to_show_3').hide('slow');
+                            } else if (this.value == 3) {
+                                jQuery('.spinandwin_when_to_show_2').hide('slow');
+                                jQuery('.spinandwin_when_to_show_3').show('slow');
+                            } else {
+                                jQuery('.spinandwin_when_to_show_2').hide('slow');
+                                jQuery('.spinandwin_when_to_show_3').hide('slow');
+                            }
+                        });
+
+                        jQuery('#spinandwin_geo_location').change(function () {
+                            if (this.value == 2 || this.value == 3) {
+                                jQuery('.spinandwin_geo_location_country').show('slow');
+                            } else {
+                                jQuery('.spinandwin_geo_location_country').hide('slow');
+                            }
+                        });
+
+
+                        /*Statistics tab*/
+                        jQuery("#generateLineChartButton").click(function () {
+                            generateLineChart();
+                            //console.log("Linechart");
+                        });
+
+                    });
+                });
+
+
+    var multiple_select_message = '<?php __('Please select atleast one country') ?>';
+    var enter_text_color_check = '<?php __('Please enter a valid color code') ?>';
+    var current_date_time = "<?php echo date('Y-m-d H:i:s', time()); ?>";
+    var datetime_greterthan_current_time = "<?php echo __('Date & Time should be greater than current date time.'); ?>";
+    var selected_country_error = "<?php echo __('Please select atleast one country'); ?>";
+    var empty_field = "<?php echo __('Field cannot be empty'); ?>";
+    var c_g_label = "<?php echo __('Total Coupons Generated'); ?>";
+    var c_un_label = "<?php echo __('Total Coupons Unused'); ?>";
+    var c_u_label = "<?php echo __('Total Coupons Used'); ?>";
+    var date_range_error = "<?php echo __('`Active Date` cannot be greater than `Expire Date`'); ?>";
+    var stats_date_range_error = "<?php echo __('`From` Date cannot be greater than `To` Date'); ?>";
+    var gravity_range_error = "<?php echo __('The sum of Gravity is not in the valid range. It should be betwen 1 and 100. The total is: '); ?>";
+    var no_list_mailchimp = "<?php echo __('No list exists for this API key.'); ?>";
+    var number_times = "<?php echo __('No. of times'); ?>";
+    var text_date = "<?php echo __('Date'); ?>";
+    var image_empty = "<?php echo __("Please upload an image file."); ?>";
+</script>
+

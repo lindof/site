@@ -1,0 +1,117 @@
+<?php
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()): ?>
+<div class="box-tocart">
+    <div class="fieldset">
+        <?php if ($block->shouldRenderQuantity()): ?>
+        <div class="field qty">
+            <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
+            <div class="control">
+                <input type="number"
+                       name="qty"
+                       id="qty"
+                       min="0"
+                       value="<?= /* @escapeNotVerified */ $block->getProductDefaultQty() * 1 ?>"
+                       title="<?= /* @escapeNotVerified */ __('Qty') ?>"
+                       class="input-text qty"
+                       data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                       />
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php if ($block->isEnableAtProductPage()): ?>
+            <div id="appjetty-deliverydate" data-bind="scope:'product-deliverydate'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <script>
+                    window.deliverydateConfig = <?php echo Zend_Json::encode($block->getDeliveryDateConfig()); ?>;
+                </script>
+                <script type="text/x-magento-init">
+                {
+                    "#appjetty-deliverydate": {
+                        "Magento_Ui/js/core/app": {
+                           "components": {
+                                "product-deliverydate": {
+                                    "component": "Biztech_Deliverydate/js/product-deliverydate"
+                                }
+                            }
+                        }
+                    }
+                }
+                </script>
+            </div>
+        <?php endif; ?>
+
+        <div class="actions">
+            <button type="submit"
+                    title="<?= /* @escapeNotVerified */ $buttonTitle ?>"
+                    class="action primary tocart"
+                    id="product-addtocart-button">
+                <span><?= /* @escapeNotVerified */ $buttonTitle ?></span>
+            </button>
+            <?= $block->getChildHtml('', true) ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
+<?php if ($block->isRedirectToCartEnabled()): ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        }
+    }
+</script>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/storage'
+    ], function ($, storage) {
+
+
+        function clearHidden() {
+            jQuery('#shipping_arrival_date').val('');
+            jQuery('#shipping_arrival_slot').val('');
+            jQuery('#delivery_charges').val('');
+            jQuery('.delivery-slot').prop('checked', false);
+        }
+
+        jQuery('#shipping_arrival_comments').blur(function (event) {
+            console.log($('#shipping_arrival_comments').val());
+            var params = {
+                shipping_arrival_comments: $('#shipping_arrival_comments').val()
+            };
+
+        });
+        jQuery('.delivery-slot').click(function (event) {
+            /*order.loadArea('totals', true);*/
+            var res = this.id.split('_');
+
+            jQuery('#shipping_arrival_date').val(res[0]);
+            jQuery('#shipping_arrival_slot').val(jQuery(this).val());
+            jQuery('#delivery_charges').val(res[2]);
+
+            var params = {
+                delivery_charges: res[2],
+                shipping_arrival_date: res[0],
+                shipping_arrival_slot: jQuery(this).val(),
+            };
+
+        });
+    });
+
+</script>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/export.xsd">
+    <entity name="mexbs_cart_rules" label="Mexbs Cart Rules" model="Mexbs\ApBase\Model\Export\Sources" entityAttributeFilterType="mexbs_cart_rules"/>
+</config>

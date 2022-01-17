@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var \Orange35\Colorpickercustom\Block\InlineCss $block
+ */
+$configHelper = $block->getConfigHelper();
+$maxWidth = null;
+?>
+<!--Orange35_Colorpickercustom inline css -->
+<style>
+    <?php if (($css = $block->getSwatchOptionCss())) : ?>
+        .o35-swatches .swatch-option {<?= $css ?>}
+    <?php endif;?>
+    <?php if (($css = $block->getTooltipImageCss())) : ?>
+        .swatch-option-tooltip .image, .swatch-option-tooltip-layered .image {<?= $css ?>}
+    <?php endif;?>
+    <?php if (($css = $block->getTooltipCss())) : ?>
+        .swatch-option-tooltip {<?= $css ?>}
+    <?php endif;?>
+    <?php if (($maxWidth = $block->getTooltipMaxWidth())) : ?>
+        .swatch-option-tooltip .title {max-width: <?= $maxWidth ?>px;}
+    <?php endif;?>
+    <?php if (($css = $block->getSwatchSelectedOutlineCss())) : ?>
+        <?php foreach (['color', 'image', 'textual'] as $className) : ?>
+            .o35-swatches .swatch-option.<?=$className;?>.selected, .o35-swatches .swatch-option.<?=$className?>:hover {<?= $css ?>}
+        <?php endforeach; ?>
+    <?php endif;?>
+</style>
+<!--Orange35_Colorpickercustom inline css end-->

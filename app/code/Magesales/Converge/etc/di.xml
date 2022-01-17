@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<!--
+
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Configure Magesales_ConvergePaymentApi -->
+
+    <preference for="Magesales\Converge\Api\RedirectInterface"
+                type="Magesales\Converge\Common\Redirect" />
+
+    <preference for="Magesales\ConvergePaymentApi\Config" type="Magesales\Converge\Gateway\Config\Config"/>
+
+    <preference for="Magesales\ConvergePaymentSpiCommon\ValidationService" type="Magesales\Converge\Common\ValidationService"/>
+    <preference for="Magesales\ConvergePaymentSpiCommon\TransactionService" type="Magesales\Converge\Common\TransactionService"/>
+    <preference for="Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction" type="Magesales\Converge\Common\GenericTransaction"/>
+
+    <!-- Configure ConvergePaymentSpi -->
+    <preference for="Magesales\ConvergePaymentSpi\TransactionService" type="Magesales\ConvergePaymentSpiCommon\TransactionService"/>
+    <preference for="Magesales\ConvergePaymentSpi\HttpClient" type="Magesales\Converge\Gateway\HttpClient"/>
+    <type name="Magesales\ConvergePaymentSpi\TransactionService">
+        <arguments>
+            <argument name="transactions" xsi:type="array">
+                <item name="ccsale" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+                <item name="ccauthonly" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+                <item name="cccredit" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+                <item name="cccomplete" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+                <item name="ccreturn" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+                <item name="ccvoid" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Transaction\GenericTransaction</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magesales\ConvergePaymentSpi\ValidationService" type="Magesales\ConvergePaymentSpiCommon\ValidationService"/>
+    <type name="Magesales\ConvergePaymentSpi\ValidationService">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="ccauthonly" xsi:type="array">
+                    <item name="errorValidator" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Validator\ResponseSuccess</item>
+                </item>
+                <item name="ccsale" xsi:type="array">
+                    <item name="errorValidator" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Validator\ResponseSuccess</item>
+                </item>
+                <item name="cccomplete" xsi:type="array">
+                    <item name="errorValidator" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Validator\ResponseSuccess</item>
+                </item>
+                <item name="ccreturn" xsi:type="array">
+                    <item name="errorValidator" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Validator\ResponseSuccess</item>
+                </item>
+                <item name="ccvoid" xsi:type="array">
+                    <item name="errorValidator" xsi:type="object">Magesales\ConvergePaymentSpiCommon\Validator\ResponseSuccess</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <!-- Configure Magesales_Converge -->
+
+    <preference for="Magesales\Converge\Api\GuestPaymentManagementInterface" type="Magesales\Converge\Common\GuestPaymentManagement"/>
+    <preference for="Magesales\Converge\Api\PaymentManagementInterface" type="Magesales\Converge\Common\PaymentManagement"/>
+
+    <type name="Magesales\Converge\Gateway\HttpClient">
+        <arguments>
+            <argument name="converter" xsi:type="object">Magesales\Converge\Gateway\Http\Converter\UriStringToArray</argument>
+            <argument name="logger" xsi:type="object">MagesalesConvergePaymentLogger</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="MagesalesConvergeMonologLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers"  xsi:type="array">
+                <item name="debug" xsi:type="object">Magesales\Converge\Gateway\Logger\Debug</item>
+                <item name="critical" xsi:type="object">Magesales\Converge\Gateway\Logger\Critical</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MagesalesConvergePaymentLogger" type="Magento\Payment\Model\Method\Logger">
+        <arguments>
+            <argument name="config" xsi:type="object">Magesales\Converge\Gateway\Config\Config</argument>
+            <argument name="logger" xsi:type="object">MagesalesConvergeMonologLogger</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergePaymentFacade" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="string">converge</argument>
+            <argument name="valueHandlerPool" xsi:type="object">ConvergePaymentValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">ConvergePaymentValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">ConvergePaymentCommandPool</argument>
+            <argument name="formBlockType" xsi:type="string">MagesalesConvergePaymentFormCc</argument>
+            <argument name="infoBlockType" xsi:type="string">MagesalesConvergeBlockInfo</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="MagesalesConvergePaymentFormCc" type="Magento\Payment\Block\Form\Cc">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="template" xsi:type="string">Magesales_Converge::form/cc.phtml</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="MagesalesConvergeBlockInfo" type="Magesales\Converge\Ui\Block\Info">
+        <arguments>
+            <argument name="config" xsi:type="object">Magesales\Converge\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergePaymentCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="authorize" xsi:type="string">ConvergeTransactionAuthCommand</item>
+                <item name="capture" xsi:type="string">ConvergeCaptureStrategyCommand</item>
+                <item name="complete" xsi:type="string">ConvergeTransactionCcCompleteCommand</item>
+                <item name="void" xsi:type="string">ConvergeTransactionCcVoidCommand</item>
+                <item name="refund" xsi:type="string">ConvergeTransactionCcReturnCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magesales\Converge\Gateway\Response\Handler\LoggerHandler">
+        <arguments>
+            <argument name="logger" xsi:type="object">MagesalesConvergePaymentLogger</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="ConvergeTransactionAuthCommand" type="Magesales\Converge\Gateway\Command\ConvergeTransaction">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">ConvergeTransactionAuthRequestBuilder</argument>
+            <argument name="transactionApiCall" xsi:type="object">ConvergeTransactionAuthGenericTransaction</argument>
+            <argument name="responseHandler" xsi:type="object">ConvergeTransactionAuthCommandHandlers</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionAuthRequestBuilder" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="general" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\General</item>
+                <item name="capture" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\Capture</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionAuthCommandHandlers" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="updatePayment" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\UpdatePaymentHandler</item>
+                <item name="transactionHandler" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\TransactionHandler</item>
+                <item name="authPaymentHandler" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\AuthPaymentHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionAuthGenericTransaction" type="Magesales\ConvergePaymentApiCommon\Transaction\GenericTransaction">
+        <arguments>
+            <argument name="transactionService" xsi:type="object">Magesales\ConvergePaymentSpi\TransactionService</argument>
+            <argument name="validationService" xsi:type="object">Magesales\ConvergePaymentSpi\ValidationService</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergeTransactionCcCompleteCommand" type="Magesales\Converge\Gateway\Command\ConvergeTransaction">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">ConvergeTransactionCcCompleteRequestBuilder</argument>
+            <argument name="transactionApiCall" xsi:type="object">ConvergeTransactionCcCompleteConvergeTransaction</argument>
+            <argument name="responseHandler" xsi:type="object">ConvergeTransactionCcCompleteCommandHandlers</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcCompleteRequestBuilder" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="general" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\General</item>
+                <item name="complete" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\Complete</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcCompleteCommandHandlers" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="updatePayment" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\UpdateCompletePaymentHandler</item>
+                <item name="transactionHandler" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\TransactionHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcCompleteConvergeTransaction" type="Magesales\ConvergePaymentApiCommon\Transaction\GenericTransaction">
+        <arguments>
+            <argument name="transactionService" xsi:type="object">Magesales\ConvergePaymentSpi\TransactionService</argument>
+            <argument name="validationService" xsi:type="object">Magesales\ConvergePaymentSpi\ValidationService</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergeCaptureStrategyCommand" type="Magesales\Converge\Gateway\Command\CaptureStrategyCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">ConvergePaymentCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+
+    <virtualType name="ConvergeTransactionCcReturnCommand" type="Magesales\Converge\Gateway\Command\ConvergeTransaction">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">ConvergeTransactionCcReturnRequestBuilder</argument>
+            <argument name="transactionApiCall" xsi:type="object">ConvergeTransactionCcReturnConvergeTransaction</argument>
+            <argument name="responseHandler" xsi:type="object">ConvergeTransactionCcReturnCommandHandlers</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcReturnRequestBuilder" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="general" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\General</item>
+                <item name="return" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\CcReturn</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcReturnCommandHandlers" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="transactionHandler" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\TransactionHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcReturnConvergeTransaction" type="Magesales\ConvergePaymentApiCommon\Transaction\GenericTransaction">
+        <arguments>
+            <argument name="transactionService" xsi:type="object">Magesales\ConvergePaymentSpi\TransactionService</argument>
+            <argument name="validationService" xsi:type="object">Magesales\ConvergePaymentSpi\ValidationService</argument>
+        </arguments>
+    </virtualType>
+
+
+
+    <virtualType name="ConvergeTransactionCcVoidCommand" type="Magesales\Converge\Gateway\Command\ConvergeTransaction">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">ConvergeTransactionCcVoidRequestBuilder</argument>
+            <argument name="transactionApiCall" xsi:type="object">ConvergeTransactionCcVoidConvergeTransaction</argument>
+            <argument name="responseHandler" xsi:type="object">ConvergeTransactionCcVoidCommandHandlers</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcVoidRequestBuilder" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="general" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\General</item>
+                <item name="void" xsi:type="string">Magesales\Converge\Gateway\Request\Builder\CreditCard\CcVoid</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcVoidCommandHandlers" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="transactionHandler" xsi:type="string">Magesales\Converge\Gateway\Response\Handler\TransactionHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergeTransactionCcVoidConvergeTransaction" type="Magesales\ConvergePaymentApiCommon\Transaction\GenericTransaction">
+        <arguments>
+            <argument name="transactionService" xsi:type="object">Magesales\ConvergePaymentSpi\TransactionService</argument>
+            <argument name="validationService" xsi:type="object">Magesales\ConvergePaymentSpi\ValidationService</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magesales\Converge\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="string">converge</argument>
+        </arguments>
+    </type>
+    <virtualType name="ConvergePaymentConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">Magesales\Converge\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergePaymentValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">ConvergePaymentConfigValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergePaymentCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">Magesales\Converge\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ConvergePaymentValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="global" xsi:type="string">Magesales\Converge\Gateway\Validator\GlobalValidator</item>
+                <item name="availability" xsi:type="string">Magesales\Converge\Gateway\Validator\AvailabilityValidator</item>
+                <item name="country" xsi:type="string">ConvergePaymentCountryValidator</item>
+                <item name="currency" xsi:type="string">Magesales\Converge\Gateway\Validator\CurrencyValidator</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ConvergePaymentCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">ConvergePaymentCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Payment\Gateway\Command\CommandManagerPool">
+        <arguments>
+            <argument name="executors" xsi:type="array">
+                <item name="converge" xsi:type="string">ConvergePaymentCommandManager</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magesales\Converge\Gateway\Config\CommonConfig">
+        <arguments>
+            <argument name="methodCode" xsi:type="string">converge</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,47 @@
+<?php
+/**
+ * @var \Act\Dialog\Block\Dialog $block
+ */
+?>
+
+<?php if($block->isActive()): ?>
+  <div>
+      <div id="act-dialogbox">
+        <?= $block->getChildHtml('act.promotion.popup') ?>
+      </div>
+  </div>
+
+  <script>
+  require([
+      'jquery',
+      'Magento_Ui/js/modal/modal',
+      'jquery/jquery.cookie',
+      'domReady!'
+      ], function($, modal, $cookie) {
+      // Open Modal only if cookie is not set
+      var options = {
+          type: 'popup',
+          modalClass: 'act-dialog-modal',
+          responsive: true,
+          innerScroll: true,
+          title: '<?php print $block->getTitle(); ?>',
+          autoOpen: false,
+          buttons: [],
+          closed: function () {
+              $.cookie("ignore_dialog", "true");
+          }
+      };
+      var popup = modal(options, $('#act-dialogbox'));
+
+      setTimeout( function() {
+          var ignorePopup = $.cookie("ignore_dialog");
+          if (!ignorePopup) {
+              $("#act-dialogbox").modal('openModal');
+          }
+      }, 10000);
+
+
+  });
+  </script>
+
+<?php endif; ?>

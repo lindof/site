@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <colorpickercustom_section>
+            <swatch>
+                <choice_method>toggle</choice_method>
+                <show_price>1</show_price>
+            </swatch>
+            <slider>
+                <enabled>0</enabled>
+                <slides_to_show>4</slides_to_show>
+                <slides_to_scroll>4</slides_to_scroll>
+            </slider>
+        </colorpickercustom_section>
+    </default>
+</config>

@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \Mexbs\ApBase\Helper\Data $apHelper
+ */
+$apHelper = $this->helper('Mexbs\ApBase\Helper\Data');
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Mexbs_ApBase/js/model/ap-simple-actions": {
+                "hintsNotSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsNotSupportingHints()))) ?>",
+                "productHintsSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsSupportingProductHints()))) ?>",
+                "promoBlockSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsSupportingPromoBlock()))) ?>",
+                "productHintsLocationSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsSupportingProductHintsLocation()))) ?>",
+                "bannerBadgeGetSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsSupportingBannerBadgeGet()))) ?>",
+                "bannerBadgeTriggerSupportingActions": "<?php echo /* @noEscape */ str_replace("\"", "\\\"", json_encode(array_keys($apHelper->getApSimpleActionsSupportingBannerBadgeTrigger()))) ?>"
+            }
+        }
+    }
+</script>

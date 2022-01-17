@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="colorpicker_swatches" />
+    <body>
+        <referenceContainer name="head.additional">
+            <block class="Orange35\Colorpickercustom\Block\Product\View\Options"
+                   name="orange35.colorpickercustom.product.view.init-swatches"
+                   template="Orange35_Colorpickercustom::product/view/init-options.phtml"
+                   after="-">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

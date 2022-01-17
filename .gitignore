@@ -6,4 +6,8 @@
 !/composer.json
 !/readme.md
 !/app/code/**/*
+!/app/design/frontend/Local/**/*
 !/app/etc/config.php
+/dev
+/update/
+/vendor/

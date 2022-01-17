@@ -1,0 +1,49 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_DependentCustomOption
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Text options block
+ *
+ * @var \Bss\DependentCustomOption\Block\Options\Type\Select $block
+ */
+?> 
+
+<?php
+$productId = $block->getProduct()->getId();
+$option = $block->getOption();
+$class = ($option->getIsRequire()) ? ' required' : '';
+?>
+<div id="bss_options_<?php echo $option->getId() ?>" class="field<?php  echo $class; ?>">
+    <label class="label" for="select_<?php echo $option->getId() ?>">
+        <span><?php echo  $block->escapeHtml($option->getTitle()) ?></span>
+        <?php  echo $block->getBssCustomOptionBlock('after_title'); ?>
+    </label> 
+    <?php echo $block->getBssCustomOptionBlock('before_control'); ?>
+    <div class="control">
+        <?php echo $block->getValuesHtml() ?>
+        <?php if ($option->getIsRequire()): ?>
+            <?php if ($option->getType() == \Magento\Catalog\Model\Product\Option::OPTION_TYPE_RADIO
+                || $option->getType() == \Magento\Catalog\Model\Product\Option::OPTION_TYPE_CHECKBOX): ?>
+                <span id="options-<?php  echo $option->getId() ?>-container"></span>
+            <?php endif; ?>
+        <?php endif;?>
+    </div>
+    <?php  echo $block->getBssCustomOptionBlock('after_control'); ?>
+</div>

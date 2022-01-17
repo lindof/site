@@ -1,0 +1,83 @@
+<?php $settings = $this->getSettings('knowband/spinandwin/settings'); 
+?>
+<div class="fieldset-wrapper" id="look-and-feel">
+    <div class="admin__fieldset-wrapper-content">
+        <h1 class="spinandwin-h1"><?php echo __("Theme Scheduling")?></h1>
+        <fieldset class="admin__fieldset">
+            <div class="admin__field">
+                <label class="admin__field-label" for="spinandwin_enable_theme_scheduling">
+                    <span><?php echo __("Enable Theme Scheduling")?></span>
+                </label>
+                <div class="admin__field-control">
+                    <div class="admin__actions-switch" data-role="switcher">
+                        <input type="checkbox" class="admin__actions-switch-checkbox" id="spinandwin_enable_theme_scheduling" name="vss_spinandwin[theme_scheduling][enable_theme_scheduling]" value="1" <?php echo isset($settings["theme_scheduling"]["enable_theme_scheduling"])?$settings["theme_scheduling"]["enable_theme_scheduling"]?'checked="checked"':'':'';?>>
+                        <label class="admin__actions-switch-label" for="spinandwin_enable_theme_scheduling">
+                            <span class="admin__actions-switch-text" data-text-on="<?php echo __('Yes'); ?>" data-text-off="<?php echo __('No'); ?>"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </fieldset>
+    </div>
+</div>
+<div id="theme_scheduling_grid">
+<button type="button" class="btn btn-primary" onclick="location.href='<?php echo $this->getUrl('*/*/addSchedule'); ?>';" id="add_new_schedule" ><?php echo __('Add New Schedule'); ?></button>
+<?php
+    $blockObj= $this->getLayout()->createBlock('Knowband\Spinandwin\Block\Adminhtml\Tab\ScheduledThemes');
+    echo $blockObj->toHtml();
+    ?>
+</div>
+<style>
+    #add_new_schedule {
+        float: right;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    #add_new_schedule:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+</style>
+<style>
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-right: 4px;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+
+.spin_btn {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+</style>

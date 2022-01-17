@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Biztech\Deliverydate\Block\Deliverydate" after="deliverydateInformation" name="deliverydate.info" template="Biztech_Deliverydate::delivery_date_config.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="checkout.cart.totals">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-totals" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="delivery_charges" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Biztech_Deliverydate/js/view/checkout/summary/deliverycharges</item>
+                                    <item name="sortOrder" xsi:type="string">20</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="delivery_charges" xsi:type="string" translate="true">Delivery Charges</item>
+                                    </item>
+                                </item>
+                                <item name="same_day_charges" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Biztech_Deliverydate/js/view/checkout/summary/samedaycharges</item>
+                                    <item name="sortOrder" xsi:type="string">21</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">Biztech_Deliverydate/checkout/summary/samedaycharges</item>
+                                        <item name="title" xsi:type="string" translate="true">Same Day Delivery Charges</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

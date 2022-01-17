@@ -1,0 +1,529 @@
+//
+//    Common
+//--------------------------------------
+
+@header_color: #000000;
+@header_size: 30px;
+@border_image: #dddddd;
+@border_thin: 1px;
+@border_color: #dddddd;
+
+.storelocator-wrapper {
+
+  width: 1120px;
+  margin: 0 auto;
+
+  .header {
+    color: @header_color;
+    font-size: @header_size;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+
+  }
+
+  .storelocator-back {
+    width: 100%;
+    height: 40px;
+    border: 1px solid @border_color;
+    text-align: center;
+    line-height: 40px;
+    a {
+      color: #000000;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+  }
+
+  .storelocator-wrapper-loader {
+    height: 80px;
+  }
+
+  .clear {
+    clear: both;
+  }
+}
+.H_ui .H_ib_body {
+  background: url(http://demo.iwdextensions.com/store-locator/skin/frontend/base/default/css/iwd/storelocator/images/gm_info_window_bkg.png) no-repeat scroll 0 0 transparent;
+  height: 276px;
+  padding: 15px 20px;
+  width: 278px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.H_ib_close svg.H_icon{
+  fill: #000000 ;
+}
+.H_ib_tail{
+  display: none;
+}
+.H_ui .H_ib{
+  left: -94%;
+}
+.storelocator-items {
+  width: 885px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .storelocator-item {
+    width: 245px;
+    box-sizing: content-box;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid @border_color;
+    padding-right: 37px;
+    padding-left: 37px;
+    height: 365px;
+    padding-bottom: 25px;
+    position: relative;
+  }
+}
+
+.storelocator-item.storelocator-item-short {
+  height: 228px;
+}
+
+.storelocator-item {
+
+  .image-section {
+    overflow: hidden;
+    /* border:@border_thin solid @border_image; */
+    height: 136px;
+    width: 244px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .storelocator-name {
+    h4 {
+      color: #000000;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      max-height: 36px;
+
+      small {
+        color: #888888;
+        font-size: 13px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .storelocator-phone {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 3px;
+    display: block;
+  }
+  .storelocator-text {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .storelocator-itema-action {
+    overflow: hidden;
+    margin-top: 17px;
+
+    .item-website {
+      color: #000000;
+      font-weight: bold;
+      font-size: 14px;
+      float: left;
+
+      i {
+        font-size: 16px;
+        position: relative;
+        top: 1px;
+        margin-left: 4px;
+      }
+
+    }
+    .item-get-direction {
+      color: #c60b34;
+      font-weight: bold;
+      font-size: 14px;
+      float: right;
+      i {
+        font-size: 16px;
+        position: relative;
+        top: 1px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .storelocator-divider {
+    border-bottom: 1px solid @border_color;
+    position: absolute;
+    height: 1px;
+    width: 248px;
+    bottom: 25px;
+  }
+}
+
+.storelocator-map {
+  position: relative;
+  width: 100%;
+  height: 600px;
+
+  .storelcoator-mobile-function {
+    display: none
+  }
+}
+
+.storelocator-map.responsive {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 600px;
+
+}
+
+.storelocator-map.responsive + .storelocator-map-section {
+  height: 600px
+}
+
+.storelocator-item:nth-child(3n+1) {
+  padding-left: 0;
+}
+
+.storelocator-item:nth-child(3n+3) {
+  padding-right: 0;
+  border-right: 0
+}
+
+#storelocator-map {
+  height: 600px;
+}
+
+.storelocator-filter {
+  top: 25px;
+  padding-top: 25px;
+  background: rgba(255, 255, 255, 0.75) none repeat scroll 0 0;
+  height: 55px;
+  left: 50%;
+  margin-left: -415px;
+  position: absolute;
+  width: 830px;
+  z-index: 10;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+
+  .storelocator-filter-country {
+    width: 149px;
+    float: left;
+    margin-left: 25px
+  }
+  .storelocator-filter-state {
+    width: 327px;
+    float: left;
+    margin-left: 25px;
+
+    input[type="text"]::-moz-placeholder {
+      color: #343030;
+    }
+  }
+  .storelocator-raduis-state {
+    width: 149px;
+    float: left;
+    margin-left: 25px
+  }
+  .storelocator-submit {
+    float: right;
+    margin-right: 25px;
+    border-radius: 0;
+  }
+  .hidden {
+    display: none
+  }
+}
+
+.storelocator-filter.storelocator-filter-compact {
+  width: 660px;
+  margin-left: -330px;
+}
+
+#storelocator-map {
+  .H_ui {
+    &:extend(.infoBox);
+    .H_ib_body {
+      &:extend(.infoBox-inner);
+    }
+  }
+}
+
+.infoBox {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  .infoBox-inner {
+    background: #fbf9f5;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiZjlmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVkZWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left, #fbf9f5 0%, #eeedea 100%);
+    background: -webkit-linear-gradient(left, #fbf9f5 0%, #eeedea 100%);
+    background: linear-gradient(to right, #fbf9f5 0%, #eeedea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbf9f5', endColorstr='#eeedea', GradientType=1);
+
+    border: 1px solid #b6b4af;
+    max-height: 250px;
+    padding: 15px;
+    overflow: hidden;
+  }
+
+  > img:first-child {
+    position: absolute !important;
+    right: 6px;
+    top: 6px;
+  }
+
+  .storelocator-name {
+    overflow: hidden;
+
+    h4 {
+      color: #000000;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 24px;
+      margin-bottom: 25px;
+      margin-top: 0;
+      text-transform: uppercase;
+
+      small {
+        color: #888888;
+        font-size: 13px;
+        margin-left: 8px;
+      }
+    }
+
+    .storelocator-icon-image {
+      max-width: 32px;
+      max-height: 55px;
+      overflow: hidden;
+      float: left;
+    }
+    .storelocator-icon-image img {
+      max-width: 100%
+    }
+    .storelocator-icon-image + h4 {
+      float: left;
+      margin-left: 20px;
+      max-height: 45px;
+      overflow: hidden;
+      width: 195px;
+    }
+  }
+
+  .storelocator-phone {
+
+    overflow: hidden;
+    margin-top: 17px;
+
+    .item-website-action,
+    .item-get-direction-action {
+      float: left;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+
+    .item-get-direction-action {
+      float: right;
+    }
+
+    .item-website:hover,
+    .item-get-direction:hover {
+      text-decoration: none
+    }
+  }
+}
+
+.clear {
+  clear: both
+}
+
+.storelocator-index-index {
+  .page-title-wrapper {
+    max-width: 1120px;
+    width: 1120px;
+    margin: 0 auto;
+  }
+  h1.page-title {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  #storelocator-map {
+    display: none;
+  }
+
+  .storelocator-map {
+    width: 100%;
+    height: auto;
+
+    .storelcoator-mobile-function {
+      display: block
+    }
+  }
+
+  .storelocator-map.responsive {
+    position: initial;
+    width: 100%;
+    height: auto;
+
+    .storelcoator-mobile-function {
+      display: block
+    }
+  }
+
+  .storelocator-map.responsive + .storelocator-map-section {
+    height: auto;
+  }
+
+  .storelocator-filter,
+  .storelocator-filter.storelocator-filter-compact {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    position: initial;
+    width: 100%;
+    padding: 0;
+
+    select {
+
+    }
+    .storelocator-filter-country {
+      float: none;
+      margin: 0 0 15px 0;
+      width: 100%
+    }
+    .storelocator-filter-state {
+      float: none;
+      margin: 0 0 15px 0;
+      width: 100%
+    }
+    .storelocator-raduis-state {
+      margin-left: 0
+    }
+    .storelocator-raduis-state {
+      width: 190px;
+    }
+    .storelocator-submit {
+      margin-right: 0;
+    }
+  }
+
+  .storelcoator-mobile-function {
+    margin-top: 24px;
+    text-align: center;
+
+    p {
+      color: #000000;
+      font-size: 13px;
+    }
+    a {
+      background: #7b7677 none repeat scroll 0 0;
+      color: #ffffff;
+      display: block;
+      font-size: 14px;
+      height: 30px;
+      line-height: 30px;
+      margin: 0 auto;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 172px;
+    }
+  }
+
+  .storelocator-wrapper {
+    width: 100%;
+
+    .storelocator-items {
+      width: 245px;
+
+      .storelocator-item {
+        border: none;
+        padding-left: 0;
+        padding-right: 0
+      }
+    }
+    .header {
+      color: #000000;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .storelocator-wrapper {
+    width: 100%;
+
+    .storelocator-items {
+      width: 565px;
+
+      .storelocator-item {
+        float: left;
+        padding-left: 0;
+        padding-right: 37px;
+      }
+
+      .storelocator-item:nth-child(2n+2) {
+        padding-right: 0;
+        padding-left: 37px;
+        border-left: 1px solid #dddddd;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1050px) {
+
+  .storelocator-filter:not(.storelocator-filter-compact) {
+    margin-left: 0;
+    width: 100%;
+    left: 0;
+
+    .storelocator-filter-state {
+      width: 227px;
+    }
+  }
+
+  .storelocator-wrapper {
+    width: 100%;
+
+    .storelocator-items {
+      width: 565px;
+
+      .storelocator-item {
+        border: none;
+        float: left;
+        padding-left: 0;
+        padding-right: 37px;
+      }
+
+      .storelocator-item:nth-child(2n+2) {
+        padding-right: 0;
+        padding-left: 37px;
+        border-left: 1px solid #dddddd;
+      }
+    }
+  }
+}

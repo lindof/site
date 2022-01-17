@@ -1,0 +1,17 @@
+
+.converge-section .entry-edit-head .heading strong {
+    padding-left:150px;
+    background:url("images/converge-logo.png") no-repeat 0 0 / 145px auto;
+    line-height:45px;
+}
+.converge-section .entry-edit-head > .config-heading:before {
+    background: url("images/converge_payments_cards.png") no-repeat 0 0 / 100% auto;
+    content: "";
+    display: inline;
+    float: right;
+    height: 35px;
+    width: 280px;
+}
+.modal-popup .converge-changelog-list {
+    margin-left: 20px;
+}

@@ -1,0 +1,9 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Sales\Api\Data\OrderInterface">
+        <attribute code="shipping_arrival_date" type="string"/>
+        <attribute code="shipping_arrival_slot" type="string"/>
+        <attribute code="shipping_arrival_comments" type="string"/>
+        <attribute code="delivery_charges" type="string"/>
+        <attribute code="same_day_charges" type="string"/>
+    </extension_attributes>
+</config>

@@ -1,0 +1,40 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_columns">
+        <column name="shipping_arrival_date" class="Biztech\Deliverydate\Component\Columns\OrderGrid">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Delivery Date</item>
+                    <item name="dateFormat" xsi:type="string">MMMM d, Y</item>
+                </item>
+            </argument>
+        </column>
+        <column name="shipping_arrival_comments">
+            <argument name="data" xsi:type="array">
+                <item name="js_config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="align" xsi:type="string">right</item>
+                    <item name="label" xsi:type="string" translate="true">Delivery Comments</item>
+                </item>
+            </argument>
+        </column>
+        <column name="call_before_delivery">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Biztech\Deliverydate\Ui\Component\Listing\Column\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Call Before Delivery</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

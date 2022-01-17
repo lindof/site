@@ -1,0 +1,26 @@
+<?php
+/** @var \Cminds\Supplierfrontendproductuploader\Block\Product\DisableAttribute $block*/
+
+/** @var \Cminds\Supplierfrontendproductuploader\ViewModel\Product\DisableAttribute $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<form name="disable_attribute_form" id="disable_attribute_form" method="post" action="<?php echo $block->getAction();?>">
+    <div class="col-md-2 col-sm-4 col-sm-offset-4 col-md-offset-5 btn-save-fix">
+        <ul class="category-list">
+            <h5><?php echo __('Disable %1 Attribute Values', $viewModel->getAttribute()->getDefaultFrontendLabel())?></h5>
+            <?php foreach ($viewModel->getAttributeValues() as $value): ?>
+            <li>
+                <input id="attribute-<?php echo $value['value']?>"
+                       name="attribute[]"
+                       value="<?php echo $value['value']?>"
+                       type="checkbox"
+                    <?php echo $value['disabled'] ? 'checked' : ''?>>
+                    <?php echo $value['label'] ?>
+                </input>
+            </li>
+            <?php endforeach;?>
+        </ul>
+        <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Disable Products">
+    </div>
+</form>
+

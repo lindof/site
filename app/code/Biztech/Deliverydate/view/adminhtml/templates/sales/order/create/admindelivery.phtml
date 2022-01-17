@@ -1,0 +1,25 @@
+<?php
+// @codingStandardsIgnoreFile
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helper = $objectManager->create('Biztech\Deliverydate\Helper\Data');
+if ($helper->isEnable() && $helper->getConfigValue('deliverydate/deliverydate_general/admin_enabled')) {
+    ?>
+    <section id="order-delivery-date" class="admin__page-section order-delivery-date">
+        <div class="admin__page-section-title">
+            <span class="title"><?php /* @escapeNotVerified */
+                echo __('Delivery Date Information'); ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?php
+            $config = $objectManager->create('Magento\Framework\App\Config\ScopeConfigInterface');
+            $enable_method = $config->getValue('deliverydate/deliverydate_general/delivery_method');
+            if ($enable_method == 1) {
+                echo $this->getLayout()->createBlock('Biztech\Deliverydate\Block\Deliverydate')->setTemplate('deliverydate/deliverydate.phtml')->toHtml();
+            }
+            if ($enable_method == 2) {
+                echo $this->getLayout()->createBlock('Biztech\Deliverydate\Block\Deliverydate')->setTemplate('deliverydate/timeslot.phtml')->toHtml();
+            }
+            ?>
+        </div>
+    </section>
+<?php } ?>

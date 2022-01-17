@@ -1,0 +1,75 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+   <!-- Remove unwanted account navigation links -->
+   <!-- Store credit -->
+   <!-- <referenceBlock name="customer-account-navigation-customer-balance-link" remove="true"/> -->
+   <!-- Downloadable product link -->
+   <referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+   <!-- Store Payment Methods product link -->
+   <referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/>
+
+
+                    <!-- <block class="Amasty\Affiliate\Ui\Element\Html\Link\Current" name="amasty-affiliate-account-navigation-program">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Affiliate Programs</argument>
+                            <argument name="path" xsi:type="string">account/program</argument>
+                        </arguments>
+                    </block> -->
+
+   <referenceBlock name="amasty-affiliate-account-navigation-program">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Refer a Friend</argument>
+            <argument name="path" xsi:type="string">account/program</argument>
+        </arguments>
+   </referenceBlock>
+
+    <referenceBlock name="amasty-affiliate-account-navigation-share">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Promo Code</argument>
+            <argument name="path" xsi:type="string">account/promo</argument>
+        </arguments>
+   </referenceBlock>
+
+    <referenceBlock name="amasty-affiliate-account-navigation-setting">
+    <arguments>
+        <argument name="label" xsi:type="string" translate="true">Referral Settings</argument>
+        <argument name="path" xsi:type="string">account/setting</argument>
+    </arguments>
+   </referenceBlock>
+
+    <referenceBlock name="amasty-affiliate-account-navigation-refer">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">My Links</argument>
+            <argument name="path" xsi:type="string">account/refer</argument>
+        </arguments>
+    </referenceBlock>
+
+
+   <!-- Subscription link -->
+   <!-- <referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/> -->
+   <!-- Billing agreement link -->
+   <!-- <referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/> -->
+   <!-- Product review link -->
+   <!-- <referenceBlock name="customer-account-navigation-product-reviews-link" remove="true"/> -->
+   <!-- My credit card link -->
+   <!-- <referenceBlock name="customer-account-navigation-my-credit-cards-link" remove="true"/> -->
+   <!-- Account link -->
+   <!-- <referenceBlock name="customer-account-navigation-account-link" remove="true"/> -->
+   <!-- Account edit link -->
+   <!-- <referenceBlock name="customer-account-navigation-account-edit-link" remove="true"/> -->
+   <!-- Address link -->
+   <!-- <referenceBlock name="customer-account-navigation-address-link" remove="true"/> -->
+   <!-- Orders link -->
+   <!-- <referenceBlock name="customer-account-navigation-orders-link" remove="true"/> -->
+   <!-- Wish list link -->
+   <!-- <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/> -->
+   <!-- Gift card link -->
+   <!-- <referenceBlock name="customer-account-navigation-gift-card-link" remove="true"/> -->
+   <!-- Order by SKU -->
+   <!-- <referenceBlock name="customer-account-navigation-checkout-sku-link" remove="true"/> -->
+   <!-- Gift registry -->
+   <!-- <referenceBlock name="customer-account-navigation-giftregistry-link" remove="true"/> -->
+   <!-- Reward points -->
+   <!-- <referenceBlock name="customer-account-navigation-reward-link" remove="true"/> -->
+</body>
+</page>

@@ -1,0 +1,29 @@
+<?php
+
+$mobile = $block->getMobile();
+$tablet = $block->getTablet();
+$desktop = $block->getDesktop();
+$xlarge = $block->getXlarge();
+
+?>
+
+<div class="jumbotron jumbotron-image no-padding">
+  <picture>
+    <!--[if IE 9]><video style="display: none"><![endif]-->
+    <source
+      data-srcset="<?php print $block->getMediaUrl() . $mobile ?>"
+      media="(max-width: 600px)" />
+    <source
+      data-srcset="<?php echo $block->getMediaUrl() . $tablet ?>"
+      media="(max-width: 960px)" />
+    <source
+      data-srcset="<?php echo $block->getMediaUrl() . $desktop ?>"
+      media="(max-width: 1680px)" />
+  <!--[if IE 9]></video><![endif]-->
+  <img
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      data-src="<?php echo $block->getMediaUrl() . $xlarge ?>"
+      class="lazyload"
+      alt="Lindo F fur" />
+  </picture>
+</div>

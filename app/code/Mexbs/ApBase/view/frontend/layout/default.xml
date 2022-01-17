@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Mexbs_ApBase::css/cart.css"/>
+        <css src="Mexbs_ApBase::css/rule-popup.css"/>
+        <css src="Mexbs_ApBase::css/promo-block-widget.css"/>
+        <css src="Mexbs_ApBase::css/category-badges.css"/>
+		<css src="Mexbs_ApBase::css/cart.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Mexbs\ApBase\Block\DisplayRulePopup"
+                   name="ap.display.popup"
+                   template="Mexbs_ApBase::display-popup.phtml"
+                    />
+        </referenceContainer>
+    </body>
+</page>

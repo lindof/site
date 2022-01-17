@@ -1,0 +1,64 @@
+.conversion-balance-info {
+    display: inline-block;
+}
+
+div.conversion-price-field {
+    margin: 5px;
+    padding: 10px;
+    background: #f0f0f0;
+    float: left;
+}
+.form-conversion {
+}
+.form-conversion .fieldset {
+    margin: 0;
+}
+.form-conversion .action.primary {
+    text-transform: none;
+    margin-right: 15px;
+}
+.form-conversion .actions-toolbar {
+    margin-bottom: 30px;
+}
+.affiliate-balance-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    margin-bottom: 25px;
+}
+.affiliate-balance-info .affiliate-price-field {
+    text-align: center;
+    float: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+.affiliate-balance-info .affiliate-title {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Montserrat',sans-serif;
+}
+.affiliate-balance-info .affiliate-price {
+    display: block;
+    padding: 10px;
+    border: 1px solid #2e2e2e;
+    font-weight: bold;
+    font-size: 2.4rem;
+    font-family: 'Montserrat',sans-serif;
+}
+.amasty-affiliate-balance-static {
+    margin-bottom: 30px;
+}
+@media (min-width: 1024px) {
+    .amasty_affiliate-account-transaction .column.main {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+@media (max-width: 767px) {
+    .affiliate-balance-info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
