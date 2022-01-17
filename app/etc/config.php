@@ -380,7 +380,7 @@ return [
         'Ebizmarts_PosRequest' => 1,
         'Ebizmarts_SalesAttribution' => 1,
         'Ess_M2ePro' => 1,
-        'FishPig_Bolt' => 1,
+        'FishPig_Bolt' => 0,
         'FishPig_PageSpeed' => 1,
         'IWD_All' => 1,
         'IWD_StoreLocator' => 1,
