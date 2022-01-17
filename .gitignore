@@ -8,6 +8,15 @@
 !/app/code/**/*
 !/app/design/frontend/Local/**/*
 !/app/etc/config.php
+# 2022-01-17 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# "How to fix the «Invalid template file» / «require_js.phtml» failure of Magento ≥ 2.3 in Windows?": https://mage2.pro/t/5774
+!/vendor/magento/framework/View/Element/Template/File/Validator.php
 /dev
 /update/
-/vendor/
+/vendor/codeception
+/vendor/endroid
+/vendor/magento/framework/Test
+/vendor/magento/magento2-base
+/vendor/magento/magento2-functional-testing-framework
+/vendor/mpdf
+/vendor/tubalmartin
